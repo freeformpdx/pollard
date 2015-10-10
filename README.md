@@ -12,7 +12,7 @@ A DJ Playlist creator frontend
 
 ## Methodology
 - Reactiflux to stand-up prototype for early UX feedback w/o building persistence layer
-- :Bootstrap for UI styling cuz: ez
+- Bootstrap for UI styling cuz: ez
 
 ## DIY
 `npm install && npm start`
