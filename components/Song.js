@@ -22,30 +22,15 @@ export default class Song extends Component {
 				/>;
     });
 
-		let styles = {
-			songContainer: {
-			}
-		};
-
-		let classes = classNames(
-			"col-xs-12",
-			"col-md-10",
-			"col-md-offset-1"
-		);
 
     return (
-      <div
-				className={ classes }
-				style={ styles.songContainer }
-				onClick={ (e) => this.handleClick(e) }>
-				<div className="panel panel-default">
-					<div className="panel-body">
-						<div className="row">
-							{ inputs }
-						</div>
-					</div>
+			<li className="list-group-item">
+				<div
+					onClick={ (e) => this.handleClick(e) }
+					className="row">
+					{ inputs }
 				</div>
-			</div>
+			</li>
     );
   }
 
