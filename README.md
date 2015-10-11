@@ -24,7 +24,7 @@ A DJ Playlist creator frontend
 Boilerplate from [React Redux Boilerplate][rrbp]
 
 
-[!alt text](gifs/kicks_man.gif)
+![alt tag](gifs/kicks_man.gif)
 
 
 
