@@ -2,14 +2,17 @@ import React, { Component, PropTypes } from 'react';
 
 import { POLLARD_ACTION } from '../constants/ActionTypes';
 
-export default class Main extends Component {
+export default class SetlistPage extends Component {
   constructor() {
 		super();
   }
 
   render() {
     return (
-      <div>Pollard Main Component</div>
+      <div>
+				Pollard Setlist Component
+				<
+			</div>
     );
   }
 }
