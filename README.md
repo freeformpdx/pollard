@@ -24,7 +24,9 @@ A DJ Playlist creator frontend
 Boilerplate from [React Redux Boilerplate][rrbp]
 
 
+[!alt text](gifs/kicks_man.gif)
+
 
 
 [rrbp]: https://github.com/knowbody/react-redux-boilerplate.git
-[devnotes]: https://github.com/spencerliechty/pollard/blob/master/devnotes.md
+[devnotes]: devnotes.md
