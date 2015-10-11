@@ -1,8 +1,8 @@
 // import * as types from '../constants/ActionTypes';
 
-// export function someAction(payload) {
+// export function action(payload) {
 //   return {
-//     type: types.SOME_ACTION,
+//     type: types.ACTION,
 //     payload
 //   }
 // }
