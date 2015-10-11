@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { Connector } from 'react-redux';
 import Main from '../components/Main';
-import * as SomeappActions from '../actions/SomeappActions';
+import * as Actions from '../actions/Actions';
 
-export default class SomeApp extends Component {
+export default class Pollard extends Component {
   render() {
     return (
-      <Connector select={state => ({ someapp: state.someapp })}>
+      <Connector select={state => ({ state: state })}>
         {this.renderChild}
       </Connector>
     );
   }
 
-  renderChild({ someapp, dispatch }) {
-    const actions = bindActionCreators(SomeappActions, dispatch);
+  renderChild({ app, dispatch }) {
+    const actions = bindActionCreators(Actions, dispatch);
     return (
       <div>
-        <Main someapp={someapp} actions={actions} />
+        <Main app={app} actions={actions} />
       </div>
     );
   }

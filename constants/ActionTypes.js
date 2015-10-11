@@ -1,1 +1,1 @@
-export const SOME_ACTION = 'SOME_ACTION';
+export const POLLARD_ACTION = 'POLLARD_ACTION';
