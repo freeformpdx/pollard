@@ -4,7 +4,7 @@ import { POLLARD_ACTION } from '../constants/ActionTypes';
 
 export default class Main extends Component {
   constructor() {
-
+		super();
   }
 
   render() {
