@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { Connector } from 'react-redux';
-import SetlistPage from '../components/SetlistPage';
+import SetPage from '../components/SetPage';
 import * as Actions from '../actions/Actions';
 
 export default class Pollard extends Component {
@@ -17,7 +17,7 @@ export default class Pollard extends Component {
     const actions = bindActionCreators(Actions, dispatch);
     return (
       <div className="container">
-        <SetlistPage app={app} actions={actions} />
+        <SetPage app={app} actions={actions} />
       </div>
     );
   }

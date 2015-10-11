@@ -48,11 +48,12 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 ```
 
 - ACTIONS
-		-	add song
-		- mark as played
+		-	add song to setlist
+		- search for song
+		- mark song as played
 		-	update song inputs
 		-	delete song
-		- add setlist
-		- choose setlist / edit setlist inputs
-		- delete setlist
+		- add set
+		- choose set / edit set inputs
+		- delete set
 

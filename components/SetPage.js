@@ -5,7 +5,7 @@ import { POLLARD_ACTION } from '../constants/ActionTypes';
 import Setlist from './Setlist.js';
 import mergeStyles from '../lib/mergeStyles';
 
-export default class SetlistPage extends Component {
+export default class SetPage extends Component {
 
   render() {
 		let songs = [{
@@ -42,7 +42,7 @@ export default class SetlistPage extends Component {
 
     return (
       <div>
-				<h1>Pollard Setlist Page</h1>
+				<h1>Pollard Set Page</h1>
 				<Setlist
 					songs= { songs }
 					onSongClick={ (index) => 
