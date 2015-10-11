@@ -1,5 +1,9 @@
 // import { POLLARD_ACTION } from '../constants/ActionTypes';
 
+// TODO
+// make state immutable
+// bifurcate reducers
+
 const initialState = [{
   payload: {}
 }];
