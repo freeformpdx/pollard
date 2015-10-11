@@ -2,3 +2,4 @@
 
 ## 10/10
 - Setting up project and factoring out react-redux-boilerplate cruft
+- build component hierarchy
