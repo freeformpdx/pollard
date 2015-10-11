@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import { POLLARD_ACTION } from '../constants/ActionTypes';
 import SongInput from './SongInput';
+import MarkPlayedBtn from './MarkPlayedBtn';
 import flatten2Array from '../lib/flattenObjectToArray';
 
 
@@ -22,13 +23,13 @@ export default class Song extends Component {
 				/>;
     });
 
-
     return (
 			<li className="list-group-item">
 				<div
 					onClick={ (e) => this.handleClick(e) }
 					className="row">
 					{ inputs }
+					<MarkPlayedBtn />
 				</div>
 			</li>
     );

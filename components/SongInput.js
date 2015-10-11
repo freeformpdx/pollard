@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import { POLLARD_ACTION } from '../constants/ActionTypes';
+import mergeStyles from '../lib/mergeStyles';
 
 
 export default class SongInput extends Component {
@@ -16,10 +17,16 @@ export default class SongInput extends Component {
 			"col-md-6",
 			"col-md-offset-0"
 		);
+		let gridStyle = mergeStyles({
+			marginTop: 5
+		});
+
 		let labelId = "label-" + this.props.label;
 
     return (
-			<div className={ gridClasses }>
+			<div
+				className={ gridClasses }
+				style={ gridStyle }>
 				<div className="input-group">
 					<span
 						className="input-group-addon"
