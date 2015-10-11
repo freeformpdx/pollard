@@ -15,10 +15,16 @@ A DJ Playlist creator frontend
 - Bootstrap for UI styling cuz: ez
 
 ## DIY
+
+[Dev Notes][devnotes]
+
 `npm install && npm start`
 
 ## BIG UPZ
 Boilerplate from [React Redux Boilerplate][rrbp]
 
 
+
+
 [rrbp]: https://github.com/knowbody/react-redux-boilerplate.git
+[devnotes]: https://github.com/spencerliechty/pollard/blob/master/devnotes.md
