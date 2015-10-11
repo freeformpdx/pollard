@@ -1,4 +1,4 @@
-// import { POLLARD_ACTION } from '../constants/ActionTypes';
+ import { POLLARD_ACTION } from '../constants/ActionTypes';
 
 // TODO
 // make state immutable
@@ -8,8 +8,7 @@ const initialState = [{
   payload: {}
 }];
 
-export default function rootReducer(state = initialState, action) {
-	debugger;
+export function rootReducer(state = initialState, action) {
   switch (action.type) {
   case POLLARD_ACTION:
     return [{
