@@ -16,7 +16,7 @@ export default class Pollard extends Component {
   renderChild({ app, dispatch }) {
     const actions = bindActionCreators(Actions, dispatch);
     return (
-      <div>
+      <div className="container">
         <SetlistPage app={app} actions={actions} />
       </div>
     );

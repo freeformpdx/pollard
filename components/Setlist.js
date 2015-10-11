@@ -7,8 +7,7 @@ export default class Setlist extends Component {
 
   render() {
     return (
-      <div>
-				Setlist Component
+      <div className="row">
         {this.props.songs.map((song, index) =>
           <Song song={song}
 						key={index}

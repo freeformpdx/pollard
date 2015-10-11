@@ -3,6 +3,7 @@ import Immutable from 'immutable';
 
 import { POLLARD_ACTION } from '../constants/ActionTypes';
 import Setlist from './Setlist.js';
+import mergeStyles from '../lib/mergeStyles';
 
 export default class SetlistPage extends Component {
 
@@ -53,14 +54,3 @@ export default class SetlistPage extends Component {
   }
 
 }
-
-/*
-SCRATCH SPACE
-						title: '',
-						artist: '',
-						album: '',
-						label: '',
-						year: '',
-						notes: '',
-						played: '',
-*/
