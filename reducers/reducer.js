@@ -1,13 +1,48 @@
 import * as actionTypes from '../constants/ActionTypes';
 
-import { Map, List } from 'immutable';
+import Immutable, { Map, List } from 'immutable';
 
 // TODO
 // bifurcate reducers/actionTypes/actions on major feature
 
 
+/* remove this when real data happens */
+const initialDataSongsState = Immutable.fromJS({
+	'id1': {
+		inputs: {
+			title: 'tracy\'s jacks',
+			artist: 'blurry',
+			album: 'parklifes',
+			label: 'label 5',
+			year: '1996',
+			notes: 'it\'s a good song!',
+		},
+		played: true
+	},
+	'id2': {
+		inputs: {
+			title: 'Ride the Ligtening',
+			artist: 'Metalica',
+			album: 'Minister of Puppets',
+			label: 'Label #420',
+			year: '1987',
+			notes: 'bang yr head',
+		},
+		played: true,
+	},
+	'id3': {
+		inputs: {
+			title: 'india was an angel',
+			artist: 'guiding by voices',
+			album: 'king ship && the golden boyz',
+			label: 'scat records',
+			year: '1993',
+			notes: 'sweet spots 4 you',
+		},
+		played: true,
+	}
+});
 
-const initialState = Map({});
 export function rootReducer(state = Map({}), action) {
 	return state
 		.set('view', view(state, action))
@@ -44,7 +79,7 @@ export function data(state = Map({}), action) {
 		.set('songs', dataSong(state, action));
 }
 
-export function dataSongs(state = Map({}), action) {
+export function dataSongs(state = initialDataSongsState, action) {
   switch (action.type) {
 	case actionTypes.SEARCH_FOR_SONG:
 	case actionTypes.ADD_SONG:

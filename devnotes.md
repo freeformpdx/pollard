@@ -63,6 +63,7 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 		- delete set
 
 UP NEXT:
-Connect components to read from state, init basic state
-Wire up select song action
-Write dataSongs reducers
+XX init basic state
+00 Connect components to read from state
+00 Wire up select song action
+00 Write dataSongs reducers
