@@ -51,16 +51,16 @@
 }
 ```
 
-- ACTIONS
-		-	add song to setlist
-		- search for song
-		- select song
-		- mark song as played
-		-	update song inputs
-		-	delete song
-		- add set
-		- choose set / edit set inputs
-		- delete set
+### ACTIONS
+-	add song to setlist
+- search for song
+- select song
+- mark song as played
+-	update song inputs
+-	delete song
+- add set
+- choose set / edit set inputs
+- delete set
 
 UP NEXT:
 - XX init basic state
