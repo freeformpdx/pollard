@@ -75,8 +75,8 @@ export function viewSong(state = Map({}), action) {
 
 export function data(state = Map({}), action) {
 	return state
-		.set('sets', dataSet(state, action))
-		.set('songs', dataSong(state, action));
+		.set('sets', dataSets(state, action))
+		.set('songs', dataSongs(state, action));
 }
 
 export function dataSongs(state = initialDataSongsState, action) {

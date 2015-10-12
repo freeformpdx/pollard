@@ -10,6 +10,7 @@ import { rootReducer } from '../reducers/reducer.js';
 
 const reducer = combineReducers({rootReducer});
 const store = createStore(reducer);
+debugger;
 
 export default class App extends Component {
   render() {

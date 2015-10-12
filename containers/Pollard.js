@@ -7,7 +7,7 @@ import * as Actions from '../actions/Actions';
 export default class Pollard extends Component {
   render() {
     return (
-      <Connector select={state => ({ state: state })}>
+      <Connector select={state => ( state )}>
         {this.renderChild}
       </Connector>
     );
