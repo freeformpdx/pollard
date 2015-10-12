@@ -15,7 +15,7 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 ```JSON
 {
 	view: {
-		setlist: {
+		set: {
 			selected: 0 
 		},
 		song: {
@@ -23,26 +23,30 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 		}
 	},
 	data: {
-		set: {
-			date: '',
-			time: '',
-			name: '',
-			image: '',
-			setlist: [
-				'songs'
-			],
-		},
-		songs: [{
-			inputs: {
-				title: '',
-				artist: '',
-				album: '',
-				label: '',
-				year: '',
-				notes: '',
+		sets: {
+			'id': {
+				date: '',
+				time: '',
+				name: '',
+				image: '',
+				setlist: [
+					'songs'
+				],
 			},
-			played: true
-		}]
+		},
+		songs: {
+			'id': {
+				inputs: {
+					title: '',
+					artist: '',
+					album: '',
+					label: '',
+					year: '',
+					notes: '',
+				},
+				played: true
+			},
+		}
 	}
 }
 ```
@@ -50,6 +54,7 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 - ACTIONS
 		-	add song to setlist
 		- search for song
+		- select song
 		- mark song as played
 		-	update song inputs
 		-	delete song
@@ -57,3 +62,7 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 		- choose set / edit set inputs
 		- delete set
 
+UP NEXT:
+Connect components to read from state, init basic state
+Wire up select song action
+Write dataSongs reducers
