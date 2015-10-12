@@ -5,9 +5,9 @@
 - build component hierarchy
 
 ### API SEARCH
-https://freemusicarchive.org/api
-http://www.last.fm/api/tos
-http://www.programmableweb.com/news/25-music-apis/2008/02/21
+- https://freemusicarchive.org/api
+- http://www.last.fm/api/tos
+- http://www.programmableweb.com/news/25-music-apis/2008/02/21
 
 ## 10/11
 - STATE && REDUCERS
@@ -63,7 +63,7 @@ http://www.programmableweb.com/news/25-music-apis/2008/02/21
 		- delete set
 
 UP NEXT:
-XX init basic state
-00 Connect components to read from state
-00 Wire up select song action
-00 Write dataSongs reducers
+- XX init basic state
+- 00 Connect components to read from state
+- 00 Wire up select song action
+- 00 Write dataSongs reducers
