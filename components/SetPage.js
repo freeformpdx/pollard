@@ -7,7 +7,6 @@ import Setlist from './Setlist.js';
 class SetPage extends Component {
   render() {
 		const { dispatch, dataSongs, viewSong } = this.props;
-		debugger;
 
     return (
       <div>
@@ -23,13 +22,14 @@ class SetPage extends Component {
   }
 }
 
-function select(state) {
+function select({rootReducer}) {
 	debugger;
   return {
-    dataSongs: state.getIn(['data','songs']),
-    viewSong: state.getIn(['view','song'])
+    dataSongs: rootReducer.getIn(['data','songs']),
+    viewSong: rootReducer.getIn(['view','song'])
   };
 }
 
 // Wrap the component to inject dispatch and state into it
+
 export default connect(select)(SetPage);
