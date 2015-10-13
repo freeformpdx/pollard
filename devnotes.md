@@ -1,4 +1,17 @@
 # DEV NOTES
+LOCALS ONLY!!!
+
+           _____
+           |_ _|
+      n    (O O)    n
+      H   _|\_/|_   H
+     nHnn/ \___/ \nnHn
+    <V VV /     \ VV V>
+     \__\/|     |\/__/
+
+	     EAT SHIT
+
+
 
 ## 10/10
 - Setting up project and factoring out react-redux-boilerplate cruft
@@ -64,6 +77,8 @@
 
 UP NEXT:
 - XX init basic state
+
+## 10/12
 - XX Connect components to read from state
 - XX Wire up select song action
 - 00 do update song reducer
