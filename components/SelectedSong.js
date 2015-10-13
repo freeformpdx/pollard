@@ -8,13 +8,18 @@ import mergeStyles from '../lib/mergeStyles';
 import flatten2Array from '../lib/flattenObjectToArray';
 
 
-export default class Song extends Component {
-	handleClick(event) {
-		console.log('hit song click');
-	}
-
+export default class SelectedSong extends Component {
 
   render() {
+		let flatInputs = flatten2Array(this.props.song.inputs);
+		let inputs = flatInputs.map((keyVal, index) => {
+			return <SongInput
+				label={ keyVal[0] }
+				val={ keyVal[1] }
+				key={ index }
+				/>;
+    });
+
 		let songStyle= mergeStyles({
 			backgroundColor: '#F6EBFA'
 		});
@@ -24,8 +29,7 @@ export default class Song extends Component {
 				<div
 					onClick={ (e) => this.handleClick(e) }
 					className="row">
-					{ this.props.song.inputs.title } - 
-					{ this.props.song.inputs.artist }
+					{ inputs }
 					<MarkPlayedBtn />
 				</div>
 			</li>

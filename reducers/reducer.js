@@ -43,6 +43,10 @@ const initialDataSongsState = Immutable.fromJS({
 	}
 });
 
+const initialViewSongState = Immutable.fromJS({
+	selected: 'id1'
+});
+
 
 export function state(state = Map({}), action) {
 	return state
@@ -65,7 +69,7 @@ export function viewSet(state = Map({}), action) {
   }
 }
 
-export function viewSong(state = Map({}), action) {
+export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
     return state.set('selected', action.id);

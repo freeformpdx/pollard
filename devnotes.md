@@ -64,6 +64,6 @@
 
 UP NEXT:
 - XX init basic state
-- 00 Connect components to read from state
+- XX Connect components to read from state
 - 00 Wire up select song action
 - 00 Write dataSongs reducers

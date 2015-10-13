@@ -8,12 +8,14 @@ class SetPage extends Component {
   render() {
 		const { dispatch, dataSongs, viewSong } = this.props;
 		const songs = dataSongs.toJSON();
+		const selectedSong = viewSong.get('selected');
 
     return (
       <div>
 				<h1>Pollard Set Page</h1>
 				<Setlist
-					songs= { songs }
+					songs={ songs }
+					selectedSong={ selectedSong }
 					onSongClick={ (index) => 
 						console.log('songSelected: ' + index)
 					}
