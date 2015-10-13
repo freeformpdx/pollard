@@ -43,16 +43,17 @@ const initialDataSongsState = Immutable.fromJS({
 	}
 });
 
+
 export function state(state = Map({}), action) {
 	return state
-		.set('view', view(state, action))
-		.set('data', data(state, action));
+		.set('view', view(state.get('view'), action))
+		.set('data', data(state.get('data'), action));
 }
 
 export function view(state = Map({}), action) {
 	return state
-		.set('set', viewSet(state, action))
-		.set('song', viewSong(state, action));
+		.set('set', viewSet(state.get('set'), action))
+		.set('song', viewSong(state.get('song'), action));
 }
 
 export function viewSet(state = Map({}), action) {
@@ -75,8 +76,8 @@ export function viewSong(state = Map({}), action) {
 
 export function data(state = Map({}), action) {
 	return state
-		.set('sets', dataSets(state, action))
-		.set('songs', dataSongs(state, action));
+		.set('sets', dataSets(state.get('sets'), action))
+		.set('songs', dataSongs(state.get('songs'), action));
 }
 
 export function dataSongs(state = initialDataSongsState, action) {

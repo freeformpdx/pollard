@@ -7,6 +7,7 @@ import Setlist from './Setlist.js';
 class SetPage extends Component {
   render() {
 		const { dispatch, dataSongs, viewSong } = this.props;
+		const songs = dataSongs.toJSON();
 
     return (
       <div>
