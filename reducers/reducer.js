@@ -43,7 +43,7 @@ const initialDataSongsState = Immutable.fromJS({
 	}
 });
 
-export function rootReducer(state = Map({}), action) {
+export function state(state = Map({}), action) {
 	return state
 		.set('view', view(state, action))
 		.set('data', data(state, action));

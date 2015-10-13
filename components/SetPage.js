@@ -22,11 +22,10 @@ class SetPage extends Component {
   }
 }
 
-function select({rootReducer}) {
-	debugger;
+function select({state}) {
   return {
-    dataSongs: rootReducer.getIn(['data','songs']),
-    viewSong: rootReducer.getIn(['view','song'])
+    dataSongs: state.getIn(['data','songs']),
+    viewSong: state.getIn(['view','song'])
   };
 }
 

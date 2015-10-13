@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Pollard from './Pollard';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import { rootReducer } from '../reducers/reducer.js';
+import { state } from '../reducers/reducer.js';
 
 // TODO
 // remove combine reducers call
-// const store = createStore(rootReducer);
+// const store = createStore(state);
 
-const reducer = combineReducers({rootReducer});
+const reducer = combineReducers({state});
 const store = createStore(reducer);
-debugger;
 
 export default class App extends Component {
   render() {
