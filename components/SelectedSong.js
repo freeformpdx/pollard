@@ -27,7 +27,6 @@ export default class SelectedSong extends Component {
     return (
 			<li className="list-group-item" style={ songStyle }>
 				<div
-					onClick={ (e) => this.handleClick(e) }
 					className="row">
 					{ inputs }
 					<MarkPlayedBtn />
