@@ -7,7 +7,11 @@ import mergeStyles from '../lib/mergeStyles';
 
 export default class SongInput extends Component {
 	handleChange(event) {
-		console.log('hit input change');
+		this.props.onUpdateSong({
+			id: this.props.songId,
+			key: this.props.label,
+			val: event.target.value
+		});
 	}
 
   render() {

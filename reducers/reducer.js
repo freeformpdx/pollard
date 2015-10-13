@@ -86,10 +86,14 @@ export function data(state = Map({}), action) {
 
 export function dataSongs(state = initialDataSongsState, action) {
   switch (action.type) {
+	case actionTypes.UPDATE_SONG:
+		return state.setIn(
+			[action.update.id, 'inputs', action.update.key],
+			action.update.val
+		);
 	case actionTypes.SEARCH_FOR_SONG:
 	case actionTypes.ADD_SONG:
 	case actionTypes.MARK_SONG_PLAYED:
-	case actionTypes.UPDATE_SONG:
 	case actionTypes.DELETE_SONG:
 		debugger;
     return state;

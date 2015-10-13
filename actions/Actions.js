@@ -56,10 +56,10 @@ export function markSongPlayed(payload) {
   }
 };
 
-export function updateSong(payload) {
+export function updateSong(update) {
   return {
     type: types.UPDATE_SONG,
-    payload
+    update
   }
 };
 

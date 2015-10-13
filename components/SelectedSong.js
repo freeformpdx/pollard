@@ -16,6 +16,8 @@ export default class SelectedSong extends Component {
 			return <SongInput
 				label={ keyVal[0] }
 				val={ keyVal[1] }
+				songId={ this.props.songId }
+				onUpdateSong={ this.props.onUpdateSong }
 				key={ index }
 				/>;
     });

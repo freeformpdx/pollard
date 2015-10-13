@@ -81,6 +81,6 @@ UP NEXT:
 ## 10/12
 - XX Connect components to read from state
 - XX Wire up select song action
-- 00 do update song reducer
+- XX do update song reducer
 - 00 do add song component
 - 00 do add song reducer

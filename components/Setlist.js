@@ -17,7 +17,7 @@ export default class Setlist extends Component {
 							songId={ tuple[0] }
 							selectedSong={ this.props.selectedSong }
 							key={ idx }
-							onClick={() => this.props.onSongClick(index)}
+							onUpdateSong={ this.props.onUpdateSong }
 						/>:
 						<Song song={ tuple[1] }
 							songId={ tuple[0] }

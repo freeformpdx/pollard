@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { selectSong } from '../actions/Actions.js';
+import { selectSong, updateSong } from '../actions/Actions.js';
 
 import Setlist from './Setlist.js';
 
@@ -18,6 +18,9 @@ class SetPage extends Component {
 					selectedSong={ selectedSong }
 					onSongClick={ (songId) => 
             dispatch(selectSong(songId))
+					}
+					onUpdateSong={ (song) => 
+            dispatch(updateSong(song))
 					}
 				/>
 			</div>
