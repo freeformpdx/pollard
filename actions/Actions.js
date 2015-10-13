@@ -28,10 +28,10 @@ export function deleteSet(payload) {
   }
 };
 
-export function selectSong(payload) {
+export function selectSong(id) {
   return {
     type: types.SELECT_SONG,
-    payload
+    id
   }
 };
 

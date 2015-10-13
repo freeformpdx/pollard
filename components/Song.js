@@ -10,7 +10,7 @@ import flatten2Array from '../lib/flattenObjectToArray';
 
 export default class Song extends Component {
 	handleClick(event) {
-		console.log('hit song click');
+		this.props.onSongClick(this.props.songId);
 	}
 
 

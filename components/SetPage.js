@@ -16,8 +16,8 @@ class SetPage extends Component {
 				<Setlist
 					songs={ songs }
 					selectedSong={ selectedSong }
-					onSongClick={ (index) => 
-						console.log('songSelected: ' + index)
+					onSongClick={ (songId) => 
+            dispatch(selectSong(songId))
 					}
 				/>
 			</div>
