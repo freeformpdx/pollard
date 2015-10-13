@@ -19,6 +19,7 @@ A DJ Playlist creator frontend
 [Dev Notes][devnotes]
 
 `npm install && npm start`
+&& then [in yo bowser](http://0.0.0.0:3000)
 
 ## BIG UPZ
 Boilerplate from [React Redux Boilerplate][rrbp]
