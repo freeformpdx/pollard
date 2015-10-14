@@ -35,10 +35,10 @@ export function selectSong(id) {
   }
 };
 
-export function searchForSong(payload) {
+export function searchSong(song) {
   return {
-    type: types.SEARCH_FOR_SONG,
-    payload
+    type: types.SEARCH_SONG,
+    song
   }
 };
 

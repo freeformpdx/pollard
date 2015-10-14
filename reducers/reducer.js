@@ -87,6 +87,9 @@ export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
     return state.set('selected', action.id);
+	case actionTypes.SEARCH_FOR_SONG:
+		debugger;
+    return state;
   default:
     return state;
   }
@@ -117,7 +120,6 @@ export function dataSongs(state = initialDataSongsState, action) {
 		songObj[newGuid] = song;
 
 		return Immutable.Map(songObj).merge(state);
-	case actionTypes.SEARCH_FOR_SONG:
 	case actionTypes.MARK_SONG_PLAYED:
 	case actionTypes.DELETE_SONG:
 		debugger;

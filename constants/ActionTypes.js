@@ -6,7 +6,7 @@ export const UPDATE_SET = 'UPDATE_SET';
 export const DELETE_SET = 'DELETE_SET';
 
 export const SELECT_SONG = 'SELECT_SONG';
-export const SEARCH_FOR_SONG = 'SEARCH_FOR_SONG';
+export const SEARCH_SONG = 'SEARCH_SONG';
 export const ADD_SONG = 'ADD_SONG';
 export const MARK_SONG_PLAYED = 'MARK_SONG_PLAYED';
 export const UPDATE_SONG = 'UPDATE_SONG';

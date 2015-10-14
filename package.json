@@ -2,10 +2,10 @@
   "name": "pollard",
   "version": "0.0.1",
   "description": "dj playlist creator frontend",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/spencerliechty/pollard.git"
-	},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spencerliechty/pollard.git"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
