@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 //import fetch from 'whatwg-fetch';
 import classNames from 'classnames';
 
+import secrets from '../secrets';
 import mergeStyles from '../lib/mergeStyles';
 
-import secrets from '../secrets';
+import FoundSong from './FoundSong';
+
 
 
 export default class SearchSong extends Component {
@@ -49,28 +51,12 @@ export default class SearchSong extends Component {
 		})
 	}
 
-	/*
-	handleChange(event) {
-		let searchUrl = this.getSearchUrl(
-			event.target.value,
-			this.state.apiKey);
-		$.get(this.props.source, function(result) {
-			if (this.isMounted()) {
-				this.setState({
-					username: lastGist.owner.login,
-					lastGistUrl: lastGist.html_url
-				});
-			}
-		}.bind(this));
-		this.setState({value: event.target.value});
-	}
-	*/
-
 	getSearchUrl() {
 		return "http://developer.echonest.com/api/v4/song/search?" +
 			"api_key=" + this.state.apiKey +
 			"&title=" + this.state.trackValue +
-			"&artist=" + this.state.artistValue;
+			"&artist=" + this.state.artistValue +
+			"&bucket=id:7digital-US&bucket=audio_summary&bucket=tracks";
 	}
 
   render() {
@@ -80,6 +66,11 @@ export default class SearchSong extends Component {
 
 		var artistValue = this.state.artistValue;
 		var trackValue = this.state.trackValue;
+
+		let foundSongsComponents = this.state.foundSongs.map(function(foundSong, idx)  {
+			return <FoundSong key={ idx } song={ foundSong } />;
+		});
+
 
     return (
 			<li
@@ -104,7 +95,12 @@ export default class SearchSong extends Component {
 							className="glyphicon glyphicon-search"
 							aria-hidden="true"></span> Search
 					</button>
-					<pre>{ JSON.stringify(this.state.foundSongs, null, 2) }</pre>
+					{ (this.state.foundSongs.length > 0) ?
+						<ul className="list-group">
+							{ foundSongsComponents }
+						</ul>
+						: '' 
+					}
 				</div>
 			</li>
     );
