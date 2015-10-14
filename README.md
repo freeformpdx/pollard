@@ -14,6 +14,14 @@ A DJ Playlist creator frontend
 - Reactiflux to stand-up prototype for early UX feedback w/o building persistence layer
 - Bootstrap for UI styling cuz: ez
 
+## Work In Progress Stills
+
+*SEARCH*
+![search](gifs/search.png)
+
+*SETPAGE*
+![setpage](gifs/setpage.png)
+
 ## DIY
 
 [Dev Notes][devnotes]
