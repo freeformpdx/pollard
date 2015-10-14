@@ -42,10 +42,10 @@ export function searchForSong(payload) {
   }
 };
 
-export function addSong(payload) {
+export function addSong(song) {
   return {
     type: types.ADD_SONG,
-    payload
+    song
   }
 };
 

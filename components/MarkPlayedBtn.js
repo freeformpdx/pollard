@@ -6,8 +6,8 @@ import mergeStyles from '../lib/mergeStyles';
 
 
 export default class MarkPlayedBtn extends Component {
-	handleChange(event) {
-		console.log('hit input change');
+	handleClick(event) {
+		console.log('hit mark played button');
 	}
 
   render() {
@@ -19,7 +19,9 @@ export default class MarkPlayedBtn extends Component {
 			<div className="col-xs-11 col-md-12" style={ gridStyle }>
 				<button
 					type="button"
-					className="btn btn-primary btn-lg pull-right">
+					className="btn btn-primary pull-right"
+					onClick={ (e) => this.handleClick(e) }
+					>
 					<span
 						className="glyphicon glyphicon-volume-off"
 						aria-hidden="true"></span> Mark Played

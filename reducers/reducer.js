@@ -2,6 +2,8 @@ import * as actionTypes from '../constants/ActionTypes';
 
 import Immutable, { Map, List } from 'immutable';
 
+import guid from '../lib/guid';
+
 // TODO
 // bifurcate reducers/actionTypes/actions on major feature
 
@@ -45,6 +47,18 @@ const initialDataSongsState = Immutable.fromJS({
 
 const initialViewSongState = Immutable.fromJS({
 	selected: 'id1'
+});
+
+const initialSongState = Immutable.fromJS({
+	inputs: {
+		title: '',
+		artist: '',
+		album: '',
+		label: '',
+		year: '',
+		notes: '',
+	},
+	played: false
 });
 
 
@@ -91,8 +105,19 @@ export function dataSongs(state = initialDataSongsState, action) {
 			[action.update.id, 'inputs', action.update.key],
 			action.update.val
 		);
-	case actionTypes.SEARCH_FOR_SONG:
 	case actionTypes.ADD_SONG:
+		// TODO: make this its own function
+		let song = action.song;
+		let newGuid = guid();
+		let songObj = {};
+
+		if (Object.keys(action.song).length == 0) {
+			song = initialSongState;
+		}
+		songObj[newGuid] = song;
+
+		return Immutable.Map(songObj).merge(state);
+	case actionTypes.SEARCH_FOR_SONG:
 	case actionTypes.MARK_SONG_PLAYED:
 	case actionTypes.DELETE_SONG:
 		debugger;

@@ -82,8 +82,10 @@ UP NEXT:
 - XX Connect components to read from state
 - XX Wire up select song action
 - XX do update song reducer
-- 00 do add song component
-- 00 do add song reducer
+
+## 10/13
+- XX do add song component
+- XX do add song reducer
 - 00 do search cmpnt
 - 00 do search rdxr
 - 00 do mark song played cmpnt
