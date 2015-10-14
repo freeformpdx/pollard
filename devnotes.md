@@ -9,7 +9,7 @@ LOCALS ONLY!!!
     <V VV /     \ VV V>
      \__\/|     |\/__/
 
-	     EAT SHIT
+	   EAT SHIT && DIE
 
 
 

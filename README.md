@@ -24,7 +24,7 @@ A DJ Playlist creator frontend
 ## BIG UPZ
 Boilerplate from [React Redux Boilerplate][rrbp]
 
-
+### KICKSMAN
 ![alt tag](gifs/kicks_man.gif)
 
 
