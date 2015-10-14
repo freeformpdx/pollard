@@ -84,3 +84,10 @@ UP NEXT:
 - XX do update song reducer
 - 00 do add song component
 - 00 do add song reducer
+- 00 do search cmpnt
+- 00 do search rdxr
+- 00 do mark song played cmpnt
+- 00 do mark song played rdxr
+- 00 do deletesong cmpnt
+- 00 do deletesong rdxr
+- 00 FIX SHIT UI
