@@ -2,5 +2,6 @@
 export default function secrets() {
 	return {
 		echoNest: '',
+		'7digital': '',
 	};
 }
