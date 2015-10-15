@@ -86,8 +86,21 @@ UP NEXT:
 ## 10/13
 - XX do add song component
 - XX do add song reducer
-- 00 do search cmpnt
-- 00 do search rdxr
+- XX do search cmpnt
+- XX do search rdxr
+
+## 10/14
+- 00 Fix search api calls
+- https://freemusicarchive.org/api
+    couldn't get it to work. 
+- http://developer.echonest.com/
+    Good title/artist search, spotty album info, provides
+		release info for 7digital api - could loop over songs
+		and build a big request to gather all album info 
+		should check if that 7digital api returns more than
+		the spotty info from echonest
+    
+
 - 00 do mark song played cmpnt
 - 00 do mark song played rdxr
 - 00 do deletesong cmpnt
