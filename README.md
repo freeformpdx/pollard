@@ -28,6 +28,10 @@ A DJ Playlist creator frontend
 
 `npm install && npm start`
 && then [in yo bowser](http://0.0.0.0:3000)
+`cp secrets-template.js secrets.js`
+&& then enter in yr [echonest][echonestapikey]
+&& [7digital][7digitalapikey] api keys
+
 
 ## BIG UPZ
 Boilerplate from [React Redux Boilerplate][rrbp]
@@ -39,3 +43,5 @@ Boilerplate from [React Redux Boilerplate][rrbp]
 
 [rrbp]: https://github.com/knowbody/react-redux-boilerplate.git
 [devnotes]: devnotes.md
+[echonestapikey]: https://developer.echonest.com/account/register
+[7digitalapikey]: https://api-signup.7digital.com/
