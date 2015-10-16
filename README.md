@@ -28,6 +28,7 @@ A DJ Playlist creator frontend
 
 `npm install && npm start`
 && then [in yo bowser](http://0.0.0.0:3000)
+
 `cp secrets-template.js secrets.js`
 && then enter in yr [echonest][echonestapikey]
 && [7digital][7digitalapikey] api keys
