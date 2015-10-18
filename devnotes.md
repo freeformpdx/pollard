@@ -123,9 +123,10 @@ of display info. This is POC finished for now.
 - 00 do deletesong cmpnt
 - 00 do deletesong rdxr
 
-- 00 FIX SHIT UX
+- FIX SHIT UX
     - 00 on add found song, clear search list && select new song
+		- 00 enter on title/track should search
 
-- 00 FIX SHIT UI
-    - clicking (un)played button moves button around
-    - everything is ugly and shitty
+- FIX SHIT UI
+    - 00 clicking (un)played button moves button around
+    - 00 everything is ugly and shitty
