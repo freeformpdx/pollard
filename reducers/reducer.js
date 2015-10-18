@@ -49,7 +49,7 @@ const initialViewSongState = Immutable.fromJS({
 	selected: 'id1'
 });
 
-const initialSongState = Immutable.fromJS({
+const initialSongState = {
 	inputs: {
 		title: '',
 		artist: '',
@@ -59,7 +59,7 @@ const initialSongState = Immutable.fromJS({
 		notes: '',
 	},
 	played: false
-});
+};
 
 
 export function state(state = Map({}), action) {
@@ -117,7 +117,8 @@ export function dataSongs(state = initialDataSongsState, action) {
 		if (Object.keys(action.song).length == 0) {
 			song = initialSongState;
 		}
-		songObj[newGuid] = song;
+
+		songObj[newGuid] = Immutable.fromJS(song);
 
 		return Immutable.Map(songObj).merge(state);
 	case actionTypes.MARK_SONG_PLAYED:

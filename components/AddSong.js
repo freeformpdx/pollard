@@ -14,19 +14,13 @@ export default class AddSong extends Component {
 		});
 
     return (
-			<li className="list-group-item" style={ songStyle }>
-				<div className="row">
-					<div className="col-xs-11 col-md-12">
-						<button
-							className="btn btn-primary pull-right"
-							onClick={ (e) => this.handleClick(e) }>
-							<span
-								className="glyphicon glyphicon-plus"
-								aria-hidden="true"></span> Blank Song
-						</button>
-					</div>
-				</div>
-			</li>
+			<button
+				className="btn btn-primary pull-right"
+				onClick={ (e) => this.handleClick(e) }>
+				<span
+					className="glyphicon glyphicon-plus"
+					aria-hidden="true"></span> Blank Song
+			</button>
     );
   }
 

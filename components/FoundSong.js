@@ -18,10 +18,13 @@ export default class FoundSong extends Component {
 		/* SHIT CODE */
 		/* SHIT CODE */
 		/* SHIT CODE */
-		let album = this.props.song.album ? this.props.song.album  : 'Unknown Album';
-		let date = this.props.song.date ? this.props.song.date: 'Unknown Date';
+		let album = this.props.song.album ?
+			this.props.song.album :
+			'Unknown Album';
+		let date = this.props.song.date ?
+			this.props.song.date :
+			'Unknown Date';
 
-		// debugger;
     return (
 			<li className="list-group-item">
 				<div className="clearfix">
@@ -35,7 +38,9 @@ export default class FoundSong extends Component {
 							src={ this.props.song.img } />
 					</span>
 					<div className="pull-right">
-						<AddFoundSong song={ this.props.song } />
+						<AddFoundSong
+							song={ this.props.song }
+							onAddSong={ this.props.onAddSong }/>
 					</div>
 				</div>
 			</li>

@@ -4,7 +4,6 @@ import { POLLARD_ACTION } from '../constants/ActionTypes';
 import flatten2Array from '../lib/flattenObjectToArray';
 
 import SearchSong from './SearchSong';
-import AddSong from './AddSong';
 import SelectedSong from './SelectedSong';
 import Song from './Song';
 
@@ -16,8 +15,7 @@ export default class Setlist extends Component {
       <div className="row">
 				<ul className="list-group">
 					<SearchSong
-						onSearchSong={ this.props.onSearchSong } />
-					<AddSong
+						onSearchSong={ this.props.onSearchSong }
 						onAddSong={ this.props.onAddSong } />
 					{flatten2Array(this.props.songs).map((tuple, idx) =>
 						(tuple[0] == this.props.selectedSong) ?

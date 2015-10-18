@@ -5,9 +5,8 @@ import classNames from 'classnames';
 import secrets from '../secrets';
 import mergeStyles from '../lib/mergeStyles';
 
+import AddSong from './AddSong';
 import FoundSong from './FoundSong';
-
-
 
 export default class SearchSong extends Component {
 
@@ -130,7 +129,6 @@ export default class SearchSong extends Component {
 								date: json.release.year,
 								img: json.release.image
 							});
-							// debugger;
 
 							foundSongs[i] = updatedFoundSong;
 						}
@@ -166,9 +164,12 @@ export default class SearchSong extends Component {
 		var artistValue = this.state.artistValue;
 		var trackValue = this.state.trackValue;
 
-		let foundSongsComponents = this.state.foundSongs.map(function(foundSong, idx)  {
-			return <FoundSong key={ idx } song={ foundSong } />;
-		});
+		let foundSongsComponents = this.state.foundSongs.map((foundSong, idx) =>
+			<FoundSong
+				key={ idx }
+				song={ foundSong }
+				onAddSong={ this.props.onAddSong } />
+		);
 
 
     return (
@@ -194,6 +195,7 @@ export default class SearchSong extends Component {
 							className="glyphicon glyphicon-search"
 							aria-hidden="true"></span> Search
 					</button>
+					<AddSong onAddSong={ this.props.onAddSong } />
 					{ (this.state.foundSongs.length > 0) ?
 						<ul className="list-group">
 							{ foundSongsComponents }
