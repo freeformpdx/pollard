@@ -24,7 +24,10 @@ export default class Song extends Component {
 					className="row">
 					{ this.props.song.inputs.title } - 
 					{ this.props.song.inputs.artist }
-					<MarkPlayedBtn />
+					<MarkPlayedBtn
+						songId={ this.props.songId }
+						isSongPlayed={ this.props.song.played }
+						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
 				</div>
 			</li>
     );

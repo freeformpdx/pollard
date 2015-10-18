@@ -19,7 +19,7 @@ const initialDataSongsState = Immutable.fromJS({
 			year: '1996',
 			notes: 'it\'s a good song!',
 		},
-		played: true
+		played: false
 	},
 	'id2': {
 		inputs: {
@@ -122,6 +122,10 @@ export function dataSongs(state = initialDataSongsState, action) {
 
 		return Immutable.Map(songObj).merge(state);
 	case actionTypes.MARK_SONG_PLAYED:
+		return state.setIn(
+			[action.id, 'played'],
+			!state.get(action.id).get('played')
+		);
 	case actionTypes.DELETE_SONG:
 		debugger;
     return state;

@@ -49,10 +49,10 @@ export function addSong(song) {
   }
 };
 
-export function markSongPlayed(payload) {
+export function markSongPlayed(id) {
   return {
     type: types.MARK_SONG_PLAYED,
-    payload
+    id
   }
 };
 

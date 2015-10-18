@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import { POLLARD_ACTION } from '../constants/ActionTypes';
 import mergeStyles from '../lib/mergeStyles';
 
 

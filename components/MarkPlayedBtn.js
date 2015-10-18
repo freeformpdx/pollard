@@ -1,30 +1,54 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import { POLLARD_ACTION } from '../constants/ActionTypes';
 import mergeStyles from '../lib/mergeStyles';
 
 
 export default class MarkPlayedBtn extends Component {
 	handleClick(event) {
-		console.log('hit mark played button');
+		this.props.onMarkSongPlayed(this.props.songId);
 	}
 
   render() {
-		let gridStyle = mergeStyles({
+		const gridStyle = mergeStyles({
 			marginTop: 5
 		});
+
+		let btnText;
+		let btnClass;
+		let spanGlyph;
+
+		if (this.props.isSongPlayed) {
+			btnText = 'Played';
+			btnClass = 'btn-warning';
+			spanGlyph = 'glyphicon-volume-up';
+		} else {
+			btnText = 'Unplayed';
+			btnClass = 'btn-primary';
+			spanGlyph = 'glyphicon-volume-off';
+		}
+
+		let btnClasses = classNames(
+			btnClass,
+			"btn",
+			"pull-right"
+		);
+
+		let spanClasses = classNames(
+			"glyphicon",
+			spanGlyph
+		);
 
     return (
 			<div className="col-xs-11 col-md-12" style={ gridStyle }>
 				<button
 					type="button"
-					className="btn btn-primary pull-right"
+					className={ btnClasses }
 					onClick={ (e) => this.handleClick(e) }
 					>
 					<span
-						className="glyphicon glyphicon-volume-off"
-						aria-hidden="true"></span> Mark Played
+						className={ spanClasses }
+						aria-hidden="true"></span> { btnText }
 				</button>
 			</div>
     );

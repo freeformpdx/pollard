@@ -1,5 +1,3 @@
-export const POLLARD_ACTION = 'POLLARD_ACTION';
-
 export const ADD_SET = 'ADD_SET';
 export const SELECT_SET = 'SELECT_SET';
 export const UPDATE_SET = 'UPDATE_SET';

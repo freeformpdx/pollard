@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import { POLLARD_ACTION } from '../constants/ActionTypes';
 import flatten2Array from '../lib/flattenObjectToArray';
 
 import SearchSong from './SearchSong';
@@ -23,10 +22,12 @@ export default class Setlist extends Component {
 							songId={ tuple[0] }
 							selectedSong={ this.props.selectedSong }
 							key={ idx }
+							onMarkSongPlayed={ this.props.onMarkSongPlayed }
 							onUpdateSong={ this.props.onUpdateSong } />:
 						<Song song={ tuple[1] }
 							songId={ tuple[0] }
 							key={ idx }
+							onMarkSongPlayed={ this.props.onMarkSongPlayed }
 							onSongClick={ this.props.onSongClick } />
 					)}
 				</ul>

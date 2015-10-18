@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import { POLLARD_ACTION } from '../constants/ActionTypes';
 import SongInput from './SongInput';
 import MarkPlayedBtn from './MarkPlayedBtn';
 import mergeStyles from '../lib/mergeStyles';
@@ -31,7 +30,10 @@ export default class SelectedSong extends Component {
 				<div
 					className="row">
 					{ inputs }
-					<MarkPlayedBtn />
+					<MarkPlayedBtn
+						songId={ this.props.songId }
+						isSongPlayed={ this.props.song.played }
+						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
 				</div>
 			</li>
     );
