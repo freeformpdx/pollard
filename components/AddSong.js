@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 
-import { POLLARD_ACTION } from '../constants/ActionTypes';
-import SongInput from './SongInput';
-import MarkPlayedBtn from './MarkPlayedBtn';
 import mergeStyles from '../lib/mergeStyles';
-import flatten2Array from '../lib/flattenObjectToArray';
-
 
 export default class AddSong extends Component {
 	handleClick(event) {
@@ -28,7 +22,7 @@ export default class AddSong extends Component {
 							onClick={ (e) => this.handleClick(e) }>
 							<span
 								className="glyphicon glyphicon-plus"
-								aria-hidden="true"></span> Add Song
+								aria-hidden="true"></span> Blank Song
 						</button>
 					</div>
 				</div>

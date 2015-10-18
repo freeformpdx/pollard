@@ -22,6 +22,15 @@ LOCALS ONLY!!!
 - http://www.last.fm/api/tos
 - http://www.programmableweb.com/news/25-music-apis/2008/02/21
 
+Echonest and 7digital APIs are only so-so.
+I should look into spotify/musicbrainz next,
+but for now I'm going to finish workflow stuff.
+
+[Echonest -> spotify](http://stackoverflow.com/questions/26964072/how-to-get-the-spotify-id-of-a-specific-song-with-echonest-api?rq=1)
+
+[Echonest Release Info gathering](http://stackoverflow.com/questions/33044342/album-release-dates-echonest)
+
+
 ## 10/11
 - STATE && REDUCERS
 
@@ -101,6 +110,12 @@ UP NEXT:
 		the spotty info from echonest
     
 
+## 10/18
+Ended up doing shitty loop over results from Echonest, building 7digital
+release API requests, then dispatching them and building flattened JSON
+of display info. This is POC finished for now.
+
+- 00 do add song from search results action
 - 00 do mark song played cmpnt
 - 00 do mark song played rdxr
 - 00 do deletesong cmpnt
