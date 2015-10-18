@@ -117,10 +117,15 @@ of display info. This is POC finished for now.
 
 - XX do add song from search results action
 
-- 00 do mark song played cmpnt
-- 00 do mark song played rdxr
+- XX do mark song played cmpnt
+- XX do mark song played rdxr
 
 - 00 do deletesong cmpnt
 - 00 do deletesong rdxr
 
+- 00 FIX SHIT UX
+    - 00 on add found song, clear search list && select new song
+
 - 00 FIX SHIT UI
+    - clicking (un)played button moves button around
+    - everything is ugly and shitty
