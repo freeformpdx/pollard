@@ -63,9 +63,9 @@ export function updateSong(update) {
   }
 };
 
-export function deleteSong(payload) {
+export function deleteSong(id) {
   return {
     type: types.DELETE_SONG,
-    payload
+    id
   }
 };

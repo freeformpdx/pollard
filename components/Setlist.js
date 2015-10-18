@@ -22,11 +22,13 @@ export default class Setlist extends Component {
 							songId={ tuple[0] }
 							selectedSong={ this.props.selectedSong }
 							key={ idx }
+							onDeleteSong={ this.props.onDeleteSong }
 							onMarkSongPlayed={ this.props.onMarkSongPlayed }
 							onUpdateSong={ this.props.onUpdateSong } />:
 						<Song song={ tuple[1] }
 							songId={ tuple[0] }
 							key={ idx }
+							onDeleteSong={ this.props.onDeleteSong }
 							onMarkSongPlayed={ this.props.onMarkSongPlayed }
 							onSongClick={ this.props.onSongClick } />
 					)}

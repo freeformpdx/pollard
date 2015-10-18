@@ -127,8 +127,7 @@ export function dataSongs(state = initialDataSongsState, action) {
 			!state.get(action.id).get('played')
 		);
 	case actionTypes.DELETE_SONG:
-		debugger;
-    return state;
+    return state.delete(action.id);
   default:
     return state;
   }

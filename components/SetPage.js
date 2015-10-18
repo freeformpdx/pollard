@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { selectSong, updateSong,
 		addSong, searchSong,
-		markSongPlayed
+		markSongPlayed, deleteSong
 } from '../actions/Actions.js';
 
 import Setlist from './Setlist.js';
@@ -33,6 +33,9 @@ class SetPage extends Component {
 					}
 					onMarkSongPlayed={ (songId) => 
             dispatch(markSongPlayed(songId))
+					}
+					onDeleteSong={ (songId) => 
+            dispatch(deleteSong(songId))
 					}
 				/>
 			</div>

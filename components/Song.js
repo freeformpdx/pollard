@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import MarkPlayedBtn from './MarkPlayedBtn';
-
 import mergeStyles from '../lib/mergeStyles';
+
+import MarkPlayedBtn from './MarkPlayedBtn';
+import DeleteSongBtn from './DeleteSongBtn';
 
 
 export default class Song extends Component {
@@ -24,6 +25,9 @@ export default class Song extends Component {
 					className="row">
 					{ this.props.song.inputs.title } - 
 					{ this.props.song.inputs.artist }
+					<DeleteSongBtn
+						songId={ this.props.songId }
+						onDeleteSong={ this.props.onDeleteSong } />
 					<MarkPlayedBtn
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }

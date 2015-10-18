@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import SongInput from './SongInput';
-import MarkPlayedBtn from './MarkPlayedBtn';
 import mergeStyles from '../lib/mergeStyles';
 import flatten2Array from '../lib/flattenObjectToArray';
+
+import SongInput from './SongInput';
+import MarkPlayedBtn from './MarkPlayedBtn';
+import DeleteSongBtn from './DeleteSongBtn';
 
 
 export default class SelectedSong extends Component {
@@ -30,6 +32,9 @@ export default class SelectedSong extends Component {
 				<div
 					className="row">
 					{ inputs }
+					<DeleteSongBtn
+						songId={ this.props.songId }
+						onDeleteSong={ this.props.onDeleteSong } />
 					<MarkPlayedBtn
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }

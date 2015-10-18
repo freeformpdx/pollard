@@ -116,12 +116,10 @@ release API requests, then dispatching them and building flattened JSON
 of display info. This is POC finished for now.
 
 - XX do add song from search results action
-
 - XX do mark song played cmpnt
 - XX do mark song played rdxr
-
-- 00 do deletesong cmpnt
-- 00 do deletesong rdxr
+- XX do deletesong cmpnt
+- XX do deletesong rdxr
 
 - FIX SHIT UX
     - 00 on add found song, clear search list && select new song
