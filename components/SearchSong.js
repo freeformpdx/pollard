@@ -157,8 +157,12 @@ export default class SearchSong extends Component {
 	}
 
   render() {
-		let songStyle= mergeStyles({
+		let searchStyle = mergeStyles({
 			backgroundColor: '#F6EBFA'
+		});
+
+		let searchCtrlStyle = mergeStyles({
+			marginBottom: 20
 		});
 
 		var artistValue = this.state.artistValue;
@@ -174,28 +178,30 @@ export default class SearchSong extends Component {
 
     return (
 			<li
-				className="list-group-item"
-				style={ songStyle }>
-				<div className="row">
-					<input
-						type="text"
-						placeholder="artist"
-						value={ artistValue }
-						onChange={ (e) => this.handleArtistChange(e) }/>
-					<input
-						type="text"
-						placeholder="track"
-						value={ trackValue }
-						onChange={ (e) => this.handleTrackChange(e) }/>
-					<button 
-						type="button"
-						className="btn btn-primary"
-						onClick={ (e) => this.handleSearchClick(e) }>
-						<span
-							className="glyphicon glyphicon-search"
-							aria-hidden="true"></span> Search
-					</button>
-					<AddSong onAddSong={ this.props.onAddSong } />
+				className="list-group-item clearfix"
+				style={ searchStyle }>
+				<div>
+					<div style={ searchCtrlStyle }>
+						<input
+							type="text"
+							placeholder="artist"
+							value={ artistValue }
+							onChange={ (e) => this.handleArtistChange(e) }/>
+						<input
+							type="text"
+							placeholder="track"
+							value={ trackValue }
+							onChange={ (e) => this.handleTrackChange(e) }/>
+						<button 
+							type="button"
+							className="btn btn-primary"
+							onClick={ (e) => this.handleSearchClick(e) }>
+							<span
+								className="glyphicon glyphicon-search"
+								aria-hidden="true"></span> Search
+						</button>
+						<AddSong onAddSong={ this.props.onAddSong } />
+					</div>
 					{ (this.state.foundSongs.length > 0) ?
 						<ul className="list-group">
 							{ foundSongsComponents }
