@@ -115,9 +115,12 @@ Ended up doing shitty loop over results from Echonest, building 7digital
 release API requests, then dispatching them and building flattened JSON
 of display info. This is POC finished for now.
 
-- 00 do add song from search results action
+- XX do add song from search results action
+
 - 00 do mark song played cmpnt
 - 00 do mark song played rdxr
+
 - 00 do deletesong cmpnt
 - 00 do deletesong rdxr
+
 - 00 FIX SHIT UI
