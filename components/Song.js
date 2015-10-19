@@ -9,7 +9,7 @@ import DeleteSongBtn from './DeleteSongBtn';
 
 export default class Song extends Component {
 	handleClick(event) {
-		this.props.onSongClick(this.props.songId);
+		this.props.onSelectSong(this.props.songId);
 	}
 
 

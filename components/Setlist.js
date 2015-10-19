@@ -30,7 +30,7 @@ export default class Setlist extends Component {
 							key={ idx }
 							onDeleteSong={ this.props.onDeleteSong }
 							onMarkSongPlayed={ this.props.onMarkSongPlayed }
-							onSongClick={ this.props.onSongClick } />
+							onSelectSong={ this.props.onSelectSong } />
 					)}
 				</ul>
 			</div>

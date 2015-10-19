@@ -19,7 +19,7 @@ class SetPage extends Component {
 				<Setlist
 					songs={ songs }
 					selectedSong={ selectedSong }
-					onSongClick={ (songId) => 
+					onSelectSong={ (songId) => 
             dispatch(selectSong(songId))
 					}
 					onUpdateSong={ (song) => 
