@@ -14,6 +14,7 @@ export default class AddFoundSong extends Component {
 			},
 			played: false
 		});
+		this.props.onClearSongs();
 	}
 
 

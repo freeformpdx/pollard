@@ -124,7 +124,7 @@ of display info. This is POC finished for now.
 ## ROLLING TO DO
 
 - FIX SHIT UX
-	- 00 on add found song, clear search list && select new song
+	- XX on add found song, clear search list && select new song
 	- 00 enter on title/track should search
 
 - FIX SHIT UI

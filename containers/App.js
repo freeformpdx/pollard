@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import Pollard from './Pollard';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
 import { state } from '../reducers/reducer.js';
+
+import Pollard from './Pollard';
+import autoSelect from '../middleware/autoSelect.js';
 
 // TODO
 // remove combine reducers call
 // const store = createStore(state);
 
+const createStoreWithMiddleware = applyMiddleware(autoSelect)(createStore);
+
 const reducer = combineReducers({state});
-const store = createStore(reducer);
+const store = createStoreWithMiddleware(reducer);
 
 export default class App extends Component {
   render() {

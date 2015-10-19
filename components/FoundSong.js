@@ -40,6 +40,7 @@ export default class FoundSong extends Component {
 					<div className="pull-right">
 						<AddFoundSong
 							song={ this.props.song }
+							onClearSongs={ this.props.onClearSongs }
 							onAddSong={ this.props.onAddSong }/>
 					</div>
 				</div>

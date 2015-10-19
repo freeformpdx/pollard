@@ -36,6 +36,10 @@ export default class SearchSong extends Component {
 		this.setState({trackValue: event.target.value});
 	}
 
+	handleClearSongs() {
+		this.setState({foundSongs: []});
+	}
+
 	handleSearchClick(event) {
 		this.setState({isSeraching: true});
 		let trackSearchUrl = this.getTrackSearchUrl();
@@ -172,6 +176,7 @@ export default class SearchSong extends Component {
 			<FoundSong
 				key={ idx }
 				song={ foundSong }
+				onClearSongs={ () => this.handleClearSongs() }
 				onAddSong={ this.props.onAddSong } />
 		);
 
