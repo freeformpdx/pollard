@@ -23,9 +23,11 @@ A DJ Playlist creator frontend
 ![setpage](gifs/setpage.png)
 
 *MOBILE SEARCH*
+
 ![search](gifs/mob-search.png)
 
 *MOBILE SETPAGE*
+
 ![setpage](gifs/mob-setpage.png)
 
 ## DIY
