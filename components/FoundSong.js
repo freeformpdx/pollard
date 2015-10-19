@@ -28,21 +28,21 @@ export default class FoundSong extends Component {
     return (
 			<li className="list-group-item">
 				<div className="clearfix">
-					<span className="pull-left">
-						{ this.props.song.artist } - &nbsp;
-						{ this.props.song.title } || &nbsp;
-						{ album } - &nbsp;
-						{ date } &nbsp; &nbsp;
+					<div className="col-xs-6 col-sm-3">
+						{ this.props.song.artist } <br/>
+						{ this.props.song.title } <br/>
+						{ album } <br/>
+						{ date } <br/>
+					</div>
+					<div className="col-xs-6 col-sm-3">
 						<img
 							style={ releaseImgStyle }
 							src={ this.props.song.img } />
-					</span>
-					<div className="pull-right">
+					</div>
 						<AddFoundSong
 							song={ this.props.song }
 							onClearSongs={ this.props.onClearSongs }
 							onAddSong={ this.props.onAddSong }/>
-					</div>
 				</div>
 			</li>
     );

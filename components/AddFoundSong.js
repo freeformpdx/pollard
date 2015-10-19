@@ -22,7 +22,7 @@ export default class AddFoundSong extends Component {
     return (
 			<button
 				type="button"
-				className="btn btn-primary"
+				className="btn btn-primary col-xs-12 col-sm-3 col-sm-offset-3"
 				onClick={ (e) => this.handleClick(e) }
 				>
 				<span
