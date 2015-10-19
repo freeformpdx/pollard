@@ -37,7 +37,12 @@ export default class SearchSong extends Component {
 	}
 
 	handleClearSongs() {
-		this.setState({foundSongs: []});
+		this.setState({
+			trackValue: '',
+			artistValue: '',
+			isSearching: false,
+			foundSongs: []
+		});
 	}
 
 	handleSearchClick(event) {
@@ -165,9 +170,6 @@ export default class SearchSong extends Component {
 			backgroundColor: '#F6EBFA'
 		});
 
-		let searchCtrlStyle = mergeStyles({
-			marginBottom: 20
-		});
 
 		var artistValue = this.state.artistValue;
 		var trackValue = this.state.trackValue;
@@ -182,43 +184,45 @@ export default class SearchSong extends Component {
 
 
     return (
-			<li
-				className="list-group-item clearfix"
-				style={ searchStyle }>
-				<div>
-					<div style={ searchCtrlStyle }>
-						<form className="form-inline">
-							<input
-								className="form-control col-xs-5 col-sm-2"
-								type="text"
-								placeholder="artist"
-								value={ artistValue }
-								onChange={ (e) => this.handleArtistChange(e) }/>
-							<input
-								type="text"
-								className="form-control col-xs-5 col-sm-2 col-sm-offset-1"
-								placeholder="track"
-								value={ trackValue }
-								onChange={ (e) => this.handleTrackChange(e) }/>
-							<button 
-								type="button"
-								className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
-								onClick={ (e) => this.handleSearchClick(e) }>
-								<span
-									className="glyphicon glyphicon-search"
-									aria-hidden="true"></span> Search
-							</button>
-						</form>
-						<AddSong onAddSong={ this.props.onAddSong } />
-					</div>
-					{ (this.state.foundSongs.length > 0) ?
+			<div>
+				<li
+					className="list-group-item clearfix"
+					style={ searchStyle }>
+							<form className="form-inline">
+								<input
+									className="form-control col-xs-5 col-sm-2"
+									type="text"
+									placeholder="artist"
+									value={ artistValue }
+									onChange={ (e) => this.handleArtistChange(e) }/>
+								<input
+									type="text"
+									className="form-control col-xs-5 col-sm-2 col-sm-offset-1"
+									placeholder="track"
+									value={ trackValue }
+									onChange={ (e) => this.handleTrackChange(e) }/>
+								<button 
+									type="button"
+									className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
+									onClick={ (e) => this.handleSearchClick(e) }>
+									<span
+										className="glyphicon glyphicon-search"
+										aria-hidden="true"></span> Search
+								</button>
+							</form>
+							<AddSong onAddSong={ this.props.onAddSong } />
+				</li>
+				{ (this.state.foundSongs.length > 0) ?
+					<li
+						className="list-group-item"
+						style={ searchStyle }>
 						<ul className="list-group">
 							{ foundSongsComponents }
 						</ul>
-						: '' 
-					}
-				</div>
-			</li>
+					</li>
+					: '' 
+				}
+			</div>
     );
   }
 
