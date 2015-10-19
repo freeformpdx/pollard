@@ -8,7 +8,6 @@ A DJ Playlist creator frontend
 	- inputs for artist, title, album, label, year, dj comments
 	- find API || (use dataset && (run SQL || search index server))
 - Mark songs as 'live/currently playing'
-- I/0 w/ backend
 
 ## Methodology
 - Reactiflux to stand-up prototype for early UX feedback w/o building persistence layer
