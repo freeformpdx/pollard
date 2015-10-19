@@ -5,6 +5,8 @@ import { selectSong, updateSong,
 		markSongPlayed, deleteSong
 } from '../actions/Actions.js';
 
+import mergeStyles from '../lib/mergeStyles';
+
 import Setlist from './Setlist.js';
 
 class SetPage extends Component {
@@ -12,9 +14,13 @@ class SetPage extends Component {
 		const { dispatch, dataSongs, viewSong } = this.props;
 		const songs = dataSongs.toJSON();
 		const selectedSong = viewSong.get('selected');
+		const setStyle= mergeStyles({
+			maxWidth: 720
+		});
+
 
     return (
-      <div>
+      <div style={ setStyle }>
 				<h1>Pollard Set Page</h1>
 				<Setlist
 					songs={ songs }

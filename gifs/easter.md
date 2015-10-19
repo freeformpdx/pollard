@@ -5,6 +5,7 @@
 - finish prototype
 	- hallway usability testing
 	- get feedback from stakeholders
+	- quick demo vid
 - Persistence layer ( aka Future Project Sprout )
 - tests for boundaries
 	- search api down

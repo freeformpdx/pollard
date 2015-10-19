@@ -121,10 +121,11 @@ of display info. This is POC finished for now.
 - XX do deletesong cmpnt
 - XX do deletesong rdxr
 
+- XX on add found song, clear search list && select new song
+
 ## ROLLING TO DO
 
 - FIX SHIT UX
-	- XX on add found song, clear search list && select new song
 	- 00 enter on title/track should search
 
 - FIX SHIT UI
