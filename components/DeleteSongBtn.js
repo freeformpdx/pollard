@@ -5,8 +5,20 @@ import mergeStyles from '../lib/mergeStyles';
 
 
 export default class DeleteSongBtn extends Component {
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			deleteStep: 0
+		}
+	}
+
 	handleClick(event) {
-		this.props.onDeleteSong(this.props.songId);
+		if (this.state.deleteStep == 0) {
+			this.setState({deleteStep: 1});
+		} else {
+			this.props.onDeleteSong(this.props.songId);
+		}
 	}
 
   render() {
@@ -22,7 +34,7 @@ export default class DeleteSongBtn extends Component {
 					>
 					<span
 						className="glyphicon glyphicon-trash"
-						aria-hidden="true"></span> Delete
+						aria-hidden="true"></span> { this.state.deleteStep == 0 ? 'Delete' : 'Confirm' }
 				</button>
     );
   }
