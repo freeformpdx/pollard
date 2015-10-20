@@ -128,8 +128,9 @@ of display info. This is POC finished for now.
 
 ## 10/19
 Focused on more UI prettification \r\n
-- 00 SHIT UI: Song single line
-- 00 SHIT UI: SelectedSong
+- XX SHIT UI: Song single line
+- XX SHIT UI: SelectedSong
+- 00 SHIT UI: Refine selectSong onClick to target 
 
 
 ## ROLLING TO DO

@@ -27,11 +27,20 @@ export default class SelectedSong extends Component {
 			backgroundColor: '#F6EBFA'
 		});
 
+		let gridClasses = classNames(
+			"col-xs-10",
+			"col-xs-offset-1",
+			"col-md-6",
+			"col-md-offset-0"
+		);
+
     return (
 			<li className="list-group-item" style={ songStyle }>
 				<div
 					className="row">
-					{ inputs }
+					<div className={ gridClasses }>
+						{ inputs }
+					</div>
 					<DeleteSongBtn
 						songId={ this.props.songId }
 						onDeleteSong={ this.props.onDeleteSong } />

@@ -14,12 +14,6 @@ export default class SongInput extends Component {
 	}
 
   render() {
-		let gridClasses = classNames(
-			"col-xs-10",
-			"col-xs-offset-1",
-			"col-md-6",
-			"col-md-offset-0"
-		);
 		let gridStyle = mergeStyles({
 			marginTop: 5
 		});
@@ -28,7 +22,6 @@ export default class SongInput extends Component {
 
     return (
 			<div
-				className={ gridClasses }
 				style={ gridStyle }>
 				<div className="input-group">
 					<span
