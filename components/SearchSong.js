@@ -208,7 +208,7 @@ export default class SearchSong extends Component {
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 						<button
 							type="button"
-							className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
+							className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-1"
 							onClick={ (e) => this.handleSearchClick(e) }>
 							<span
 								className="glyphicon glyphicon-search"
