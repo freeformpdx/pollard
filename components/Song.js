@@ -26,7 +26,7 @@ export default class Song extends Component {
 						className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
 						{ this.props.song.inputs.title } - { this.props.song.inputs.artist }
 					</div>
-					<div className="visible-xs-block col-xs-12" style={ {marginTop: 5} } />
+					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<div className="col-xs-3" />
 					<MarkPlayedBtn
 						songId={ this.props.songId }

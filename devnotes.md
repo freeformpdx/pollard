@@ -132,7 +132,8 @@ Focused on more UI prettification \r\n
 - XX SHIT UI: SelectedSong
 - XX SHIT UI: Refine selectSong onClick to target 
 - XX SHIT UI: line up search bar buttons and Song buttons
-- 00 SHIT UX: hide delete button except on detail
+- XX SHIT UX: hide delete button except on detail
+- 00 SHIT UI: search bar and selected song XS styling
 - 00 SHIT UX: confirm delete button ? localState hack ?
 
 
