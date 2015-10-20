@@ -140,7 +140,9 @@ Focused on more UI prettification \r\n
 
 ## ROLLING TO DO
 
+- FIX SHIT UI
+	- 00 imgs on song/selectedSong xs && sm+
 - FIX SHIT UX
 	- 00 enter on title/track should search
-	- 00 API still suxdix
+	- 00 serach API still suxdix
 
