@@ -188,7 +188,7 @@ export default class SearchSong extends Component {
 				<li
 					className="list-group-item clearfix"
 					style={ searchStyle }>
-						<div className="col-sm-3">
+						<div className="col-xs-12 col-sm-3">
 								<input
 									className="form-control"
 									type="text"
@@ -196,7 +196,8 @@ export default class SearchSong extends Component {
 									value={ artistValue }
 									onChange={ (e) => this.handleArtistChange(e) }/>
 						</div>
-						<div className="col-sm-3">
+						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+						<div className="col-xs-12 col-sm-3">
 								<input
 									type="text"
 									className="form-control"
@@ -204,15 +205,17 @@ export default class SearchSong extends Component {
 									value={ trackValue }
 									onChange={ (e) => this.handleTrackChange(e) }/>
 						</div>
-								<button 
-									type="button"
-									className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
-									onClick={ (e) => this.handleSearchClick(e) }>
-									<span
-										className="glyphicon glyphicon-search"
-										aria-hidden="true"></span> Search
-								</button>
-							<AddSong onAddSong={ this.props.onAddSong } />
+						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+						<button
+							type="button"
+							className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
+							onClick={ (e) => this.handleSearchClick(e) }>
+							<span
+								className="glyphicon glyphicon-search"
+								aria-hidden="true"></span> Search
+						</button>
+						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+						<AddSong onAddSong={ this.props.onAddSong } />
 				</li>
 				{ (this.state.foundSongs.length > 0) ?
 					<li
