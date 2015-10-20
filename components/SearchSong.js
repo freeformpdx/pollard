@@ -188,19 +188,22 @@ export default class SearchSong extends Component {
 				<li
 					className="list-group-item clearfix"
 					style={ searchStyle }>
-							<form className="form-inline">
+						<div className="col-sm-3">
 								<input
-									className="form-control col-xs-5 col-sm-2"
+									className="form-control"
 									type="text"
 									placeholder="artist"
 									value={ artistValue }
 									onChange={ (e) => this.handleArtistChange(e) }/>
+						</div>
+						<div className="col-sm-3">
 								<input
 									type="text"
-									className="form-control col-xs-5 col-sm-2 col-sm-offset-1"
+									className="form-control"
 									placeholder="track"
 									value={ trackValue }
 									onChange={ (e) => this.handleTrackChange(e) }/>
+						</div>
 								<button 
 									type="button"
 									className="btn btn-primary col-xs-12 col-sm-2 col-sm-offset-1"
@@ -209,7 +212,6 @@ export default class SearchSong extends Component {
 										className="glyphicon glyphicon-search"
 										aria-hidden="true"></span> Search
 								</button>
-							</form>
 							<AddSong onAddSong={ this.props.onAddSong } />
 				</li>
 				{ (this.state.foundSongs.length > 0) ?
