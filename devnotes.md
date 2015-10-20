@@ -130,13 +130,15 @@ of display info. This is POC finished for now.
 Focused on more UI prettification \r\n
 - XX SHIT UI: Song single line
 - XX SHIT UI: SelectedSong
-- 00 SHIT UI: Refine selectSong onClick to target 
+- XX SHIT UI: Refine selectSong onClick to target 
+- 00 SHIT UI: line up search bar buttons and Song buttons
+- 00 SHIT UX: hide delete button except on detail
+- 00 SHIT UX: confirm delete button ? localState hack ?
 
 
 ## ROLLING TO DO
 
 - FIX SHIT UI
-	- 00 clicking (un)played button moves button around
 	- 00 everything is ugly and shitty
 
 - FIX SHIT UX
