@@ -15,17 +15,15 @@ export default class DeleteSongBtn extends Component {
 		});
 
     return (
-			<div className="col-xs-11 col-md-12" style={ gridStyle }>
 				<button
 					type="button"
-					className="btn btn-danger pull-right"
+					className="btn btn-danger col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-1"
 					onClick={ (e) => this.handleClick(e) }
 					>
 					<span
 						className="glyphicon glyphicon-trash"
 						aria-hidden="true"></span> Delete
 				</button>
-			</div>
     );
   }
 }

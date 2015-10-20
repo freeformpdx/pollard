@@ -23,8 +23,11 @@ export default class Song extends Component {
 				<div
 					onClick={ (e) => this.handleClick(e) }
 					className="row">
-					{ this.props.song.inputs.title } - 
-					{ this.props.song.inputs.artist }
+					<div
+						style={ {marginTop: 5} }
+						className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+						{ this.props.song.inputs.title } - { this.props.song.inputs.artist }
+					</div>
 					<DeleteSongBtn
 						songId={ this.props.songId }
 						onDeleteSong={ this.props.onDeleteSong } />

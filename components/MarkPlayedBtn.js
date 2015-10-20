@@ -31,7 +31,10 @@ export default class MarkPlayedBtn extends Component {
 		let btnClasses = classNames(
 			btnClass,
 			"btn",
-			"pull-right"
+			"col-xs-10",
+			"col-xs-offset-1",
+			"col-sm-2",
+			"col-sm-offset-1"
 		);
 
 		let spanClasses = classNames(
@@ -40,7 +43,6 @@ export default class MarkPlayedBtn extends Component {
 		);
 
     return (
-			<div className="col-xs-11 col-md-12" style={ gridStyle }>
 				<button
 					type="button"
 					className={ btnClasses }
@@ -50,7 +52,6 @@ export default class MarkPlayedBtn extends Component {
 						className={ spanClasses }
 						aria-hidden="true"></span> { btnText }
 				</button>
-			</div>
     );
   }
 }
