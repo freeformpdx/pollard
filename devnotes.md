@@ -122,12 +122,23 @@ of display info. This is POC finished for now.
 - XX do deletesong rdxr
 
 - XX on add found song, clear search list && select new song
+- XX SHIT UI: Search songs bar
+- XX SHIT UI: Search results list
+
+
+## 10/19
+Focused on more UI prettification \r\n
+- 00 SHIT UI: Song single line
+- 00 SHIT UI: SelectedSong
+
 
 ## ROLLING TO DO
-
-- FIX SHIT UX
-	- 00 enter on title/track should search
 
 - FIX SHIT UI
 	- 00 clicking (un)played button moves button around
 	- 00 everything is ugly and shitty
+
+- FIX SHIT UX
+	- 00 enter on title/track should search
+
+
