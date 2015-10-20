@@ -134,7 +134,7 @@ Focused on more UI prettification \r\n
 - XX SHIT UI: line up search bar buttons and Song buttons
 - XX SHIT UX: hide delete button except on detail
 - XX SHIT UI: search bar and selected song XS styling
-- 00 SHIT UI: md? weird state with 12-grid songInputs from sm-med
+- XX SHIT UI: md? weird state with 12-grid songInputs from sm-med
 - 00 SHIT UX: confirm delete button ? localState hack ?
 
 
