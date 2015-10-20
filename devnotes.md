@@ -135,15 +135,12 @@ Focused on more UI prettification \r\n
 - XX SHIT UX: hide delete button except on detail
 - XX SHIT UI: search bar and selected song XS styling
 - XX SHIT UI: md? weird state with 12-grid songInputs from sm-med
-- 00 SHIT UX: confirm delete button ? localState hack ?
+- XX SHIT UX: confirm delete button - localState hack
 
 
 ## ROLLING TO DO
 
-- FIX SHIT UI
-	- 00 everything is ugly and shitty
-
 - FIX SHIT UX
 	- 00 enter on title/track should search
-
+	- 00 API still suxdix
 
