@@ -35,9 +35,7 @@ export default class SelectedSong extends Component {
 		);
 
     return (
-			<li className="list-group-item" style={ songStyle }>
-				<div
-					className="row">
+			<li className="list-group-item clearfix" style={ songStyle }>
 					<div className={ gridClasses }>
 						{ inputs }
 					</div>
@@ -48,7 +46,6 @@ export default class SelectedSong extends Component {
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
-				</div>
 			</li>
     );
   }

@@ -19,9 +19,7 @@ export default class Song extends Component {
 		});
 
     return (
-			<li className="list-group-item" style={ songStyle }>
-				<div
-					className="row">
+			<li className="list-group-item clearfix" style={ songStyle }>
 					<div
 						onClick={ (e) => this.handleClick(e) }
 						style={ {marginTop: 5} }
@@ -35,7 +33,6 @@ export default class Song extends Component {
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
-				</div>
 			</li>
     );
   }
