@@ -39,9 +39,11 @@ export default class SelectedSong extends Component {
 					<div className={ gridClasses }>
 						{ inputs }
 					</div>
+					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<DeleteSongBtn
 						songId={ this.props.songId }
 						onDeleteSong={ this.props.onDeleteSong } />
+					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<MarkPlayedBtn
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }
