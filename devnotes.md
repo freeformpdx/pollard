@@ -139,6 +139,19 @@ Focused on more UI prettification \r\n
 
 ## 10/20
 - XX SHIT UI: SongInput widths on XS
+- XX Set up EC2 instance
+- XX installed nginx - config - gzip
+- XX built basic build/min/scp to EC2 script
+- XX Add fetch polyfill for safari/iOS
+
+
+### SIZE MATTERZ
+minified && gzipped the app went from 1.2M -> 80K
+
+Bootstrap + glyphicons adds 43K
+
+Total page size = 123K
+
 
 
 ## ROLLING TO DO
@@ -147,6 +160,6 @@ Focused on more UI prettification \r\n
 	- 00 imgs on song/selectedSong xs && sm+
 - FIX SHIT UX
 	- 00 enter on title/track should search
-	- 00 serach API still suxdix
+	- 00 search API still suxdix
 
 
