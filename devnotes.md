@@ -137,6 +137,9 @@ Focused on more UI prettification \r\n
 - XX SHIT UI: md? weird state with 12-grid songInputs from sm-med
 - XX SHIT UX: confirm delete button - localState hack
 
+## 10/20
+- XX SHIT UI: SongInput widths on XS
+
 
 ## ROLLING TO DO
 
@@ -145,4 +148,5 @@ Focused on more UI prettification \r\n
 - FIX SHIT UX
 	- 00 enter on title/track should search
 	- 00 serach API still suxdix
+
 

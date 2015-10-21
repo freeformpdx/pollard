@@ -23,8 +23,7 @@ export default class AddFoundSong extends Component {
 			<button
 				type="button"
 				className="btn btn-primary col-xs-12 col-sm-3 col-sm-offset-3"
-				onClick={ (e) => this.handleClick(e) }
-				>
+				onClick={ (e) => this.handleClick(e) } >
 				<span
 					className="glyphicon glyphicon-plus"
 					aria-hidden="true"></span> Add To Setlist
