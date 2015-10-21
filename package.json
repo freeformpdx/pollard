@@ -9,8 +9,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-		"build": "webpack --progress --colors",
-		"build-min": "webpack --config webpackmin.config.js --progress --colors",
+    "build": "webpack --progress --colors",
+    "build-min": "webpack --config webpackmin.config.js --progress --colors",
     "test": "NODE_ENV=test mocha --compilers js:babel/register --recursive",
     "test:watch": "NODE_ENV=test mocha --compilers js:babel/register --recursive --watch",
     "test:cov": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive"
@@ -18,11 +18,14 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.2",
+    "exports-loader": "^0.6.2",
+    "immutable": "^3.7.5",
+    "imports-loader": "^0.6.5",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^0.2.1",
     "redux": "^1.0.0-rc",
-		"immutable": "^3.7.5"
+    "whatwg-fetch": "^0.10.0"
   },
   "devDependencies": {
     "babel": "^5.8.12",
