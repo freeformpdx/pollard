@@ -161,5 +161,5 @@ Total page size = 123K
 - FIX SHIT UX
 	- 00 enter on title/track should search
 	- 00 search API still suxdix
-
+- Make Songs OrderedMap so adds don't get shuffled
 
