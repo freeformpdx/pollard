@@ -9,6 +9,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+		"build": "webpack --progress --colors",
     "test": "NODE_ENV=test mocha --compilers js:babel/register --recursive",
     "test:watch": "NODE_ENV=test mocha --compilers js:babel/register --recursive --watch",
     "test:cov": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive"
