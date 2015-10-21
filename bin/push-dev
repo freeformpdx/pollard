@@ -1,3 +1,4 @@
 #!/bin/bash
-scp dist/bundle.js ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com:/www/static/
+npm run build-min
+scp dist/bundle.min.js ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com:/www/static/bundle.js
 scp index.html ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com:/www/
