@@ -158,6 +158,10 @@ Total page size = 123K
 	- XX nginx log all requests && request bodies to /post
 	- XX redux middleware to post state tree to /post on add/update/delete/mark-played
 
+- Usability testing notes go here
+	-
+
+
 
 ## ROLLING TO DO
 
@@ -171,3 +175,11 @@ Total page size = 123K
 	- 00 search API still suxdix
 
 - Make Songs OrderedMap so adds don't get shuffled
+
+
+## commands 2 learn && type
+
+- `sudo tail -f /var/log/nginx/postdata.log`
+- `sudo service nginx restart`
+- `sudo vim /etc/nginx/nginx.conf`
+- `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`

@@ -77,7 +77,7 @@ export default class SearchSong extends Component {
 		for ( let i = 0 ; i < songsJSON.length ; i++) {
 			let song = songsJSON[i];
 			if (song.tracks.length > 0) {
-				// FOR 7DIGITAL INFO
+				// FOR RELEASE INFO
 				for ( let j = 0; j < song.tracks.length ; j++ ) {
 					formattedTracks.push({
 						title: song.title,
@@ -89,7 +89,7 @@ export default class SearchSong extends Component {
 					});
 				}
 			} else {
-				// FOR NO 7DIGITAL INFO
+				// FOR NO RELEASE INFO
 				formattedTracks.push({
 					title: song.title,
 					artist: song.artist_name,
@@ -114,6 +114,7 @@ export default class SearchSong extends Component {
 			if (typeof releaseIdFull !== 'undefined') {
 
 				let releaseId = releaseIdFull.split(':')[2];
+
 				let releaseSearchUrl = this.getReleaseSearchUrl(releaseId);
 
 				let myHeaders = new Headers();
@@ -128,40 +129,39 @@ export default class SearchSong extends Component {
 					self.setState(function(previousState) {
 
 						let foundSongs = previousState.foundSongs;
-						if (typeof json.release == 'undefined') {
-							console.log('Error finding releaseInfo:');
-							console.log(JSON.stringify(json));
-						} else {
-							let updatedFoundSong = Object.assign(foundSongs[i], {
-								album: json.release.title ? json.release.title : 'nothing',
-								date: json.release.year,
-								img: json.release.image
-							});
+						let updatedFoundSong = Object.assign(foundSongs[i], {
+							album: json.name ? json.name : 'nothing',
+							date: json.release_date,
+							img: json.images[1].url
+						});
 
-							foundSongs[i] = updatedFoundSong;
-						}
+						foundSongs[i] = updatedFoundSong;
 
 						return {
 							foundSongs
 						};
 					});
 				});
+
 			}
 		}
 	}
 
 	getTrackSearchUrl() {
-		return "http://developer.echonest.com/api/v4/song/search?" +
+		const url = "http://developer.echonest.com/api/v4/song/search?" +
 			"api_key=" + this.state.echoNestApiKey +
 			"&title=" + this.state.trackValue +
 			"&artist=" + this.state.artistValue +
-			"&bucket=id:7digital-US&bucket=audio_summary&bucket=tracks";
+			"&bucket=id:spotify-US&bucket=audio_summary&bucket=tracks";
+		console.log(url);
+		return url;
 	}
 
 	getReleaseSearchUrl(releaseId) {
-		return "http://api.7digital.com/1.2/release/details" +
-			"?releaseid=" + releaseId +
-			"&oauth_consumer_key=" + this.state.sevenDigitalApiKey;
+		// TODO: convert this to several
+		const url = "https://api.spotify.com/v1/albums/" + releaseId;
+		console.log(url);
+		return url;
 	}
 
   render() {
