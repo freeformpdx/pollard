@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import fetch from 'whatwg-fetch';
 import classNames from 'classnames';
 
 import secrets from '../secrets';

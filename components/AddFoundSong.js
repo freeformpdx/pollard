@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class AddFoundSong extends Component {
 	handleClick(event) {
-		console.log('adding found song');
 		this.props.onAddSong({
 			inputs: {
 				title: this.props.song.title ? this.props.song.title : '',

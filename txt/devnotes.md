@@ -156,7 +156,7 @@ Total page size = 123K
 ## 10/21
 - Simple state post to nginx server
 	- XX nginx log all requests && request bodies to /post
-	- 00 redux middleware to log songs on add/update/delete/mark/played
+	- XX redux middleware to post state tree to /post on add/update/delete/mark-played
 
 
 ## ROLLING TO DO
@@ -170,7 +170,4 @@ Total page size = 123K
 	- 00 no results found state
 	- 00 search API still suxdix
 
-- Simple state post to nginx server
 - Make Songs OrderedMap so adds don't get shuffled
-- 
-
