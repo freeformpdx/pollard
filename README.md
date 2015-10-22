@@ -52,6 +52,6 @@ Boilerplate from [React Redux Boilerplate][rrbp]
 
 
 [rrbp]: https://github.com/knowbody/react-redux-boilerplate.git
-[devnotes]: devnotes.md
+[devnotes]: txt/devnotes.md
 [echonestapikey]: https://developer.echonest.com/account/register
 [7digitalapikey]: https://api-signup.7digital.com/
