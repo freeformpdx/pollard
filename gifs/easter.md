@@ -20,6 +20,14 @@
 ## SHORT
 come up with more confusing service names
 
+- Bigger thing here: [audience engine](http://www.audienceengine.net/)
+	- only problem: not much info about the project
+	- [wfmu github](https://github.com/wfmu)
+	- seems like the only code they've put out is an ember select and php
+		utils
+	- prob needs a call/email from a stakeholder and some sort of
+		technical braindump from AE person (???)
+
 ### e.g.
 - pollard
 - sprout
