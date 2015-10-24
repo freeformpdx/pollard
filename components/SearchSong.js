@@ -84,8 +84,7 @@ export default class SearchSong extends Component {
 						artist: song.artist_name,
 						foreignReleaseId: song.tracks[j].foreign_release_id,
 						album: '',
-						date: '',
-						img: song.tracks[j].release_image,
+						date: ''
 					});
 				}
 			} else {
@@ -94,8 +93,7 @@ export default class SearchSong extends Component {
 					title: song.title,
 					artist: song.artist_name,
 					album: '',
-					date: '',
-					img: '',
+					date: ''
 				});
 
 			}
@@ -132,7 +130,8 @@ export default class SearchSong extends Component {
 						let updatedFoundSong = Object.assign(foundSongs[i], {
 							album: json.name ? json.name : 'nothing',
 							date: json.release_date,
-							img: json.images[1].url
+							img300px: json.images[1].url,
+							img64px: json.images[2].url
 						});
 
 						foundSongs[i] = updatedFoundSong;

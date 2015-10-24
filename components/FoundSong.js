@@ -35,9 +35,11 @@ export default class FoundSong extends Component {
 						{ date } <br/>
 					</div>
 					<div className="col-xs-6 col-sm-3">
+						{ this.props.song.img300px ?
 						<img
 							style={ releaseImgStyle }
-							src={ this.props.song.img } />
+							src={ this.props.song.img300px } />
+						: "" }
 					</div>
 						<AddFoundSong
 							song={ this.props.song }
