@@ -170,13 +170,13 @@ Total page size = 123K
 - XX no results found state
 - XX label info from spotify API
 - XX imgs on song/selectedSong xs && sm+
+- XX Make Songs OrderedMap so adds don't get shuffled
 
 
 # ROLLING TO DO
 - FIX SHIT UX
 	- 00 enter on title/track should search
 
-- Make Songs OrderedMap so adds don't get shuffled
 
 
 ## commands 2 learn && type

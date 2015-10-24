@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/ActionTypes';
 
-import Immutable, { Map, List } from 'immutable';
+import Immutable, { Map, OrderedMap, List } from 'immutable';
 
 import guid from '../lib/guid';
 
@@ -9,7 +9,7 @@ import guid from '../lib/guid';
 
 
 /* remove this when real data happens */
-const initialDataSongsState = Immutable.fromJS({
+const initialDataSongsState = OrderedMap({
 	'id1': {
 		inputs: {
 			title: 'tracy\'s jacks',
@@ -120,7 +120,7 @@ export function dataSongs(state = initialDataSongsState, action) {
 
 		songObj[newGuid] = Immutable.fromJS(song);
 
-		return Immutable.Map(songObj).merge(state);
+		return OrderedMap(songObj).merge(state);
 	case actionTypes.MARK_SONG_PLAYED:
 		return state.setIn(
 			[action.id, 'played'],
