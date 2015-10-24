@@ -36,6 +36,13 @@ export default class SearchSong extends Component {
 		this.setState({trackValue: event.target.value});
 	}
 
+	handleKeyPress(event) {
+		if (event.key == 'Enter') {
+			this.handleSearchClick();
+		}
+		return event;
+	}
+
 	handleClearSongs() {
 		this.setState({
 			trackValue: '',
@@ -210,6 +217,7 @@ export default class SearchSong extends Component {
 									type="text"
 									placeholder="artist"
 									value={ artistValue }
+									onKeyPress={ (e) => this.handleKeyPress(e) }
 									onChange={ (e) => this.handleArtistChange(e) }/>
 						</div>
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
@@ -219,6 +227,7 @@ export default class SearchSong extends Component {
 									className="form-control"
 									placeholder="track"
 									value={ trackValue }
+									onKeyPress={ (e) => this.handleKeyPress(e) }
 									onChange={ (e) => this.handleTrackChange(e) }/>
 						</div>
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />

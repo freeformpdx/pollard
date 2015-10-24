@@ -172,11 +172,11 @@ Total page size = 123K
 - XX imgs on song/selectedSong xs && sm+
 - XX Make Songs OrderedMap so adds don't get shuffled
 
+## 10/24
+- XX enter on title/track should search
+
 
 # ROLLING TO DO
-- FIX SHIT UX
-	- 00 enter on title/track should search
-
 
 
 ## commands 2 learn && type
