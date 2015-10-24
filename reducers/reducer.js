@@ -8,43 +8,6 @@ import guid from '../lib/guid';
 // bifurcate reducers/actionTypes/actions on major feature
 
 
-/* remove this when real data happens */
-const initialDataSongsState = OrderedMap({
-	'id1': {
-		inputs: {
-			title: 'tracy\'s jacks',
-			artist: 'blurry',
-			album: 'parklifes',
-			label: 'label 5',
-			year: '1996',
-			notes: 'it\'s a good song!',
-		},
-		played: false
-	},
-	'id2': {
-		inputs: {
-			title: 'Ride the Ligtening',
-			artist: 'Metalica',
-			album: 'Minister of Puppets',
-			label: 'Label #420',
-			year: '1987',
-			notes: 'bang yr head',
-		},
-		played: true,
-	},
-	'id3': {
-		inputs: {
-			title: 'india was an angel',
-			artist: 'guiding by voices',
-			album: 'king ship && the golden boyz',
-			label: 'scat records',
-			year: '1993',
-			notes: 'sweet spots 4 you',
-		},
-		played: true,
-	}
-});
-
 const initialViewSongState = Immutable.fromJS({
 	selected: ''
 });
@@ -101,7 +64,7 @@ export function data(state = Map({}), action) {
 		.set('songs', dataSongs(state.get('songs'), action));
 }
 
-export function dataSongs(state = initialDataSongsState, action) {
+export function dataSongs(state = OrderedMap({}), action) {
   switch (action.type) {
 	case actionTypes.UPDATE_SONG:
 		return state.setIn(

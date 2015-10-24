@@ -175,8 +175,15 @@ Total page size = 123K
 ## 10/24
 - XX enter on title/track should search
 
+- XX remove test data
+- XX add empty song component w/ hintz
+
 
 # ROLLING TO DO
+- favicon
+- move to kffp repo
+- I/0 w/ server
+- clean up/break out searchSong's components/styling
 
 
 ## commands 2 learn && type
