@@ -12,7 +12,7 @@ import postAll from '../middleware/postAll.js';
 // remove combine reducers call
 // const store = createStore(state);
 
-const createStoreWithMiddleware = applyMiddleware(autoSelect, postAll)(createStore);
+const createStoreWithMiddleware = applyMiddleware(autoSelect)(createStore);
 
 const reducer = combineReducers({state});
 const store = createStoreWithMiddleware(reducer);
