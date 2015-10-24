@@ -19,6 +19,7 @@ export default class SearchSong extends Component {
 			trackValue: '',
 			artistValue: '',
 			isSearching: false,
+			noResults: false,
 			foundSongs: [],
 			echoNestApiKey,
 			sevenDigitalApiKey
@@ -40,12 +41,16 @@ export default class SearchSong extends Component {
 			trackValue: '',
 			artistValue: '',
 			isSearching: false,
+			noResults: false,
 			foundSongs: []
 		});
 	}
 
 	handleSearchClick(event) {
-		this.setState({isSearching: true});
+		this.setState({
+			isSearching: true,
+			foundSongs: []
+		});
 		let trackSearchUrl = this.getTrackSearchUrl();
 		let self = this;
 	
@@ -56,11 +61,18 @@ export default class SearchSong extends Component {
 		}).then(function(json) {
 			// On TRAX response: add songs to state
 			let songs = self.formatTrackSearch(self.getSongsFromJSON(json));
-			self.setState({
-				foundSongs: songs
-			});
-			// Then, fetch release data from songs
-			self.fetchReleases(songs);
+			if (songs.length > 0 ) {
+				self.setState({
+					foundSongs: songs
+				});
+				// Then, fetch release data from songs
+				self.fetchReleases(songs);
+			} else {
+				self.setState({
+					noResults: true,
+					isSearching: false
+				});
+			}
 		}).catch(function(ex) {
 			console.log('parsing failed', ex)
 		})
@@ -170,13 +182,20 @@ export default class SearchSong extends Component {
 		var artistValue = this.state.artistValue;
 		var trackValue = this.state.trackValue;
 
-		let foundSongsComponents = this.state.foundSongs.map((foundSong, idx) =>
-			<FoundSong
-				key={ idx }
-				song={ foundSong }
-				onClearSongs={ () => this.handleClearSongs() }
-				onAddSong={ this.props.onAddSong } />
-		);
+		let foundSongsComponents = false;
+		if (this.state.foundSongs.length > 0) {
+			foundSongsComponents = this.state.foundSongs.map((foundSong, idx) =>
+				<FoundSong
+					key={ idx }
+					song={ foundSong }
+					onClearSongs={ () => this.handleClearSongs() }
+					onAddSong={ this.props.onAddSong } />
+			);
+		} else if (this.state.noResults) {
+			foundSongsComponents = (
+				<li className="list-group-item list-group-item-danger">No search results found 😈 💩 💯 </li>
+			);
+		}
 
 
     return (
@@ -213,7 +232,7 @@ export default class SearchSong extends Component {
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 						<AddSong onAddSong={ this.props.onAddSong } />
 				</li>
-				{ (this.state.foundSongs.length > 0) ?
+				{ (foundSongsComponents) ?
 					<li
 						className="list-group-item"
 						style={ searchStyle }>
