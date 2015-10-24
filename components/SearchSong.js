@@ -139,10 +139,11 @@ export default class SearchSong extends Component {
 
 						let foundSongs = previousState.foundSongs;
 						let updatedFoundSong = Object.assign(foundSongs[i], {
-							album: json.name ? json.name : 'nothing',
+							album: json.name ? json.name : 'No Spotify Album Info',
 							date: json.release_date,
 							img300px: json.images[1].url,
-							img64px: json.images[2].url
+							img64px: json.images[2].url,
+							label: json.copyrights[0] ? json.copyrights[0].text : ''
 						});
 
 						foundSongs[i] = updatedFoundSong;

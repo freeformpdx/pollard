@@ -167,12 +167,11 @@ Total page size = 123K
 
 ## 10/23
 - XX search state should be obvious
-- 00 no results found state
+- XX no results found state
+- XX label info from spotify API
 
 
 # ROLLING TO DO
-
-- 00 label info from spotify API??
 
 - FIX SHIT UI
 	- 00 imgs on song/selectedSong xs && sm+
@@ -189,4 +188,3 @@ Total page size = 123K
 - `sudo service nginx restart`
 - `sudo vim /etc/nginx/nginx.conf`
 - `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
-
