@@ -45,7 +45,7 @@ export default class SearchSong extends Component {
 	}
 
 	handleSearchClick(event) {
-		this.setState({isSeraching: true});
+		this.setState({isSearching: true});
 		let trackSearchUrl = this.getTrackSearchUrl();
 		let self = this;
 	
@@ -57,8 +57,7 @@ export default class SearchSong extends Component {
 			// On TRAX response: add songs to state
 			let songs = self.formatTrackSearch(self.getSongsFromJSON(json));
 			self.setState({
-				foundSongs: songs,
-				isSearching: false
+				foundSongs: songs
 			});
 			// Then, fetch release data from songs
 			self.fetchReleases(songs);
@@ -140,6 +139,7 @@ export default class SearchSong extends Component {
 							foundSongs
 						};
 					});
+					self.setState({isSearching: false});
 				});
 
 			}
@@ -152,14 +152,12 @@ export default class SearchSong extends Component {
 			"&title=" + this.state.trackValue +
 			"&artist=" + this.state.artistValue +
 			"&bucket=id:spotify-US&bucket=audio_summary&bucket=tracks";
-		console.log(url);
 		return url;
 	}
 
 	getReleaseSearchUrl(releaseId) {
 		// TODO: convert this to several
 		const url = "https://api.spotify.com/v1/albums/" + releaseId;
-		console.log(url);
 		return url;
 	}
 
@@ -210,7 +208,7 @@ export default class SearchSong extends Component {
 							onClick={ (e) => this.handleSearchClick(e) }>
 							<span
 								className="glyphicon glyphicon-search"
-								aria-hidden="true"></span> Search
+								aria-hidden="true"></span> {this.state.isSearching?'Searching...':'Search'}
 						</button>
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 						<AddSong onAddSong={ this.props.onAddSong } />

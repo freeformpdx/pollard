@@ -166,11 +166,13 @@ Total page size = 123K
 
 
 ## 10/23
-- 00 search state should be obvious
+- XX search state should be obvious
 - 00 no results found state
 
 
 # ROLLING TO DO
+
+- 00 label info from spotify API??
 
 - FIX SHIT UI
 	- 00 imgs on song/selectedSong xs && sm+
