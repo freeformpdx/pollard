@@ -169,13 +169,10 @@ Total page size = 123K
 - XX search state should be obvious
 - XX no results found state
 - XX label info from spotify API
+- XX imgs on song/selectedSong xs && sm+
 
 
 # ROLLING TO DO
-
-- FIX SHIT UI
-	- 00 imgs on song/selectedSong xs && sm+
-
 - FIX SHIT UX
 	- 00 enter on title/track should search
 

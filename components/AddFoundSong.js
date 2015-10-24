@@ -11,6 +11,8 @@ export default class AddFoundSong extends Component {
 				year: this.props.song.date ? this.props.song.date : '',
 				notes: '',
 			},
+			img64px: this.props.song.img64px ? this.props.song.img64px : '',
+			img300px: this.props.song.img300px ? this.props.song.img300px : '',
 			played: false
 		});
 		this.props.onClearSongs();

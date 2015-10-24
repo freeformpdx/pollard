@@ -12,8 +12,8 @@ import DeleteSongBtn from './DeleteSongBtn';
 export default class SelectedSong extends Component {
 
   render() {
-		let flatInputs = flatten2Array(this.props.song.inputs);
-		let inputs = flatInputs.map((keyVal, index) => {
+		const flatInputs = flatten2Array(this.props.song.inputs);
+		const inputs = flatInputs.map((keyVal, index) => {
 			return <SongInput
 				label={ keyVal[0] }
 				val={ keyVal[1] }
@@ -23,13 +23,28 @@ export default class SelectedSong extends Component {
 				/>;
     });
 
-		let songStyle= mergeStyles({
+		const songStyle= mergeStyles({
 			backgroundColor: '#F6EBFA'
 		});
 
-		let gridClasses = classNames(
+		const gridClasses = classNames(
 			"col-xs-12",
 			"col-sm-6"
+		);
+
+		const releaseImgBaseClasses = classNames(
+			"col-xs-12"
+		);
+
+		const releaseImgXSClasses = classNames(
+			releaseImgBaseClasses,
+			"visible-xs-block"
+		);
+
+		const releaseImgSMClasses = classNames(
+			"col-sm-4",
+			"col-sm-offset-1",
+			"hidden-xs"
 		);
 
     return (
@@ -37,6 +52,13 @@ export default class SelectedSong extends Component {
 					<div className={ gridClasses }>
 						{ inputs }
 					</div>
+					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+					{ this.props.song.img300px ?
+						<img
+							className={ releaseImgXSClasses }
+							src={ this.props.song.img300px } />
+						: ""
+					}
 					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<DeleteSongBtn
 						songId={ this.props.songId }
@@ -46,6 +68,13 @@ export default class SelectedSong extends Component {
 						songId={ this.props.songId }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
+					<div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
+					{ this.props.song.img300px ?
+						<img
+							className={ releaseImgSMClasses }
+							src={ this.props.song.img300px } />
+						: ""
+					}
 			</li>
     );
   }
