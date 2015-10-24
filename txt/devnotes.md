@@ -157,22 +157,26 @@ Total page size = 123K
 - Simple state post to nginx server
 	- XX nginx log all requests && request bodies to /post
 	- XX redux middleware to post state tree to /post on add/update/delete/mark-played
+	- XX use spotify API for releas searches
 
 - Usability testing notes go here
-	-
+	- Search API seems to be the highest 'touch' point, blocker. Hopefully
+		spotify API meets our needs.
+	- Didn't test delete/mark played, just search stuff
 
 
+## 10/23
+- 00 search state should be obvious
+- 00 no results found state
 
-## ROLLING TO DO
+
+# ROLLING TO DO
 
 - FIX SHIT UI
 	- 00 imgs on song/selectedSong xs && sm+
 
 - FIX SHIT UX
 	- 00 enter on title/track should search
-	- 00 search state should be obvious
-	- 00 no results found state
-	- 00 search API still suxdix
 
 - Make Songs OrderedMap so adds don't get shuffled
 
@@ -183,3 +187,4 @@ Total page size = 123K
 - `sudo service nginx restart`
 - `sudo vim /etc/nginx/nginx.conf`
 - `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
+
