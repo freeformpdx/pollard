@@ -46,7 +46,7 @@ const initialDataSongsState = Immutable.fromJS({
 });
 
 const initialViewSongState = Immutable.fromJS({
-	selected: 'id1'
+	selected: ''
 });
 
 const initialSongState = {
