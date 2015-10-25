@@ -179,11 +179,24 @@ Total page size = 123K
 - XX Emojis now load right on dev server
 
 
+## 10/25
+- 00 setup mongo/mongoose/express/socketio
+
+
 # ROLLING TO DO
+- backend
+	- 00 build socket route for client update
+	- 00 build socket route for state load
+- frontend
+	- 00 setup socketio 
+	- 00 push updates to backend (middleware)
+	- 00 basic routing (to grab setlist ids from URL)
+	- 00 set state on load
+
+
 - 00 edit img urls... somehow
-- 00 favicon
-- 00 I/0 w/ server
 - 00 clean up/break out searchSong's components/styling
+- 00 favicon???
 
 
 ## commands 2 learn && type
