@@ -27,7 +27,6 @@ export default class SearchSong extends Component {
 	}
 
 	//TODO: DRY
-
 	handleArtistChange(event) {
 		this.setState({artistValue: event.target.value});
 	}
