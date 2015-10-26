@@ -33,3 +33,6 @@ dist
 
 # PW/APIKEYS
 secrets.js
+
+# pollard app config
+pollard.config.js

@@ -1,6 +1,6 @@
 # POLLARD
 
-A DJ Playlist creator frontend
+A DJ Playlist creator
 
 ## Features
 - Add songs to a set
@@ -33,12 +33,17 @@ A DJ Playlist creator frontend
 
 [Dev Notes][devnotes]
 
+### Frontend 
 `npm install && npm start`
 && then [in yo bowser](http://0.0.0.0:3000)
 
 `cp secrets-template.js secrets.js`
 && then enter in yr [echonest][echonestapikey]
 && [7digital][7digitalapikey] api keys
+
+### Backend
+`cd sprout && npm install && DEBUG=sprout npm start` 
+&& then [in yo bowser](http://0.0.0.0:3420)
 
 
 ## BIG UPZ

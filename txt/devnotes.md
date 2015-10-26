@@ -180,7 +180,8 @@ Total page size = 123K
 
 
 ## 10/25
-- 00 setup mongo/mongoose/express/socketio
+- 00 setup express/socketio
+- 00 setup mongo/mongoose
 
 
 # ROLLING TO DO
@@ -196,7 +197,7 @@ Total page size = 123K
 
 - 00 edit img urls... somehow
 - 00 clean up/break out searchSong's components/styling
-- 00 favicon???
+- 00 favicon??? MOTHERFUCKING WEBPACK
 
 
 ## commands 2 learn && type
