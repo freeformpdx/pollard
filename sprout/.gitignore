@@ -30,4 +30,4 @@ node_modules
 npm-debug.log
 
 #config file
-sprout.config.js
+sprout.config.json

@@ -5,14 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var socket_io = require('socket.io');
+var mongoose = require('mongoose')
 
 var socketRoute = require('./routes/socketio');
 var users = require('./routes/users');
+var sproutConfig = require('./sprout.config.json');
 
 var app = express();
 
 var io = socket_io();
 app.io = io;
+
+mongoose.connect(sproutConfig.dbName);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

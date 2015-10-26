@@ -45,7 +45,7 @@ A DJ Playlist creator
 && then [in yo bowser](http://0.0.0.0:3000)
 
 ### Backend
-- `cp sprout/sprout-template.config.js sprout/sprout.config.js`
+- `cp sprout/sprout-template.config.json sprout/sprout.config.json`
 &&  fill in yr config details
 
 - `cd sprout && npm install && DEBUG=sprout npm start` 
