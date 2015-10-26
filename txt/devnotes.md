@@ -183,15 +183,15 @@ Total page size = 123K
 - XX BE: setup express/socketio
 - XX FE: setup socketio 
 - XX BE: setup super hacky mongoose model
-- 00 FE: POST state to server
+- XX FE: POST state to server
+- XX BE: Update setlist state on push
+- 00 FE: Route to previous Setlist by ID
 
 
 # ROLLING TO DO
 - backend
-	- 00 build socket route for client update
 	- 00 build socket route for state load
 - frontend
-	- 00 push updates to backend (middleware)
 	- 00 basic routing (to grab setlist ids from URL)
 	- 00 set state on load
 
