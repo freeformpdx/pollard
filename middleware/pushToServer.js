@@ -1,15 +1,16 @@
 import * as actionTypes from '../constants/ActionTypes';
 
-// Middleware that posts state back to server anytime songs get fuxxed wif
+// Middleware that pushes state back to server anytime songs get fuxxed wif
 
-let postAll = store => next => action => {
+let pushToServer = store => next => action => {
   const result = next(action);
+	/*
 	if ([actionTypes.ADD_SONG, actionTypes.UPDATE_SONG,
 			 actionTypes.DELETE_SONG, actionTypes.MARK_SONG_PLAYED].indexOf(action.type) !== -1) {
 
 		const state = store.getState().state;
 		const stateJSON = JSON.stringify(state.toJSON());
-		fetch('/post', {
+		fetch('/', {
 			method: 'post',
 			headers: {
 				'Accept': 'application/json',
@@ -19,7 +20,9 @@ let postAll = store => next => action => {
 		});
 
 	}
+	*/
+
   return result;
 };
 
-export default postAll;
+export default pushToServer;

@@ -182,7 +182,8 @@ Total page size = 123K
 ## 10/25
 - XX BE: setup express/socketio
 - XX FE: setup socketio 
-- 00 BE: setup mongoose models
+- XX BE: setup super hacky mongoose model
+- 00 FE: POST state to server
 
 
 # ROLLING TO DO
