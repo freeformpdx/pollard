@@ -26,15 +26,20 @@ const initialSongState = {
 
 
 export function state(state = Map({}), action) {
-	return state
-		.set('view', view(state.get('view'), action))
-		.set('data', data(state.get('data'), action));
+  switch (action.type) {
+	case actionTypes.LOAD_SETLIST_STATE:
+		return Immutable.fromJS(action.state);
+	default:
+		return state
+			.set('view', view(state.get('view'), action))
+			.set('data', data(state.get('data'), action));
+	}
 }
 
 export function view(state = Map({}), action) {
-	return state
-		.set('setlist', viewSetlist(state.get('setlist'), action))
-		.set('song', viewSong(state.get('song'), action));
+		return state
+			.set('setlist', viewSetlist(state.get('setlist'), action))
+			.set('song', viewSong(state.get('song'), action));
 }
 
 export function viewSetlist(state = Map({}), action) {

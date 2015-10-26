@@ -11,3 +11,4 @@ export const UPDATE_SONG = 'UPDATE_SONG';
 export const DELETE_SONG = 'DELETE_SONG';
 
 export const SET_SETLIST_ID = 'SET_SETLIST_ID';
+export const LOAD_SETLIST_STATE = 'LOAD_SETLIST_STATE';

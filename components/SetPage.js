@@ -9,7 +9,8 @@ import {
 	searchSong,
 	markSongPlayed,
 	deleteSong,
-	setSetlistId
+	setSetlistId,
+	loadSetlistState
 } from '../actions/Actions.js';
 
 import mergeStyles from '../lib/mergeStyles';
@@ -20,10 +21,24 @@ import Setlist from './Setlist.js';
 class SetPage extends Component {
 	socketIOevents() {
 			var socket = require('socket.io-client')(config().socketUrl);
-			socket.emit('loadNew');
-			socket.on('newSetlistCreated', (setlist) => {
-				this.props.actions.setSetlistId(setlist.id);
-			});
+			const urlSetlistId = this.props.params.id;
+			if (typeof urlSetlistId == 'undefined') {
+				if (!this.props.viewSetlist.get('id')) {
+					socket.emit('loadNewSetlist');
+					socket.on('newSetlistCreated', (setlist) => {
+						// TODO: route to /setlist/:id when setlistId is set
+						this.props.actions.setSetlistId(setlist.id);
+					});
+				} else {
+					console.log('trying to reload after initial load????');
+				}
+			} else {
+				socket.emit('loadExistingSetlist', { id: this.props.params.id });
+				socket.on('existingSetlistLoaded', ({ state }) => {
+					console.log(state);
+					this.props.actions.loadSetlistState(state);
+				});
+			}
 	}
 
 	componentDidMount() {
@@ -40,6 +55,8 @@ class SetPage extends Component {
 			maxWidth: 720
 		});
 
+		// TODO: route to /setlist/:id when setlistId is set
+		console.log(setlistId);
 
     return (
       <div style={ setStyle }>
@@ -90,7 +107,8 @@ function mapDispatchToProps(dispatch) {
 				searchSong,
 				markSongPlayed,
 				deleteSong,
-				setSetlistId
+				setSetlistId,
+				loadSetlistState
 			},
 			dispatch
 		)

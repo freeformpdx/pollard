@@ -21,7 +21,7 @@ module.exports = function(io) {
 			// Setlist
 		});
 
-		socket.on('loadNew', function (data) {
+		socket.on('loadNewSetlist', function (data) {
 			var setlist = new Setlist({
 				state: {}
 			});
@@ -29,6 +29,13 @@ module.exports = function(io) {
 			.then(function(setlist) {
 				socket.emit('newSetlistCreated', { id: setlist.id });
 			});
+		});
+
+		socket.on('loadExistingSetlist', function (data) {
+			Setlist.findById(data.id).exec()
+			.then(function (setlist) {
+				socket.emit('existingSetlistLoaded', { state: setlist.state });
+			})
 		});
 
 		socket.on('pushState', function (data) {

@@ -76,3 +76,10 @@ export function setSetlistId(id) {
     id
   }
 };
+
+export function loadSetlistState(state) {
+	return {
+		type: types.LOAD_SETLIST_STATE,
+		state
+	}
+};

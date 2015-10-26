@@ -185,15 +185,12 @@ Total page size = 123K
 - XX BE: setup super hacky mongoose model
 - XX FE: POST state to server
 - XX BE: Update setlist state on push
-- 00 FE: Route to previous Setlist by ID
+- XX FE: Route to previous Setlist by ID
 
 
 # ROLLING TO DO
-- backend
-	- 00 build socket route for state load
-- frontend
-	- 00 basic routing (to grab setlist ids from URL)
-	- 00 set state on load
+- 00 Load setlist from server doesn't preserve order
+- 00 Forward to setlist/:id after setlistId is returned from server
 
 
 - 00 edit img urls... somehow
