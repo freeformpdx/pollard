@@ -180,8 +180,9 @@ Total page size = 123K
 
 
 ## 10/25
-- 00 setup express/socketio
-- 00 setup mongo/mongoose
+- XX BE: setup express/socketio
+- XX FE: setup socketio 
+- 00 BE: setup mongoose models
 
 
 # ROLLING TO DO
@@ -189,7 +190,6 @@ Total page size = 123K
 	- 00 build socket route for client update
 	- 00 build socket route for state load
 - frontend
-	- 00 setup socketio 
 	- 00 push updates to backend (middleware)
 	- 00 basic routing (to grab setlist ids from URL)
 	- 00 set state on load
