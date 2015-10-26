@@ -1,9 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { selectSong, updateSong,
-		addSong, searchSong,
-		markSongPlayed, deleteSong,
-		setSetlistId
+import { bindActionCreators } from 'redux';
+
+import {
+	selectSong,
+	updateSong,
+	addSong,
+	searchSong,
+	markSongPlayed,
+	deleteSong,
+	setSetlistId
 } from '../actions/Actions.js';
 
 import mergeStyles from '../lib/mergeStyles';
@@ -16,7 +22,7 @@ class SetPage extends Component {
 			var socket = require('socket.io-client')(config().socketUrl);
 			socket.emit('loadNew');
 			socket.on('newSetlistCreated', (setlist) => {
-				this.props.dispatch(setSetlistId(setlist.id));
+				this.props.actions.setSetlistId(setlist.id);
 			});
 	}
 
@@ -26,7 +32,7 @@ class SetPage extends Component {
 
   render() {
 
-		const { dispatch, dataSongs, viewSong, viewSetlist } = this.props;
+		const { dataSongs, viewSong, viewSetlist } = this.props;
 		const songs = dataSongs.toJSON();
 		const selectedSong = viewSong.get('selected');
 		const setlistId = viewSetlist.get('id');
@@ -43,22 +49,22 @@ class SetPage extends Component {
 					selectedSong={ selectedSong }
 					setlistId={ setlistId }
 					onSelectSong={ (songId) => 
-            dispatch(selectSong(songId))
+            this.props.actions.selectSong(songId)
 					}
 					onUpdateSong={ (song) => 
-            dispatch(updateSong(song))
+            this.props.actions.updateSong(song)
 					}
 					onAddSong={ (song) => 
-            dispatch(addSong(song))
+            this.props.actions.addSong(song)
 					}
 					onSearchSong={ (song) => 
-            dispatch(searchSong(song))
+            this.props.actions.searchSong(song)
 					}
 					onMarkSongPlayed={ (songId) => 
-            dispatch(markSongPlayed(songId))
+            this.props.actions.markSongPlayed(songId)
 					}
 					onDeleteSong={ (songId) => 
-            dispatch(deleteSong(songId))
+            this.props.actions.deleteSong(songId)
 					}
 				/>
 			</div>
@@ -66,7 +72,7 @@ class SetPage extends Component {
   }
 }
 
-function select({state}) {
+function mapStateToProps({state}) {
   return {
     dataSongs: state.getIn(['data','songs']),
     viewSong: state.getIn(['view','song']),
@@ -74,6 +80,23 @@ function select({state}) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+	return { 
+		actions: bindActionCreators(
+			{
+				selectSong,
+				updateSong,
+				addSong,
+				searchSong,
+				markSongPlayed,
+				deleteSong,
+				setSetlistId
+			},
+			dispatch
+		)
+	};
+}
+
 // Wrap the component to inject dispatch and state into it
 
-export default connect(select)(SetPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SetPage);

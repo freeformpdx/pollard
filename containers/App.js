@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
+import { Route, Link } from 'react-router';
+import {
+  ReduxRouter,
+  routerStateReducer,
+  reduxReactRouter
+} from 'redux-router';
+import { createHistory } from 'history';
 
 import { state } from '../reducers/reducer.js';
 
 import Pollard from './Pollard';
+import SetPage from '../components/SetPage';
+
 import autoSelect from '../middleware/autoSelect.js';
 import pushToServer from '../middleware/pushToServer.js';
 
@@ -12,20 +21,27 @@ import pushToServer from '../middleware/pushToServer.js';
 // remove combine reducers call
 // const store = createStore(state);
 
-const createStoreWithMiddleware = applyMiddleware(
-	autoSelect,
-	pushToServer
-)(createStore);
+const reducer = combineReducers({
+	router: routerStateReducer,
+	state: state
+});
 
-const reducer = combineReducers({state});
-const store = createStoreWithMiddleware(reducer);
+const store = compose(
+	applyMiddleware(autoSelect,pushToServer),
+	reduxReactRouter({createHistory})
+)(createStore)(reducer);
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        {() => <Pollard /> }
+				<ReduxRouter>
+					<Route path="/" component={ Pollard }>
+						<Route path="setlist" component={ SetPage } />
+						<Route path="setlist/:id" component={ SetPage } />
+					</Route>
+				</ReduxRouter>
       </Provider>
-    );
+	);
   }
 }
