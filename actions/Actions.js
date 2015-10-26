@@ -69,3 +69,10 @@ export function deleteSong(id) {
     id
   }
 };
+
+export function setSetlistId(id) {
+  return {
+    type: types.SET_SETLIST_ID,
+    id
+  }
+};

@@ -4,11 +4,9 @@ import { Connector } from 'react-redux';
 import SetPage from '../components/SetPage';
 import * as Actions from '../actions/Actions';
 
-import config from '../pollard.config';
 
 export default class Pollard extends Component {
   render() {
-		var socket = require('socket.io-client')(config().socketUrl);
 
     return (
       <Connector select={state => ( state )}>

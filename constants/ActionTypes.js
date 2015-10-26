@@ -9,3 +9,5 @@ export const ADD_SONG = 'ADD_SONG';
 export const MARK_SONG_PLAYED = 'MARK_SONG_PLAYED';
 export const UPDATE_SONG = 'UPDATE_SONG';
 export const DELETE_SONG = 'DELETE_SONG';
+
+export const SET_SETLIST_ID = 'SET_SETLIST_ID';

@@ -2,19 +2,35 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { selectSong, updateSong,
 		addSong, searchSong,
-		markSongPlayed, deleteSong
+		markSongPlayed, deleteSong,
+		setSetlistId
 } from '../actions/Actions.js';
 
 import mergeStyles from '../lib/mergeStyles';
+import config from '../pollard.config';
 
 import Setlist from './Setlist.js';
 
 class SetPage extends Component {
+	socketIOevents() {
+			var socket = require('socket.io-client')(config().socketUrl);
+			socket.emit('loadNew');
+			socket.on('newSetlistCreated', (setlist) => {
+				this.props.dispatch(setSetlistId(setlist.id));
+			});
+	}
+
+	componentDidMount() {
+		this.socketIOevents();
+	}
+
   render() {
-		const { dispatch, dataSongs, viewSong } = this.props;
+
+		const { dispatch, dataSongs, viewSong, viewSetlist } = this.props;
 		const songs = dataSongs.toJSON();
 		const selectedSong = viewSong.get('selected');
-		const setStyle= mergeStyles({
+		const setlistId = viewSetlist.get('id');
+		const setStyle = mergeStyles({
 			maxWidth: 720
 		});
 
@@ -25,6 +41,7 @@ class SetPage extends Component {
 				<Setlist
 					songs={ songs }
 					selectedSong={ selectedSong }
+					setlistId={ setlistId }
 					onSelectSong={ (songId) => 
             dispatch(selectSong(songId))
 					}
@@ -52,7 +69,8 @@ class SetPage extends Component {
 function select({state}) {
   return {
     dataSongs: state.getIn(['data','songs']),
-    viewSong: state.getIn(['view','song'])
+    viewSong: state.getIn(['view','song']),
+    viewSetlist: state.getIn(['view','setlist'])
   };
 }
 

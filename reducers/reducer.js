@@ -33,14 +33,14 @@ export function state(state = Map({}), action) {
 
 export function view(state = Map({}), action) {
 	return state
-		.set('set', viewSet(state.get('set'), action))
+		.set('setlist', viewSetlist(state.get('setlist'), action))
 		.set('song', viewSong(state.get('song'), action));
 }
 
-export function viewSet(state = Map({}), action) {
+export function viewSetlist(state = Map({}), action) {
   switch (action.type) {
-  case actionTypes.SELECT_SET:
-    return state.set('selected', action.id);
+  case actionTypes.SET_SETLIST_ID:
+    return state.set('id', action.id);
   default:
     return state;
   }
@@ -60,7 +60,7 @@ export function viewSong(state = initialViewSongState, action) {
 
 export function data(state = Map({}), action) {
 	return state
-		.set('sets', dataSets(state.get('sets'), action))
+		.set('setlists', dataSetlists(state.get('setlists'), action))
 		.set('songs', dataSongs(state.get('songs'), action));
 }
 
@@ -96,7 +96,7 @@ export function dataSongs(state = OrderedMap({}), action) {
   }
 }
 
-export function dataSets(state = Map({}), action) {
+export function dataSetlists(state = Map({}), action) {
   switch (action.type) {
 	case actionTypes.ADD_SET:
 	case actionTypes.UPDATE_SET:

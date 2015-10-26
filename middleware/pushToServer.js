@@ -1,26 +1,13 @@
+import config from '../pollard.config';
 import * as actionTypes from '../constants/ActionTypes';
 
 // Middleware that pushes state back to server anytime songs get fuxxed wif
 
 let pushToServer = store => next => action => {
   const result = next(action);
-	/*
-	if ([actionTypes.ADD_SONG, actionTypes.UPDATE_SONG,
-			 actionTypes.DELETE_SONG, actionTypes.MARK_SONG_PLAYED].indexOf(action.type) !== -1) {
+	const socket = require('socket.io-client')(config().socketUrl);
 
-		const state = store.getState().state;
-		const stateJSON = JSON.stringify(state.toJSON());
-		fetch('/', {
-			method: 'post',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: stateJSON
-		});
-
-	}
-	*/
+	socket.emit('pushState', store.getState().state.toJSON());
 
   return result;
 };
