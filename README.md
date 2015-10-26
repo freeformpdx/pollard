@@ -34,15 +34,21 @@ A DJ Playlist creator
 [Dev Notes][devnotes]
 
 ### Frontend 
-`npm install && npm start`
-&& then [in yo bowser](http://0.0.0.0:3000)
-
-`cp secrets-template.js secrets.js`
+-`cp secrets-template.js secrets.js`
 && then enter in yr [echonest][echonestapikey]
 && [7digital][7digitalapikey] api keys
 
+-`cp pollard-template.config.js pollard.config.js`
+&&  fill in yr config details
+
+- `npm install && npm start`
+&& then [in yo bowser](http://0.0.0.0:3000)
+
 ### Backend
-`cd sprout && npm install && DEBUG=sprout npm start` 
+- `cp sprout/sprout-template.config.js sprout/sprout.config.js`
+&&  fill in yr config details
+
+- `cd sprout && npm install && DEBUG=sprout npm start` 
 && then [in yo bowser](http://0.0.0.0:3420)
 
 
