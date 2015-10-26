@@ -20,14 +20,14 @@ import Setlist from './Setlist.js';
 
 class SetPage extends Component {
 	socketIOevents() {
-			var socket = require('socket.io-client')(config().socketUrl);
+			const socket = require('socket.io-client')(config().socketUrl);
 			const urlSetlistId = this.props.params.id;
 			if (typeof urlSetlistId == 'undefined') {
 				if (!this.props.viewSetlist.get('id')) {
 					socket.emit('loadNewSetlist');
 					socket.on('newSetlistCreated', (setlist) => {
-						// TODO: route to /setlist/:id when setlistId is set
 						this.props.actions.setSetlistId(setlist.id);
+						this.props.history.pushState(null, '/setlist/' + setlist.id);
 					});
 				} else {
 					console.log('trying to reload after initial load????');
@@ -51,6 +51,10 @@ class SetPage extends Component {
 		const songs = dataSongs.toJSON();
 		const selectedSong = viewSong.get('selected');
 		const setlistId = viewSetlist.get('id');
+
+		// debugger;
+		// this.props.history.pushState(null, '/setlist/' + setlist.id);
+		
 		const setStyle = mergeStyles({
 			maxWidth: 720
 		});

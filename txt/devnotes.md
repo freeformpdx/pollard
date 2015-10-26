@@ -186,12 +186,11 @@ Total page size = 123K
 - XX FE: POST state to server
 - XX BE: Update setlist state on push
 - XX FE: Route to previous Setlist by ID
+- XX Forward to setlist/:id after setlistId is returned from server
 
 
 # ROLLING TO DO
 - 00 Load setlist from server doesn't preserve order
-- 00 Forward to setlist/:id after setlistId is returned from server
-
 
 - 00 edit img urls... somehow
 - 00 clean up/break out searchSong's components/styling
