@@ -188,14 +188,30 @@ Total page size = 123K
 - XX FE: Route to previous Setlist by ID
 - XX Forward to setlist/:id after setlistId is returned from server
 
+## 10/26
+- 00 
 
 # ROLLING TO DO
-- 00 Load setlist from server doesn't preserve order
-
+- 00 Load setlist from server doesn't preserve order of Songs:
+	- only option is to break out state server IO to handle ordered data.songs[] 
+- 00 Load setlist from server doesn't preserve order of SongInputs
+	- Don't need songInput state as map, use list like so:
+	- `List([['artist', 'springsteen'],['title', 'Streetz ofire']]])`
+	- Weird bug tho: it's flip-flopping all over the place... reload saved
+		set, and it changes order on each reload after selecting new song
 - 00 edit img urls... somehow
 - 00 clean up/break out searchSong's components/styling
 - 00 favicon??? MOTHERFUCKING WEBPACK
 
+# SEARCH API && AUTOCOMPLETE
+- Gotta get that Autocomplete, son. Throttle autocomplete requests.
+- Y'know, search api is ok, but it still sucks pretty bad.
+- [Rovi](http://developer.rovicorp.com/)
+- [Discogs](https://www.discogs.com/developers/#), looks like it
+	integrates w/ echonest
+
+- Set up static search API comparison component page for stakeholders
+- Maybe use that as the ADVANCE SONG SEARCH PICKER
 
 ## commands 2 learn && type
 
