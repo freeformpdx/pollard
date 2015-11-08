@@ -85,21 +85,21 @@ but for now I'm going to finish workflow stuff.
 - delete set
 
 UP NEXT:
-- XX init basic state
+- [X] init basic state
 
 ## 10/12
-- XX Connect components to read from state
-- XX Wire up select song action
-- XX do update song reducer
+- [X] Connect components to read from state
+- [X] Wire up select song action
+- [X] do update song reducer
 
 ## 10/13
-- XX do add song component
-- XX do add song reducer
-- XX do search cmpnt
-- XX do search rdxr
+- [X] do add song component
+- [X] do add song reducer
+- [X] do search cmpnt
+- [X] do search rdxr
 
 ## 10/14
-- 00 Fix search api calls
+- [X] Fix search api calls
 - https://freemusicarchive.org/api
     couldn't get it to work. 
 - http://developer.echonest.com/
@@ -115,34 +115,34 @@ Ended up doing shitty loop over results from Echonest, building 7digital
 release API requests, then dispatching them and building flattened JSON
 of display info. This is POC finished for now.
 
-- XX do add song from search results action
-- XX do mark song played cmpnt
-- XX do mark song played rdxr
-- XX do deletesong cmpnt
-- XX do deletesong rdxr
+- [X] do add song from search results action
+- [X] do mark song played cmpnt
+- [X] do mark song played rdxr
+- [X] do deletesong cmpnt
+- [X] do deletesong rdxr
 
-- XX on add found song, clear search list && select new song
-- XX SHIT UI: Search songs bar
-- XX SHIT UI: Search results list
+- [X] on add found song, clear search list && select new song
+- [X] SHIT UI: Search songs bar
+- [X] SHIT UI: Search results list
 
 
 ## 10/19
 Focused on more UI prettification \r\n
-- XX SHIT UI: Song single line
-- XX SHIT UI: SelectedSong
-- XX SHIT UI: Refine selectSong onClick to target 
-- XX SHIT UI: line up search bar buttons and Song buttons
-- XX SHIT UX: hide delete button except on detail
-- XX SHIT UI: search bar and selected song XS styling
-- XX SHIT UI: md? weird state with 12-grid songInputs from sm-med
-- XX SHIT UX: confirm delete button - localState hack
+- [X] SHIT UI: Song single line
+- [X] SHIT UI: SelectedSong
+- [X] SHIT UI: Refine selectSong onClick to target 
+- [X] SHIT UI: line up search bar buttons and Song buttons
+- [X] SHIT UX: hide delete button except on detail
+- [X] SHIT UI: search bar and selected song XS styling
+- [X] SHIT UI: md? weird state with 12-grid songInputs from sm-med
+- [X] SHIT UX: confirm delete button - localState hack
 
 ## 10/20
-- XX SHIT UI: SongInput widths on XS
-- XX Set up EC2 instance
-- XX installed nginx - config - gzip
-- XX built basic build/min/scp to EC2 script
-- XX Add fetch polyfill for safari/iOS
+- [X] SHIT UI: SongInput widths on XS
+- [X] Set up EC2 instance
+- [X] installed nginx - config - gzip
+- [X] built basic build/min/scp to EC2 script
+- [X] Add fetch polyfill for safari/iOS
 
 
 ### SIZE MATTERZ
@@ -155,9 +155,9 @@ Total page size = 123K
 
 ## 10/21
 - Simple state post to nginx server
-	- XX nginx log all requests && request bodies to /post
-	- XX redux middleware to post state tree to /post on add/update/delete/mark-played
-	- XX use spotify API for releas searches
+	- [X] nginx log all requests && request bodies to /post
+	- [X] redux middleware to post state tree to /post on add/update/delete/mark-played
+	- [X] use spotify API for releas searches
 
 - Usability testing notes go here
 	- Search API seems to be the highest 'touch' point, blocker. Hopefully
@@ -166,42 +166,42 @@ Total page size = 123K
 
 
 ## 10/23
-- XX search state should be obvious
-- XX no results found state
-- XX label info from spotify API
-- XX imgs on song/selectedSong xs && sm+
-- XX Make Songs OrderedMap so adds don't get shuffled
+- [X] search state should be obvious
+- [X] no results found state
+- [X] label info from spotify API
+- [X] imgs on song/selectedSong xs && sm+
+- [X] Make Songs OrderedMap so adds don't get shuffled
 
 ## 10/24
-- XX enter on title/track should search
-- XX remove test data
-- XX add empty song component w/ hintz
-- XX Emojis now load right on dev server
+- [X] enter on title/track should search
+- [X] remove test data
+- [X] add empty song component w/ hintz
+- [X] Emojis now load right on dev server
 
 
 ## 10/25
-- XX BE: setup express/socketio
-- XX FE: setup socketio 
-- XX BE: setup super hacky mongoose model
-- XX FE: POST state to server
-- XX BE: Update setlist state on push
-- XX FE: Route to previous Setlist by ID
-- XX Forward to setlist/:id after setlistId is returned from server
+- [X] BE: setup express/socketio
+- [X] FE: setup socketio 
+- [X] BE: setup super hacky mongoose model
+- [X] FE: POST state to server
+- [X] BE: Update setlist state on push
+- [X] FE: Route to previous Setlist by ID
+- [X] Forward to setlist/:id after setlistId is returned from server
 
-## 10/26
-- 00 
+## 11/08
+- [ ] Write sprite API Routes 
 
 # ROLLING TO DO
-- 00 Load setlist from server doesn't preserve order of Songs:
+- [ ] Load setlist from server doesn't preserve order of Songs:
 	- only option is to break out state server IO to handle ordered data.songs[] 
-- 00 Load setlist from server doesn't preserve order of SongInputs
+- [ ] Load setlist from server doesn't preserve order of SongInputs
 	- Don't need songInput state as map, use list like so:
 	- `List([['artist', 'springsteen'],['title', 'Streetz ofire']]])`
 	- Weird bug tho: it's flip-flopping all over the place... reload saved
 		set, and it changes order on each reload after selecting new song
-- 00 edit img urls... somehow
-- 00 clean up/break out searchSong's components/styling
-- 00 favicon??? MOTHERFUCKING WEBPACK
+- [ ] edit img urls... somehow
+- [ ] clean up/break out searchSong's components/styling
+- [ ] favicon??? MOTHERFUCKING WEBPACK
 
 # SEARCH API && AUTOCOMPLETE
 - Gotta get that Autocomplete, son. Throttle autocomplete requests.
