@@ -17,7 +17,7 @@ module.exports = function(io) {
 			console.log("**************");
 			console.log("* CLIENT DATA *");
 			console.log("**************");
-			console.log(JSON.stringify(data));
+			console.log(JSON.stringify(data, null, 2));
 			// Setlist
 		});
 

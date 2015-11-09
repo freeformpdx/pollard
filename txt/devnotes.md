@@ -189,7 +189,11 @@ Total page size = 123K
 - [X] Forward to setlist/:id after setlistId is returned from server
 
 ## 11/08
-- [ ] Write sprite API Routes 
+- [ ] Flesh out setlist mongoose data model
+- [ ] Configure FE actions/async calls to work w/ new data model
+- [ ] Also fix flip-flopping of inputs && song order
+- [ ] Write express api routes 
+- [ ] Simple song drag-n-drop 
 
 # ROLLING TO DO
 - [ ] Load setlist from server doesn't preserve order of Songs:
