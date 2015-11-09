@@ -7,8 +7,7 @@ let autoSelect = store => next => action => {
   const result = next(action);
 	if (action.type == actionTypes.ADD_SONG) {
 		const state = store.getState().state;
-		const newestSongId = state.getIn(['data','songs']).keySeq().first();
-		store.dispatch(selectSong(newestSongId));
+		store.dispatch(selectSong(0));
 	}
   return result;
 };

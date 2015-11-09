@@ -13,13 +13,13 @@ export default class SelectedSong extends Component {
 
   render() {
 		const flatInputs = flatten2Array(this.props.song.inputs);
-		const inputs = flatInputs.map((keyVal, index) => {
+		const inputs = this.props.song.inputs.map((input, index) => {
 			return <SongInput
-				label={ keyVal[0] }
-				val={ keyVal[1] }
-				songId={ this.props.songId }
+				label={ input.name }
+				val={ input.value }
 				onUpdateSong={ this.props.onUpdateSong }
 				key={ index }
+				songIdx={ this.props.idx }
 				/>;
     });
 
@@ -65,7 +65,7 @@ export default class SelectedSong extends Component {
 						onDeleteSong={ this.props.onDeleteSong } />
 					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<MarkPlayedBtn
-						songId={ this.props.songId }
+						idx={ this.props.idx }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
 					<div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />

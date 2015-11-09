@@ -15,7 +15,6 @@ var Song = new Schema({
 });
 
 var setlistSchema = new Schema({
-	id: String,	
 	songs: [Song]
 });
 

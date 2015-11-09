@@ -189,9 +189,12 @@ Total page size = 123K
 - [X] Forward to setlist/:id after setlistId is returned from server
 
 ## 11/08
-- [ ] Flesh out setlist mongoose data model
-- [ ] Configure FE actions/async calls to work w/ new data model
-- [ ] Also fix flip-flopping of inputs && song order
+- [X] Flesh out setlist mongoose data model
+- [X] Configure FE actions to work w/ new data model
+- [ ] Configure FE async calls to work w/ new data model
+- [ ] Configure BE async routes to work w/ new data model
+- [ ] Test loading saved setlists
+- [X] Also fix flip-flopping of inputs && song order
 - [ ] Write express api routes 
 - [ ] Simple song drag-n-drop 
 

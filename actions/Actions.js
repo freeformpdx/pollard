@@ -28,10 +28,10 @@ export function deleteSet(payload) {
   }
 };
 
-export function selectSong(id) {
+export function selectSong(idx) {
   return {
     type: types.SELECT_SONG,
-    id
+    idx
   }
 };
 
@@ -49,10 +49,10 @@ export function addSong(song) {
   }
 };
 
-export function markSongPlayed(id) {
+export function markSongPlayed(idx) {
   return {
     type: types.MARK_SONG_PLAYED,
-    id
+    idx
   }
 };
 

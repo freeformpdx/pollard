@@ -23,7 +23,7 @@ module.exports = function(io) {
 
 		socket.on('loadNewSetlist', function (data) {
 			var setlist = new Setlist({
-				state: {}
+				songs: []
 			});
 			setlist.save()
 			.then(function(setlist) {
@@ -34,7 +34,7 @@ module.exports = function(io) {
 		socket.on('loadExistingSetlist', function (data) {
 			Setlist.findById(data.id).exec()
 			.then(function (setlist) {
-				socket.emit('existingSetlistLoaded', { state: setlist.state });
+				socket.emit('existingSetlistLoaded', { setlist: setlist });
 			})
 		});
 
@@ -42,8 +42,7 @@ module.exports = function(io) {
 			if (data.view.setlist.id) {
 				Setlist.findById(data.view.setlist.id).exec()
 				.then(function (setlist) {
-					setlist.state = data;
-					setlist.markModified('state');
+					setlist = data;
 					return setlist.save();
 				});
 			} else {

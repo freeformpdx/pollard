@@ -47,12 +47,11 @@ class SetPage extends Component {
 
   render() {
 
-		const { dataSongs, viewSong, viewSetlist } = this.props;
-		const songs = dataSongs.toJSON();
+		const { songsList, viewSong, viewSetlist } = this.props;
+		const songs = songsList.toJSON();
 		const selectedSong = viewSong.get('selected');
 		const setlistId = viewSetlist.get('id');
 
-		// debugger;
 		// this.props.history.pushState(null, '/setlist/' + setlist.id);
 		
 		const setStyle = mergeStyles({
@@ -95,7 +94,7 @@ class SetPage extends Component {
 
 function mapStateToProps({state}) {
   return {
-    dataSongs: state.getIn(['data','songs']),
+    songsList: state.getIn(['data','setlist', 'songs'], []),
     viewSong: state.getIn(['view','song']),
     viewSetlist: state.getIn(['view','setlist'])
   };

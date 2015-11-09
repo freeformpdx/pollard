@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import flatten2Array from '../lib/flattenObjectToArray';
 import mergeStyles from '../lib/mergeStyles';
 
 import SearchSong from './SearchSong';
@@ -33,22 +32,28 @@ export default class Setlist extends Component {
 							</div>
 						</li> :
 					'' }
-					{flatten2Array(this.props.songs).map((tuple, idx) =>
-						(tuple[0] == this.props.selectedSong) ?
-						<SelectedSong song={ tuple[1] }
-							songId={ tuple[0] }
-							selectedSong={ this.props.selectedSong }
-							key={ idx }
-							onDeleteSong={ this.props.onDeleteSong }
-							onMarkSongPlayed={ this.props.onMarkSongPlayed }
-							onUpdateSong={ this.props.onUpdateSong } />:
-						<Song song={ tuple[1] }
-							songId={ tuple[0] }
-							key={ idx }
-							onDeleteSong={ this.props.onDeleteSong }
-							onMarkSongPlayed={ this.props.onMarkSongPlayed }
-							onSelectSong={ this.props.onSelectSong } />
-					)}
+					{this.props.songs.map((song, idx) => {
+						if (idx == this.props.selectedSong) {
+							return (
+								<SelectedSong song={ song }
+									selectedSong={ this.props.selectedSong }
+									key={ idx }
+									idx={ idx }
+									onDeleteSong={ this.props.onDeleteSong }
+									onMarkSongPlayed={ this.props.onMarkSongPlayed }
+									onUpdateSong={ this.props.onUpdateSong } />
+							);
+						} else {
+							return (
+								<Song song={ song }
+									key={ idx }
+									idx={ idx }
+									onDeleteSong={ this.props.onDeleteSong }
+									onMarkSongPlayed={ this.props.onMarkSongPlayed }
+									onSelectSong={ this.props.onSelectSong } />
+							);
+						}
+					})}
 				</ul>
 			</div>
     );

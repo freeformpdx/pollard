@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/ActionTypes';
 
-import Immutable, { Map, OrderedMap, List } from 'immutable';
+import Immutable, { Map, List } from 'immutable';
 
 import guid from '../lib/guid';
 
@@ -12,15 +12,33 @@ const initialViewSongState = Immutable.fromJS({
 	selected: ''
 });
 
+const initialDataSetlistState = Immutable.fromJS({
+	id: '',
+	songs: []
+});
+
 const initialSongState = {
-	inputs: {
-		title: '',
-		artist: '',
-		album: '',
-		label: '',
-		year: '',
-		notes: '',
-	},
+	inputs: [{
+		name: 'title',
+		value: '',
+	}, {
+		name: 'artist',
+		value: '',
+	}, {
+		name: 'album',
+		value: '',
+	}, {
+		name: 'label',
+		value: '',
+	}, {
+		name: 'year',
+		value: '',
+	}, {
+		name: 'notes',
+		value: '',
+	}],
+	img64px: '',
+	img300px: '',
 	played: false
 };
 
@@ -54,7 +72,7 @@ export function viewSetlist(state = Map({}), action) {
 export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
-    return state.set('selected', action.id);
+    return state.set('selected', action.idx);
 	case actionTypes.SEARCH_FOR_SONG:
 		debugger;
     return state;
@@ -65,49 +83,45 @@ export function viewSong(state = initialViewSongState, action) {
 
 export function data(state = Map({}), action) {
 	return state
-		.set('setlists', dataSetlists(state.get('setlists'), action))
-		.set('songs', dataSongs(state.get('songs'), action));
+		.set('setlist', dataSetlist(state.get('setlist'), action));
 }
 
-export function dataSongs(state = OrderedMap({}), action) {
+export function dataSetlist(state = initialDataSetlistState , action) {
   switch (action.type) {
 	case actionTypes.UPDATE_SONG:
+
+		const keyIdx = state.getIn(['songs', action.update.idx, 'inputs'])
+			.findIndex((value) => value.get('name') == action.update.key);
+
+		debugger;
 		return state.setIn(
-			[action.update.id, 'inputs', action.update.key],
+			['songs', action.update.idx, 'inputs', keyIdx, 'value'],
 			action.update.val
 		);
+
 	case actionTypes.ADD_SONG:
-		// TODO: make this its own function
+
 		let song = action.song;
-		let newGuid = guid();
-		let songObj = {};
 
 		if (Object.keys(action.song).length == 0) {
 			song = initialSongState;
 		}
 
-		songObj[newGuid] = Immutable.fromJS(song);
+		return state.update('songs', function (value) {
+			return value.unshift(Immutable.fromJS(song));
+		});
 
-		return OrderedMap(songObj).merge(state);
 	case actionTypes.MARK_SONG_PLAYED:
-		return state.setIn(
-			[action.id, 'played'],
-			!state.get(action.id).get('played')
+		return state.updateIn(
+			['songs', action.idx, 'played'],
+			function(played) {
+				return !played;
+			}
 		);
+
 	case actionTypes.DELETE_SONG:
     return state.delete(action.id);
-  default:
-    return state;
-  }
-}
 
-export function dataSetlists(state = Map({}), action) {
-  switch (action.type) {
-	case actionTypes.ADD_SET:
-	case actionTypes.UPDATE_SET:
-	case actionTypes.DELETE_SET:
-		debugger;
-    return state;
   default:
     return state;
   }

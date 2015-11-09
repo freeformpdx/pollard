@@ -6,7 +6,7 @@ import mergeStyles from '../lib/mergeStyles';
 
 export default class MarkPlayedBtn extends Component {
 	handleClick(event) {
-		this.props.onMarkSongPlayed(this.props.songId);
+		this.props.onMarkSongPlayed(this.props.idx);
 	}
 
   render() {
