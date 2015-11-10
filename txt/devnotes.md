@@ -191,24 +191,20 @@ Total page size = 123K
 ## 11/08
 - [X] Flesh out setlist mongoose data model
 - [X] Configure FE actions to work w/ new data model
-- [ ] Configure FE async calls to work w/ new data model
-- [ ] Configure BE async routes to work w/ new data model
-- [ ] Test loading saved setlists
 - [X] Also fix flip-flopping of inputs && song order
+
+## 11/09
+- [X] Configure FE async calls to work w/ new data model
+- [X] Configure BE async routes to work w/ new data model
+- [X] Test loading saved setlists
 - [ ] Write express api routes 
 - [ ] Simple song drag-n-drop 
 
 # ROLLING TO DO
-- [ ] Load setlist from server doesn't preserve order of Songs:
-	- only option is to break out state server IO to handle ordered data.songs[] 
-- [ ] Load setlist from server doesn't preserve order of SongInputs
-	- Don't need songInput state as map, use list like so:
-	- `List([['artist', 'springsteen'],['title', 'Streetz ofire']]])`
-	- Weird bug tho: it's flip-flopping all over the place... reload saved
-		set, and it changes order on each reload after selecting new song
 - [ ] edit img urls... somehow
 - [ ] clean up/break out searchSong's components/styling
 - [ ] favicon??? MOTHERFUCKING WEBPACK
+- [ ] SongInputs as list?: `List([['artist', 'springsteen'],['title', 'Streetz ofire']]])`
 
 # SEARCH API && AUTOCOMPLETE
 - Gotta get that Autocomplete, son. Throttle autocomplete requests.

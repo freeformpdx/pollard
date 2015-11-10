@@ -45,8 +45,6 @@ const initialSongState = {
 
 export function state(state = Map({}), action) {
   switch (action.type) {
-	case actionTypes.LOAD_SETLIST_STATE:
-		return Immutable.fromJS(action.state);
 	default:
 		return state
 			.set('view', view(state.get('view'), action))
@@ -62,8 +60,12 @@ export function view(state = Map({}), action) {
 
 export function viewSetlist(state = Map({}), action) {
   switch (action.type) {
+
+	case actionTypes.LOAD_SETLIST_STATE:
+    return state.set('id', action.state.id);
   case actionTypes.SET_SETLIST_ID:
     return state.set('id', action.id);
+
   default:
     return state;
   }
@@ -73,9 +75,6 @@ export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
     return state.set('selected', action.idx);
-	case actionTypes.SEARCH_FOR_SONG:
-		debugger;
-    return state;
   default:
     return state;
   }
@@ -88,12 +87,15 @@ export function data(state = Map({}), action) {
 
 export function dataSetlist(state = initialDataSetlistState , action) {
   switch (action.type) {
+
+	case actionTypes.LOAD_SETLIST_STATE:
+		return Immutable.fromJS(action.state);
+
 	case actionTypes.UPDATE_SONG:
 
 		const keyIdx = state.getIn(['songs', action.update.idx, 'inputs'])
 			.findIndex((value) => value.get('name') == action.update.key);
 
-		debugger;
 		return state.setIn(
 			['songs', action.update.idx, 'inputs', keyIdx, 'value'],
 			action.update.val

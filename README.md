@@ -49,6 +49,7 @@ A DJ Playlist creator
 &&  fill in yr config details
 
 - `cd sprout && npm install && DEBUG=sprout npm start` 
+- OR `node debug ./bin/www` 
 && then [in yo bowser](http://0.0.0.0:3420)
 
 

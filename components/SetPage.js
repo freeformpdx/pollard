@@ -34,9 +34,8 @@ class SetPage extends Component {
 				}
 			} else {
 				socket.emit('loadExistingSetlist', { id: this.props.params.id });
-				socket.on('existingSetlistLoaded', ({ state }) => {
-					console.log(state);
-					this.props.actions.loadSetlistState(state);
+				socket.on('existingSetlistLoaded', ( {setlist} ) => {
+					this.props.actions.loadSetlistState(setlist);
 				});
 			}
 	}
@@ -48,18 +47,17 @@ class SetPage extends Component {
   render() {
 
 		const { songsList, viewSong, viewSetlist } = this.props;
+
 		const songs = songsList.toJSON();
 		const selectedSong = viewSong.get('selected');
-		const setlistId = viewSetlist.get('id');
+
+		const setlistId = this.props.routeParams.id || viewSetlist.get('id');
 
 		// this.props.history.pushState(null, '/setlist/' + setlist.id);
 		
 		const setStyle = mergeStyles({
 			maxWidth: 720
 		});
-
-		// TODO: route to /setlist/:id when setlistId is set
-		console.log(setlistId);
 
     return (
       <div style={ setStyle }>
@@ -94,7 +92,7 @@ class SetPage extends Component {
 
 function mapStateToProps({state}) {
   return {
-    songsList: state.getIn(['data','setlist', 'songs'], []),
+    songsList: state.getIn(['data','setlist', 'songs']),
     viewSong: state.getIn(['view','song']),
     viewSetlist: state.getIn(['view','setlist'])
   };

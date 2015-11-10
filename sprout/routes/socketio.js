@@ -18,8 +18,17 @@ module.exports = function(io) {
 			console.log("* CLIENT DATA *");
 			console.log("**************");
 			console.log(JSON.stringify(data, null, 2));
-			// Setlist
+
+			// Setlists
+			Setlist.find().exec()
+			.then(function(setlist) {
+				console.log("**************");
+				console.log("*SETLIST DATA*");
+				console.log("**************");
+				console.log(setlist);
+			});
 		});
+
 
 		socket.on('loadNewSetlist', function (data) {
 			var setlist = new Setlist({
@@ -31,18 +40,23 @@ module.exports = function(io) {
 			});
 		});
 
-		socket.on('loadExistingSetlist', function (data) {
-			Setlist.findById(data.id).exec()
+		socket.on('loadExistingSetlist', function (request) {
+			Setlist.findById(request.id).exec()
 			.then(function (setlist) {
-				socket.emit('existingSetlistLoaded', { setlist: setlist });
+				socket.emit('existingSetlistLoaded', {
+					setlist: {
+						id: setlist.id,
+						songs: setlist.songs
+					}
+				});
 			})
 		});
 
-		socket.on('pushState', function (data) {
-			if (data.view.setlist.id) {
-				Setlist.findById(data.view.setlist.id).exec()
-				.then(function (setlist) {
-					setlist = data;
+		socket.on('pushState', function (newState) {
+			if (newState.view.setlist.id) {
+				Setlist.findById(newState.view.setlist.id, function (err, setlist) {
+					if (err) throw err;
+					setlist.songs = newState.data.setlist.songs;
 					return setlist.save();
 				});
 			} else {

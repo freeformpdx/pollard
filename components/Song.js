@@ -9,7 +9,6 @@ import DeleteSongBtn from './DeleteSongBtn';
 
 export default class Song extends Component {
 	handleClick(event) {
-		debugger;
 		this.props.onSelectSong(this.props.idx);
 	}
 
