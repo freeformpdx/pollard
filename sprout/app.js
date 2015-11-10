@@ -8,6 +8,7 @@ var socket_io = require('socket.io');
 var mongoose = require('mongoose')
 
 var socketRoute = require('./routes/socketio');
+var api = require('./routes/api');
 var users = require('./routes/users');
 var sproutConfig = require('./sprout.config.json');
 
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', socketRoute(app.io));
+app.use('/api', api);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

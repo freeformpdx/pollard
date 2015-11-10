@@ -19,7 +19,7 @@ module.exports = function(io) {
 			console.log("**************");
 			console.log(JSON.stringify(data, null, 2));
 
-			// Setlists
+			// LOG ALL Setlists
 			Setlist.find().exec()
 			.then(function(setlist) {
 				console.log("**************");
