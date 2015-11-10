@@ -197,7 +197,7 @@ Total page size = 123K
 - [X] Configure FE async calls to work w/ new data model
 - [X] Configure BE async routes to work w/ new data model
 - [X] Test loading saved setlists
-- [ ] Write express api routes 
+- [X] Write express api routes 
 - [ ] Simple song drag-n-drop 
 
 # ROLLING TO DO
