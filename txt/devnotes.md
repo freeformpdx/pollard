@@ -200,8 +200,10 @@ Total page size = 123K
 - [X] Write express api routes 
 - [X] Simple song drag-n-drop 
 - [X] Setlist nav button doesn't break everything now
-- [ ] Set up advanced search API component page for stakeholders
-- [ ] Setup sprout on aws
+
+## 11/14
+- [X] Set up advanced search API component page for stakeholders
+- [ ] Setup app on docker
 
 # ROLLING TO DO
 - [ ] edit img urls... somehow
@@ -224,3 +226,13 @@ Total page size = 123K
 - `sudo service nginx restart`
 - `sudo vim /etc/nginx/nginx.conf`
 - `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
+
+### DOCKER SHIT
+- Build from local context:
+- `docker build -t sliechty/node0 .`
+- Build from repo
+- `docker build -t sliechty/node0 https://github.com/spencerliechty/pollard`
+- `docker ps`
+- `docker run -p 3240:3000 -d sliechty/node0`
+- `docker start/stop <cont_name>`
+- `docker exec -it <cont_name> bash`
