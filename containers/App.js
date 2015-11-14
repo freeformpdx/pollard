@@ -13,6 +13,7 @@ import { state } from '../reducers/reducer.js';
 
 import Pollard from './Pollard';
 import SetPage from '../components/SetPage';
+import AdvancedSearch from '../components/AdvancedSearch';
 
 import autoSelect from '../middleware/autoSelect.js';
 import pushToServer from '../middleware/pushToServer.js';
@@ -39,6 +40,7 @@ export default class App extends Component {
 					<Route path="/" component={ Pollard }>
 						<Route path="setlist" component={ SetPage } />
 						<Route path="setlist/:id" component={ SetPage } />
+						<Route path="advancedSearch" component={ AdvancedSearch } />
 					</Route>
 				</ReduxRouter>
       </Provider>

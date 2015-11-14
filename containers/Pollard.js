@@ -10,6 +10,7 @@ export default class Pollard extends Component {
       <div className="container">
 					<ul>
 						<li><Link to="/setlist" activeClassName="active">Setlist</Link></li>
+						<li><Link to="/advancedSearch" activeClassName="active">Advanced Search</Link></li>
 					</ul>
 				{ this.props.children }
       </div>

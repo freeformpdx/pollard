@@ -5,6 +5,7 @@ import mergeStyles from '../lib/mergeStyles';
 import SearchSong from './SearchSong';
 import SelectedSong from './SelectedSong';
 import Song from './Song';
+import DraggableSong from './DraggableSong';
 
 
 export default class Setlist extends Component {
@@ -35,22 +36,31 @@ export default class Setlist extends Component {
 					{this.props.songs.map((song, idx) => {
 						if (idx == this.props.selectedSong) {
 							return (
-								<SelectedSong song={ song }
-									selectedSong={ this.props.selectedSong }
+								<DraggableSong
 									key={ idx }
 									idx={ idx }
-									onDeleteSong={ this.props.onDeleteSong }
-									onMarkSongPlayed={ this.props.onMarkSongPlayed }
-									onUpdateSong={ this.props.onUpdateSong } />
+									onMoveSong={ this.props.onMoveSong }>
+									<SelectedSong song={ song }
+										selectedSong={ this.props.selectedSong }
+										idx={ idx }
+										onDeleteSong={ this.props.onDeleteSong }
+										onMarkSongPlayed={ this.props.onMarkSongPlayed }
+										onUpdateSong={ this.props.onUpdateSong }/>
+								</DraggableSong>
 							);
 						} else {
 							return (
-								<Song song={ song }
+								<DraggableSong
 									key={ idx }
 									idx={ idx }
-									onDeleteSong={ this.props.onDeleteSong }
-									onMarkSongPlayed={ this.props.onMarkSongPlayed }
-									onSelectSong={ this.props.onSelectSong } />
+									onMoveSong={ this.props.onMoveSong }>
+									<Song song={ song }
+										key={ idx }
+										idx={ idx }
+										onDeleteSong={ this.props.onDeleteSong }
+										onMarkSongPlayed={ this.props.onMarkSongPlayed }
+										onSelectSong={ this.props.onSelectSong }/>
+								</DraggableSong>
 							);
 						}
 					})}

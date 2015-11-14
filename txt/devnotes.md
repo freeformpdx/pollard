@@ -198,13 +198,15 @@ Total page size = 123K
 - [X] Configure BE async routes to work w/ new data model
 - [X] Test loading saved setlists
 - [X] Write express api routes 
-- [ ] Simple song drag-n-drop 
+- [X] Simple song drag-n-drop 
+- [X] Setlist nav button doesn't break everything now
+- [ ] Set up advanced search API component page for stakeholders
+- [ ] Setup sprout on aws
 
 # ROLLING TO DO
 - [ ] edit img urls... somehow
 - [ ] clean up/break out searchSong's components/styling
 - [ ] favicon??? MOTHERFUCKING WEBPACK
-- [ ] SongInputs as list?: `List([['artist', 'springsteen'],['title', 'Streetz ofire']]])`
 
 # SEARCH API && AUTOCOMPLETE
 - Gotta get that Autocomplete, son. Throttle autocomplete requests.

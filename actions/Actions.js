@@ -56,6 +56,14 @@ export function markSongPlayed(idx) {
   }
 };
 
+export function moveSong(fromIdx, toIdx) {
+  return {
+    type: types.MOVE_SONG,
+    fromIdx,
+		toIdx
+  }
+};
+
 export function updateSong(update) {
   return {
     type: types.UPDATE_SONG,

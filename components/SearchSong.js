@@ -170,7 +170,7 @@ export default class SearchSong extends Component {
 			"api_key=" + this.state.echoNestApiKey +
 			"&title=" + this.state.trackValue +
 			"&artist=" + this.state.artistValue +
-			"&bucket=id:spotify-US&bucket=audio_summary&bucket=tracks";
+			"&bucket=id:spotify-WW&bucket=audio_summary&bucket=tracks";
 		return url;
 	}
 

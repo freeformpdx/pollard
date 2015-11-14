@@ -8,6 +8,7 @@ import {
 	addSong,
 	searchSong,
 	markSongPlayed,
+	moveSong,
 	deleteSong,
 	setSetlistId,
 	loadSetlistState
@@ -44,6 +45,14 @@ class SetPage extends Component {
 		this.socketIOevents();
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const setlistId = nextProps.routeParams.id || nextProps.viewSetlist.get('id');
+
+		if (setlistId && !nextProps.routeParams.id) {
+			nextProps.history.pushState(null, '/setlist/' + setlistId);
+		}
+	}
+
   render() {
 
 		const { songsList, viewSong, viewSetlist } = this.props;
@@ -52,8 +61,6 @@ class SetPage extends Component {
 		const selectedSong = viewSong.get('selected');
 
 		const setlistId = this.props.routeParams.id || viewSetlist.get('id');
-
-		// this.props.history.pushState(null, '/setlist/' + setlist.id);
 		
 		const setStyle = mergeStyles({
 			maxWidth: 720
@@ -74,6 +81,9 @@ class SetPage extends Component {
 					}
 					onAddSong={ (song) => 
             this.props.actions.addSong(song)
+					}
+					onMoveSong={ (fromIdx, toIdx) =>
+						this.props.actions.moveSong(fromIdx, toIdx)
 					}
 					onSearchSong={ (song) => 
             this.props.actions.searchSong(song)
@@ -107,6 +117,7 @@ function mapDispatchToProps(dispatch) {
 				addSong,
 				searchSong,
 				markSongPlayed,
+				moveSong,
 				deleteSong,
 				setSetlistId,
 				loadSetlistState
