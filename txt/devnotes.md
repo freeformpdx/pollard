@@ -228,10 +228,16 @@ Total page size = 123K
 - `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
 
 ### DOCKER SHIT
-- Build from local context:
-- `docker build -t sliechty/node0 .`
 - Build from repo
 - `docker build -t sliechty/node0 https://github.com/spencerliechty/pollard`
+
+- Run [requires configuration details in env.list]
+- `docker run -p 3240:3000 --env-file ./env.list -it sliechty/node0 bash bin/dockerrun.sh`
+
+- Run server as daemon
+- `docker run -p 3240:3000 --env-file ./env.list -d sliechty/node0 bash bin/dockerrun.sh`
+
+- Fucking with containers
 - `docker ps`
 - `docker run -p 3240:3000 -d sliechty/node0`
 - `docker start/stop <cont_name>`
