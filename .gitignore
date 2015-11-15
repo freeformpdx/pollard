@@ -31,8 +31,5 @@ dist
 
 .DS_Store
 
-# PW/APIKEYS
-secrets.js
-
-# pollard app config
-pollard.config.js
+# ENV LIST to use for config && secrets
+env.list
