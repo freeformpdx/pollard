@@ -1,13 +1,14 @@
 FROM node:5.0
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/sprout
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
+COPY . /usr/src/app
 RUN npm install
 
-COPY . /usr/src/app
+WORKDIR /usr/src/app/sprout
+RUN npm install
 
-EXPOSE 3000
+EXPOSE 3420
 
 CMD [ "npm", "start" ]
