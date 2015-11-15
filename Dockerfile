@@ -9,6 +9,6 @@ RUN npm install
 WORKDIR /usr/src/app/sprout
 RUN npm install
 
-EXPOSE 3420
+WORKDIR /usr/src/app
 
-CMD [ "npm", "start" ]
+EXPOSE 3420
