@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.sendfile('./public/index.html');
 });
 
+/* GET home page. */
+router.get('/setlist/', function(req, res, next) {
+  res.sendfile('./public/index.html');
+});
+
 module.exports = router;
