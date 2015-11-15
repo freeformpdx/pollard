@@ -10,14 +10,14 @@ var mongoose = require('mongoose')
 var socketRoute = require('./routes/socketio');
 var api = require('./routes/api');
 var users = require('./routes/users');
-var sproutConfig = require('./sprout.config.json');
+var config = require('../env.js');
 
 var app = express();
 
 var io = socket_io();
 app.io = io;
 
-mongoose.connect(sproutConfig.dbName);
+mongoose.connect(config.DB_NAME);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

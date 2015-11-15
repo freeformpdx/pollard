@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import secrets from '../secrets';
+import config from '../env.js';
 import {
 	addSong
 } from '../actions/Actions.js';
@@ -12,9 +12,9 @@ class AdvancedSearch extends Component {
 	constructor(props) {
 		super(props);
 
-		let echoNestApiKey = secrets().echoNest;
-		let discogsApiKey = secrets().discogs;
-		let sevenDigitalApiKey = secrets().sevenDigital;
+		let echoNestApiKey = config.ECHO_NEST;
+		let discogsApiKey = config.DISCOGS;
+		let sevenDigitalApiKey = config.SEVEN_DIGITAL;
 
 		this.state = {
 			trackValue: '',

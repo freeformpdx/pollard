@@ -15,13 +15,13 @@ import {
 } from '../actions/Actions.js';
 
 import mergeStyles from '../lib/mergeStyles';
-import config from '../pollard.config';
+import config from '../env.js';
 
 import Setlist from './Setlist.js';
 
 class SetPage extends Component {
 	socketIOevents() {
-			const socket = require('socket.io-client')(config().socketUrl);
+			const socket = require('socket.io-client')(config.SOCKET_URL);
 			const urlSetlistId = this.props.params.id;
 			if (typeof urlSetlistId == 'undefined') {
 				if (!this.props.viewSetlist.get('id')) {

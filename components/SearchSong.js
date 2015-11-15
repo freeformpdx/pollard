@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import secrets from '../secrets';
+import config from '../env.js';
 import mergeStyles from '../lib/mergeStyles';
 
 import AddSong from './AddSong';
@@ -12,8 +12,8 @@ export default class SearchSong extends Component {
 	constructor(props) {
 		super(props);
 
-		let echoNestApiKey = secrets().echoNest;
-		let sevenDigitalApiKey = secrets().sevenDigital;
+		let echoNestApiKey = config.ECHO_NEST;
+		let sevenDigitalApiKey = config.SEVEN_DIGITAL;
 
 		this.state = {
 			trackValue: '',
