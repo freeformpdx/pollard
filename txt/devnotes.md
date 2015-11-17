@@ -216,7 +216,6 @@ Total page size = 123K
 - [Rovi](http://developer.rovicorp.com/)
 - [Discogs](https://www.discogs.com/developers/#), looks like it
 	integrates w/ echonest
-
 - Set up static search API comparison component page for stakeholders
 - Maybe use that as the ADVANCE SONG SEARCH PICKER
 
