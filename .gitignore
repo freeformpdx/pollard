@@ -29,6 +29,10 @@ node_modules
 # build dir in /dist/
 dist
 
+# Build files
+sprout/public/bundle.js
+sprout/public/index.html
+
 .DS_Store
 
 # ENV LIST to use for config && secrets
