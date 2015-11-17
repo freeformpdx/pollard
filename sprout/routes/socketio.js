@@ -5,15 +5,15 @@ module.exports = function(io) {
 
 	/* GET home page. */
 	router.get('/', function(req, res, next) {
-		res.sendfile('./public/index.html');
+		res.sendFile('./public/index.html');
 	});
 
 	router.get('/advancedSearch', function(req, res, next) {
-		res.sendfile('./public/index.html');
+		res.sendFile('./public/index.html');
 	});
 
 	router.get('/setlist/*', function(req, res, next) {
-		res.sendfile('./public/index.html');
+		res.sendFile('./public/index.html');
 	});
 
 	io.on('connection', function (socket) {
