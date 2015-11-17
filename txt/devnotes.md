@@ -229,16 +229,13 @@ Total page size = 123K
 
 ### DOCKER SHIT
 - Build from repo
-- `docker build -t spncrlkt/pollard https://github.com/spencerliechty/pollard.git`
-
+- `docker build -t spncrlkt/pollard https://github.com/spncrlkt/pollard.git`
 - Run [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
-
-- Run server as daemon
+- Run server as daemon [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -d spncrlkt/pollard bash bin/dockerrun.sh`
-
 - Fucking with containers
 - `docker ps`
-- `docker run -p 3240:3000 -d sliechty/node0`
+- `docker run -p 3240:3000 -d spncrlkt/pollard`
 - `docker start/stop <cont_name>`
 - `docker exec -it <cont_name> bash`
