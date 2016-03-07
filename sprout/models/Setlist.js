@@ -15,7 +15,9 @@ var Song = new Schema({
 });
 
 var setlistSchema = new Schema({
-	songs: [Song]
+	songs: [Song],
+  showID: String,
+  createdAt: { type: Date, default: Date.now },
 });
 
 var Setlist = mongoose.model('Setlist', setlistSchema);
