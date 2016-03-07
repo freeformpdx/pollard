@@ -31,3 +31,6 @@ npm-debug.log
 
 #config file
 sprout.config.json
+
+#schedule file
+pollardSched.json
