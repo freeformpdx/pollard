@@ -2,7 +2,7 @@ var moment = require('moment');
 var express = require('express');
 var router = express.Router();
 
-var config = require('../env.js');
+var config = require('../../env.js');
 
 var Setlist = require('../models/Setlist');
 var Schedule = require('../models/Schedule');
@@ -65,6 +65,6 @@ router.post('/loadSched/:pw', function(req, res, next) {
   } else {
     return res.send("NUH UH");
   }
-}
+});
 
 module.exports = router;
