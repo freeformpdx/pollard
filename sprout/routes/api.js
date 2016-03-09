@@ -19,14 +19,26 @@ router.get('/nowPlaying', function(req, res, next) {
     Setlist.findOne({
       showID: showDoc.showID
     }).sort({'createdAt': -1}).exec(function(err, setlist) {
-      if (err) throw err;
-      if (setlist.songs.length > 0) {
-        for (var idx = 0; idx < setlist.songs.length; idx++) {
-          if (setlist.songs[idx].played) {
-            res.json(setlist.songs[idx]);
+      if (err) {
+        return res.send(err);
+      }
+      var response = {
+        showID: showDoc.showID,
+        setlistID: 'No setlist found',
+        songs: [],
+      }
+      if (setlist) {
+        response.setlistID = setlist.id;
+        if (setlist.songs.length > 0) {
+          for (var idx = 0; idx < setlist.songs.length; idx++) {
+            if (setlist.songs[idx].played) {
+              response.songs = setlist.songs[idx];
+              break;
+            }
           }
         }
       }
+      res.json(response);
     })
   });
 });
