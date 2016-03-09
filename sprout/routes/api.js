@@ -61,9 +61,33 @@ router.get('/newSetlist/:showID', function(req, res, next) {
 
 router.post('/loadSched/:pw', function(req, res, next) {
   if (req.params.pw == config.LOAD_SCHED_PW) {
-    return res.send("nailed it");
+    if (!req.body.sched) {
+      return res.send("No sched found: req:\n" + JSON.stringify(req.body, null, 2));
+    }
+
+    // clear sched first
+    var schedStream = Schedule.find().stream();
+
+    schedStream.on('data', function(doc) {
+      doc.remove();
+    }).on('close', function() {
+      // after clear, load sched
+      var sched = JSON.parse(req.body.sched);
+      for (var idx = 0; idx < sched.length; idx++) {
+        var schedule = new Schedule(sched[idx]);
+        schedule.save().then(function(schedule) {
+          console.log('added: ' + schedule.showID);
+        });
+      }
+      setTimeout(function() {
+        res.send("Loaded!");
+      }, 3000);
+    });
   } else {
-    return res.send("NUH UH");
+    // security lol
+    setTimeout(function() {
+      res.send("NUH UH");
+    }, 3000);
   }
 });
 
