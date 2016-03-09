@@ -2,6 +2,8 @@ var moment = require('moment');
 var express = require('express');
 var router = express.Router();
 
+var config = require('../env.js');
+
 var Setlist = require('../models/Setlist');
 var Schedule = require('../models/Schedule');
 
@@ -56,5 +58,13 @@ router.get('/newSetlist/:showID', function(req, res, next) {
     res.json({ id: setlist.id, showID: setlist.showID });
   });
 });
+
+router.post('/loadSched/:pw', function(req, res, next) {
+  if (req.params.pw == config.LOAD_SCHED_PW) {
+    return res.send("nailed it");
+  } else {
+    return res.send("NUH UH");
+  }
+}
 
 module.exports = router;
