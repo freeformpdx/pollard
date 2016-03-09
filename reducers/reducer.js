@@ -135,7 +135,7 @@ export function dataSetlist(state = initialDataSetlistState , action) {
 		return state.set('songs', reorderedSongs);
 
 	case actionTypes.DELETE_SONG:
-    return state.delete(action.id);
+    return state.deleteIn(['songs', action.idx]);
 
   default:
     return state;

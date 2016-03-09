@@ -61,7 +61,7 @@ export default class SelectedSong extends Component {
 					}
 					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<DeleteSongBtn
-						songId={ this.props.songId }
+						songIdx={ this.props.idx }
 						onDeleteSong={ this.props.onDeleteSong } />
 					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<MarkPlayedBtn

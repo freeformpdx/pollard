@@ -71,10 +71,10 @@ export function updateSong(update) {
   }
 };
 
-export function deleteSong(id) {
+export function deleteSong(idx) {
   return {
     type: types.DELETE_SONG,
-    id
+    idx
   }
 };
 

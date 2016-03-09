@@ -17,7 +17,7 @@ export default class DeleteSongBtn extends Component {
 		if (this.state.deleteStep == 0) {
 			this.setState({deleteStep: 1});
 		} else {
-			this.props.onDeleteSong(this.props.songId);
+			this.props.onDeleteSong(this.props.songIdx);
 		}
 	}
 
