@@ -22,11 +22,13 @@ router.get('/nowPlaying', function(req, res, next) {
       if (err) {
         return res.send(err);
       }
+
       var response = {
         showID: showDoc.showID,
         setlistID: 'No setlist found',
         songs: [],
       }
+
       if (setlist) {
         response.setlistID = setlist.id;
         if (setlist.songs.length > 0) {
