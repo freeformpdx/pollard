@@ -227,12 +227,15 @@ Total page size = 123K
 - `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
 
 ### DOCKER SHIT
+- Start docker shell
+- `bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'`
 - Build from repo
 - `docker build -t spncrlkt/pollard https://github.com/spncrlkt/pollard.git`
 - Run [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
 - Run server as daemon [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -d spncrlkt/pollard bash bin/dockerrun.sh`
+
 - Fucking with containers
 - `docker ps`
 - `docker run -p 3240:3000 -d spncrlkt/pollard`
