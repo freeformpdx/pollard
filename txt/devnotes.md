@@ -232,12 +232,22 @@ Total page size = 123K
 - `ssh ec2-user@XXX.XXX.XXX.XXX.us-west-1.compute.amazonaws.com`
 
 ## Once yr logged in to AWS
+- INSTALL DOCKER IF NOT EXISTS`
+- `sudo yum update -y`
+- `sudo yum install -y docker`
+- `sudo service docker start`
+- `sudo usermod -a -G docker ec2-user`
+- `reboot`
+- `docker info
+- `docker ps`
+
 - `vim env.list`
 - `docker pull spncrlkt/pollard`
 - `docker run -p 80:3420 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
 - `docker ps`
 - `docker logs MACHINE_NAME`
 - `docker exec -it MACHINE_NAME bash`
+
 
 ### DOCKER SHIT
 - Start docker shell
@@ -258,6 +268,8 @@ Total page size = 123K
 - `docker run -p 3240:3000 -d spncrlkt/pollard`
 - `docker start/stop <cont_name>`
 - `docker exec -it <cont_name> bash`
+
+
 
 ### LOADING SCHEDULES INTO POLLARD
 - make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`

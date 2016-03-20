@@ -1,4 +1,4 @@
-var moment = require('moment');
+var moment = require('moment-timezone');
 var express = require('express');
 var router = express.Router();
 
@@ -16,7 +16,7 @@ router.get('/setlist/:id', function(req, res, next) {
 });
 
 router.get('/nowPlaying', function(req, res, next) {
-  Schedule.findShowIDByTime(moment(), function(err, showDoc) {
+  Schedule.findShowIDByTime(moment().tz("America/Los_Angeles"), function(err, showDoc) {
     if (err) throw err;
     if (!showDoc) { return res.send([]); }
 

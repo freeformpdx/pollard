@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "start": "./bin/buildenv.sh && node server.js",
-		"build-env-dev": "./bin/buildenv.sh",
+    "build-env-dev": "./bin/buildenv.sh",
     "build": "webpack --progress --colors",
     "build-min-dev": "./bin/buildenv.sh && webpack --config webpackmin.config.js --progress --colors",
     "build-min": "webpack --config webpackmin.config.js --progress --colors",
@@ -24,6 +24,7 @@
     "history": "^1.12.6",
     "immutable": "^3.7.5",
     "imports-loader": "^0.6.5",
+    "moment-timezone": "^0.5.2",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
