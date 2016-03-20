@@ -224,13 +224,30 @@ Total page size = 123K
 - `sudo tail -f /var/log/nginx/postdata.log`
 - `sudo service nginx restart`
 - `sudo vim /etc/nginx/nginx.conf`
-- `ssh ec2-user@ec2-54-153-51-198.us-west-1.compute.amazonaws.com`
+
+## Logging in to AWS
+- add yr IP to AWS security rules
+- get that ssh key from AWS
+- `ssh-add ~/.ssh/kffp-dev.pem`
+- `ssh ec2-user@XXX.XXX.XXX.XXX.us-west-1.compute.amazonaws.com`
+
+## Once yr logged in to AWS
+- `vim env.list`
+- `docker pull spncrlkt/pollard`
+- `docker run -p 80:3420 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
+- `docker ps`
+- `docker logs MACHINE_NAME`
+- `docker exec -it MACHINE_NAME bash`
 
 ### DOCKER SHIT
 - Start docker shell
 - `bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'`
+
 - Build from repo
 - `docker build -t spncrlkt/pollard https://github.com/spncrlkt/pollard.git`
+- Push
+- `docker push spncrklkt/pollard`
+
 - Run [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
 - Run server as daemon [requires configuration details in env.list]
@@ -241,3 +258,8 @@ Total page size = 123K
 - `docker run -p 3240:3000 -d spncrlkt/pollard`
 - `docker start/stop <cont_name>`
 - `docker exec -it <cont_name> bash`
+
+### LOADING SCHEDULES INTO POLLARD
+- make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`
+![alt tag](gifs/load_sched_example.png)
+
