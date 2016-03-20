@@ -262,4 +262,5 @@ Total page size = 123K
 ### LOADING SCHEDULES INTO POLLARD
 - make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`
 ![alt tag](gifs/load_sched_example.png)
+- 
 

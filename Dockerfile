@@ -5,6 +5,8 @@ RUN echo 'deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main' | 
 RUN apt-get update && apt-get install -y mongodb-org vim
 RUN mkdir -p /data/db
 
+RUN echo America/America/Los_Angeles > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
+
 RUN mkdir -p /usr/src/app/sprout
 WORKDIR /usr/src/app
 
