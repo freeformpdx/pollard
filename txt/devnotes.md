@@ -235,6 +235,7 @@ Total page size = 123K
 - INSTALL DOCKER IF NOT EXISTS`
 - `sudo yum update -y`
 - `sudo yum install -y docker`
+- `sudo yum install -y git`
 - `sudo service docker start`
 - `sudo usermod -a -G docker ec2-user`
 - `reboot`
@@ -254,7 +255,7 @@ Total page size = 123K
 - `bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'`
 
 - Build from repo
-- `docker build -t spncrlkt/pollard https://github.com/spncrlkt/pollard.git`
+- `docker build -t spncrlkt/pollard https://github.com/freeformpdx/pollard.git`
 - Push
 - `docker push spncrklkt/pollard`
 
