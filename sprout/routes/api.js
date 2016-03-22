@@ -57,7 +57,7 @@ router.get('/newSetlist/:showID', function(req, res, next) {
   });
   setlist.save()
   .then(function(setlist) {
-    res.json({ id: setlist.id, showID: setlist.showID });
+    res.redirect('/setlist/'+setlist.id);
   });
 });
 
