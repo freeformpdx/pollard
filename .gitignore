@@ -38,3 +38,6 @@ sprout/public/index.html
 # ENV LIST to use for config && secrets
 env.list
 env.js
+
+# bin artifacts
+bin/butt.txt
