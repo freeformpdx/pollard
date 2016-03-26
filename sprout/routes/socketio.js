@@ -22,18 +22,18 @@ module.exports = function(io) {
 		console.log("**************");
 
 		socket.on('pushState', function (data) {
-			console.log("**************");
-			console.log("* CLIENT DATA *");
-			console.log("**************");
-			console.log(JSON.stringify(data, null, 2));
+			// console.log("**************");
+			// console.log("* CLIENT DATA *");
+			// console.log("**************");
+			// console.log(JSON.stringify(data, null, 2));
 
 			// LOG ALL Setlists
 			Setlist.find().exec()
 			.then(function(setlist) {
-				console.log("**************");
-				console.log("*SETLIST DATA*");
-				console.log("**************");
-				console.log(setlist);
+				// console.log("**************");
+				// console.log("*SETLIST DATA*");
+				// console.log("**************");
+				// console.log(setlist);
 			});
 		});
 

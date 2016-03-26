@@ -15,10 +15,10 @@ router.get('/setlist/:id', function(req, res, next) {
 	});
 });
 
-router.get('/nowPlaying', function(req, res, next) {
+router.get('/nowPlaying/:format', function(req, res, next) {
   Schedule.findShowIDByTime(moment().tz("America/Los_Angeles"), function(err, showDoc) {
     if (err) throw err;
-    if (!showDoc) { return res.send([]); }
+    if (!showDoc) { return res.send('KFFP FREEFORM PORTLAND!'); }
 
     Setlist.findOne({
       showID: showDoc.showID
@@ -27,27 +27,55 @@ router.get('/nowPlaying', function(req, res, next) {
         return res.send(err);
       }
 
-      var response = {
-        showID: showDoc.showID,
-        setlistID: 'No setlist found',
-        songs: [],
-      }
+      var response = 'KFFP FREEFORM PDX!';
 
       if (setlist) {
         response.setlistID = setlist.id;
         if (setlist.songs.length > 0) {
           for (var idx = 0; idx < setlist.songs.length; idx++) {
             if (setlist.songs[idx].played) {
-              response.songs = setlist.songs[idx];
+              response = formatSong(req.params.format, setlist.songs[idx]);
               break;
             }
+            console.log('ERROR: no played songs for setlist ' + setlist.id);
           }
+        } else {
+          console.log('ERROR: no songs for setlist ' + setlist.id);
         }
+      } else {
+        console.log('ERROR: no setlist found for ' + showDoc.showID);
       }
       res.json(response);
     })
   });
 });
+
+function formatSong(format, song) {
+  switch (format) {
+    case 'butt':
+      return getButtFormat(song);
+      break;
+    case 'json':
+    case 'raw':
+    default:
+      return song;
+  }
+}
+
+function getButtFormat(song) {
+  var inputs = song.inputs;
+  var title = "Unknown Song";
+  var artist = "Unkwnown Artist";
+  for (var idx = 0; idx < inputs.length; idx++) {
+    if (inputs[idx].name == 'title') {
+      title = inputs[idx].value;
+    }
+    if (inputs[idx].name == 'artist') {
+      artist = inputs[idx].value;
+    }
+  }
+  return artist + ' - ' + title;
+}
 
 router.get('/newSetlist/:showID', function(req, res, next) {
   var showID = req.params.showID;
