@@ -242,6 +242,7 @@ Total page size = 123K
 - `docker info
 - `docker ps`
 
+- in ~
 - `vim env.list`
 - `docker pull spncrlkt/pollard`
 - `docker run -p 80:3420 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
