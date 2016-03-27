@@ -55,6 +55,8 @@ LOCALS ONLY!!!
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
 - Run server as daemon [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -d spncrlkt/pollard bash bin/dockerrun.sh`
+- Start app
+- `docker exec -it <cont_name> bash bin/restart_app.sh`
 
 - Fucking with containers
 - `docker ps`
