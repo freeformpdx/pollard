@@ -50,7 +50,7 @@ LOCALS ONLY!!!
 - Build from repo
 - `docker build -t spncrlkt/pollard https://github.com/freeformpdx/pollard.git`
 - Push
-- `docker push spncrklkt/pollard`
+- `docker push spncrlkt/pollard`
 
 - Run [requires configuration details in env.list]
 - `docker run -p 3240:3420 --env SOCKET_URL=192.168.99.100:3240 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
