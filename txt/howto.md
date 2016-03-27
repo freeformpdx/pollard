@@ -37,6 +37,7 @@ LOCALS ONLY!!!
 - `vim env.list`
 - `docker pull spncrlkt/pollard`
 - `docker run -p 80:3420 --env-file ./env.list -it spncrlkt/pollard bash bin/dockerrun.sh`
+- `docker exec -it <cont_name> bash bin/start_app.sh`
 - `docker ps`
 - `docker logs MACHINE_NAME`
 - `docker exec -it MACHINE_NAME bash`
