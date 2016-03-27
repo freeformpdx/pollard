@@ -37,6 +37,7 @@ sprout/public/index.html
 
 # ENV LIST to use for config && secrets
 env.list
+env.list.fromServer
 env.js
 
 # bin artifacts
