@@ -1,3 +1,4 @@
+git pull
 node bin/buildenv.js
 npm run build-min
 
