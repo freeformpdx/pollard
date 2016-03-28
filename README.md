@@ -61,7 +61,9 @@ Boilerplate from [React Redux Boilerplate][rrbp]
 
 ![alt tag](gifs/kicks_man.gif)
 
+### SPIRITUAL SUPPORTERS
 
+1. [Trenton Strong](https://github.com/trentonstrong)
 
 [rrbp]: https://github.com/knowbody/react-redux-boilerplate.git
 [devnotes]: txt/devnotes.md
