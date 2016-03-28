@@ -29,7 +29,7 @@ export default class Setlist extends Component {
 								className="well"
 								style={{textAlign: 'center'}}>
 								⚡️ Search⚡️ Add Blank Song⚡️ <br/>
-								🚀 Build 🎶 Setlist 🚀
+								🚀 Build 🎶 Playlist🚀
 							</div>
 						</li> :
 					'' }
