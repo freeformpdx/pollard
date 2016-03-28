@@ -68,7 +68,6 @@ class SetPage extends Component {
 
     return (
       <div style={ setStyle }>
-				<h1>Pollard Set Page</h1>
 				<Setlist
 					songs={ songs }
 					selectedSong={ selectedSong }
