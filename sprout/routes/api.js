@@ -77,6 +77,15 @@ function getButtFormat(song) {
   return artist + ' - ' + title;
 }
 
+router.get('/setlistsByShowID/:showID', function(req, res, next) {
+  var showID = req.params.showID;
+  Setlist.find({ 'showID': showID }, function(err, setlists) {
+    if (err) throw err;
+		res.json(setlists);
+  });
+});
+
+
 router.get('/newSetlist/:showID', function(req, res, next) {
   var showID = req.params.showID;
   var setlist = new Setlist({
