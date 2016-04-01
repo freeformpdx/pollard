@@ -66,6 +66,7 @@ export default class SelectedSong extends Component {
 					<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 					<MarkPlayedBtn
 						idx={ this.props.idx }
+            playingSongIdx={ this.props.playingSongIdx }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
 					<div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />

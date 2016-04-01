@@ -6,13 +6,26 @@ import SearchSong from './SearchSong';
 import SelectedSong from './SelectedSong';
 import Song from './Song';
 import DraggableSong from './DraggableSong';
+import PlayingSongIndicator from './PlayingSongIndicator.js';
 
 
 export default class Setlist extends Component {
+  getCurrentlyPlayingSongIdx() {
+    for (var idx = 0; idx < this.props.songs.length; idx++) {
+      if (this.props.songs[idx].played) {
+        return idx;
+      }
+    }
+    return -1;
+  }
+
   render() {
 		const noSongsStyle = mergeStyles({
 			backgroundColor: '#F6EBFA'
 		});
+
+    const playingSongIdx = this.getCurrentlyPlayingSongIdx();
+    let playingSongIndicator = null;
 
     return (
       <div className="row">
@@ -43,6 +56,7 @@ export default class Setlist extends Component {
 									<SelectedSong song={ song }
 										selectedSong={ this.props.selectedSong }
 										idx={ idx }
+                    playingSongIdx={ playingSongIdx }
 										onDeleteSong={ this.props.onDeleteSong }
 										onMarkSongPlayed={ this.props.onMarkSongPlayed }
 										onUpdateSong={ this.props.onUpdateSong }/>
@@ -57,6 +71,7 @@ export default class Setlist extends Component {
 									<Song song={ song }
 										key={ idx }
 										idx={ idx }
+                    playingSongIdx={ playingSongIdx }
 										onDeleteSong={ this.props.onDeleteSong }
 										onMarkSongPlayed={ this.props.onMarkSongPlayed }
 										onSelectSong={ this.props.onSelectSong }/>

@@ -39,6 +39,7 @@ export default class Song extends Component {
 					<div className="col-xs-3" />
 					<MarkPlayedBtn
 						idx={ this.props.idx }
+            playingSongIdx={ this.props.playingSongIdx }
 						isSongPlayed={ this.props.song.played }
 						onMarkSongPlayed={ this.props.onMarkSongPlayed } />
 			</li>
