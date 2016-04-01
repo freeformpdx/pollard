@@ -20,7 +20,7 @@ export default class MarkPlayedBtn extends Component {
 
 		if (this.props.isSongPlayed) {
 			btnText = 'Played';
-			btnClass = 'btn-success';
+			btnClass = 'btn-warning';
 			spanGlyph = 'glyphicon-volume-up';
 		} else {
 			btnText = 'Play Song';
@@ -29,6 +29,7 @@ export default class MarkPlayedBtn extends Component {
 		}
     if (this.props.idx == this.props.playingSongIdx) {
       btnText = 'Now Playing';
+			btnClass = 'btn-success';
     }
 
 		let btnClasses = classNames(
