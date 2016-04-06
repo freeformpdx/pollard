@@ -111,16 +111,20 @@ router.post('/loadSched/:pw', function(req, res, next) {
       doc.remove();
     }).on('close', function() {
       // after clear, load sched
-      var sched = JSON.parse(req.body.sched);
-      for (var idx = 0; idx < sched.length; idx++) {
-        var schedule = new Schedule(sched[idx]);
-        schedule.save().then(function(schedule) {
-          console.log('added: ' + schedule.showID);
-        });
+      try {
+        var sched = JSON.parse(req.body.sched);
+        for (var idx = 0; idx < sched.length; idx++) {
+          var schedule = new Schedule(sched[idx]);
+          schedule.save().then(function(schedule) {
+            console.log('added: ' + schedule.showID);
+          });
+        }
+        setTimeout(function() {
+          res.send("Loaded!");
+        }, 3000);
+      } catch(e) {
+        res.status(400).send('Invalid JSON string');
       }
-      setTimeout(function() {
-        res.send("Loaded!");
-      }, 3000);
     });
   } else {
     // security lol
