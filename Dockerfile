@@ -15,6 +15,7 @@ RUN npm install
 
 WORKDIR /usr/src/app/sprout
 RUN npm install
+RUN npm install -g strongloop
 
 WORKDIR /usr/src/app
 
