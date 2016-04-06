@@ -1,4 +1,4 @@
-sudo npm install -g strongloop
+npm install -g strongloop
 git pull
 node bin/buildenv.js
 npm run build-min
