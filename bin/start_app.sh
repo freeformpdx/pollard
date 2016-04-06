@@ -6,4 +6,4 @@ cp dist/bundle.min.js sprout/public/bundle.js
 cp index.html sprout/public/index.html
 cd sprout
 
-slc start
+npm start
