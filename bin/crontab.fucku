@@ -1,0 +1,2 @@
+* * * * * docker exec -i dreamy_colden bash bin/start_app.sh
+* * * * * ( sleep 30 ; docker exec -i dreamy_colden bash bin/start_app.sh )
