@@ -1,22 +1,21 @@
 FROM node:5.0
 
-RUN apt-key adv --keyserver 'keyserver.ubuntu.com' --recv '7F0CEB10'
-RUN echo 'deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main' | tee '/etc/apt/sources.list.d/mongodb-org-3.0.list'
-RUN apt-get update && apt-get install -y mongodb-org vim
-RUN mkdir -p /data/db
-
 RUN echo America/America/Los_Angeles > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN mkdir -p /usr/src/app/sprout
 WORKDIR /usr/src/app
+
+RUN groupadd -r node \
+&&  useradd -r -m -g node node
+
+USER node
 
 COPY . /usr/src/app
 RUN npm install
 
 WORKDIR /usr/src/app/sprout
 RUN npm install
-RUN npm install -g strongloop
 
-WORKDIR /usr/src/app
-
+ENV NODE_ENV development # production for staging
+CMD [ "npm", "start" ]
 EXPOSE 3420
