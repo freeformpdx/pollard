@@ -1,9 +1,8 @@
-git pull
-node bin/buildenv.js
+./bin/buildenv.sh
 npm run build-min
 
 cp dist/bundle.min.js sprout/public/bundle.js
 cp index.html sprout/public/index.html
-cd sprout
 
-npm start
+docker-compose build
+docker-compose up

@@ -10,6 +10,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 RUN npm install
 
+
 WORKDIR /usr/src/app/sprout
 RUN npm install
 
