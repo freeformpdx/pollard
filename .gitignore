@@ -39,6 +39,7 @@ sprout/public/index.html
 env.list
 env.list.fromServer
 env.js
+development.env
 
 # bin artifacts
 bin/butt.txt

@@ -7,7 +7,7 @@ app:
   environment:
    - NODE_ENV=development # production for staging
   env_file:
-   - ./server/config/development.env # required only if you have environment settings to load
+   - ./development.env # required only if you have environment settings to load
 db:
   image: mongo
   ports:

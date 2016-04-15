@@ -4,6 +4,6 @@ module.exports = {
 	FMA: process.env.FMA || '',
 	SEVEN_DIGITAL: process.env.SEVEN_DIGITAL || '',
 	DISCOGS: process.env.DISCOGS || '',
-	DB_NAME: process.env.DB_NAME || 'mongodb://localhost/',
+	DB_NAME: process.env.DB_NAME || 'mongodb://db_1/',
 	LOAD_SCHED_PW: process.env.LOAD_SCHED_PW || ''
 }
