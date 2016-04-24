@@ -33,8 +33,6 @@ dist
 sprout/public/bundle.js
 sprout/public/index.html
 
-.DS_Store
-
 # ENV LIST to use for config && secrets
 env.list
 env.list.fromServer
@@ -43,3 +41,7 @@ development.env
 
 # bin artifacts
 bin/butt.txt
+
+# MISC
+.DS_Store
+*.swp
