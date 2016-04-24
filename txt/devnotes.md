@@ -17,11 +17,17 @@ LOCALS ONLY!!!
 - [ ] BE - install && configure pm2
 - [ ] deploy target ip/host info stuff
 - [X] build FE dist w/ secrets - dev
+- [ ] build FE dist w/ secrets - staging
 - [ ] build FE dist w/ secrets - prod
+
 - [ ] docker build sprout script - dev
+- [ ] docker build sprout script - staging
 - [ ] docker build sprout script - prod
+
 - [ ] docker run all services script - dev
+- [ ] docker run all services script - staging
 - [ ] docker run all services script - prod
+
 - [ ] mongo - add volume for /data/db/
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
 - [ ] monitoring tests
