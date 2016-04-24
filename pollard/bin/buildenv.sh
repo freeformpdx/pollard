@@ -1,5 +1,5 @@
 while read p; do
 	export $p
-done <env.list
+done <../development.env
 
 node bin/buildenv.js

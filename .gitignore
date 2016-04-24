@@ -33,11 +33,11 @@ dist
 sprout/public/bundle.js
 sprout/public/index.html
 
-# ENV LIST to use for config && secrets
-env.list
-env.list.fromServer
-env.js
+# development.env staging.env prod.env to use for config && secrets
 development.env
+staging.env
+production.env
+env.js
 
 # bin artifacts
 bin/butt.txt
