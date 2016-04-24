@@ -13,7 +13,7 @@ LOCALS ONLY!!!
 
 # BEEN A LONG TIME COUSIN
 
-- [ ] split FE/BE
+- [X] split FE/BE
 - [ ] build FE dist w/ secrets - dev
 - [ ] build FE dist w/ secrets - prod
 - [ ] BE - install && configure pm2
