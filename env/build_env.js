@@ -2,8 +2,8 @@ var util = require('util');
 var fs = require('fs')
 
 var output;
-var envTemplate = require('../.env.js');
-var envOutputPath = 'env.js';
+var envTemplate = require('./.env.js');
+var envOutputPath = './env/env.js';
 
 // Reads in env template
 // processes env template with exported (from build_env.sh) env vars
@@ -20,7 +20,7 @@ fs.open(envOutputPath, 'w+', function(err, data) {
             if (err)
                 console.log("ERROR !! " + err);
             fs.close(data, function() {
-                console.log('wrote env.js');
+                console.log('wrote env/env.js');
             })
         });
     }

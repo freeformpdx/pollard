@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var config = require('../env.js');
+var config = require('../env/env.js');
 var pollardSched = require('./pollardSched.json');
 
 mongoose.connect(config.DB_NAME);

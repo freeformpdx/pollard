@@ -2,7 +2,7 @@ var moment = require('moment-timezone');
 var express = require('express');
 var router = express.Router();
 
-var config = require('../../env.js');
+var config = require('../../env/env.js');
 
 var Setlist = require('../models/Setlist');
 var Schedule = require('../models/Schedule');

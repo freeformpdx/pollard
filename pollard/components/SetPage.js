@@ -15,7 +15,7 @@ import {
 } from '../actions/Actions.js';
 
 import mergeStyles from '../lib/mergeStyles';
-import config from '../env.js';
+import config from '../../env/env.js';
 
 import Setlist from './Setlist.js';
 
