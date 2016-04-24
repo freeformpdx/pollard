@@ -6,7 +6,7 @@ var envTemplate = require('../.env.js');
 var envOutputPath = 'env.js';
 
 // Reads in env template
-// processes env template with exported (from buildenv.sh) env vars
+// processes env template with exported (from build_env.sh) env vars
 // writes to importable env.js file to be used when FE app is built w/ webpack
 
 output = util.inspect(envTemplate, {depth: null});

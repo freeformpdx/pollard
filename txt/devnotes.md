@@ -11,35 +11,56 @@ LOCALS ONLY!!!
 
 	   EAT SHIT && DIE
 
-# BEEN A LONG TIME COUSIN
+# TASKS
+
+## DONEZKY
 
 - [X] split FE/BE
-- [ ] BE - install && configure pm2
-- [ ] deploy target ip/host info stuff
 - [X] build FE dist w/ secrets - dev
-- [ ] build FE dist w/ secrets - staging
-- [ ] build FE dist w/ secrets - prod
+- [X] build FE dist w/ secrets - staging
+- [X] build FE dist w/ secrets - prod
+
+## systems
+
+- [ ] deploy target ip/host info stuff
+- [ ] BE - install && configure pm2
+
+## docker build
+
 - [ ] docker build sprout script - dev
 - [ ] docker build sprout script - staging
 - [ ] docker build sprout script - prod
+
+## docker run
+
 - [ ] docker run all services script - dev
 - [ ] docker run all services script - staging
 - [ ] docker run all services script - prod
+
+## miggity mongo
+
 - [ ] mongo - add volume for /data/db/
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
+
+## Clean up && whatnot
+
 - [ ] monitoring tests
 - [ ] nginx reverse proxy container && configuration
 
 
-# current/old build process
+# FINISHED PROCESS
+
+## build FE dist
+
+- cd pollard/
+- ./bin/build_dist.sh [development, staging, production]
+
+
+
+# NOTES
+
+## old build process
 
 - ./bin/buildenv.sh => exports env.list && calls `node bin/buildenv.js`
 - node bin/buildenv.js => builds env.js file from env template (.env.js) and env vars
 - `webpack --config webpackmin.config.js --progress --colors` => produces dist bundle in dist/bundle.min.js
-
-
-# build FE dist DEV/PROD
-
-- ./bin/buildenv.sh dev OR ./bin/buildenv.sh prod
-- cp dist/bundle.min.js sprout/public/bundle.js
-- cp index.html sprout/public/index.html
