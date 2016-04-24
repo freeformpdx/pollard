@@ -27,6 +27,7 @@ LOCALS ONLY!!!
 
 ## docker build
 
+- [ ] Dockerfile
 - [ ] docker build sprout script - dev
 - [ ] docker build sprout script - staging
 - [ ] docker build sprout script - prod

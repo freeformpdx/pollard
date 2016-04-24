@@ -1,0 +1,15 @@
+{
+    "apps": [
+        {
+            "name": "sprout",
+            "script": "./bin/www",
+            "merge_logs": true,
+            "max_restarts": 20,
+            "max_memory_restart": "200M",
+            "env": {
+                "PORT": 4500,
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}

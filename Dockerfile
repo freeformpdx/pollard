@@ -2,23 +2,16 @@ FROM node:5.0
 
 RUN echo America/America/Los_Angeles > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 
+RUN mkdir -p /usr/src/sprout
+WORKDIR /usr/src/sprout
 
-RUN mkdir -p /usr/src/app/sprout
-WORKDIR /usr/src/app
+RUN npm i -g pm2
 
-
-COPY . /usr/src/app
+ADD sprout/package.json ./
 RUN npm install
 
+ADD sprout/ ./
 
-WORKDIR /usr/src/app/sprout
-RUN npm install
+EXPOSE 4200
 
-# RUN groupadd -r node \
-# &&  useradd -r -m -g node node
-
-# USER node
-
-ENV NODE_ENV development # production for staging
-CMD [ "npm", "start" ]
-EXPOSE 3420
+CMD ["./bin/start.sh"]
