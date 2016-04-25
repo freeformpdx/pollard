@@ -1,4 +1,4 @@
-var config = require('../env/env.js');
+var config = require('./env.js');
 var mongoose = require('mongoose')
 var moment = require('moment');
 

@@ -10,7 +10,7 @@ var mongoose = require('mongoose')
 var socketRoute = require('./routes/socketio');
 var api = require('./routes/api');
 var users = require('./routes/users');
-var config = require('../env/env.js');
+var config = require('./env.js');
 
 var app = express();
 
