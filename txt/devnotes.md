@@ -27,14 +27,14 @@ LOCALS ONLY!!!
 
 ## docker build
 
-- [ ] Dockerfile
-- [ ] docker build sprout script - dev
-- [ ] docker build sprout script - staging
-- [ ] docker build sprout script - prod
+- [X] Dockerfile
+- [X] docker build sprout script - dev
+- [X] docker build sprout script - staging
+- [X] docker build sprout script - prod
 
 ## docker run
 
-- [ ] docker run all services script - dev
+- [X] docker run all services script - dev
 - [ ] docker run all services script - staging
 - [ ] docker run all services script - prod
 
@@ -42,6 +42,37 @@ LOCALS ONLY!!!
 
 - [ ] mongo - add volume for /data/db/
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
+
+so i've kinda got this working, i can mount /data, but docker inspect shows:
+```
+"Mounts": [
+            {
+                "Source": "/Users/psliechty/dev/pollard/data",
+                "Destination": "/data",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Name": "deae7a7a4f5e991178cfbae62f31dd5f7a3f906b6cfd9733b29b7e5e4d773124",
+                "Source": "/mnt/sda1/var/lib/docker/volumes/deae7a7a4f5e991178cfbae62f31dd5f7a3f906b6cfd9733b29b7e5e4d773124/_data",
+                "Destination": "/data/configdb",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Name": "e76ae9f0e93e0d60c0fbe79b87adcd1dd04698d5d6977603e8296ca34984574b",
+                "Source": "/mnt/sda1/var/lib/docker/volumes/e76ae9f0e93e0d60c0fbe79b87adcd1dd04698d5d6977603e8296ca34984574b/_data",
+                "Destination": "/data/db",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+```
 
 ## Clean up && whatnot
 
