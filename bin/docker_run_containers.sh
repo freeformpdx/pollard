@@ -7,8 +7,10 @@ set -e
 
 echo "Starting sprout"
 
+docker create -v /data/db --name mongo_data mongo:3.1
+
 docker run -d --restart=always \
-    -v $(PWD)/data:/data \
+    --volumes-from mongo_data \
     --name mongo \
     mongo:3.1
 
@@ -17,4 +19,5 @@ docker run -d --restart=always \
     -v $PWD/env/env.js:/usr/src/sprout/env.js:ro \
     -e "ENV=$1" \
     -p 4200:4200 \
+    --name sprout \
     kffp/sprout

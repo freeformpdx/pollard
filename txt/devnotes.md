@@ -16,76 +16,50 @@ LOCALS ONLY!!!
 ## DONEZKY
 
 - [X] split FE/BE
-- [X] build FE dist w/ secrets - dev
-- [X] build FE dist w/ secrets - staging
-- [X] build FE dist w/ secrets - prod
+- [X] build FE dist w/ secrets - development/staging/production
+- [X] BE - install && configure pm2
+- [X] Dockerfile
+- [X] docker build sprout script - development/staging/production
+- [X] mongo - add volume for /data/db/
+- [X] docker run all services script
+
 
 ## systems
 
 - [ ] deploy target ip/host info stuff
-- [ ] BE - install && configure pm2
+- [ ] push to aws host script
 
-## docker build
 
-- [X] Dockerfile
-- [X] docker build sprout script - dev
-- [X] docker build sprout script - staging
-- [X] docker build sprout script - prod
+## mongo
 
-## docker run
-
-- [X] docker run all services script - dev
-- [ ] docker run all services script - staging
-- [ ] docker run all services script - prod
-
-## miggity mongo
-
-- [ ] mongo - add volume for /data/db/
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
-
-so i've kinda got this working, i can mount /data, but docker inspect shows:
-```
-"Mounts": [
-            {
-                "Source": "/Users/psliechty/dev/pollard/data",
-                "Destination": "/data",
-                "Mode": "",
-                "RW": true,
-                "Propagation": "rprivate"
-            },
-            {
-                "Name": "deae7a7a4f5e991178cfbae62f31dd5f7a3f906b6cfd9733b29b7e5e4d773124",
-                "Source": "/mnt/sda1/var/lib/docker/volumes/deae7a7a4f5e991178cfbae62f31dd5f7a3f906b6cfd9733b29b7e5e4d773124/_data",
-                "Destination": "/data/configdb",
-                "Driver": "local",
-                "Mode": "",
-                "RW": true,
-                "Propagation": ""
-            },
-            {
-                "Name": "e76ae9f0e93e0d60c0fbe79b87adcd1dd04698d5d6977603e8296ca34984574b",
-                "Source": "/mnt/sda1/var/lib/docker/volumes/e76ae9f0e93e0d60c0fbe79b87adcd1dd04698d5d6977603e8296ca34984574b/_data",
-                "Destination": "/data/db",
-                "Driver": "local",
-                "Mode": "",
-                "RW": true,
-                "Propagation": ""
-            }
-        ],
-```
 
 ## Clean up && whatnot
 
 - [ ] monitoring tests
 - [ ] nginx reverse proxy container && configuration
 
+## logging
+
+- [ ] get some logging
+
+## tagging && pushin 2 docker hub
+
+- [ ] tagging
+- [ ] pushin 2 docker hub
+
 
 # FINISHED PROCESS
 
-## build FE dist
+## buildin
 
-- cd pollard/
-- ./bin/build_dist.sh [development, staging, production]
+- ./pollard/bin/build_dist.sh [development, staging, production]
+- ./bin/docker_build.sh
+
+
+## runnin
+
+- ./bin/docker_run_containers.sh [development, staging, production]
 
 
 
