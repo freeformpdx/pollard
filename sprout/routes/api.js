@@ -135,5 +135,6 @@ router.post('/loadSched/:pw', function(req, res, next) {
 });
 
 router.get('/fucked', function(req, res, next) {});
+router.get('/fukced', function(req, res, next) {});
 
 module.exports = router;
