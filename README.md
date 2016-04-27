@@ -22,6 +22,23 @@ A DJ Setlist creator
 
 [Dev Notes][devnotes]
 
+## env
+
+- `cp env/development.env.template env/development.env`
+  && then enter in yr [echonest][echonestapikey]
+  && [7digital][7digitalapikey] api keys
+
+## buildin
+
+- ./pollard/bin/build_dist.sh [development, staging, production]
+- ./bin/docker_build.sh
+
+
+## runnin
+
+- ./bin/docker_run_containers.sh [development, staging, production]
+
+
 
 ### KICKSMAN
 [MAS FLAIR](gifs)
