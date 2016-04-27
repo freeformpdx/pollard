@@ -22,6 +22,7 @@ LOCALS ONLY!!!
 - [X] docker build sprout script - development/staging/production
 - [X] mongo - add volume for /data/db/
 - [X] docker run all services script
+- [X] get some sprout/express logging
 
 
 ## systems
@@ -36,16 +37,17 @@ LOCALS ONLY!!!
 
 ## Clean up && whatnot
 
+- [ ] kill sprout api endpoint
 - [ ] monitoring tests
 - [ ] nginx reverse proxy container && configuration
 
 ## logging
 
-- [ ] get some logging
+- [ ] get some mongo logging
 
 ## tagging && pushin 2 docker hub
 
-- [ ] tagging
+- [ ] tagging on build [env + version?]
 - [ ] pushin 2 docker hub
 
 
