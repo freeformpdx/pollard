@@ -1,15 +1,17 @@
 {
-    "apps": [
-        {
-            "name": "sprout",
-            "script": "./bin/www",
-            "merge_logs": true,
-            "max_restarts": 20,
-            "max_memory_restart": "200M",
-            "env": {
-                "PORT": 4200,
-                "NODE_ENV": "production"
-            }
-        }
-    ]
+  "apps": [
+    {
+      "name": "sprout",
+      "script": "./bin/www",
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm",
+      "log_file": "/usr/src/sprout/logs/sprout.log",
+      "max_restarts": 20,
+      "max_memory_restart": "200M",
+      "env": {
+        "PORT": 4200,
+        "NODE_ENV": "production"
+      }
+    }
+  ]
 }
