@@ -13,17 +13,11 @@ LOCALS ONLY!!!
 
 # TASKS
 
-## DONEZKY
+# DONEZKY
 
-- [X] split FE/BE
-- [X] build FE dist w/ secrets - development/staging/production
-- [X] BE - install && configure pm2
-- [X] Dockerfile
-- [X] docker build sprout script - development/staging/production
-- [X] mongo - add volume for /data/db/
-- [X] docker run all services script
-- [X] get some sprout/express logging
+## development
 
+- [ ] run webpack dev server in dev environment w/ docker
 
 ## systems
 
@@ -34,21 +28,31 @@ LOCALS ONLY!!!
 ## mongo
 
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
+- [ ] mongo - full restore from S3
 
 ## Clean up && whatnot
 
 - [ ] kill sprout api endpoint
-- [ ] monitoring tests
+- [ ] smoke tests
 - [ ] nginx reverse proxy container && configuration
 
 ## logging
 
 - [ ] get some mongo logging
 
-## tagging && pushin 2 docker hub
+## THINK ABOUT STUFF
 
-- [ ] tagging on build [env + version?]
-- [ ] pushin 2 docker hub
+- actual release promotion stuff
+  - hack hack hack w/ dev server
+  - mk staging release
+  - deploy to staging.kffp.rocks
+  - run tests
+  - call it good
+  - mk production release
+  - deploy to kffp.rocks
+  - start new sprout container on 8080
+  - run non-destructive tests against new sprout container
+  - run new sprout container on :80
 
 
 # FINISHED PROCESS
@@ -64,11 +68,6 @@ LOCALS ONLY!!!
 - ./bin/docker_run_containers.sh [development, staging, production]
 
 
+## releasin
 
-# NOTES
-
-## old build process
-
-- ./bin/buildenv.sh => exports env.list && calls `node bin/buildenv.js`
-- node bin/buildenv.js => builds env.js file from env template (.env.js) and env vars
-- `webpack --config webpackmin.config.js --progress --colors` => produces dist bundle in dist/bundle.min.js
+- ./bin/mk_releases.sh

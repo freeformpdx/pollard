@@ -203,7 +203,6 @@ Total page size = 123K
 
 ## 11/14
 - [X] Set up advanced search API component page for stakeholders
-- [ ] Setup app on docker
 
 # ROLLING TO DO
 - [ ] edit img urls... somehow
@@ -218,3 +217,19 @@ Total page size = 123K
 	integrates w/ echonest
 - Set up static search API comparison component page for stakeholders
 - Maybe use that as the ADVANCE SONG SEARCH PICKER
+
+
+# 2016 MOTHERFUCKRZZZ
+
+## DONEZKY
+
+- [X] split FE/BE
+- [X] build FE dist w/ secrets - development/staging/production
+- [X] BE - install && configure pm2
+- [X] Dockerfile
+- [X] docker build sprout script - development/staging/production
+- [X] mongo - add volume for /data/db/
+- [X] docker run all services script
+- [X] get some sprout/express logging
+- [X] tagging on build [env + version?]
+- [X] pushin 2 docker hub
