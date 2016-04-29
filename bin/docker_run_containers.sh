@@ -21,4 +21,4 @@ docker run -d --restart=always \
     -e "ENV=$1" \
     -p 4200:4200 \
     --name sprout \
-    kffp/sprout
+    spncrlkt/sprout

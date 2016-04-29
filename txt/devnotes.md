@@ -16,6 +16,12 @@ LOCALS ONLY!!!
 # DONEZKY
 
 - [X] run webpack dev server in dev environment w/ docker
+- [X] `./bin/dev_restart_sprout.sh`
+
+## testing
+
+- [ ] kill sprout api endpoint
+- [ ] smoke tests
 
 ## systems
 
@@ -28,15 +34,14 @@ LOCALS ONLY!!!
 - [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
 - [ ] mongo - full restore from S3
 
-## Clean up && whatnot
-
-- [ ] kill sprout api endpoint
-- [ ] smoke tests
-- [ ] nginx reverse proxy container && configuration
-
 ## logging
 
 - [ ] get some mongo logging
+
+## XTRA Credit
+
+- [ ] nginx reverse proxy container && configuration
+
 
 ## THINK ABOUT STUFF
 
