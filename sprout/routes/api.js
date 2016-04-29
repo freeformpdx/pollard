@@ -134,7 +134,12 @@ router.post('/loadSched/:pw', function(req, res, next) {
   }
 });
 
-router.get('/fucked', function(req, res, next) {});
-router.get('/fukced', function(req, res, next) {});
+router.get('/500', function(req, res, next) {
+  throw new Error("⚰ DAMN DUDE ITS FUUUUUCKED ⚰ ");
+});
+
+router.get('/ufuckindie', function(req, res, next) {
+  process.exit();
+});
 
 module.exports = router;
