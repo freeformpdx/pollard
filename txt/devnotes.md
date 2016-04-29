@@ -17,10 +17,10 @@ LOCALS ONLY!!!
 
 - [X] run webpack dev server in dev environment w/ docker
 - [X] `./bin/dev_restart_sprout.sh`
+- [X] kill sprout api endpoint
 
 ## testing
 
-- [ ] kill sprout api endpoint
 - [ ] smoke tests
 
 ## systems
