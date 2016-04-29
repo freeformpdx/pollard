@@ -14,7 +14,7 @@ docker run -d --restart=always \
     --link mongo:mongo \
     -v $PWD/env/env.js:/usr/src/sprout/env.js:ro \
     -v $PWD/logs:/usr/src/sprout/logs \
-    -e "ENV=$1" \
+    -e "ENV=development" \
     -p 4200:4200 \
     --name sprout \
     spncrlkt/sprout:development.latest
