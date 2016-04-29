@@ -11,6 +11,7 @@ export default class Pollard extends Component {
     } = this.props;
     return (
       <div className="container">
+
         <ul>
           <li>
             <Link
@@ -20,7 +21,9 @@ export default class Pollard extends Component {
             </Link>
           </li>
         </ul>
+
         { children }
+
       </div>
     );
   }
