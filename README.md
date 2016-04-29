@@ -30,13 +30,22 @@ A DJ Setlist creator
 
 ## buildin
 
-- ./pollard/bin/build_dist.sh [development, staging, production]
-- ./bin/docker_build.sh
+- `./pollard/bin/build_dist.sh [development, staging, production]`
+- `./bin/docker_build.sh`
 
 
 ## runnin
 
-- ./bin/docker_run_containers.sh [development, staging, production]
+- `./bin/docker_run_containers.sh [development, staging, production]`
+
+## devin
+
+with sprout && mongo containers running:
+
+- `cd pollard && npm start`
+- in yr browser at 0.0.0.0:3000
+
+This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
 
 
 
@@ -48,6 +57,7 @@ A DJ Setlist creator
 ### SPIRITUAL SUPPORTERS
 
 1. [Trenton Strong](https://github.com/trentonstrong)
+2. [Billiam Gatez](https://www.microsoft.com)
 
 [devnotes]: txt/devnotes.md
 [echonestapikey]: https://developer.echonest.com/account/register
