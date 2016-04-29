@@ -18,6 +18,7 @@ LOCALS ONLY!!!
 - [X] run webpack dev server in dev environment w/ docker
 - [X] `./bin/dev_restart_sprout.sh`
 - [X] kill sprout api endpoint
+- [X] can find a setlist smoke test
 
 ## testing
 
