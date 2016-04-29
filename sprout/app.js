@@ -17,7 +17,17 @@ var app = express();
 var io = socket_io();
 app.io = io;
 
-mongoose.connect(config.DB_NAME);
+
+var options = {
+  server: {
+    socketOptions: {
+      keepAlive: 30000,
+      connectTimeoutMS: 30000
+    }
+  }
+};
+
+mongoose.connect(config.DB_NAME, options);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

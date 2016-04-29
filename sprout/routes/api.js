@@ -142,4 +142,12 @@ router.get('/ufuckindie', function(req, res, next) {
   process.exit();
 });
 
+/* Basic 'can i connect 2 mongo' health check */
+router.get('/health', function(req, res, next) {
+	Setlist.findOne({}, function(err, setlist) {
+		if (err) throw err;
+		res.send("OK");
+	});
+});
+
 module.exports = router;
