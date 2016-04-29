@@ -15,9 +15,7 @@ LOCALS ONLY!!!
 
 # DONEZKY
 
-## development
-
-- [ ] run webpack dev server in dev environment w/ docker
+- [X] run webpack dev server in dev environment w/ docker
 
 ## systems
 
@@ -71,3 +69,12 @@ LOCALS ONLY!!!
 ## releasin
 
 - ./bin/mk_releases.sh
+
+## devin
+
+with sprout && mongo containers running:
+
+- `cd pollard && npm start`
+- in yr browser at 0.0.0.0:3000
+
+This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.

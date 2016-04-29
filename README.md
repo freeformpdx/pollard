@@ -38,6 +38,11 @@ A DJ Setlist creator
 
 - `./bin/docker_run_containers.sh [development, staging, production]`
 
+## releasin (WIPAF)
+
+- ./bin/mk_releases.sh
+
+
 ## devin
 
 with sprout && mongo containers running:

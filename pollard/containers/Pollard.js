@@ -6,13 +6,21 @@ import SetPage from '../components/SetPage';
 
 export default class Pollard extends Component {
   render() {
+    const {
+      children,
+    } = this.props;
     return (
       <div className="container">
-					<ul>
-						<li><Link to="/setlist/" activeClassName="active">My Playlist</Link></li>
-						{/*  <li><Link to="/advancedSearch" activeClassName="active">Advanced Search</Link></li> */}
-					</ul>
-				{ this.props.children }
+        <ul>
+          <li>
+            <Link
+              to="/setlist/"
+              activeClassName="active">
+                My Playlist
+            </Link>
+          </li>
+        </ul>
+        { children }
       </div>
     );
   }
