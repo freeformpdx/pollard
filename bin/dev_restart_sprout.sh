@@ -12,7 +12,7 @@ docker rm sprout
 
 docker run -d --restart=always \
     --link mongo:mongo \
-    -v $PWD/env/env.js:/usr/src/sprout/env.js:ro \
+    -v $PWD/env.js:/usr/src/sprout/env.js:ro \
     -v $PWD/logs:/usr/src/sprout/logs \
     -e "ENV=development" \
     -p 80:4200 \

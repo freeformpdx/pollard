@@ -11,6 +11,11 @@
 
 # USAGE: ./bin/mk_relesase.sh [tag number]
 
+if [ -z "$1" ]; then
+  echo "No release tag specified. Use next release tag or latest"
+  exit 1
+fi
+
 git tag -a $1 -m "Auto-tag @ $1"
 git push origin $1
 

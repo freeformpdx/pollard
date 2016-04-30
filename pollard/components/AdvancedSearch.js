@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import config from '../../env/env.js';
+import config from '../../env.js';
 import {
 	addSong
 } from '../actions/Actions.js';

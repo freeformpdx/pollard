@@ -18,7 +18,7 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 ## buildin
 
 - ./pollard/bin/build_dist.sh [development, staging, production]
-- ./bin/docker_build.sh
+- ./bin/docker_build.sh [development, staging, production] [tag/'latest']
 
 
 ## runnin

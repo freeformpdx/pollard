@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import config from '../../env/env.js';
+import config from '../../env.js';
 import mergeStyles from '../lib/mergeStyles';
 
 import AddSong from './AddSong';

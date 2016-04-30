@@ -10,15 +10,23 @@ LOCALS ONLY!!!
      \__\/|     |\/__/
 
 	   EAT SHIT && DIE
+     (OR, BE WELL &&
+       DO GOOD WORK &&
+       KEEP IN TOUCH)
 
-# DONEZKY
+# D34D
 
 - [X] [SYSE] mv ./env/env.js => ./env.js
 - [X] [SYSE] docker_run_containers expose port 80
 
+# WH1P
 
-# TASKS
+- [ ] [SYSE] pull docker run command into single spot (dev/sprout_restart_sprout, docker_run_containers)
 
+# T4SX
+
+- [ ] [SYSE] mk relesases: targeted to env
+- [ ] [SYSE] mk a prod_restart_sprout.sh script
 - [ ] [SYSE] deploy target ip/host info stuff
 - [ ] [SYSE] push to aws host script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
@@ -37,9 +45,6 @@ LOCALS ONLY!!!
 
 # PUSH 2 AWS SCRIPT
 
-- pull docker run command into single spot (dev/sprout_restart_sprout, docker_run_containers)
-- mk relesases: targeted to env
-- mk a prod_restart_sprout.sh script
 
 it shd:
 

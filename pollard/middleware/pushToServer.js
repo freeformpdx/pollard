@@ -1,4 +1,4 @@
-import config from '../../env/env.js';
+import config from '../../env.js';
 import * as actionTypes from '../constants/ActionTypes';
 
 // Middleware that pushes state back to server anytime songs get fuxxed wif
