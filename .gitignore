@@ -39,6 +39,9 @@ staging.env
 production.env
 env.js
 
+# hosts
+hosts.txt
+
 # bin artifacts
 bin/butt.txt
 
