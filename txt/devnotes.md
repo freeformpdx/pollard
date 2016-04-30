@@ -22,7 +22,9 @@ LOCALS ONLY!!!
 
 ## testing
 
-- [ ] smoke tests
+- [ ] has loaded schedule smoke test
+- [ ] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
+- [ ] X smoke test
 
 ## systems
 
