@@ -20,14 +20,14 @@ LOCALS ONLY!!!
 - [X] [SYSE] docker_run_containers expose port 80
 - [X] [SYSE] pull docker run command into single spot
       ([dev/prod]_restart_sprout, docker_run_containers)
+- [X] [SYSE] mk a prod_restart_sprout.sh script
 
 # WH1P
 
-- [ ] [SYSE] mk a prod_restart_sprout.sh script
+- [ ] [SYSE] mk relesases: targeted to env
 
 # T4SX
 
-- [ ] [SYSE] mk relesases: targeted to env
 - [ ] [SYSE] deploy target ip/host info stuff
 - [ ] [SYSE] push to aws host script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
