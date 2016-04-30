@@ -21,7 +21,8 @@ LOCALS ONLY!!!
 
 # WH1P
 
-- [ ] [SYSE] pull docker run command into single spot (dev/sprout_restart_sprout, docker_run_containers)
+- [ ] [SYSE] pull docker run command into single spot
+      ([dev/prod]_restart_sprout, docker_run_containers)
 
 # T4SX
 
