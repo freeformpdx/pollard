@@ -31,6 +31,10 @@ LOCALS ONLY!!!
 - [ ] deploy target ip/host info stuff
 - [ ] push to aws host script
 
+## alerting
+
+- run all smoke tests from studio && from somewhere else? (home server?)
+
 
 ## mongo
 
@@ -59,30 +63,3 @@ LOCALS ONLY!!!
   - start new sprout container on 8080
   - run non-destructive tests against new sprout container
   - run new sprout container on :80
-
-
-# FINISHED PROCESS
-
-## buildin
-
-- ./pollard/bin/build_dist.sh [development, staging, production]
-- ./bin/docker_build.sh
-
-
-## runnin
-
-- ./bin/docker_run_containers.sh [development, staging, production]
-
-
-## releasin
-
-- ./bin/mk_releases.sh
-
-## devin
-
-with sprout && mongo containers running:
-
-- `cd pollard && npm start`
-- in yr browser at 0.0.0.0:3000
-
-This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
