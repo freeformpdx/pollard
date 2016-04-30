@@ -11,6 +11,12 @@ LOCALS ONLY!!!
 
 	   EAT SHIT && DIE
 
+# DONEZKY
+
+- [X] [SYSE] mv ./env/env.js => ./env.js
+- [X] [SYSE] docker_run_containers expose port 80
+
+
 # TASKS
 
 - [ ] [SYSE] deploy target ip/host info stuff
@@ -27,6 +33,21 @@ LOCALS ONLY!!!
 - [ ] [TEST] can't reach freeformportland.org smoke test
 - [ ] [LGNG] get some mongo logging
 - [ ] [XTRA] nginx reverse proxy container && configuration
+
+
+# PUSH 2 AWS SCRIPT
+
+- pull docker run command into single spot (dev/sprout_restart_sprout, docker_run_containers)
+- mk relesases: targeted to env
+- mk a prod_restart_sprout.sh script
+
+it shd:
+
+- scp env file
+- scp run containers script
+- scp restart sprout script
+
+- then either: init containers @ tag || restart sprout @ tag
 
 
 # RUMINATIN AF RN
