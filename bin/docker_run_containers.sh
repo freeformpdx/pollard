@@ -30,6 +30,6 @@ docker run -d --restart=always \
     -v $PWD/env/env.js:/usr/src/sprout/env.js:ro \
     -v $PWD/logs:/usr/src/sprout/logs \
     -e "ENV=$1" \
-    -p 4200:4200 \
+    -p 80:4200 \
     --name sprout \
     spncrlkt/sprout:$1.latest
