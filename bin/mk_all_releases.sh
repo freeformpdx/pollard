@@ -21,25 +21,24 @@ git push origin $1
 
 
 # MK DEV RELEASE
-pollard/bin/build_dist.sh development
-bin/docker_build.sh development $1
-
+bin/mk_release.sh development $1
 
 # MK STAGING RELEASE
-pollard/bin/build_dist.sh staging
-bin/docker_build.sh staging $1
-
+bin/mk_release.sh staging $1
 
 # MK PROD RELEASE
-pollard/bin/build_dist.sh production
-bin/docker_build.sh production $1
+bin/mk_release.sh production $1
 
-echo -n "Push Release to Docker Hub (y/n)?"
+echo -n "Push releases to Docker Hub (y/n)?"
 read answer
 if echo "$answer" | grep -iq "^y" ;then
     docker login
     docker push spncrlkt/sprout:staging.$1
     docker push spncrlkt/sprout:production.$1
 else
-    echo "Fine, I Won't"
+    echo "fine then i wont u mfer"
 fi
+
+##### NOTES
+# at some point should check if tags exist or smth 
+# http://stackoverflow.com/questions/17790123/shell-script-trying-to-validate-if-a-git-tag-exists-in-a-git-repository-in-an
