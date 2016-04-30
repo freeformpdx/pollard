@@ -13,44 +13,23 @@ LOCALS ONLY!!!
 
 # TASKS
 
-# DONEZKY
-
-- [X] run webpack dev server in dev environment w/ docker
-- [X] `./bin/dev_restart_sprout.sh`
-- [X] kill sprout api endpoint
-- [X] can find a setlist smoke test
-
-## testing
-
-- [ ] has loaded schedule smoke test
-- [ ] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
-- [ ] X smoke test
-
-## systems
-
-- [ ] deploy target ip/host info stuff
-- [ ] push to aws host script
-
-## alerting
-
-- run all smoke tests from studio && from somewhere else? (home server?)
+- [ ] [SYSE] deploy target ip/host info stuff
+- [ ] [SYSE] push to aws host script
+- [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
+- [ ] [ALRT] send page/email
+- [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
+- [ ] [MNGO] backup script (pause mongod; cp out /data/db; push 2 s3)
+- [ ] [MNGO] full restore from S3
+- [ ] [CODE] load schedule FE
+- [ ] [TEST] has loaded schedule smoke test
+- [ ] [TEST] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
+- [ ] [TEST] stream server dead smoke test
+- [ ] [TEST] can't reach freeformportland.org smoke test
+- [ ] [LGNG] get some mongo logging
+- [ ] [XTRA] nginx reverse proxy container && configuration
 
 
-## mongo
-
-- [ ] mongo - backup script (pause mongod; cp out /data/db; push 2 s3)
-- [ ] mongo - full restore from S3
-
-## logging
-
-- [ ] get some mongo logging
-
-## XTRA Credit
-
-- [ ] nginx reverse proxy container && configuration
-
-
-## THINK ABOUT STUFF
+# RUMINATIN AF RN
 
 - actual release promotion stuff
   - hack hack hack w/ dev server
