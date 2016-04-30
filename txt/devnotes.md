@@ -18,16 +18,16 @@ LOCALS ONLY!!!
 
 - [X] [SYSE] mv ./env/env.js => ./env.js
 - [X] [SYSE] docker_run_containers expose port 80
+- [X] [SYSE] pull docker run command into single spot
+      ([dev/prod]_restart_sprout, docker_run_containers)
 
 # WH1P
 
-- [ ] [SYSE] pull docker run command into single spot
-      ([dev/prod]_restart_sprout, docker_run_containers)
+- [ ] [SYSE] mk a prod_restart_sprout.sh script
 
 # T4SX
 
 - [ ] [SYSE] mk relesases: targeted to env
-- [ ] [SYSE] mk a prod_restart_sprout.sh script
 - [ ] [SYSE] deploy target ip/host info stuff
 - [ ] [SYSE] push to aws host script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
@@ -48,11 +48,9 @@ LOCALS ONLY!!!
 
 
 it shd:
-
 - scp env file
 - scp run containers script
 - scp restart sprout script
-
 - then either: init containers @ tag || restart sprout @ tag
 
 
