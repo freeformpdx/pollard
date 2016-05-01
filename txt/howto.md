@@ -30,6 +30,11 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 
 - ./bin/mk_all_releases.sh
 
+## deployin
+
+- for a brand new install on a host: `./deploy/deploy_init_sprout.sh`
+- for a running sprout code update: `./deploy/deploy_restart_sprout.sh`
+
 ## devin
 
 with sprout && mongo containers running:

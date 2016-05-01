@@ -30,10 +30,13 @@ LOCALS ONLY!!!
 # WH1P
 
 - [SYSE] push to aws host scriptz
-- [ ] [SYSE] update: restart prod container script
+- [ ] [SYSE] restart: restart prod container script
 
 # T4SX
 
+- [ ] [SYSE] init && restart: use deploy target tags
+- [ ] [SYSE] mk staging versions of init && restart scripts
+- [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
 - [ ] [ALRT] send page/email
 - [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
@@ -46,14 +49,6 @@ LOCALS ONLY!!!
 - [ ] [TEST] can't reach freeformportland.org smoke test
 - [ ] [LGNG] get some mongo logging
 - [ ] [XTRA] nginx reverse proxy container && configuration
-
-
-# PUSH 2 AWS SCRIPT
-
-
-2 scripz:
--  init containers @ tag 
--  restart sprout @ tag
 
 
 # RUMINATIN AF RN
