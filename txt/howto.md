@@ -15,7 +15,7 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 
 # FINISHED PROCESS
 
-## buildin
+## buildin for test/local dev
 
 - ./pollard/bin/build_dist.sh [development, staging, production]
 - ./bin/docker_build.sh [development, staging, production] [tag/'latest']
@@ -26,9 +26,9 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 - ./bin/docker_run_containers.sh [development, staging, production]
 
 
-## releasin
+## releasin && pushin 2 dockr hub
 
-- ./bin/mk_releases.sh
+- ./bin/mk_all_releases.sh
 
 ## devin
 

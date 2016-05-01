@@ -12,6 +12,11 @@ if [ -z "$2" ]; then
   exit 1
 fi
 
+if [ $2 = "latest" ]; then
+  echo "Pulling latest"
+  docker pull spncrlkt/sprout:$1.$2
+fi
+
 docker run -d --restart=always \
     --link mongo:mongo \
     -v $PWD/env.js:/usr/src/sprout/env.js:ro \

@@ -26,7 +26,7 @@ LOCALS ONLY!!!
 
 # WH1P
 
-- [ ] [SYSE] push to aws host script
+- [ ] [SYSE] push to aws host scriptz
 
 # T4SX
 
