@@ -4,7 +4,7 @@ source hosts.env
 
 echo -e "\n** pushing assets"
 
-bin/scp_server_assets.sh
+deploy/scp_server_assets.sh
 
 echo -e "\n** rming all containers"
 
