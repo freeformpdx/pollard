@@ -11,6 +11,11 @@ echo -e "\n** rming all containers"
 ssh ec2-user@$KFFPPROD \
   './bin/docker_rm_all.sh'
 
+echo -e "\n** rming all containers"
+
+ssh ec2-user@$KFFPPROD \
+  './bin/docker_rm_all.sh'
+
 echo -e "\n** running all containers"
 
 ssh ec2-user@$KFFPPROD \
