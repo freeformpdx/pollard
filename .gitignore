@@ -43,7 +43,7 @@ production.env.js
 env.js
 
 # hosts
-hosts.txt
+hosts.env
 
 # bin artifacts
 bin/butt.txt

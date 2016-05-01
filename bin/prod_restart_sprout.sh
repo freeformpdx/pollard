@@ -9,4 +9,4 @@
 docker stop sprout
 docker rm sprout
 docker pull spncrlkt/sprout:production.latest
-docker_run_sprout_container.sh production latest
+bin/docker_run_sprout_container.sh production latest
