@@ -21,15 +21,15 @@ LOCALS ONLY!!!
 - [X] [SYSE] pull docker run command into single spot
       ([dev/prod]_restart_sprout, docker_run_containers)
 - [X] [SYSE] mk a prod_restart_sprout.sh script
+- [X] [SYSE] mk relesases: targeted to env
 
 # WH1P
 
-- [ ] [SYSE] mk relesases: targeted to env
+- [ ] [SYSE] push to aws host script
 
 # T4SX
 
 - [ ] [SYSE] deploy target ip/host info stuff
-- [ ] [SYSE] push to aws host script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
 - [ ] [ALRT] send page/email
 - [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
