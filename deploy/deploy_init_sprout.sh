@@ -1,17 +1,23 @@
 #!/bin/bash
 
-source hosts.env
+echo -e "\n*****************\n"
+echo -e "*WARNING!WARNING*"
+echo -e "\n*****************\n"
+echo -e "THIS CAN KILL YR PROD DB"
+echo -n "U REALLY WANNA INIT THE APP ON THIS SERVER (y/n)?"
 
-echo -e "\n** pushing assets"
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+  source hosts.env
 
-deploy/scp_server_assets.sh
+  echo -e "\n** pushing assets"
 
-echo -e "\n** rming all containers"
+  deploy/scp_server_assets.sh
 
-ssh ec2-user@$KFFPPROD \
-  './bin/docker_rm_all.sh'
+  echo -e "\n** initing sprout"
 
-echo -e "\n** running all containers"
-
-ssh ec2-user@$KFFPPROD \
-  './bin/docker_run_containers.sh production'
+  ssh ec2-user@$KFFPPROD \
+    './bin/docker_check_for_running_containers.sh && ./bin/prod_init_sprout.sh'
+else
+    echo "fine then i wont u mfer"
+fi

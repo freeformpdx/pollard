@@ -23,10 +23,14 @@ LOCALS ONLY!!!
 - [X] [SYSE] mk a prod_restart_sprout.sh script
 - [X] [SYSE] mk relesases: targeted to env
 - [X] [SYSE] deploy target ip/host info stuff
+- [X] [SYSE] init: warn and confirm
+- [X] [SYSE] init: script to check 4 no running mongo && sprout
+- [X] [SYSE] init: exec ^ and check results before continuing init
 
 # WH1P
 
-- [ ] [SYSE] push to aws host scriptz
+- [SYSE] push to aws host scriptz
+- [ ] [SYSE] update: restart prod container script
 
 # T4SX
 
