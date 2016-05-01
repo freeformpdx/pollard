@@ -22,6 +22,7 @@ LOCALS ONLY!!!
       ([dev/prod]_restart_sprout, docker_run_containers)
 - [X] [SYSE] mk a prod_restart_sprout.sh script
 - [X] [SYSE] mk relesases: targeted to env
+- [X] [SYSE] deploy target ip/host info stuff
 
 # WH1P
 
@@ -29,7 +30,6 @@ LOCALS ONLY!!!
 
 # T4SX
 
-- [ ] [SYSE] deploy target ip/host info stuff
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
 - [ ] [ALRT] send page/email
 - [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
@@ -47,11 +47,9 @@ LOCALS ONLY!!!
 # PUSH 2 AWS SCRIPT
 
 
-it shd:
-- scp env file
-- scp run containers script
-- scp restart sprout script
-- then either: init containers @ tag || restart sprout @ tag
+2 scripz:
+-  init containers @ tag 
+-  restart sprout @ tag
 
 
 # RUMINATIN AF RN
