@@ -6,7 +6,11 @@
 
 # USAGE ./bin/dev_restart_sprout.sh
 
+echo "Stopping sprout"
 docker stop sprout
+echo "rming sprout"
 docker rm sprout
-bin/mk_dev_release.sh
+echo "mking dev release"
+bin/mk_release.sh development
+echo "running dev container"
 bin/docker_run_sprout_container.sh development latest
