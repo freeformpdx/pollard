@@ -35,8 +35,11 @@ sprout/public/index.html
 
 # development.env staging.env prod.env to use for config && secrets
 development.env
+development.env.js
 staging.env
+staging.env.js
 production.env
+production.env.js
 env.js
 
 # hosts
