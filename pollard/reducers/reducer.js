@@ -62,6 +62,14 @@ export function view(state = Map({}), action) {
 export function viewSearch(state = Map({}), action) {
   switch (action.type) {
 
+	case actionTypes.ARTIST_CHANGE:
+    return state
+      .set('artist', action.artist)
+
+	case actionTypes.TITLE_CHANGE:
+    return state
+      .set('title', action.title);
+
 	case actionTypes.SEARCH_SONG:
     return state
       .set('artist', action.artist)
@@ -121,7 +129,10 @@ export function dataSetlist(state = initialDataSetlistState , action) {
 
 		if (Object.keys(action.song).length == 0) {
 			song = initialSongState;
-		}
+		} else {
+      song.inputs = Object.assign([], initialSongState.inputs, song.inputs)
+    }
+
 
 		return state.update('songs', function (value) {
 			return value.unshift(Immutable.fromJS(song));

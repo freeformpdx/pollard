@@ -7,6 +7,8 @@ import {
 	updateSong,
 	addSong,
 	searchSong,
+	artistChange,
+	titleChange,
 	markSongPlayed,
 	moveSong,
 	deleteSong,
@@ -55,13 +57,18 @@ class SetPage extends Component {
 
   render() {
 
-		const { songsList, viewSong, viewSetlist } = this.props;
+		const {
+      songsList,
+      viewSong,
+      viewSetlist,
+      lastSearchedSong,
+    } = this.props;
 
 		const songs = songsList.toJSON();
 		const selectedSong = viewSong.get('selected');
 
 		const setlistId = this.props.routeParams.id || viewSetlist.get('id');
-		
+
 		const setStyle = mergeStyles({
 			maxWidth: 720
 		});
@@ -72,6 +79,7 @@ class SetPage extends Component {
 					songs={ songs }
 					selectedSong={ selectedSong }
 					setlistId={ setlistId }
+          lastSearchedSong={ lastSearchedSong }
 					onSelectSong={ (songId) => 
             this.props.actions.selectSong(songId)
 					}
@@ -80,7 +88,7 @@ class SetPage extends Component {
 					}
 					onAddSong={ (song) => 
             this.props.actions.addSong(song)
-					}
+          }
 					onMoveSong={ (fromIdx, toIdx) =>
 						this.props.actions.moveSong(fromIdx, toIdx)
 					}
@@ -89,6 +97,12 @@ class SetPage extends Component {
 					}
 					onMarkSongPlayed={ (songId) => 
             this.props.actions.markSongPlayed(songId)
+					}
+					onArtistChange={ (artist) => 
+            this.props.actions.artistChange(artist)
+					}
+					onTitleChange={ (title) => 
+            this.props.actions.titleChange(title)
 					}
 					onDeleteSong={ (songId) => 
             this.props.actions.deleteSong(songId)
@@ -100,11 +114,11 @@ class SetPage extends Component {
 }
 
 function mapStateToProps({state}) {
-  console.log(state.toJS());
   return {
     songsList: state.getIn(['data','setlist', 'songs']),
     viewSong: state.getIn(['view','song']),
-    viewSetlist: state.getIn(['view','setlist'])
+    viewSetlist: state.getIn(['view','setlist']),
+    lastSearchedSong: state.getIn(['view', 'search'])
   };
 }
 
@@ -117,6 +131,8 @@ function mapDispatchToProps(dispatch) {
 				addSong,
 				searchSong,
 				markSongPlayed,
+        artistChange,
+        titleChange,
 				moveSong,
 				deleteSong,
 				setSetlistId,

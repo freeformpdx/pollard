@@ -31,8 +31,11 @@ export default class Setlist extends Component {
       <div className="row">
 				<ul className="list-group">
 					<SearchSong
+            lastSearchedSong={ this.props.lastSearchedSong }
 						onSearchSong={ this.props.onSearchSong }
-						onAddSong={ this.props.onAddSong } />
+						onAddSong={ this.props.onAddSong }
+						onArtistChange={ this.props.onArtistChange }
+						onTitleChange={ this.props.onTitleChange } />
 					{ (Object.keys(this.props.songs).length == 0) ?
 						<li
 							className="list-group-item"

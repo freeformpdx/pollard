@@ -43,6 +43,20 @@ export function searchSong(artist, title) {
   }
 };
 
+export function artistChange(artist) {
+  return {
+    type: types.ARTIST_CHANGE,
+    artist
+  }
+};
+
+export function titleChange(title) {
+  return {
+    type: types.TITLE_CHANGE,
+    title
+  }
+};
+
 export function addSong(song) {
   return {
     type: types.ADD_SONG,

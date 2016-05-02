@@ -29,7 +29,8 @@ const reducer = combineReducers({
 
 const store = compose(
 	applyMiddleware(autoSelect,pushToServer),
-	reduxReactRouter({createHistory})
+	reduxReactRouter({createHistory}),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);
 
 export default class App extends Component {

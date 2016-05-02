@@ -4,16 +4,23 @@ import mergeStyles from '../lib/mergeStyles';
 
 export default class AddSong extends Component {
 	handleClick(event) {
-    debugger;
+    const title = this.props.lastSearchedSong.get('title') ?
+                  this.props.lastSearchedSong.get('title') :
+                  '';
+    const artist= this.props.lastSearchedSong.get('artist') ?
+                  this.props.lastSearchedSong.get('artist') :
+                  '';
+
 		this.props.onAddSong({
       inputs: [{
         name: 'title',
-        value: '',
+        value: title,
       }, {
         name: 'artist',
-        value: '',
+        value: artist,
       }
     ]});
+    this.props.onClearSongs();
 	}
 
 

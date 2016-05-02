@@ -29,10 +29,12 @@ export default class SearchSong extends Component {
 	//TODO: DRY
 	handleArtistChange(event) {
 		this.setState({artistValue: event.target.value});
+    this.props.onArtistChange(event.target.value);
 	}
 
-	handleTrackChange(event) {
+	handleTitleChange(event) {
 		this.setState({trackValue: event.target.value});
+    this.props.onTitleChange(event.target.value);
 	}
 
 	handleKeyPress(event) {
@@ -233,7 +235,7 @@ export default class SearchSong extends Component {
 									placeholder="track"
 									value={ trackValue }
 									onKeyPress={ (e) => this.handleKeyPress(e) }
-									onChange={ (e) => this.handleTrackChange(e) }/>
+									onChange={ (e) => this.handleTitleChange(e) }/>
 						</div>
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 						<button
@@ -245,7 +247,10 @@ export default class SearchSong extends Component {
 								aria-hidden="true"></span> {this.state.isSearching?'Searching...':'Search'}
 						</button>
 						<div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-						<AddSong onAddSong={ this.props.onAddSong } />
+						<AddSong
+              lastSearchedSong={ this.props.lastSearchedSong }
+              onClearSongs={ () => this.handleClearSongs() }
+              onAddSong={ this.props.onAddSong }/>
 				</li>
 				{ (foundSongsComponents) ?
 					<li
