@@ -26,15 +26,15 @@ LOCALS ONLY!!!
 - [X] [SYSE] init: warn and confirm
 - [X] [SYSE] init: script to check 4 no running mongo && sprout
 - [X] [SYSE] init: exec ^ and check results before continuing init
+- [X] [SYSE] restart: restart prod container script
 
 # WH1P
 
-- [SYSE] push to aws host scriptz
-- [ ] [SYSE] restart: restart prod container script
+- [ ] [SYSE] init && restart: use deploy target tags
 
 # T4SX
 
-- [ ] [SYSE] init && restart: use deploy target tags
+- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
 - [ ] [SYSE] mk staging versions of init && restart scripts
 - [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
