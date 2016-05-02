@@ -168,8 +168,8 @@ export default class SearchSong extends Component {
 	getTrackSearchUrl() {
 		const url = "http://developer.echonest.com/api/v4/song/search?" +
 			"api_key=" + this.state.echoNestApiKey +
-			"&title=" + this.state.trackValue +
-			"&artist=" + this.state.artistValue +
+			"&title=" + encodeURIComponent(this.state.trackValue) +
+			"&artist=" + encodeURIComponent(this.state.artistValue) +
 			"&bucket=id:spotify-WW&bucket=audio_summary&bucket=tracks";
 		return url;
 	}
