@@ -233,3 +233,14 @@ Total page size = 123K
 - [X] get some sprout/express logging
 - [X] tagging on build [env + version?]
 - [X] pushin 2 docker hub
+- [X] [SYSE] mv ./env/env.js => ./env.js
+- [X] [SYSE] docker_run_containers expose port 80
+- [X] [SYSE] pull docker run command into single spot
+      ([dev/prod]_restart_sprout, docker_run_containers)
+- [X] [SYSE] mk a prod_restart_sprout.sh script
+- [X] [SYSE] mk relesases: targeted to env
+- [X] [SYSE] deploy target ip/host info stuff
+- [X] [SYSE] init: warn and confirm
+- [X] [SYSE] init: script to check 4 no running mongo && sprout
+- [X] [SYSE] init: exec ^ and check results before continuing init
+- [X] [SYSE] restart: restart prod container script
