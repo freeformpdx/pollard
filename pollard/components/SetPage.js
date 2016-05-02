@@ -84,8 +84,8 @@ class SetPage extends Component {
 					onMoveSong={ (fromIdx, toIdx) =>
 						this.props.actions.moveSong(fromIdx, toIdx)
 					}
-					onSearchSong={ (song) => 
-            this.props.actions.searchSong(song)
+					onSearchSong={ (artist, title) => 
+            this.props.actions.searchSong(artist, title)
 					}
 					onMarkSongPlayed={ (songId) => 
             this.props.actions.markSongPlayed(songId)
@@ -100,6 +100,7 @@ class SetPage extends Component {
 }
 
 function mapStateToProps({state}) {
+  console.log(state.toJS());
   return {
     songsList: state.getIn(['data','setlist', 'songs']),
     viewSong: state.getIn(['view','song']),
@@ -108,7 +109,7 @@ function mapStateToProps({state}) {
 }
 
 function mapDispatchToProps(dispatch) {
-	return { 
+	return {
 		actions: bindActionCreators(
 			{
 				selectSong,

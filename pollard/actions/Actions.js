@@ -35,10 +35,11 @@ export function selectSong(idx) {
   }
 };
 
-export function searchSong(song) {
+export function searchSong(artist, title) {
   return {
     type: types.SEARCH_SONG,
-    song
+    artist,
+    title
   }
 };
 

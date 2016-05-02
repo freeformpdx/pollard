@@ -54,8 +54,22 @@ export function state(state = Map({}), action) {
 
 export function view(state = Map({}), action) {
 		return state
+			.set('search', viewSearch(state.get('search'), action))
 			.set('setlist', viewSetlist(state.get('setlist'), action))
 			.set('song', viewSong(state.get('song'), action));
+}
+
+export function viewSearch(state = Map({}), action) {
+  switch (action.type) {
+
+	case actionTypes.SEARCH_SONG:
+    return state
+      .set('artist', action.artist)
+      .set('title', action.title);
+
+  default:
+    return state;
+  }
 }
 
 export function viewSetlist(state = Map({}), action) {
@@ -135,6 +149,9 @@ export function dataSetlist(state = initialDataSetlistState , action) {
 		return state.set('songs', reorderedSongs);
 
 	case actionTypes.DELETE_SONG:
+    return state.deleteIn(['songs', action.idx]);
+
+	case actionTypes.SERCH_SONG:
     return state.deleteIn(['songs', action.idx]);
 
   default:

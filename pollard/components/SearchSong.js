@@ -59,7 +59,13 @@ export default class SearchSong extends Component {
 		});
 		let trackSearchUrl = this.getTrackSearchUrl();
 		let self = this;
-	
+
+    // update redux state
+    this.props.onSearchSong(
+      this.state.artistValue,
+      this.state.trackValue,
+    );
+
 		// FETCH TRAX
 		fetch(trackSearchUrl)
 		.then(function(response) {
@@ -83,7 +89,7 @@ export default class SearchSong extends Component {
 			console.log('parsing failed', ex)
 		})
 	}
-	
+
 	getSongsFromJSON(json) {
 		return json.response.songs;
 	}

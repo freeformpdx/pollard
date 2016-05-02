@@ -152,11 +152,9 @@ class AdvancedSearch extends Component {
 		},[]);
 
 		// LIMITED SUBSET FOR TESTING REMOVE THIS SHIT FOR RELAY
-		// debugger;
 		// VVVVVVVVV
 		return denseIdxsToFetch.slice(0,2);
 		// ^^^^^^^^^
-		// debugger;
 		// LIMITED SUBSET FOR TESTING REMOVE THIS SHIT FOR RELAY
 		
 	}

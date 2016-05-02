@@ -4,7 +4,16 @@ import mergeStyles from '../lib/mergeStyles';
 
 export default class AddSong extends Component {
 	handleClick(event) {
-		this.props.onAddSong({});
+    debugger;
+		this.props.onAddSong({
+      inputs: [{
+        name: 'title',
+        value: '',
+      }, {
+        name: 'artist',
+        value: '',
+      }
+    ]});
 	}
 
 
