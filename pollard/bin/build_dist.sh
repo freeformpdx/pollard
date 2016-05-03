@@ -13,7 +13,7 @@ fi
 
 cd pollard
 
-npm run build-min
+NODE_ENV=$1 npm run build-min
 cp dist/bundle.min.js ../sprout/public/bundle.js
 cp index.html ../sprout/public/index.html
 
