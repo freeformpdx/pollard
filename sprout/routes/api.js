@@ -98,8 +98,8 @@ router.get('/newSetlist/:showID', function(req, res, next) {
   });
 });
 
-router.post('/loadSched/:pw', function(req, res, next) {
-  if (req.params.pw == config.LOAD_SCHED_PW) {
+router.post('/loadSchedule/', function(req, res, next) {
+  if (req.body.pw == config.LOAD_SCHED_PW) {
     if (!req.body.sched) {
       return res.send("No sched found: req:\n" + JSON.stringify(req.body, null, 2));
     }

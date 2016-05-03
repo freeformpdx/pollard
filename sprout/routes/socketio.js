@@ -12,6 +12,10 @@ module.exports = function(io) {
 		res.sendfile('./public/index.html');
 	});
 
+	router.get('/loadSchedule', function(req, res, next) {
+		res.sendfile('./public/index.html');
+	});
+
 	router.get('/setlist/*', function(req, res, next) {
 		res.sendfile('./public/index.html');
 	});

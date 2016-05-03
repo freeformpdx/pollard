@@ -14,6 +14,7 @@ import { state } from '../reducers/reducer.js';
 import Pollard from './Pollard';
 import SetPage from '../components/SetPage';
 import AdvancedSearch from '../components/AdvancedSearch';
+import LoadSchedule from '../components/LoadSchedule';
 
 import autoSelect from '../middleware/autoSelect.js';
 import pushToServer from '../middleware/pushToServer.js';
@@ -23,13 +24,13 @@ import pushToServer from '../middleware/pushToServer.js';
 // const store = createStore(state);
 
 const reducer = combineReducers({
-	router: routerStateReducer,
-	state: state
+  router: routerStateReducer,
+  state: state
 });
 
 const store = compose(
-	applyMiddleware(autoSelect,pushToServer),
-	reduxReactRouter({createHistory}),
+  applyMiddleware(autoSelect,pushToServer),
+  reduxReactRouter({createHistory}),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);
 
@@ -37,14 +38,15 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-				<ReduxRouter>
-					<Route path="/" component={ Pollard }>
-						<Route path="setlist" component={ SetPage } />
-						<Route path="setlist/:id" component={ SetPage } />
-						<Route path="advancedSearch" component={ AdvancedSearch } />
-					</Route>
-				</ReduxRouter>
+        <ReduxRouter>
+          <Route path="/" component={ Pollard }>
+            <Route path="setlist" component={ SetPage } />
+            <Route path="setlist/:id" component={ SetPage } />
+            <Route path="advancedSearch" component={ AdvancedSearch } />
+            <Route path="loadSchedule" component={ LoadSchedule } />
+          </Route>
+        </ReduxRouter>
       </Provider>
-	);
+    );
   }
 }
