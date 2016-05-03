@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var socket_io = require('socket.io');
 var mongoose = require('mongoose')
 
@@ -41,6 +42,54 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/* file upload */
+var Schedule = require('./models/Schedule');
+var upload = multer({ dest: 'uploads/' })
+
+app.post('/api/loadSchedule', upload.single('sched'), function (req, res, next) {
+  if (req.body.pw == config.LOAD_SCHED_PW) {
+    if (!req.file.path) {
+      return res.send("No sched found: req:\n" + JSON.stringify(req.file, null, 2));
+    }
+
+    // clear sched first
+    var schedStream = Schedule.find().stream();
+
+    schedStream.on('data', function(doc) {
+      doc.remove();
+    }).on('close', function() {
+      // after clear, load sched
+      try {
+        require('fs').readFile(req.file.path, 'utf8', function (err, data) {
+          if (err) throw err; // we'll not consider error handling for now
+
+          var sched = JSON.parse(data);
+          for (var idx = 0; idx < sched.length; idx++) {
+            var schedule = new Schedule(sched[idx]);
+            schedule.save().then(function(schedule) {
+              console.log('added: ' + schedule.showID);
+            });
+          }
+          setTimeout(function() {
+            res.send("Loaded!");
+          }, 3000);
+        });
+      } catch(e) {
+        console.log(JSON.stringify(e));
+        res.status(400).send('Invalid JSON string');
+      }
+    });
+  } else {
+    // security lol
+    setTimeout(function() {
+      res.send("NUH UH");
+    }, 3000);
+  }
+
+});
+/* file upload */
+
 
 app.use('/api', api);
 app.use('/users', users);

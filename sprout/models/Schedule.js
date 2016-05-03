@@ -3,16 +3,11 @@ var Schema = mongoose.Schema;
 var moment = require('moment');
 
 var scheduleSchema = new Schema({
-  showName: String,
-  dj: String,
-  description: String,
-  startTimeRaw: String,
   showID: String,
   startDay: String,
   startHour: Number,
   endDay: String,
   endHour: Number,
-  startTimeFmtdStr: String
 });
 
 scheduleSchema.statics.findShowIDByTime = function(timestamp, cb) {

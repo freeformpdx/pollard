@@ -98,6 +98,10 @@ router.get('/newSetlist/:showID', function(req, res, next) {
   });
 });
 
+/* deprecated (FOR NOW) */
+/* TODO: move upload logic from app.js into here (somehow?)
+
+
 router.post('/loadSchedule/', function(req, res, next) {
   if (req.body.pw == config.LOAD_SCHED_PW) {
     if (!req.body.sched) {
@@ -123,6 +127,7 @@ router.post('/loadSchedule/', function(req, res, next) {
           res.send("Loaded!");
         }, 3000);
       } catch(e) {
+        console.log(JSON.stringify(e));
         res.status(400).send('Invalid JSON string');
       }
     });
@@ -133,6 +138,8 @@ router.post('/loadSchedule/', function(req, res, next) {
     }, 3000);
   }
 });
+
+*/
 
 router.get('/500', function(req, res, next) {
   throw new Error("⚰ DAMN DUDE ITS FUUUUUCKED ⚰ ");
