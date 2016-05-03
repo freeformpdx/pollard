@@ -28,7 +28,8 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 
 ## releasin && pushin 2 dockr hub
 
-- ./bin/mk_all_releases.sh
+- yr one-line build_dist, docker_build, docker push soln:
+- ./bin/mk_all_releases.sh [tag]
 
 ## deployin
 
