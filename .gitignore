@@ -42,9 +42,6 @@ production.env
 production.env.js
 env.js
 
-# upload pollardSchedule.json to kffp.rocks/loadSchedule
-pollardSchedule.json
-
 # hosts
 hosts.env
 

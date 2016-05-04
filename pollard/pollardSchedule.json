@@ -1,0 +1,714 @@
+[
+  {
+    "showID": "[KFFP59247]",
+    "title": "Based Goth Radio",
+    "startDay": "3",
+    "startHour": "12",
+    "endDay": "3",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP34202]",
+    "title": "Turn the Beat Around",
+    "startDay": "2",
+    "startHour": "21",
+    "endDay": "2",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP76357]",
+    "title": "The Amos Ananda Show",
+    "startDay": "3",
+    "startHour": "10",
+    "endDay": "3",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP23477]",
+    "title": "The Produce Department",
+    "startDay": "5",
+    "startHour": "8",
+    "endDay": "5",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP69079]",
+    "title": "Heavy Psychedelic Experience",
+    "startDay": "0",
+    "startHour": "22",
+    "endDay": "1",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP67146]",
+    "title": "Spider in the Ear",
+    "startDay": "5",
+    "startHour": "22",
+    "endDay": "6",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP31337]",
+    "title": "The After Show",
+    "startDay": "4",
+    "startHour": "22",
+    "endDay": "5",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP71290]",
+    "title": "Nightlight",
+    "startDay": "4",
+    "startHour": "22",
+    "endDay": "5",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP29077]",
+    "title": "Guitar and Other Machines",
+    "startDay": "4",
+    "startHour": "20",
+    "endDay": "4",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP37456]",
+    "title": "Bonus Beats",
+    "startDay": "5",
+    "startHour": "20",
+    "endDay": "5",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP06956]",
+    "title": "Futures and Pasts",
+    "startDay": "6",
+    "startHour": "20",
+    "endDay": "6",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP43932]",
+    "title": "Misplaced Keys",
+    "startDay": "6",
+    "startHour": "18",
+    "endDay": "6",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP74794]",
+    "title": "Cities in Dust",
+    "startDay": "5",
+    "startHour": "12",
+    "endDay": "5",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP29071]",
+    "title": "Club Nitty Gritty",
+    "startDay": "6",
+    "startHour": "10",
+    "endDay": "6",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP86705]",
+    "title": "Les Bons Temps Rule",
+    "startDay": "5",
+    "startHour": "10",
+    "endDay": "5",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP57094]",
+    "title": "Full Life Radio",
+    "startDay": "3",
+    "startHour": "14",
+    "endDay": "3",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP36720]",
+    "title": "Makeout Sesh",
+    "startDay": "6",
+    "startHour": "2",
+    "endDay": "6",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP59404]",
+    "title": "Well Worn and New Territory",
+    "startDay": "4",
+    "startHour": "14",
+    "endDay": "4",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP73179]",
+    "title": "Psychic Realty",
+    "startDay": "4",
+    "startHour": "2",
+    "endDay": "4",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP11356]",
+    "title": "Makeup & Booze",
+    "startDay": "5",
+    "startHour": "16",
+    "endDay": "5",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP29282]",
+    "title": "ADHD",
+    "startDay": "6",
+    "startHour": "0",
+    "endDay": "6",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP65796]",
+    "title": "We\u2019ll do it live",
+    "startDay": "5",
+    "startHour": "18",
+    "endDay": "5",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP93196]",
+    "title": "The Great Pain of Space",
+    "startDay": "5",
+    "startHour": "0",
+    "endDay": "5",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP12695]",
+    "title": "Morning Variety Music Mix",
+    "startDay": "3",
+    "startHour": "6",
+    "endDay": "3",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP48809]",
+    "title": "Welcome to Noon",
+    "startDay": "0",
+    "startHour": "12",
+    "endDay": "0",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP88048]",
+    "title": "The Radio Birdman Show",
+    "startDay": "5",
+    "startHour": "6",
+    "endDay": "5",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP00534]",
+    "title": "Alleys Of Your Mind",
+    "startDay": "3",
+    "startHour": "18",
+    "endDay": "3",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP71791]",
+    "title": "Radio 859",
+    "startDay": "1",
+    "startHour": "8",
+    "endDay": "1",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP40098]",
+    "title": "Weekend Family Music Hour",
+    "startDay": "6",
+    "startHour": "6",
+    "endDay": "6",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP26980]",
+    "title": "What Sub Genre",
+    "startDay": "2",
+    "startHour": "14",
+    "endDay": "2",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP42668]",
+    "title": "It\u2019s a nice world to visit",
+    "startDay": "2",
+    "startHour": "12",
+    "endDay": "2",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP39253]",
+    "title": "Curb Service",
+    "startDay": "4",
+    "startHour": "8",
+    "endDay": "4",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP73435]",
+    "title": "The Down-Low",
+    "startDay": "2",
+    "startHour": "10",
+    "endDay": "2",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP71123]",
+    "title": "If you feel like letting go",
+    "startDay": "2",
+    "startHour": "8",
+    "endDay": "2",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP15536]",
+    "title": "The Pocket Book",
+    "startDay": "3",
+    "startHour": "8",
+    "endDay": "3",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP10507]",
+    "title": "Chaos Warp",
+    "startDay": "2",
+    "startHour": "6",
+    "endDay": "2",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP95484]",
+    "title": "The Upstairs Room",
+    "startDay": "2",
+    "startHour": "4",
+    "endDay": "2",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP62967]",
+    "title": "Zach\u2019s Radio Show",
+    "startDay": "3",
+    "startHour": "20",
+    "endDay": "3",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP58796]",
+    "title": "Reel Talk",
+    "startDay": "4",
+    "startHour": "10",
+    "endDay": "4",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP07041]",
+    "title": "The Crooked Mile",
+    "startDay": "3",
+    "startHour": "22",
+    "endDay": "3",
+    "endHour": "23"
+  },
+  {
+    "showID": "[KFFP40646]",
+    "title": "Deep Lez Power Hour",
+    "startDay": "6",
+    "startHour": "12",
+    "endDay": "6",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP88906]",
+    "title": "The Good \u2018Ol Boys",
+    "startDay": "3",
+    "startHour": "23",
+    "endDay": "4",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP59427]",
+    "title": "Center for Cassette Studies",
+    "startDay": "2",
+    "startHour": "18",
+    "endDay": "2",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP17756]",
+    "title": "Ghostpunkwasteland",
+    "startDay": "6",
+    "startHour": "14",
+    "endDay": "6",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP80923]",
+    "title": "Turn The Beat Around w\/ DJ Ed",
+    "startDay": "",
+    "startHour": "",
+    "endDay": "",
+    "endHour": ""
+  },
+  {
+    "showID": "[KFFP34202]",
+    "title": "Radio Transmission",
+    "startDay": "2",
+    "startHour": "20",
+    "endDay": "2",
+    "endHour": "21"
+  },
+  {
+    "showID": "[KFFP30838]",
+    "title": "the Basement",
+    "startDay": "4",
+    "startHour": "0",
+    "endDay": "4",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP90265]",
+    "title": "Gammasphere",
+    "startDay": "3",
+    "startHour": "4",
+    "endDay": "3",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP99282]",
+    "title": "Green Fuzz Rides: Taxi Radio",
+    "startDay": "3",
+    "startHour": "2",
+    "endDay": "3",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP75307]",
+    "title": "Cinematic Excursions",
+    "startDay": "3",
+    "startHour": "0",
+    "endDay": "3",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP70707]",
+    "title": "Jam the Controls",
+    "startDay": "5",
+    "startHour": "2",
+    "endDay": "5",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP56082]",
+    "title": "Studio Visit",
+    "startDay": "1",
+    "startHour": "22",
+    "endDay": "2",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP34472]",
+    "title": "Kitty McKlaine\u2019s Dance Party \/ In Crates We Dig (Alternating)",
+    "startDay": "1",
+    "startHour": "20",
+    "endDay": "1",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP51215]",
+    "title": "Unrouted Radio",
+    "startDay": "0",
+    "startHour": "16",
+    "endDay": "0",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP28099]",
+    "title": "Static Atomizer",
+    "startDay": "2",
+    "startHour": "0",
+    "endDay": "2",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP91465]",
+    "title": "All the Cake Show",
+    "startDay": "1",
+    "startHour": "14",
+    "endDay": "1",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP01674]",
+    "title": "Black Castle",
+    "startDay": "1",
+    "startHour": "18",
+    "endDay": "1",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP40870]",
+    "title": "RipCity Radio",
+    "startDay": "1",
+    "startHour": "16",
+    "endDay": "1",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP12930]",
+    "title": "Good Times! End Times!",
+    "startDay": "1",
+    "startHour": "12",
+    "endDay": "1",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP27626]",
+    "title": "Sounds Obscure",
+    "startDay": "1",
+    "startHour": "10",
+    "endDay": "1",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP56241]",
+    "title": "PDX Trans Pride Radio",
+    "startDay": "1",
+    "startHour": "6",
+    "endDay": "1",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP18887]",
+    "title": "Smokin\u2019 Denim",
+    "startDay": "1",
+    "startHour": "4",
+    "endDay": "1",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP64326]",
+    "title": "Opaque Terrarium",
+    "startDay": "0",
+    "startHour": "0",
+    "endDay": "1",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP45460]",
+    "title": "Crooked Cartunes Radio Show",
+    "startDay": "1",
+    "startHour": "0",
+    "endDay": "1",
+    "endHour": "2"
+  },
+  {
+    "showID": "[KFFP41172]",
+    "title": "Off The Cut",
+    "startDay": "2",
+    "startHour": "22",
+    "endDay": "3",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP00174]",
+    "title": "Unclaimed Baggage Music",
+    "startDay": "0",
+    "startHour": "18",
+    "endDay": "0",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP17632]",
+    "title": "On | Record",
+    "startDay": "0",
+    "startHour": "14",
+    "endDay": "0",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP13357]",
+    "title": "Fencepost Modern",
+    "startDay": "0",
+    "startHour": "10",
+    "endDay": "0",
+    "endHour": "12"
+  },
+  {
+    "showID": "[KFFP31354]",
+    "title": "Universal Sound",
+    "startDay": "0",
+    "startHour": "8",
+    "endDay": "0",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP18421]",
+    "title": "Nocturne",
+    "startDay": "0",
+    "startHour": "4",
+    "endDay": "0",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP41287]",
+    "title": "Morningstar: The Light In The Darkness",
+    "startDay": "1",
+    "startHour": "2",
+    "endDay": "0",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP35033]",
+    "title": "Jah Jams",
+    "startDay": "0",
+    "startHour": "2",
+    "endDay": "0",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP09230]",
+    "title": "Groove Pursuit",
+    "startDay": "5",
+    "startHour": "15",
+    "endDay": "5",
+    "endHour": "16"
+  },
+  {
+    "showID": "[KFFP63188]",
+    "title": "Terminal Beach",
+    "startDay": "5",
+    "startHour": "14",
+    "endDay": "5",
+    "endHour": "15"
+  },
+  {
+    "showID": "[KFFP96325]",
+    "title": "Indie Pop Takeover",
+    "startDay": "4",
+    "startHour": "4",
+    "endDay": "4",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP40398]",
+    "title": ", summer",
+    "startDay": "4",
+    "startHour": "12",
+    "endDay": "4",
+    "endHour": "14"
+  },
+  {
+    "showID": "[KFFP97426]",
+    "title": "Cheap Rewards",
+    "startDay": "5",
+    "startHour": "4",
+    "endDay": "5",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP90691]",
+    "title": "Eclectronic Dawn",
+    "startDay": "6",
+    "startHour": "4",
+    "endDay": "6",
+    "endHour": "6"
+  },
+  {
+    "showID": "[KFFP66037]",
+    "title": "Saturday Brunch Line",
+    "startDay": "6",
+    "startHour": "8",
+    "endDay": "6",
+    "endHour": "10"
+  },
+  {
+    "showID": "[KFFP66342]",
+    "title": "\u2026Hold Onto the Rails!",
+    "startDay": "0",
+    "startHour": "6",
+    "endDay": "0",
+    "endHour": "8"
+  },
+  {
+    "showID": "[KFFP36525]",
+    "title": "Group Therapy",
+    "startDay": "2",
+    "startHour": "2",
+    "endDay": "2",
+    "endHour": "4"
+  },
+  {
+    "showID": "[KFFP77250]",
+    "title": "Live from Beech St Parlor \/ Zaph Mann\u2019s IMOJP Show (Alternating)",
+    "startDay": "6",
+    "startHour": "22",
+    "endDay": "0",
+    "endHour": "0"
+  },
+  {
+    "showID": "[KFFP25156]",
+    "title": "Frankenstein\u2019s Footlocker",
+    "startDay": "6",
+    "startHour": "16",
+    "endDay": "6",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP76578]",
+    "title": "Space Cake Radio \/ Yr Mom (Alternating)",
+    "startDay": "2",
+    "startHour": "16",
+    "endDay": "2",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP02378]",
+    "title": "Esoteria",
+    "startDay": "4",
+    "startHour": "18",
+    "endDay": "4",
+    "endHour": "20"
+  },
+  {
+    "showID": "[KFFP49112]",
+    "title": "Mid-Day Meltdown",
+    "startDay": "3",
+    "startHour": "16",
+    "endDay": "3",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP51350]",
+    "title": "Throwback Thursdays",
+    "startDay": "4",
+    "startHour": "16",
+    "endDay": "4",
+    "endHour": "18"
+  },
+  {
+    "showID": "[KFFP04906]",
+    "title": "Sweet Tarnation",
+    "startDay": "0",
+    "startHour": "20",
+    "endDay": "0",
+    "endHour": "22"
+  },
+  {
+    "showID": "[KFFP05696]",
+    "title": "Zigzag Body Talk",
+    "startDay": "4",
+    "startHour": "6",
+    "endDay": "4",
+    "endHour": "8"
+  }
+]
