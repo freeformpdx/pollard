@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import mergeStyles from '../lib/mergeStyles';
-
 import SearchSong from './SearchSong';
 import SelectedSong from './SelectedSong';
 import Song from './Song';
 import DraggableSong from './DraggableSong';
 import PlayingSongIndicator from './PlayingSongIndicator.js';
+import NewPlaylistInstructions from './NewPlaylistInstructions.js';
 
 
 export default class Setlist extends Component {
@@ -20,10 +19,6 @@ export default class Setlist extends Component {
   }
 
   render() {
-		const noSongsStyle = mergeStyles({
-			backgroundColor: '#F6EBFA'
-		});
-
     const playingSongIdx = this.getCurrentlyPlayingSongIdx();
     let playingSongIndicator = null;
 
@@ -36,19 +31,9 @@ export default class Setlist extends Component {
 						onAddSong={ this.props.onAddSong }
 						onArtistChange={ this.props.onArtistChange }
 						onTitleChange={ this.props.onTitleChange } />
-					{ (Object.keys(this.props.songs).length == 0) ?
-						<li
-							className="list-group-item"
-							style={ noSongsStyle }
-							>
-							<div
-								className="well"
-								style={{textAlign: 'center'}}>
-								⚡️ Search⚡️ Add Blank Song⚡️ <br/>
-								🚀 Build 🎶 Playlist 🚀
-							</div>
-						</li> :
-					'' }
+
+					{ (Object.keys(this.props.songs).length == 0) ? <NewPlaylistInstructions /> : '' }
+
 					{this.props.songs.map((song, idx) => {
 						if (idx == this.props.selectedSong) {
 							return (
