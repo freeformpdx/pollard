@@ -6,6 +6,7 @@ import mergeStyles from '../lib/mergeStyles';
 
 import AddSong from './AddSong';
 import FoundSong from './FoundSong';
+import SearchInput from './SearchInput';
 
 export default class SearchSong extends Component {
 
@@ -27,14 +28,14 @@ export default class SearchSong extends Component {
   }
 
   //TODO: DRY
-  handleArtistChange(event) {
-    this.setState({artistValue: event.target.value});
-    this.props.onArtistChange(event.target.value);
+  handleArtistChange(e) {
+    this.setState({artistValue: e.target.value});
+    this.props.onArtistChange(e.target.value);
   }
 
-  handleTitleChange(event) {
-    this.setState({trackValue: event.target.value});
-    this.props.onTitleChange(event.target.value);
+  handleTitleChange(e) {
+    this.setState({trackValue: e.target.value});
+    this.props.onTitleChange(e.target.value);
   }
 
   handleKeyPress(event) {
@@ -229,25 +230,17 @@ export default class SearchSong extends Component {
         <li
           className="list-group-item clearfix"
           style={ searchStyle }>
-            <div className="col-xs-12 col-sm-3">
-                <input
-                  className="form-control"
-                  type="text"
-                  placeholder="artist"
-                  value={ artistValue }
-                  onKeyPress={ (e) => this.handleKeyPress(e) }
-                  onChange={ (e) => this.handleArtistChange(e) }/>
-            </div>
+            <SearchInput
+              placeholderText="artist"
+              value={ artistValue }
+              onKeyPress={ (e) => this.handleKeyPress(e) }
+              onChange={ (value) => this.handleArtistChange(value) }/>
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-            <div className="col-xs-12 col-sm-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="track"
-                  value={ trackValue }
-                  onKeyPress={ (e) => this.handleKeyPress(e) }
-                  onChange={ (e) => this.handleTitleChange(e) }/>
-            </div>
+              <SearchInput
+                placeholderText="title"
+                value={ trackValue }
+                onKeyPress={ (e) => this.handleKeyPress(e) }
+                onChange={ (value) => this.handleTitleChange(value) }/>
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
             <button
               type="button"
