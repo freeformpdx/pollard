@@ -23,51 +23,51 @@ export default class Setlist extends Component {
 
     return (
       <div className="row">
-				<ul className="list-group">
-					<SearchSong
+        <ul className="list-group">
+          <SearchSong
             lastSearchedSong={ this.props.lastSearchedSong }
-						onSearchSong={ this.props.onSearchSong }
-						onAddSong={ this.props.onAddSong }
-						onArtistChange={ this.props.onArtistChange }
-						onTitleChange={ this.props.onTitleChange } />
+            onSearchSong={ this.props.onSearchSong }
+            onAddSong={ this.props.onAddSong }
+            onArtistChange={ this.props.onArtistChange }
+            onTitleChange={ this.props.onTitleChange } />
 
-					{ (Object.keys(this.props.songs).length == 0) ? <NewPlaylistInstructions /> : '' }
+          { (Object.keys(this.props.songs).length == 0) ? <NewPlaylistInstructions /> : '' }
 
-					{this.props.songs.map((song, idx) => {
-						if (idx == this.props.selectedSong) {
-							return (
-								<DraggableSong
-									key={ idx }
-									idx={ idx }
-									onMoveSong={ this.props.onMoveSong }>
-									<SelectedSong song={ song }
-										selectedSong={ this.props.selectedSong }
-										idx={ idx }
+          {this.props.songs.map((song, idx) => {
+            if (idx == this.props.selectedSong) {
+              return (
+                <DraggableSong
+                  key={ idx }
+                  idx={ idx }
+                  onMoveSong={ this.props.onMoveSong }>
+                  <SelectedSong song={ song }
+                    selectedSong={ this.props.selectedSong }
+                    idx={ idx }
                     playingSongIdx={ playingSongIdx }
-										onDeleteSong={ this.props.onDeleteSong }
-										onMarkSongPlayed={ this.props.onMarkSongPlayed }
-										onUpdateSong={ this.props.onUpdateSong }/>
-								</DraggableSong>
-							);
-						} else {
-							return (
-								<DraggableSong
-									key={ idx }
-									idx={ idx }
-									onMoveSong={ this.props.onMoveSong }>
-									<Song song={ song }
-										key={ idx }
-										idx={ idx }
+                    onDeleteSong={ this.props.onDeleteSong }
+                    onMarkSongPlayed={ this.props.onMarkSongPlayed }
+                    onUpdateSong={ this.props.onUpdateSong }/>
+                </DraggableSong>
+              );
+            } else {
+              return (
+                <DraggableSong
+                  key={ idx }
+                  idx={ idx }
+                  onMoveSong={ this.props.onMoveSong }>
+                  <Song song={ song }
+                    key={ idx }
+                    idx={ idx }
                     playingSongIdx={ playingSongIdx }
-										onDeleteSong={ this.props.onDeleteSong }
-										onMarkSongPlayed={ this.props.onMarkSongPlayed }
-										onSelectSong={ this.props.onSelectSong }/>
-								</DraggableSong>
-							);
-						}
-					})}
-				</ul>
-			</div>
+                    onDeleteSong={ this.props.onDeleteSong }
+                    onMarkSongPlayed={ this.props.onMarkSongPlayed }
+                    onSelectSong={ this.props.onSelectSong }/>
+                </DraggableSong>
+              );
+            }
+          })}
+        </ul>
+      </div>
     );
   }
 

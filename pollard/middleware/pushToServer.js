@@ -5,12 +5,12 @@ import * as actionTypes from '../constants/ActionTypes';
 
 let pushToServer = store => next => action => {
   const result = next(action);
-	const socket = require('socket.io-client')(config.SOCKET_URL);
-	
-	if (action.type != actionTypes.LOAD_SETLIST_STATE) {
-		// Don't push state if ya just loaded it
-		socket.emit('pushState', store.getState().state.toJSON());
-	}
+  const socket = require('socket.io-client')(config.SOCKET_URL);
+  
+  if (action.type != actionTypes.LOAD_SETLIST_STATE) {
+    // Don't push state if ya just loaded it
+    socket.emit('pushState', store.getState().state.toJSON());
+  }
 
   return result;
 };

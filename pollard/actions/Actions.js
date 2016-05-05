@@ -75,7 +75,7 @@ export function moveSong(fromIdx, toIdx) {
   return {
     type: types.MOVE_SONG,
     fromIdx,
-		toIdx
+    toIdx
   }
 };
 
@@ -101,8 +101,8 @@ export function setSetlistId(id) {
 };
 
 export function loadSetlistState(state) {
-	return {
-		type: types.LOAD_SETLIST_STATE,
-		state
-	}
+  return {
+    type: types.LOAD_SETLIST_STATE,
+    state
+  }
 };

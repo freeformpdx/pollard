@@ -1,11 +1,11 @@
 export default function flattenObjectToArray(ob) {
-	var toReturn = [];
+  var toReturn = [];
 
-	for (var i in ob) {
-		if (!ob.hasOwnProperty(i)) continue;
+  for (var i in ob) {
+    if (!ob.hasOwnProperty(i)) continue;
 
-		toReturn.push([i, ob[i]]);
-	}
+    toReturn.push([i, ob[i]]);
+  }
 
-	return toReturn;
+  return toReturn;
 };

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import mergeStyles from '../lib/mergeStyles';
 
 export default class AddSong extends Component {
-	handleClick(event) {
+  handleClick(event) {
     const title = this.props.lastSearchedSong.get('title') ?
                   this.props.lastSearchedSong.get('title') :
                   '';
@@ -11,7 +11,7 @@ export default class AddSong extends Component {
                   this.props.lastSearchedSong.get('artist') :
                   '';
 
-		this.props.onAddSong({
+    this.props.onAddSong({
       inputs: [{
         name: 'title',
         value: title,
@@ -21,22 +21,22 @@ export default class AddSong extends Component {
       }
     ]});
     this.props.onClearSongs();
-	}
+  }
 
 
   render() {
-		let songStyle= mergeStyles({
-			backgroundColor: '#F6EBFA'
-		});
+    let songStyle= mergeStyles({
+      backgroundColor: '#F6EBFA'
+    });
 
     return (
-			<button
-				className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2"
-				onClick={ (e) => this.handleClick(e) }>
-				<span
-					className="glyphicon glyphicon-plus"
-					aria-hidden="true"></span> Blank Song
-			</button>
+      <button
+        className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2"
+        onClick={ (e) => this.handleClick(e) }>
+        <span
+          className="glyphicon glyphicon-plus"
+          aria-hidden="true"></span> Blank Song
+      </button>
     );
   }
 
