@@ -53,7 +53,6 @@ with sprout && mongo containers running:
 This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
 
 
-
 ### KICKSMAN
 [MAS FLAIR](gifs)
 
