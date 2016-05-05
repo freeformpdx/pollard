@@ -7,6 +7,8 @@ import mergeStyles from '../lib/mergeStyles';
 import AddSong from './AddSong';
 import FoundSong from './FoundSong';
 import SearchInput from './SearchInput';
+import SearchSongButton from './SearchSongButton';
+import XSSeparator from './XSSeparator';
 
 export default class SearchSong extends Component {
 
@@ -230,27 +232,29 @@ export default class SearchSong extends Component {
         <li
           className="list-group-item clearfix"
           style={ searchStyle }>
+
             <SearchInput
               placeholderText="artist"
               value={ artistValue }
               onKeyPress={ (e) => this.handleKeyPress(e) }
-              onChange={ (value) => this.handleArtistChange(value) }/>
+              onChange={ (e) => this.handleArtistChange(e) }/>
+
+            <XSSeparator />
+
+            <SearchInput
+              placeholderText="title"
+              value={ trackValue }
+              onKeyPress={ (e) => this.handleKeyPress(e) }
+              onChange={ (e) => this.handleTitleChange(e) }/>
+
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-              <SearchInput
-                placeholderText="title"
-                value={ trackValue }
-                onKeyPress={ (e) => this.handleKeyPress(e) }
-                onChange={ (value) => this.handleTitleChange(value) }/>
+
+            <SearchSongButton
+              isDragging={ this.state.isDragging }
+              onClick={ (e) => this.handleSearchClick(e) }/>
+
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-            <button
-              type="button"
-              className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-1"
-              onClick={ (e) => this.handleSearchClick(e) }>
-              <span
-                className="glyphicon glyphicon-search"
-                aria-hidden="true"></span> {this.state.isSearching?'Searching...':'Search'}
-            </button>
-            <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+
             <AddSong
               lastSearchedSong={ this.props.lastSearchedSong }
               onClearSongs={ () => this.handleClearSongs() }
