@@ -4,7 +4,6 @@ import SearchSong from './SearchSong';
 import SelectedSong from './SelectedSong';
 import Song from './Song';
 import DraggableSong from './DraggableSong';
-import PlayingSongIndicator from './PlayingSongIndicator.js';
 import NewPlaylistInstructions from './NewPlaylistInstructions.js';
 
 
