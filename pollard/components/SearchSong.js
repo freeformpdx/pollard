@@ -49,12 +49,19 @@ export default class SearchSong extends Component {
       trackValue: '',
       artistValue: '',
       isSearching: false,
+      missingSearchInputs: false,
       noResults: false,
-      foundSongs: []
+      foundSongs: [],
     });
   }
 
   handleSearchClick(event) {
+    if (!this.state.artistValue || !this.state.trackValue) {
+      this.setState({
+        missingSearchInputs: true,
+      });
+      return;
+    }
     this.setState({
       isSearching: true,
       foundSongs: []
@@ -210,6 +217,10 @@ export default class SearchSong extends Component {
       foundSongsComponents = (
         <li className="list-group-item list-group-item-danger">No search results found 😈 💩 💯 </li>
       );
+    } else if (this.state.missingSearchInputs) {
+      foundSongsComponents = (
+        <li className="list-group-item list-group-item-danger">Search needs artist AND title 😈 💩 💯 </li>
+      );
     }
 
 
@@ -260,7 +271,7 @@ export default class SearchSong extends Component {
               { foundSongsComponents }
             </ul>
           </li>
-          : '' 
+          : ''
         }
       </div>
     );
