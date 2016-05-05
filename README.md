@@ -1,6 +1,6 @@
 # POLLARD
 
-A DJ Setlist creator
+A DJ Playlist creator
 
 ## Stills
 
