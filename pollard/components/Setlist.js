@@ -6,31 +6,44 @@ import NewPlaylistInstructions from './NewPlaylistInstructions.js';
 
 
 export default class Setlist extends Component {
-  getCurrentlyPlayingSongIdx() {
-    for (var idx = 0; idx < this.props.songs.length; idx++) {
-      if (this.props.songs[idx].played) {
-        return idx;
-      }
-    }
-    return -1;
-  }
-
   render() {
-    const playingSongIdx = this.getCurrentlyPlayingSongIdx();
+    const {
+      lastSearchedSong,
+      onAddSong,
+      onArtistChange,
+      onTitleChange,
+      onDeleteSong,
+      onMarkSongPlayed,
+      onMoveSong,
+      onSearchSong,
+      onSelectSong,
+      onUpdateSong,
+      songs,
+      selectedSong,
+    } = this.props;
 
     return (
       <div className="row">
         <ul className="list-group">
+
           <SearchSong
-            lastSearchedSong={ this.props.lastSearchedSong }
-            onSearchSong={ this.props.onSearchSong }
-            onAddSong={ this.props.onAddSong }
-            onArtistChange={ this.props.onArtistChange }
-            onTitleChange={ this.props.onTitleChange } />
+            lastSearchedSong={ lastSearchedSong }
+            onSearchSong={ onSearchSong }
+            onAddSong={ onAddSong }
+            onArtistChange={ onArtistChange }
+            onTitleChange={ onTitleChange } />
 
-          { (Object.keys(this.props.songs).length == 0) ? <NewPlaylistInstructions /> : '' }
+          { (Object.keys(songs).length == 0) ? <NewPlaylistInstructions /> : '' }
 
-          <AddedSongs {...this.props} />
+          <AddedSongs
+            onDeleteSong={ onDeleteSong }
+            onMarkSongPlayed={ onMarkSongPlayed }
+            onMoveSong={ onMoveSong }
+            onSelectSong={ onSelectSong }
+            onUpdateSong={ onUpdateSong }
+            songs={ songs }
+            selectedSong={ selectedSong }
+          />
 
         </ul>
       </div>

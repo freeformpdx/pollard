@@ -6,9 +6,9 @@ import DraggableSong from './DraggableSong';
 
 
 export default class AddedSongs extends Component {
-  getCurrentlyPlayingSongIdx() {
-    for (var idx = 0; idx < this.props.songs.length; idx++) {
-      if (this.props.songs[idx].played) {
+  getCurrentlyPlayingSongIdx(songs) {
+    for (var idx = 0; idx < songs.length; idx++) {
+      if (songs[idx].played) {
         return idx;
       }
     }
@@ -16,25 +16,36 @@ export default class AddedSongs extends Component {
   }
 
   render() {
-    const playingSongIdx = this.getCurrentlyPlayingSongIdx();
-    //const songsI/
+    const {
+      onDeleteSong,
+      onMarkSongPlayed,
+      onMoveSong,
+      onSelectSong,
+      onUpdateSong,
+      songs,
+      selectedSong,
+    } = this.props;
+
+    const playingSongIdx = this.getCurrentlyPlayingSongIdx(songs);
 
     return (
       <div>
-      { this.props.songs.map((song, idx) => {
-        if (idx == this.props.selectedSong) {
+      { songs.map((song, idx) => {
+        if (idx == selectedSong) {
           return (
             <DraggableSong
               key={ idx }
               idx={ idx }
-              onMoveSong={ this.props.onMoveSong }>
+              onMoveSong={ onMoveSong }>
+
               <SelectedSong song={ song }
-                selectedSong={ this.props.selectedSong }
+                selectedSong={ selectedSong }
                 idx={ idx }
                 playingSongIdx={ playingSongIdx }
-                onDeleteSong={ this.props.onDeleteSong }
-                onMarkSongPlayed={ this.props.onMarkSongPlayed }
-                onUpdateSong={ this.props.onUpdateSong }/>
+                onDeleteSong={ onDeleteSong }
+                onMarkSongPlayed={ onMarkSongPlayed }
+                onUpdateSong={ onUpdateSong }/>
+
             </DraggableSong>
           );
         } else {
@@ -42,14 +53,16 @@ export default class AddedSongs extends Component {
             <DraggableSong
               key={ idx }
               idx={ idx }
-              onMoveSong={ this.props.onMoveSong }>
+              onMoveSong={ onMoveSong }>
+
               <Song song={ song }
                 key={ idx }
                 idx={ idx }
                 playingSongIdx={ playingSongIdx }
-                onDeleteSong={ this.props.onDeleteSong }
-                onMarkSongPlayed={ this.props.onMarkSongPlayed }
-                onSelectSong={ this.props.onSelectSong }/>
+                onDeleteSong={ onDeleteSong }
+                onMarkSongPlayed={ onMarkSongPlayed }
+                onSelectSong={ onSelectSong }/>
+
             </DraggableSong>
           );
         }
@@ -57,5 +70,4 @@ export default class AddedSongs extends Component {
       </div>
     );
   }
-
 }
