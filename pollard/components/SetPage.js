@@ -3,15 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {
-  selectSong,
-  updateSong,
   addSong,
   searchSong,
   artistChange,
   titleChange,
-  markSongPlayed,
-  moveSong,
-  deleteSong,
   setSetlistId,
   loadSetlistState
 } from '../actions/Actions.js';
@@ -58,14 +53,13 @@ class SetPage extends Component {
   render() {
 
     const {
+      lastSearchedSong,
       songsList,
       viewSong,
       viewSetlist,
-      lastSearchedSong,
     } = this.props;
 
     const songs = songsList.toJSON();
-    const selectedSong = viewSong.get('selected');
 
     const setlistId = this.props.routeParams.id || viewSetlist.get('id');
 
@@ -77,35 +71,19 @@ class SetPage extends Component {
       <div style={ setStyle }>
         <Setlist
           songs={ songs }
-          selectedSong={ selectedSong }
           setlistId={ setlistId }
           lastSearchedSong={ lastSearchedSong }
-          onSelectSong={ (songId) => 
-            this.props.actions.selectSong(songId)
-          }
-          onUpdateSong={ (song) => 
-            this.props.actions.updateSong(song)
-          }
           onAddSong={ (song) => 
             this.props.actions.addSong(song)
           }
-          onMoveSong={ (fromIdx, toIdx) =>
-            this.props.actions.moveSong(fromIdx, toIdx)
-          }
           onSearchSong={ (artist, title) => 
             this.props.actions.searchSong(artist, title)
-          }
-          onMarkSongPlayed={ (songId) => 
-            this.props.actions.markSongPlayed(songId)
           }
           onArtistChange={ (artist) => 
             this.props.actions.artistChange(artist)
           }
           onTitleChange={ (title) => 
             this.props.actions.titleChange(title)
-          }
-          onDeleteSong={ (songId) => 
-            this.props.actions.deleteSong(songId)
           }
         />
       </div>
@@ -126,15 +104,10 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
       {
-        selectSong,
-        updateSong,
         addSong,
         searchSong,
-        markSongPlayed,
         artistChange,
         titleChange,
-        moveSong,
-        deleteSong,
         setSetlistId,
         loadSetlistState
       },

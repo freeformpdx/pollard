@@ -4,12 +4,11 @@ import classNames from 'classnames';
 import mergeStyles from '../lib/mergeStyles';
 
 import MarkPlayedBtn from './MarkPlayedBtn';
-import DeleteSongBtn from './DeleteSongBtn';
 
 
 export default class Song extends Component {
   handleClick(event) {
-    this.props.onSelectSong(this.props.idx);
+    this.props.selectSong(this.props.idx);
   }
 
 
@@ -41,7 +40,7 @@ export default class Song extends Component {
             idx={ this.props.idx }
             playingSongIdx={ this.props.playingSongIdx }
             isSongPlayed={ this.props.song.played }
-            onMarkSongPlayed={ this.props.onMarkSongPlayed } />
+            markSongPlayed={ this.props.markSongPlayed } />
       </li>
     );
   }

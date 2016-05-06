@@ -10,16 +10,10 @@ export default class Setlist extends Component {
     const {
       lastSearchedSong,
       onAddSong,
+      onSearchSong,
       onArtistChange,
       onTitleChange,
-      onDeleteSong,
-      onMarkSongPlayed,
-      onMoveSong,
-      onSearchSong,
-      onSelectSong,
-      onUpdateSong,
       songs,
-      selectedSong,
     } = this.props;
 
     return (
@@ -35,15 +29,7 @@ export default class Setlist extends Component {
 
           { (Object.keys(songs).length == 0) ? <NewPlaylistInstructions /> : '' }
 
-          <AddedSongs
-            onDeleteSong={ onDeleteSong }
-            onMarkSongPlayed={ onMarkSongPlayed }
-            onMoveSong={ onMoveSong }
-            onSelectSong={ onSelectSong }
-            onUpdateSong={ onUpdateSong }
-            songs={ songs }
-            selectedSong={ selectedSong }
-          />
+          <AddedSongs />
 
         </ul>
       </div>

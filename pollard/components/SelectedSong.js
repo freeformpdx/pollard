@@ -17,7 +17,7 @@ export default class SelectedSong extends Component {
       return <SongInput
         label={ input.name }
         val={ input.value }
-        onUpdateSong={ this.props.onUpdateSong }
+        updateSong={ this.props.updateSong }
         key={ index }
         songIdx={ this.props.idx }
         />;
@@ -62,13 +62,13 @@ export default class SelectedSong extends Component {
           <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
           <DeleteSongBtn
             songIdx={ this.props.idx }
-            onDeleteSong={ this.props.onDeleteSong } />
+            deleteSong={ this.props.deleteSong } />
           <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
           <MarkPlayedBtn
             idx={ this.props.idx }
             playingSongIdx={ this.props.playingSongIdx }
             isSongPlayed={ this.props.song.played }
-            onMarkSongPlayed={ this.props.onMarkSongPlayed } />
+            markSongPlayed={ this.props.markSongPlayed } />
           <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
           { this.props.song.img300px ?
             <img

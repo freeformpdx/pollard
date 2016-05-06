@@ -15,11 +15,11 @@ LOCALS ONLY!!!
        KEEP IN TOUCH)
 
 # D34D
+- [X] [RFXR] push connect() down to AddedSongs
 
 # WH1P
 
 - [ ] [RFXR] push connect() down to SearchSong
-- [ ] [RFXR] push connect() down to AddedSongs
 - [ ] [RFXR] rm setState calls from DeleteSongBtn
 - [ ] [RFXR] rm setState calls from SearchSong
 

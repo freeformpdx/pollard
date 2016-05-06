@@ -27,7 +27,7 @@ export default class DraggableSong extends Component {
       return;
     }
 
-    this.props.onMoveSong(data.idx, this.props.idx);
+    this.props.moveSong(data.idx, this.props.idx);
   }
 
   render() {
