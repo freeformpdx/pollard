@@ -11,7 +11,7 @@ export default class AddSong extends Component {
                   this.props.lastSearchedSong.get('artist') :
                   '';
 
-    this.props.onAddSong({
+    this.props.addSong({
       inputs: [{
         name: 'title',
         value: title,
@@ -20,7 +20,7 @@ export default class AddSong extends Component {
         value: artist,
       }
     ]});
-    this.props.onClearSongs();
+    this.props.clearSongs();
   }
 
 

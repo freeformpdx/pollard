@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {
-  addSong,
-  searchSong,
-  artistChange,
-  titleChange,
   setSetlistId,
   loadSetlistState
 } from '../actions/Actions.js';
@@ -24,7 +20,7 @@ class SetPage extends Component {
         if (!this.props.viewSetlist.get('id')) {
           socket.emit('loadNewSetlist');
           socket.on('newSetlistCreated', (setlist) => {
-            this.props.actions.setSetlistId(setlist.id);
+            this.props.setSetlistId(setlist.id);
             this.props.history.pushState(null, '/setlist/' + setlist.id);
           });
         } else {
@@ -33,7 +29,7 @@ class SetPage extends Component {
       } else {
         socket.emit('loadExistingSetlist', { id: this.props.params.id });
         socket.on('existingSetlistLoaded', ( {setlist} ) => {
-          this.props.actions.loadSetlistState(setlist);
+          this.props.loadSetlistState(setlist);
         });
       }
   }
@@ -51,41 +47,16 @@ class SetPage extends Component {
   }
 
   render() {
-
     const {
-      lastSearchedSong,
-      songsList,
-      viewSong,
-      viewSetlist,
+      songs,
     } = this.props;
-
-    const songs = songsList.toJSON();
-
-    const setlistId = this.props.routeParams.id || viewSetlist.get('id');
-
     const setStyle = mergeStyles({
       maxWidth: 720
     });
 
     return (
       <div style={ setStyle }>
-        <Setlist
-          songs={ songs }
-          setlistId={ setlistId }
-          lastSearchedSong={ lastSearchedSong }
-          onAddSong={ (song) => 
-            this.props.actions.addSong(song)
-          }
-          onSearchSong={ (artist, title) => 
-            this.props.actions.searchSong(artist, title)
-          }
-          onArtistChange={ (artist) => 
-            this.props.actions.artistChange(artist)
-          }
-          onTitleChange={ (title) => 
-            this.props.actions.titleChange(title)
-          }
-        />
+        <Setlist songs={ songs }/>
       </div>
     );
   }
@@ -93,26 +64,15 @@ class SetPage extends Component {
 
 function mapStateToProps({state}) {
   return {
-    songsList: state.getIn(['data','setlist', 'songs']),
-    viewSong: state.getIn(['view','song']),
+    songs: state.getIn(['data','setlist', 'songs']),
     viewSetlist: state.getIn(['view','setlist']),
-    lastSearchedSong: state.getIn(['view', 'search'])
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(
-      {
-        addSong,
-        searchSong,
-        artistChange,
-        titleChange,
-        setSetlistId,
-        loadSetlistState
-      },
-      dispatch
-    )
+    setSetlistId: bindActionCreators(setSetlistId, dispatch),
+    loadSetlistState: bindActionCreators(loadSetlistState, dispatch),
   };
 }
 

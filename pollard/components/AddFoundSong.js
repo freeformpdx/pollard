@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class AddFoundSong extends Component {
   handleClick(event) {
-    this.props.onAddSong({
+    this.props.addSong({
       inputs: [{
         name: "title",
         value: this.props.song.title ? this.props.song.title : '',
@@ -26,7 +26,7 @@ export default class AddFoundSong extends Component {
       img300px: this.props.song.img300px ? this.props.song.img300px : '',
       played: false
     });
-    this.props.onClearSongs();
+    this.props.clearSongs();
   }
 
 

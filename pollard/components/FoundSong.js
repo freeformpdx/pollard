@@ -43,8 +43,8 @@ export default class FoundSong extends Component {
           </div>
             <AddFoundSong
               song={ this.props.song }
-              onClearSongs={ this.props.onClearSongs }
-              onAddSong={ this.props.onAddSong }/>
+              clearSongs={ this.props.clearSongs }
+              addSong={ this.props.addSong }/>
         </div>
       </li>
     );

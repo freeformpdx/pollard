@@ -16,12 +16,12 @@ LOCALS ONLY!!!
 
 # D34D
 - [X] [RFXR] push connect() down to AddedSongs
+- [X] [RFXR] push connect() down to SearchSong
 
 # WH1P
 
-- [ ] [RFXR] push connect() down to SearchSong
-- [ ] [RFXR] rm setState calls from DeleteSongBtn
-- [ ] [RFXR] rm setState calls from SearchSong
+- [ ] [BUGZ] multiple + blank songs add same starting artist/title data
+- [ ] [RFXR] rm setState calls from SearchSongDisplay
 
 # T4SX
 
