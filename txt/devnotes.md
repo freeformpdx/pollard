@@ -18,6 +18,11 @@ LOCALS ONLY!!!
 
 # WH1P
 
+- [ ] [RFXR] push connect() down to SearchSong
+- [ ] [RFXR] push connect() down to AddedSongs
+- [ ] [RFXR] rm setState calls from DeleteSongBtn
+- [ ] [RFXR] rm setState calls from SearchSong
+
 # T4SX
 
 - [ ] [SYSE] init && restart: use deploy target tags
@@ -34,6 +39,8 @@ LOCALS ONLY!!!
 - [ ] [TEST] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
 - [ ] [TEST] stream server dead smoke test
 - [ ] [TEST] can't reach freeformportland.org smoke test
+- [ ] [TEST] Unit Testing Plan && Implementation
+- [ ] [TEST] Functional Testing Plan && Implementation
 - [ ] [LGNG] get some mongo logging
 - [ ] [XTRA] nginx reverse proxy container && configuration
 
