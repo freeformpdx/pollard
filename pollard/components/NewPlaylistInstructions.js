@@ -4,14 +4,15 @@ import mergeStyles from '../lib/mergeStyles';
 
 export default class NewPlaylistInstructions extends Component {
   render() {
-    const noSongsStyle = mergeStyles({
+    const newPlaylistStyle = mergeStyles({
       backgroundColor: '#F6EBFA'
     });
 
     return (
       <li
+        id="NewPlaylistInstructions"
         className="list-group-item"
-        style={ noSongsStyle }>
+        style={ newPlaylistStyle }>
 
         <div
           className="well"

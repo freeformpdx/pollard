@@ -11,12 +11,13 @@ export default class Setlist extends Component {
       songs,
     } = this.props;
 
+
     return (
       <div className="row">
         <ul className="list-group">
           <SearchSong/>
           {
-            (Object.keys(songs).length == 0) ?
+            (songs.size === 0) ?
             <NewPlaylistInstructions /> :
             ''
           }

@@ -15,6 +15,7 @@ export default class Pollard extends Component {
         <ul>
           <li>
             <Link
+              id="MyPlaylist"
               to="/setlist/"
               activeClassName="active">
                 My Playlist
