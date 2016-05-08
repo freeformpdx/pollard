@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import mergeStyles from '../lib/mergeStyles';
-import flatten2Array from '../lib/flattenObjectToArray';
 
 import SongInput from './SongInput';
 import MarkPlayedBtn from './MarkPlayedBtn';
@@ -12,7 +11,6 @@ import DeleteSongBtn from './DeleteSongBtn';
 export default class SelectedSong extends Component {
 
   render() {
-    // const flatInputs = flatten2Array(this.props.song.inputs);
     const inputs = this.props.song.get('inputs').map((input, index) => {
       return <SongInput
         label={ input.get('name') }

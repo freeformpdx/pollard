@@ -36,6 +36,7 @@ LOCALS ONLY!!!
 # WH1P
 
 - [ ] [DVLP] selected song spacing when dragging is goofy
+- [ ] [DVLP] deselect song button
 - [ ] [BUGZ] multiple + blank songs add same starting artist/title data
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
 
