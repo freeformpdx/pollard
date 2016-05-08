@@ -1,48 +1,30 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 
-import mergeStyles from '../lib/mergeStyles';
-
-import MarkPlayedBtn from './MarkPlayedBtn';
-
+import SongSingleLine from './SongSingleLine';
+import SelectedSong from './SelectedSong';
 
 export default class Song extends Component {
-  handleClick(event) {
-    this.props.selectSong(this.props.idx);
-  }
-
-
   render() {
-    let songStyle= mergeStyles({
-      backgroundColor: '#F6EBFA'
-    });
+    const {
+      selectedSong,
+      idx,
+      ...rest,
+    } = this.props;
 
-    const inputNameFilter = (nameToFind) => {
-      return (input) => {
-        return input.name == nameToFind;
-      };
-    };
+    console.log('SONG: ' + this.props.selectedSong);
 
-    const songTitle = this.props.song.inputs.filter(inputNameFilter("title")).pop().value;
-    const artistName = this.props.song.inputs.filter(inputNameFilter("artist")).pop().value;
-
-    return (
-      <li className="list-group-item clearfix" style={ songStyle }>
-          <div
-            onClick={ (e) => this.handleClick(e) }
-            style={ {marginTop: 5, cursor:'pointer'} }
-            className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
-            { songTitle } - { artistName }
-          </div>
-          <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-          <div className="col-xs-3" />
-          <MarkPlayedBtn
-            idx={ this.props.idx }
-            playingSongIdx={ this.props.playingSongIdx }
-            isSongPlayed={ this.props.song.played }
-            markSongPlayed={ this.props.markSongPlayed } />
-      </li>
-    );
+    if (idx === selectedSong) {
+      return (
+        <SelectedSong
+          idx={ idx }
+          { ...rest }/>
+      );
+    } else {
+      return (
+        <SongSingleLine
+          idx={ idx }
+          { ...rest }/>
+      );
+    }
   }
-
 }

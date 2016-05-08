@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import SelectedSong from './SelectedSong';
-import Song from './Song';
 import DraggableSong from './DraggableSong';
 
 
@@ -17,13 +15,8 @@ export default class AddedSongsDisplay extends Component {
 
   render() {
     const {
-      deleteSong,
-      markSongPlayed,
-      moveSong,
-      selectSong,
-      updateSong,
       songs,
-      selectedSong,
+      ...rest,
     } = this.props;
 
     const playingSongIdx = this.getCurrentlyPlayingSongIdx(songs);
@@ -31,41 +24,14 @@ export default class AddedSongsDisplay extends Component {
     return (
       <div>
       { songs.map((song, idx) => {
-        if (idx == selectedSong) {
           return (
             <DraggableSong
               key={ idx }
               idx={ idx }
-              moveSong={ moveSong }>
-
-              <SelectedSong song={ song }
-                selectedSong={ selectedSong }
-                idx={ idx }
-                playingSongIdx={ playingSongIdx }
-                deleteSong={ deleteSong }
-                markSongPlayed={ markSongPlayed }
-                updateSong={ updateSong }/>
-
-            </DraggableSong>
-          );
-        } else {
-          return (
-            <DraggableSong
-              key={ idx }
-              idx={ idx }
-              moveSong={ moveSong }>
-
-              <Song song={ song }
-                key={ idx }
-                idx={ idx }
-                playingSongIdx={ playingSongIdx }
-                deleteSong={ deleteSong }
-                markSongPlayed={ markSongPlayed }
-                selectSong={ selectSong }/>
-
-            </DraggableSong>
-          );
-        }
+              playingSongIdx={ playingSongIdx}
+              song={ song }
+              {...rest} />
+         );
       })}
       </div>
     );

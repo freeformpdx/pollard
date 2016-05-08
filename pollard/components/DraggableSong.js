@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 
+import Song from './Song';
+
 const songSource = {
   beginDrag(props) {
     return {
@@ -88,18 +90,19 @@ export default class Card extends Component {
 class DraggableSong extends Component {
   render() {
     const {
-      children,
       connectDragSource,
       connectDropTarget,
       isDragging,
+      ...rest,
     } = this.props;
+
 
     const opacity = isDragging ? 0 : 1;
     console.log('isDragging: ' + isDragging);
 
     return connectDragSource(connectDropTarget(
       <div style={{ opacity }}>
-        { children }
+        <Song {...rest} />
       </div>
     ));
   }
