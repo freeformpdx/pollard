@@ -1,6 +1,7 @@
 var assert = require('assert');
 var RoutesPage = require('../pages/routesPage');
 var SearchSongPage = require('../pages/searchSongPage');
+var SetlistPage = require('../pages/setlistPage');
 
 describe('search song tests', function() {
 
@@ -38,6 +39,23 @@ describe('search song tests', function() {
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
 
     assert(SearchSongPage.songsFound(), 'song results found');
+  });
+
+  it('search song should produce results', function () {
+    RoutesPage.makeNewPlaylist();
+
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+
+    assert(SearchSongPage.songsFound(), 'song results found');
+  });
+
+  it('search song should produce addable results', function () {
+    RoutesPage.makeNewPlaylist();
+
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+    SearchSongPage.addSongToPlaylist();
+
+    assert(SetlistPage.selectedSongExists(), 'song added to setlist');
   });
 
 });
