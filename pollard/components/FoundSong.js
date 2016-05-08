@@ -26,7 +26,7 @@ export default class FoundSong extends Component {
       'Unknown Date';
 
     return (
-      <li className="list-group-item">
+      <li className="foundSong list-group-item">
         <div className="clearfix">
           <div className="col-xs-6 col-sm-3">
             { this.props.song.artist } <br/>

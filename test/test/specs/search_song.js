@@ -35,14 +35,9 @@ describe('search song tests', function() {
   it('search song should produce results', function () {
     RoutesPage.makeNewPlaylist();
 
-    var artistInput = "guided by voices";
-    var titleInput = "gold star for robot boy";
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
 
-    SearchSongPage.inputArtist(artistInput);
-    SearchSongPage.inputTitle(titleInput);
-    SearchSongPage.clickSearchButton();
-
-    this.timeout(60000); browser.debug();
+    assert(SearchSongPage.songsFound(), 'song results found');
   });
 
 });
