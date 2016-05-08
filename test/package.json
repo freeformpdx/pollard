@@ -1,0 +1,30 @@
+{
+  "name": "webdriverio_test",
+  "version": "0.0.0",
+  "description": "webdriverio test",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:dev",
+    "test:dev": "HOST='http://0.0.0.0:3000' ./node_modules/.bin/wdio wdio.conf.js",
+    "test:docker": "HOST='http://192.168.99.100' ./node_modules/.bin/wdio wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spncrlkt/webdriverio_test.git"
+  },
+  "keywords": [
+    "webdriverio",
+    "test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spncrlkt/webdriverio_test/issues"
+  },
+  "homepage": "https://github.com/spncrlkt/webdriverio_test#readme",
+  "devDependencies": {
+    "wdio-dot-reporter": "0.0.5",
+    "wdio-mocha-framework": "^0.2.13",
+    "webdriverio": "^4.0.7"
+  }
+}
