@@ -12,15 +12,14 @@ import DeleteSongBtn from './DeleteSongBtn';
 export default class SelectedSong extends Component {
 
   render() {
-    const flatInputs = flatten2Array(this.props.song.inputs);
-    const inputs = this.props.song.inputs.map((input, index) => {
+    // const flatInputs = flatten2Array(this.props.song.inputs);
+    const inputs = this.props.song.get('inputs').map((input, index) => {
       return <SongInput
-        label={ input.name }
-        val={ input.value }
+        label={ input.get('name') }
+        val={ input.get('value') }
         updateSong={ this.props.updateSong }
         key={ index }
-        songIdx={ this.props.idx }
-        />;
+        songIdx={ this.props.idx }/>;
     });
 
     const songStyle= mergeStyles({

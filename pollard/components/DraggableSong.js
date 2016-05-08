@@ -77,8 +77,6 @@ class DraggableSong extends Component {
       </div>
     ));
   }
-
-
 }
 
 export default DragSource('song', songSource, (connect, monitor) => ({

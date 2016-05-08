@@ -18,6 +18,7 @@ LOCALS ONLY!!!
 - [X] [RFXR] push connect() down to AddedSongs
 - [X] [RFXR] push connect() down to SearchSong
 - [X] [DVLP] use react-dnd
+- [X] [DVLP] selected song is busto
 
 # TEST
 
@@ -34,7 +35,7 @@ LOCALS ONLY!!!
 
 # WH1P
 
-- [ ] [DVLP] selected song is busto
+- [ ] [DVLP] selected song spacing when dragging is goofy
 - [ ] [BUGZ] multiple + blank songs add same starting artist/title data
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
 
