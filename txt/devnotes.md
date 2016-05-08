@@ -17,6 +17,7 @@ LOCALS ONLY!!!
 # D34D
 - [X] [RFXR] push connect() down to AddedSongs
 - [X] [RFXR] push connect() down to SearchSong
+- [X] [DVLP] use react-dnd
 
 # TEST
 
@@ -33,7 +34,7 @@ LOCALS ONLY!!!
 
 # WH1P
 
-- [ ] [DVLP] use react-dnd
+- [ ] [DVLP] selected song is busto
 - [ ] [BUGZ] multiple + blank songs add same starting artist/title data
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
 
