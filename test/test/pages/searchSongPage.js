@@ -4,6 +4,7 @@ var searchSongPage = {
      */
     _artistInput:  '#artistSearchInput',
     _titleInput:  '#titleSearchInput',
+    _searchSongButton:  '#SearchSongButton',
 
     /**
      * define functionality
@@ -22,6 +23,10 @@ var searchSongPage = {
 
     getTitleInput: function() {
       return browser.getValue(this._titleInput);
+    },
+
+    clickSearchButton: function() {
+      browser.click(this._searchSongButton);
     },
 };
 

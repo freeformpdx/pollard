@@ -21,7 +21,7 @@ describe('search song tests', function() {
   it('should add title input to songSearch', function () {
     RoutesPage.makeNewPlaylist();
 
-    var titleInput = "guided by voices";
+    var titleInput = "gold star for robot boy";
 
     SearchSongPage.inputTitle(titleInput);
 
@@ -30,6 +30,19 @@ describe('search song tests', function() {
       'title input should accept input'
     );
 
+  });
+
+  it('search song should produce results', function () {
+    RoutesPage.makeNewPlaylist();
+
+    var artistInput = "guided by voices";
+    var titleInput = "gold star for robot boy";
+
+    SearchSongPage.inputArtist(artistInput);
+    SearchSongPage.inputTitle(titleInput);
+    SearchSongPage.clickSearchButton();
+
+    this.timeout(60000); browser.debug();
   });
 
 });
