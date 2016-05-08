@@ -97,6 +97,21 @@ export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
     return state.set('selected', action.idx);
+  case actionTypes.MOVE_SONG:
+    // persist selected state while moving
+    if (state.get('selected') == action.fromIdx) {
+      return state.set('selected', action.toIdx);
+    }
+    if (state.get('selected') == action.toIdx) {
+      if (action.fromIdx > action.toIdx) {
+        // dragging upwards
+        return state.update('selected', (selected) => selected + 1)
+      } else {
+        // dragging downwards
+        return state.update('selected', (selected) => selected - 1)
+      }
+    }
+    return state;
   default:
     return state;
   }
