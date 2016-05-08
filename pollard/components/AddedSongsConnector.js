@@ -33,7 +33,7 @@ class AddedSongsConnector extends Component {
         moveSong={ moveSong }
         selectSong={ selectSong }
         updateSong={ updateSong }
-        songs={ songs.toJSON() }
+        songs={ songs }
         selectedSong={ selectedSong }
       />
     );

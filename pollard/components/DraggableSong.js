@@ -49,10 +49,6 @@ const songTarget = {
     }
 
     // Time to actually perform the action
-    console.log('DEBUG: moving song from: ' + dragIdx + ' to ' + hoverIdx);
-
-
-    // props.moveCard(dragIdx, hoverIdx);
     props.moveSong(dragIdx, hoverIdx);
 
     // Note: we're mutating the monitor item here!
@@ -62,30 +58,6 @@ const songTarget = {
     monitor.getItem().idx = hoverIdx;
   }
 };
-
-/*
-export default class Card extends Component {
-  static propTypes = {
-    connectDragSource: PropTypes.func.isRequired,
-    connectDropTarget: PropTypes.func.isRequired,
-    index: PropTypes.number.isRequired,
-    isDragging: PropTypes.bool.isRequired,
-    id: PropTypes.any.isRequired,
-    text: PropTypes.string.isRequired,
-    moveCard: PropTypes.func.isRequired
-  };
-
-  render() {
-    const { text, isDragging, connectDragSource, connectDropTarget } = this.props;
-    const opacity = isDragging ? 0 : 1;
-
-    return connectDragSource(connectDropTarget(
-      <div style={{ ...style, opacity }}>
-        {text}
-      </div>
-    ));
-  }
-*/
 
 class DraggableSong extends Component {
   render() {
@@ -98,7 +70,6 @@ class DraggableSong extends Component {
 
 
     const opacity = isDragging ? 0 : 1;
-    console.log('isDragging: ' + isDragging);
 
     return connectDragSource(connectDropTarget(
       <div style={{ opacity }}>
@@ -110,8 +81,9 @@ class DraggableSong extends Component {
 
 }
 
-export default DropTarget('song', songTarget, connect => ({
-  connectDropTarget: connect.dropTarget(),
-}))(DragSource('song', songSource, (connect, monitor) => ({
+export default DragSource('song', songSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging(),
+}))(DropTarget('song', songTarget, connect => ({
+  connectDropTarget: connect.dropTarget(),
 }))(DraggableSong));

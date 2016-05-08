@@ -11,8 +11,6 @@ export default class Song extends Component {
       ...rest,
     } = this.props;
 
-    console.log('SONG: ' + this.props.selectedSong);
-
     if (idx === selectedSong) {
       return (
         <SelectedSong

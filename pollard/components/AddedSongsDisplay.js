@@ -5,8 +5,8 @@ import DraggableSong from './DraggableSong';
 
 export default class AddedSongsDisplay extends Component {
   getCurrentlyPlayingSongIdx(songs) {
-    for (var idx = 0; idx < songs.length; idx++) {
-      if (songs[idx].played) {
+    for (var idx = 0; idx < songs.size; idx++) {
+      if (songs.getIn([idx, 'played'])) {
         return idx;
       }
     }
@@ -26,9 +26,9 @@ export default class AddedSongsDisplay extends Component {
       { songs.map((song, idx) => {
           return (
             <DraggableSong
-              key={ idx }
+              key={ song.get('_id') }
               idx={ idx }
-              playingSongIdx={ playingSongIdx}
+              playingSongIdx={ playingSongIdx }
               song={ song }
               {...rest} />
          );

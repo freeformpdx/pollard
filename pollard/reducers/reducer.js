@@ -150,12 +150,7 @@ export function dataSetlist(state = initialDataSetlistState , action) {
     const songs = state.get('songs');
     const fromSong = songs.get(action.fromIdx);
     const smallerSongs = songs.delete(action.fromIdx);
-
-    // Adjust splice idx if deleting fromSong screwed it up
-    const toSpliceIdx = action.fromIdx < action.toIdx ?
-      action.toIdx - 1 : action.toIdx;
-
-    const reorderedSongs = smallerSongs.splice(toSpliceIdx, 0, fromSong);
+    const reorderedSongs = smallerSongs.splice(action.toIdx, 0, fromSong);
 
     return state.set('songs', reorderedSongs);
 

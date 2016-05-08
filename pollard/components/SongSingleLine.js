@@ -17,14 +17,13 @@ export default class SongSingleLine extends Component {
       backgroundColor: '#F6EBFA'
     });
 
-    const inputNameFilter = (nameToFind) => {
-      return (input) => {
-        return input.name == nameToFind;
-      };
-    };
+    const songTitle = this.props.song.get('inputs').filter(
+      input => input.get('name') == 'title'
+    ).first().get('value');
 
-    const songTitle = this.props.song.inputs.filter(inputNameFilter("title")).pop().value;
-    const artistName = this.props.song.inputs.filter(inputNameFilter("artist")).pop().value;
+    const artistName = this.props.song.get('inputs').filter(
+      input => input.get('name') == 'artist'
+    ).first().get('value');
 
     return (
       <li className="list-group-item clearfix" style={ songStyle }>
@@ -39,7 +38,7 @@ export default class SongSingleLine extends Component {
           <MarkPlayedBtn
             idx={ this.props.idx }
             playingSongIdx={ this.props.playingSongIdx }
-            isSongPlayed={ this.props.song.played }
+            isSongPlayed={ this.props.song.get('played') }
             markSongPlayed={ this.props.markSongPlayed } />
       </li>
     );
