@@ -18,13 +18,30 @@ LOCALS ONLY!!!
 - [X] [RFXR] push connect() down to AddedSongs
 - [X] [RFXR] push connect() down to SearchSong
 
+# TEST
+
+- [ ] add blank song
+- [ ] add blank song w/ inputs
+- [ ] add blank song after failed search
+- [ ] delete action
+- [ ] play song action
+- [ ] play song action => now playing
+- [ ] select song
+- [ ] edit song inputs
+- [ ] reorder/D&&D
+
+
 # WH1P
 
+- [ ] [DVLP] use react-dnd
 - [ ] [BUGZ] multiple + blank songs add same starting artist/title data
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
 
 # T4SX
 
+- [ ] [UIUX] Group all non-top level song actions into menu
+             - top level: play, back-announced
+             - other: delete, from music library
 - [ ] [SYSE] init && restart: use deploy target tags
 - [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
 - [ ] [SYSE] mk staging versions of init && restart scripts
@@ -40,7 +57,6 @@ LOCALS ONLY!!!
 - [ ] [TEST] stream server dead smoke test
 - [ ] [TEST] can't reach freeformportland.org smoke test
 - [ ] [TEST] Unit Testing Plan && Implementation
-- [ ] [TEST] Functional Testing Plan && Implementation
 - [ ] [LGNG] get some mongo logging
 - [ ] [XTRA] nginx reverse proxy container && configuration
 
