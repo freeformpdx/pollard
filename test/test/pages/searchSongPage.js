@@ -15,6 +15,14 @@ var searchSongPage = {
     getArtistInput: function() {
       return browser.getValue(this._artistInput);
     },
+
+    inputTitle: function(titleInput) {
+      browser.setValue(this._titleInput, titleInput);
+    },
+
+    getTitleInput: function() {
+      return browser.getValue(this._titleInput);
+    },
 };
 
 module.exports = searchSongPage;

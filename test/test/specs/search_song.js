@@ -18,4 +18,18 @@ describe('search song tests', function() {
 
   });
 
+  it('should add title input to songSearch', function () {
+    RoutesPage.makeNewPlaylist();
+
+    var titleInput = "guided by voices";
+
+    SearchSongPage.inputTitle(titleInput);
+
+    assert(
+      SearchSongPage.getTitleInput() == titleInput,
+      'title input should accept input'
+    );
+
+  });
+
 });
