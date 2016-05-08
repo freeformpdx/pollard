@@ -8,6 +8,8 @@ import {
   reduxReactRouter
 } from 'redux-router';
 import { createHistory } from 'history';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
 
 import { state } from '../reducers/reducer.js';
 
@@ -34,7 +36,7 @@ const store = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <Provider store={store}>
@@ -50,3 +52,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default DragDropContext(HTML5Backend)(App);
