@@ -33,7 +33,7 @@ describe('search song tests', function() {
 
   });
 
-  it('search song should produce results', function () {
+  it('should produce results', function () {
     RoutesPage.makeNewPlaylist();
 
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
@@ -41,7 +41,7 @@ describe('search song tests', function() {
     assert(SearchSongPage.songsFound(), 'song results found');
   });
 
-  it('search song should produce results', function () {
+  it('should produce results', function () {
     RoutesPage.makeNewPlaylist();
 
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
@@ -49,7 +49,7 @@ describe('search song tests', function() {
     assert(SearchSongPage.songsFound(), 'song results found');
   });
 
-  it('search song should produce addable results', function () {
+  it('should produce addable results', function () {
     RoutesPage.makeNewPlaylist();
 
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
@@ -57,5 +57,20 @@ describe('search song tests', function() {
 
     assert(SetlistPage.selectedSongExists(), 'song added to setlist');
   });
+
+  it('should produce addable results x2', function () {
+    RoutesPage.makeNewPlaylist();
+
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+    SearchSongPage.addSongToPlaylist();
+
+    assert(SetlistPage.selectedSongExists(), 'song added to setlist');
+
+    SearchSongPage.searchForSong("guided by voices", "valuable hunting knife");
+    SearchSongPage.addSongToPlaylist();
+
+    assert(SetlistPage.selectedSongExists(), 'second song added to setlist');
+  });
+
 
 });
