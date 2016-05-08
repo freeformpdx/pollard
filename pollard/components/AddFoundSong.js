@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import guid from '../lib/guid';
+
 export default class AddFoundSong extends Component {
   handleClick(event) {
     this.props.addSong({
@@ -24,7 +26,8 @@ export default class AddFoundSong extends Component {
       }],
       img64px: this.props.song.img64px ? this.props.song.img64px : '',
       img300px: this.props.song.img300px ? this.props.song.img300px : '',
-      played: false
+      played: false,
+      clientID: guid(),
     });
     this.props.clearSongs();
   }

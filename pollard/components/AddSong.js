@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import guid from '../lib/guid';
 import mergeStyles from '../lib/mergeStyles';
 
 export default class AddSong extends Component {
@@ -18,8 +19,9 @@ export default class AddSong extends Component {
       }, {
         name: 'artist',
         value: artist,
-      }
-    ]});
+      }],
+      clientID: guid(),
+    });
     this.props.clearSongs();
   }
 

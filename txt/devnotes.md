@@ -20,6 +20,7 @@ LOCALS ONLY!!!
 - [X] [DVLP] use react-dnd
 - [X] [DVLP] selected song is busto
 - [X] [DVLP] selected song spacing when dragging is goofy
+- [X] [DVLP] added songs don't get ids
 
 # TEST
 

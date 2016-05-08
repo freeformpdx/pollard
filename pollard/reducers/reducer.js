@@ -2,8 +2,6 @@ import * as actionTypes from '../constants/ActionTypes';
 
 import Immutable, { Map, List } from 'immutable';
 
-import guid from '../lib/guid';
-
 // TODO
 // bifurcate reducers/actionTypes/actions on major feature
 

@@ -24,9 +24,12 @@ export default class AddedSongsDisplay extends Component {
     return (
       <div>
       { songs.map((song, idx) => {
+          const key = song.get('_id') ?
+                      song.get('_id') :
+                      song.get('clientID');
           return (
             <DraggableSong
-              key={ song.get('_id') }
+              key={ key }
               idx={ idx }
               playingSongIdx={ playingSongIdx }
               song={ song }
