@@ -5,7 +5,7 @@ var routesPage = {
     _myPlaylistLink:  '#MyPlaylist',
 
     /**
-     *
+     * define functionality
      */
     makeNewPlaylist: function() {
       browser.url(process.env.HOST);

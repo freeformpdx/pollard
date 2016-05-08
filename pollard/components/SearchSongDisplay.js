@@ -234,7 +234,7 @@ export default class SearchSongDisplay extends Component {
           style={ searchStyle }>
 
             <SearchInput
-              placeholderText="artist"
+              type="artist"
               value={ artistValue }
               onKeyPress={ (e) => this.handleKeyPress(e) }
               onChange={ (e) => this.handleArtistChange(e) }/>
@@ -242,7 +242,7 @@ export default class SearchSongDisplay extends Component {
             <XSSeparator />
 
             <SearchInput
-              placeholderText="title"
+              type="title"
               value={ trackValue }
               onKeyPress={ (e) => this.handleKeyPress(e) }
               onChange={ (e) => this.handleTitleChange(e) }/>

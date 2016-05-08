@@ -1,35 +1,20 @@
-var routesPage = {
+var searchSongPage = {
     /**
      * define selectors
      */
-    _myPlaylistLink:  '#MyPlaylist',
+    _artistInput:  '#artistSearchInput',
+    _titleInput:  '#titleSearchInput',
 
     /**
-     *
+     * define functionality
      */
-    makeNewPlaylist: function() {
-      browser.url(process.env.HOST);
-      browser.click(this._myPlaylistLink);
-
-      // wait for redirect to setlist/:id
-      var currentUrl = browser.getUrl()
-      return browser.waitUntil(function() {
-        return browser.getUrl().then(function (url) {
-          return url !== currentUrl;
-        });
-      })
+    inputArtist: function(artistInput) {
+      browser.setValue(this._artistInput, artistInput);
     },
 
-    getNewPlaylistInstructions: function() {
-      return browser.getText('#NewPlaylistInstructions');
+    getArtistInput: function() {
+      return browser.getValue(this._artistInput);
     },
-
-    getSetlistIdFromUrl: function() {
-      var url = browser.getUrl();
-      var urlPieces = url.split('/');
-      return urlPieces[urlPieces.length-1];
-    },
-
 };
 
-module.exports = routesPage;
+module.exports = searchSongPage;
