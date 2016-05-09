@@ -2,7 +2,7 @@ var assert = require('assert');
 
 var RoutesPage = require('../pages/routesPage');
 var SearchSongPage = require('../pages/searchSongPage');
-var SetlistPage = require('../pages/setlistPage');
+var SelectedSongPage = require('../pages/selectedSongPage');
 var BlankSongPage = require('../pages/blankSongPage');
 
 describe('blank song tests', function() {
@@ -11,7 +11,7 @@ describe('blank song tests', function() {
 
     BlankSongPage.clickAddBlankSongButton();
 
-    assert(SetlistPage.selectedSongExists(), 'song added to setlist');
+    assert(SelectedSongPage.selectedSongExists(), 'song added to setlist');
   });
 
   it('added blank song should be blank', function () {
@@ -20,11 +20,11 @@ describe('blank song tests', function() {
     BlankSongPage.clickAddBlankSongButton();
 
     assert(
-      SetlistPage.getSelectedSongField('title') == '',
+      SelectedSongPage.getSelectedSongField('title') == '',
       'title should be blank'
     );
     assert(
-      SetlistPage.getSelectedSongField('artist') == '',
+      SelectedSongPage.getSelectedSongField('artist') == '',
       'artist should be blank'
     );
   });
@@ -41,11 +41,11 @@ describe('blank song tests', function() {
     BlankSongPage.clickAddBlankSongButton();
 
     assert(
-      SetlistPage.getSelectedSongField('title') == title,
+      SelectedSongPage.getSelectedSongField('title') == title,
       'title should be pre-filled'
     );
     assert(
-      SetlistPage.getSelectedSongField('artist') == artist,
+      SelectedSongPage.getSelectedSongField('artist') == artist,
       'artist should be pre-filled'
     );
   });
@@ -64,11 +64,11 @@ describe('blank song tests', function() {
     BlankSongPage.clickAddBlankSongButton();
 
     assert(
-      SetlistPage.getSelectedSongField('title') == title,
+      SelectedSongPage.getSelectedSongField('title') == title,
       'title should be pre-filled'
     );
     assert(
-      SetlistPage.getSelectedSongField('artist') == artist,
+      SelectedSongPage.getSelectedSongField('artist') == artist,
       'artist should be pre-filled'
     );
   });

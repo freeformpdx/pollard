@@ -1,4 +1,4 @@
-var setlistPage = {
+var selectedSongPage = {
     /**
      * define selectors
      */
@@ -19,4 +19,4 @@ var setlistPage = {
     },
 };
 
-module.exports = setlistPage;
+module.exports = selectedSongPage;

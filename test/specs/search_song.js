@@ -1,7 +1,7 @@
 var assert = require('assert');
 var RoutesPage = require('../pages/routesPage');
 var SearchSongPage = require('../pages/searchSongPage');
-var SetlistPage = require('../pages/setlistPage');
+var SelectedSongPage = require('../pages/selectedSongPage');
 
 describe('search song tests', function() {
 
@@ -55,7 +55,7 @@ describe('search song tests', function() {
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
     SearchSongPage.addSongToPlaylist();
 
-    assert(SetlistPage.selectedSongExists(), 'song added to setlist');
+    assert(SelectedSongPage.selectedSongExists(), 'song added to setlist');
   });
 
   it('should produce addable results x2', function () {
@@ -64,12 +64,12 @@ describe('search song tests', function() {
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
     SearchSongPage.addSongToPlaylist();
 
-    assert(SetlistPage.selectedSongExists(), 'song added to setlist');
+    assert(SelectedSongPage.selectedSongExists(), 'song added to setlist');
 
     SearchSongPage.searchForSong("guided by voices", "valuable hunting knife");
     SearchSongPage.addSongToPlaylist();
 
-    assert(SetlistPage.selectedSongExists(), 'second song added to setlist');
+    assert(SelectedSongPage.selectedSongExists(), 'second song added to setlist');
   });
 
 
