@@ -29,7 +29,7 @@ render() {
   return (
     <button
       type="button"
-      className="btn btn-danger col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-1"
+      className="deleteButton btn btn-danger col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-1"
       onClick={ (e) => this.handleClick(e) }>
 
       <span

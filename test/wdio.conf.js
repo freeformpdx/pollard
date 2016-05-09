@@ -1,5 +1,5 @@
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -16,6 +16,20 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+    suites: {
+      blank_song: [
+        './specs/blank_song.js',
+      ],
+      delete_song: [
+        './specs/delete_song.js',
+      ],
+      make_new_playlist: [
+        './specs/make_new_playlist.js',
+      ],
+      search_song: [
+        './specs/search_song.js',
+      ],
+    },
     //
     // ============
     // Capabilities

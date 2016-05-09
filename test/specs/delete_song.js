@@ -10,6 +10,10 @@ describe('delete song tests', function() {
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
     SearchSongPage.addSongToPlaylist();
 
+    assert(
+      SelectedSongPage.deleteButtonExists(),
+      'delete button should exist'
+    );
 
   });
 
