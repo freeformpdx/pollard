@@ -23,11 +23,11 @@ LOCALS ONLY!!!
 - [X] [DVLP] added songs don't get ids
 - [X] [BUGZ] multiple + blank songs add same starting artist/title data
 - [X] [SRCH] add blank song
+- [X] [SRCH] add blank song w/ inputs
 
 # TEST
 
 
-- [ ] [SRCH] add blank song w/ inputs
 - [ ] [SRCH] add blank song after failed search
 - [ ] [LIST] reorder/D&&D
 - [ ] [LIST] delete action

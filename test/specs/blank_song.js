@@ -29,4 +29,25 @@ describe('blank song tests', function() {
     );
   });
 
+  it('should pre-fill blank song w/ current inputs', function () {
+    RoutesPage.makeNewPlaylist();
+
+    var title = 'test title';
+    var artist = 'test artist';
+
+    SearchSongPage.inputTitle(title);
+    SearchSongPage.inputArtist(artist);
+
+    BlankSongPage.clickAddBlankSongButton();
+
+    assert(
+      SetlistPage.getSelectedSongField('title') == title,
+      'title should be pre-filled'
+    );
+    assert(
+      SetlistPage.getSelectedSongField('artist') == artist,
+      'artist should be pre-filled'
+    );
+  });
+
 });
