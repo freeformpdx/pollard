@@ -244,3 +244,13 @@ Total page size = 123K
 - [X] [SYSE] init: script to check 4 no running mongo && sprout
 - [X] [SYSE] init: exec ^ and check results before continuing init
 - [X] [SYSE] restart: restart prod container script
+- [X] [RFXR] push connect() down to AddedSongs
+- [X] [RFXR] push connect() down to SearchSong
+- [X] [DVLP] use react-dnd
+- [X] [DVLP] selected song is busto
+- [X] [DVLP] selected song spacing when dragging is goofy
+- [X] [DVLP] added songs don't get ids
+- [X] [BUGZ] multiple + blank songs add same starting artist/title data
+- [X] [SRCH] add blank song
+- [X] [SRCH] add blank song w/ inputs
+- [X] [SRCH] add blank song after failed search
