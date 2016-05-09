@@ -21,6 +21,7 @@ LOCALS ONLY!!!
 - [X] [DVLP] selected song is busto
 - [X] [DVLP] selected song spacing when dragging is goofy
 - [X] [DVLP] added songs don't get ids
+- [X] [BUGZ] multiple + blank songs add same starting artist/title data
 
 # TEST
 
@@ -37,8 +38,8 @@ LOCALS ONLY!!!
 
 # WH1P
 
+- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
 - [ ] [DVLP] deselect song button
-- [ ] [BUGZ] multiple + blank songs add same starting artist/title data
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
 
 # T4SX

@@ -73,6 +73,11 @@ export function viewSearch(state = Map({}), action) {
       .set('artist', action.artist)
       .set('title', action.title);
 
+  case actionTypes.CLEAR_SEARCH_SONG_INPUTS:
+    return state
+      .set('artist', '')
+      .set('title', '');
+
   default:
     return state;
   }

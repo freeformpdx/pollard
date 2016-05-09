@@ -56,6 +56,7 @@ export default class SearchSongDisplay extends Component {
       noResults: false,
       foundSongs: [],
     });
+    this.props.clearSearchSongInputs();
   }
 
   handleSearchClick(event) {

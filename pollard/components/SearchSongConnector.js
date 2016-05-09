@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import {
   addSong,
   artistChange,
+  clearSearchSongInputs,
   searchSong,
   titleChange,
 } from '../actions/Actions.js';
@@ -16,6 +17,7 @@ class SearchSongConnector extends Component {
     const {
       addSong,
       artistChange,
+      clearSearchSongInputs,
       lastSearchedSong,
       searchSong,
       titleChange,
@@ -25,6 +27,7 @@ class SearchSongConnector extends Component {
       <SearchSongDisplay
         addSong={ addSong }
         artistChange={ artistChange }
+        clearSearchSongInputs={ clearSearchSongInputs }
         lastSearchedSong={ lastSearchedSong }
         searchSong={ searchSong }
         titleChange={ titleChange }/>
@@ -42,6 +45,7 @@ function mapDispatchToProps(dispatch) {
   return {
     addSong: bindActionCreators(addSong, dispatch),
     artistChange: bindActionCreators(artistChange, dispatch),
+    clearSearchSongInputs: bindActionCreators(clearSearchSongInputs, dispatch),
     searchSong: bindActionCreators(searchSong, dispatch),
     titleChange: bindActionCreators(titleChange, dispatch),
   };

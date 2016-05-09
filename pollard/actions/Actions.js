@@ -57,6 +57,12 @@ export function titleChange(title) {
   }
 };
 
+export function clearSearchSongInputs() {
+  return {
+    type: types.CLEAR_SEARCH_SONG_INPUTS,
+  }
+};
+
 export function addSong(song) {
   return {
     type: types.ADD_SONG,
