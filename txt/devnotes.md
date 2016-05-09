@@ -15,16 +15,6 @@ LOCALS ONLY!!!
        KEEP IN TOUCH)
 
 # D34D
-- [X] [RFXR] push connect() down to AddedSongs
-- [X] [RFXR] push connect() down to SearchSong
-- [X] [DVLP] use react-dnd
-- [X] [DVLP] selected song is busto
-- [X] [DVLP] selected song spacing when dragging is goofy
-- [X] [DVLP] added songs don't get ids
-- [X] [BUGZ] multiple + blank songs add same starting artist/title data
-- [X] [SRCH] add blank song
-- [X] [SRCH] add blank song w/ inputs
-- [X] [SRCH] add blank song after failed search
 
 # TEST
 
