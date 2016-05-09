@@ -33,6 +33,7 @@ export default class AddSong extends Component {
 
     return (
       <button
+        id="AddSong"
         className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2"
         onClick={ (e) => this.handleClick(e) }>
         <span
