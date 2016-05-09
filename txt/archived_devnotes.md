@@ -254,3 +254,4 @@ Total page size = 123K
 - [X] [SRCH] add blank song
 - [X] [SRCH] add blank song w/ inputs
 - [X] [SRCH] add blank song after failed search
+- [X] [CODE] load schedule FE
