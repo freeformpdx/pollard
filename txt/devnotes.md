@@ -24,11 +24,11 @@ LOCALS ONLY!!!
 - [X] [BUGZ] multiple + blank songs add same starting artist/title data
 - [X] [SRCH] add blank song
 - [X] [SRCH] add blank song w/ inputs
+- [X] [SRCH] add blank song after failed search
 
 # TEST
 
 
-- [ ] [SRCH] add blank song after failed search
 - [ ] [LIST] reorder/D&&D
 - [ ] [LIST] delete action
 - [ ] [LIST] play song action

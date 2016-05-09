@@ -50,4 +50,27 @@ describe('blank song tests', function() {
     );
   });
 
+  it('after bad search, should pre-fill blank song w/ current inputs', function () {
+    RoutesPage.makeNewPlaylist();
+
+    var title = 'test title sanotehu';
+    var artist = 'test artist asnotebu';
+
+    SearchSongPage.inputTitle(title);
+    SearchSongPage.inputArtist(artist);
+
+    SearchSongPage.clickSearchButton();
+
+    BlankSongPage.clickAddBlankSongButton();
+
+    assert(
+      SetlistPage.getSelectedSongField('title') == title,
+      'title should be pre-filled'
+    );
+    assert(
+      SetlistPage.getSelectedSongField('artist') == artist,
+      'artist should be pre-filled'
+    );
+  });
+
 });
