@@ -25,15 +25,16 @@ LOCALS ONLY!!!
 
 # TEST
 
-- [ ] add blank song
-- [ ] add blank song w/ inputs
-- [ ] add blank song after failed search
-- [ ] delete action
-- [ ] play song action
-- [ ] play song action => now playing
-- [ ] select song
-- [ ] edit song inputs
-- [ ] reorder/D&&D
+
+- [ ] [SRCH] add blank song
+- [ ] [SRCH] add blank song w/ inputs
+- [ ] [SRCH] add blank song after failed search
+- [ ] [LIST] reorder/D&&D
+- [ ] [LIST] delete action
+- [ ] [LIST] play song action
+- [ ] [LIST] play song action => now playing
+- [ ] [LIST] select song
+- [ ] [LIST] edit song inputs
 
 
 # WH1P
