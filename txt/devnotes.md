@@ -16,45 +16,44 @@ LOCALS ONLY!!!
 
 # D34D
 
+# WH1P
+
+- [ ] [MNGO] backup script (pause mongod; cp out /data/db; push 2 s3)
+- [ ] [MNGO] full restore from S3
+- [ ] [TEST] Load-test script
+
+# T4SX
+
+- [ ] [SYSE] init && restart: use deploy target tags
+- [ ] [SYSE] mk staging versions of init && restart scripts
+- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
+- [ ] [DVLP] deselect song button
+- [ ] [RFXR] rm setState calls from SearchSongDisplay
+- [ ] [UIUX] Group all non-top level song actions into menu
+             - top level: play, back-announced
+             - other: delete, from music library
+- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
+- [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
+- [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
+- [ ] [ALRT] send page/email
+- [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
+- [ ] [TEST] has loaded schedule smoke test
+- [ ] [TEST] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
+- [ ] [TEST] stream server dead smoke test
+- [ ] [TEST] can't reach freeformportland.org smoke test
+- [ ] [LGNG] get some mongo logging
+- [ ] [XTRA] nginx reverse proxy container && configuration
+
+
 # TEST
 
-
-- [ ] [LIST] reorder/D&&D
 - [ ] [LIST] delete action
 - [ ] [LIST] play song action
 - [ ] [LIST] play song action => now playing
 - [ ] [LIST] select song
 - [ ] [LIST] edit song inputs
+- [ ] [LIST] reorder/D&&D
 
-
-# WH1P
-
-- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
-- [ ] [DVLP] deselect song button
-- [ ] [RFXR] rm setState calls from SearchSongDisplay
-
-# T4SX
-
-- [ ] [UIUX] Group all non-top level song actions into menu
-             - top level: play, back-announced
-             - other: delete, from music library
-- [ ] [SYSE] init && restart: use deploy target tags
-- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
-- [ ] [SYSE] mk staging versions of init && restart scripts
-- [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
-- [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
-- [ ] [ALRT] send page/email
-- [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
-- [ ] [MNGO] backup script (pause mongod; cp out /data/db; push 2 s3)
-- [ ] [MNGO] full restore from S3
-- [ ] [CODE] load schedule FE
-- [ ] [TEST] has loaded schedule smoke test
-- [ ] [TEST] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
-- [ ] [TEST] stream server dead smoke test
-- [ ] [TEST] can't reach freeformportland.org smoke test
-- [ ] [TEST] Unit Testing Plan && Implementation
-- [ ] [LGNG] get some mongo logging
-- [ ] [XTRA] nginx reverse proxy container && configuration
 
 
 # RUMINATIN AF RN
