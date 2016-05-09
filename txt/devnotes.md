@@ -22,11 +22,11 @@ LOCALS ONLY!!!
 - [X] [DVLP] selected song spacing when dragging is goofy
 - [X] [DVLP] added songs don't get ids
 - [X] [BUGZ] multiple + blank songs add same starting artist/title data
+- [X] [SRCH] add blank song
 
 # TEST
 
 
-- [ ] [SRCH] add blank song
 - [ ] [SRCH] add blank song w/ inputs
 - [ ] [SRCH] add blank song after failed search
 - [ ] [LIST] reorder/D&&D

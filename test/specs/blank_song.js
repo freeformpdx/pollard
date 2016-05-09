@@ -13,4 +13,20 @@ describe('blank song tests', function() {
 
     assert(SetlistPage.selectedSongExists(), 'song added to setlist');
   });
+
+  it('added blank song should be blank', function () {
+    RoutesPage.makeNewPlaylist();
+
+    BlankSongPage.clickAddBlankSongButton();
+
+    assert(
+      SetlistPage.getSelectedSongField('title') == '',
+      'title should be blank'
+    );
+    assert(
+      SetlistPage.getSelectedSongField('artist') == '',
+      'artist should be blank'
+    );
+  });
+
 });

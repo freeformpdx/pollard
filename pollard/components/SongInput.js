@@ -29,7 +29,7 @@ export default class SongInput extends Component {
             id={ labelId }>{ this.props.label }</span>
             <input
               type="text"
-              className="form-control"
+              className={ "form-control " +  labelId }
               aria-describedby={ labelId }
               value={ this.props.val }
               onChange={ (e) => this.handleChange(e) }
