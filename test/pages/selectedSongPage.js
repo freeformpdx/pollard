@@ -24,6 +24,11 @@ var selectedSongPage = {
       browser.waitForExist(this._deleteButton, 5000);
       return true;
     },
+
+    deleteButtonExists: function() {
+      browser.waitForExist(this._deleteButton, 5000);
+      return true;
+    },
 };
 
 module.exports = selectedSongPage;

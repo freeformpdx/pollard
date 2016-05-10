@@ -17,4 +17,18 @@ describe('delete song tests', function() {
 
   });
 
+  it('should prompt for delete confirmation', function () {
+    RoutesPage.makeNewPlaylist();
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+    SearchSongPage.addSongToPlaylist();
+
+    /* WIP */
+
+    assert(
+      SelectedSongPage.deleteButtonExists(),
+      'delete button should exist'
+    );
+
+  });
+
 });
