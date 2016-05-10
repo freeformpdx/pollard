@@ -10,7 +10,7 @@ echo "Starting mongo backup"
 
 docker run \
     --rm \
-    -it \
+    -i \
     --link mongo:mongo \
     -v /data/backup:/data/backup \
     --name mongo_backup \

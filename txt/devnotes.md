@@ -16,10 +16,17 @@ LOCALS ONLY!!!
 
 # D34D
 
+- [X] [MNGO] ./bin/docker\_mongo\_backup.sh
+- [X] [MNGO] ./bin/docker\_mongo\_restore.sh
+- [X] [MNGO] scp backups to local
+
+# NOTZ
+
+- aws s3 cp README.md s3://kffp.backups/prod/
+
 # WH1P
 
-- [ ] [MNGO] backup script (pause mongod; cp out /data/db; push 2 s3)
-- [ ] [MNGO] full restore from S3
+- [ ] [MNGO] push backups 2 S3
 - [ ] [TEST] Load-test script
 
 # T4SX

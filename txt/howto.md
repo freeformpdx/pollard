@@ -52,5 +52,12 @@ This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for de
 - `ssh-add ~/.ssh/kffp-dev.pem`
 - `ssh ec2-user@XXX.XXX.XXX.XXX.us-west-1.compute.amazonaws.com`
 
+
+## aws cli for backing up to S3
+- [IAM](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html)
+- [CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-bundle-other-os)
+-
+
+
 ### LOADING SCHEDULES INTO POLLARD
 - make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`

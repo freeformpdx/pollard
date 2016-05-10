@@ -53,3 +53,7 @@ bin/butt.txt
 *.swp
 
 errorShots
+
+backup/development
+backup/staging
+backup/production
