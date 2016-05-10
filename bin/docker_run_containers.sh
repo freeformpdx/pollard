@@ -13,7 +13,7 @@ set -e
 
 echo "Starting mongo_data"
 
-docker create -v /data/db --name mongo_data mongo:3.1
+docker create -v /data/db:/data/db --name mongo_data mongo:3.1
 
 
 ##################
