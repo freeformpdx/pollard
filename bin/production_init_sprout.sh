@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# run by deploy_init_sprout.sh
+# run by deploy/production/init_sprout.sh
 
 echo -e "\n** rming all containers"
 ./bin/docker_rm_all.sh

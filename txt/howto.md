@@ -33,8 +33,8 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
 
 ## deployin
 
-- for a brand new install on a host: `./deploy/[production/staging]/deploy_init_sprout.sh`
-- for a running sprout code update: `./deploy/[production/staging]/deploy_restart_sprout.sh`
+- for a brand new install on a host: `./deploy/[production/staging]/init_sprout.sh`
+- for a running sprout code update: `./deploy/[production/staging]/restart_sprout.sh`
 
 ## devin
 

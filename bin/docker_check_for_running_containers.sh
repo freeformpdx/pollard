@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# used to determine if we can ./bin/deploy_init_sprout.sh
+# used to determine if we can ./deploy/[production,staging]/init_sprout.sh
 
 if ! docker top mongo &>/dev/null
 then
