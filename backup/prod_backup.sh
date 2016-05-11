@@ -19,3 +19,8 @@ mkdir -p backup/production/$DOTE
 scp -r \
   ec2-user@$KFFPPROD:/data/backup \
   backup/production/$DATE
+
+aws s3 cp \
+  --recursive \
+  backup/production/$DATE \
+  s3://kffp.backups/production/$DATE
