@@ -4,7 +4,7 @@
 # pulls production.latest tag
 # restarts sprout
 
-# USAGE ./bin/prod_restart_sprout.sh
+# USAGE ./bin/production_restart_sprout.sh
 
 docker stop sprout
 docker rm sprout

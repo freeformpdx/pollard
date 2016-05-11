@@ -17,7 +17,7 @@ if echo "$answer" | grep -iq "^y" ;then
   echo -e "\n** initing sprout"
 
   ssh ec2-user@$KFFPPROD \
-    './bin/docker_check_for_running_containers.sh && ./bin/prod_init_sprout.sh'
+    './bin/docker_check_for_running_containers.sh && ./bin/production_init_sprout.sh'
 else
     echo "fine then i wont u mfer"
 fi
