@@ -12,7 +12,7 @@ if echo "$answer" | grep -iq "^y" ;then
 
   echo -e "\n** pushing assets"
 
-  deploy/scp_server_assets.sh
+  deploy/production/scp_server_assets.sh
 
   echo -e "\n** initing sprout"
 

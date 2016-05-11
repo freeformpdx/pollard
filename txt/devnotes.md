@@ -19,20 +19,17 @@ LOCALS ONLY!!!
 - [X] [MNGO] ./bin/docker\_mongo\_backup.sh
 - [X] [MNGO] ./bin/docker\_mongo\_restore.sh
 - [X] [MNGO] scp backups to local
+- [X] [MNGO] local backups 2 aws S3
+- [X] [SYSE] mk staging versions of init && restart scripts
 
-# NOTZ
-
-- aws s3 cp README.md s3://kffp.backups/prod/
 
 # WH1P
 
-- [ ] [MNGO] push backups 2 S3
-- [ ] [TEST] Load-test script
+- [ ] [SYSE] init && restart: use deploy target tags
 
 # T4SX
 
-- [ ] [SYSE] init && restart: use deploy target tags
-- [ ] [SYSE] mk staging versions of init && restart scripts
+- [ ] [TEST] Load-test script
 - [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
 - [ ] [DVLP] deselect song button
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
