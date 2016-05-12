@@ -16,7 +16,6 @@ export default class SearchSongDisplay extends Component {
     super(props);
 
     let echoNestApiKey = config.ECHO_NEST;
-    let sevenDigitalApiKey = config.SEVEN_DIGITAL;
 
     this.state = {
       trackValue: '',
@@ -25,7 +24,6 @@ export default class SearchSongDisplay extends Component {
       foundSongs: [],
       error: null,
       echoNestApiKey,
-      sevenDigitalApiKey
     };
   }
 

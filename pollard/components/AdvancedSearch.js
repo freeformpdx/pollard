@@ -14,7 +14,6 @@ class AdvancedSearch extends Component {
 
     let echoNestApiKey = config.ECHO_NEST;
     let discogsApiKey = config.DISCOGS;
-    let sevenDigitalApiKey = config.SEVEN_DIGITAL;
 
     this.state = {
       trackValue: '',
@@ -24,7 +23,6 @@ class AdvancedSearch extends Component {
       searchResults: {},
       echoNestApiKey,
       discogsApiKey,
-      sevenDigitalApiKey
     };
   }
 
