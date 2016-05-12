@@ -22,8 +22,8 @@ export default class SearchSongDisplay extends Component {
       trackValue: '',
       artistValue: '',
       isSearching: false,
-      noResults: false,
       foundSongs: [],
+      error: null,
       echoNestApiKey,
       sevenDigitalApiKey
     };
@@ -33,6 +33,12 @@ export default class SearchSongDisplay extends Component {
   handleArtistChange(e) {
     this.setState({artistValue: e.target.value});
     this.props.artistChange(e.target.value);
+  }
+
+  setError(error) {
+    this.setState({
+      error,
+    });
   }
 
   handleTitleChange(e) {
@@ -52,9 +58,8 @@ export default class SearchSongDisplay extends Component {
       trackValue: '',
       artistValue: '',
       isSearching: false,
-      missingSearchInputs: false,
-      noResults: false,
       foundSongs: [],
+      error: null,
     });
     this.props.clearSearchSongInputs();
   }
@@ -62,7 +67,7 @@ export default class SearchSongDisplay extends Component {
   handleSearchClick(event) {
     if (!this.state.artistValue || !this.state.trackValue) {
       this.setState({
-        missingSearchInputs: true,
+        error: 'Search needs title && artist',
       });
       return;
     }
@@ -82,6 +87,11 @@ export default class SearchSongDisplay extends Component {
     // FETCH TRAX
     fetch(trackSearchUrl)
     .then(function(response) {
+      if (!response.ok) {
+        const errMsg = "Search server down :( Try again?";
+        self.setError(errMsg);
+        throw Error(errMsg);
+      }
       return response.json();
     }).then(function(json) {
       // On TRAX response: add songs to state
@@ -94,12 +104,12 @@ export default class SearchSongDisplay extends Component {
         self.fetchReleases(songs);
       } else {
         self.setState({
-          noResults: true,
+          error: 'No search results found :(',
           isSearching: false
         });
       }
     }).catch(function(ex) {
-      console.log('parsing failed', ex)
+      console.log('Fetching Tracks Failed: ', ex)
     })
   }
 
@@ -217,13 +227,9 @@ export default class SearchSongDisplay extends Component {
           clearSongs={ () => this.handleClearSongs() }
           addSong={ this.props.addSong } />
       );
-    } else if (this.state.noResults) {
+    } else if (this.state.error) {
       foundSongsComponents = (
-        <li className="list-group-item list-group-item-danger">No search results found 😈 💩 💯 </li>
-      );
-    } else if (this.state.missingSearchInputs) {
-      foundSongsComponents = (
-        <li className="list-group-item list-group-item-danger">Search needs artist AND title 😈 💩 💯 </li>
+        <li className="list-group-item list-group-item-danger"> {this.state.error} 😈 💩 💯 </li>
       );
     }
 

@@ -25,11 +25,11 @@ LOCALS ONLY!!!
 
 # WH1P
 
-- [ ] [SYSE] init && restart: use deploy target tags
 
 # T4SX
 
 - [ ] [TEST] Load-test script
+- [ ] [SYSE] init && restart: use deploy target tags
 - [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
 - [ ] [DVLP] deselect song button
 - [ ] [RFXR] rm setState calls from SearchSongDisplay
