@@ -88,7 +88,7 @@ export default class SearchSongDisplay extends Component {
     fetch(trackSearchUrl)
     .then(function(response) {
       if (!response.ok) {
-        const errMsg = "Search server down :( Try again?";
+        const errMsg = "Search server (EchoNest) down :( Try again?";
         self.setError(errMsg);
         throw Error(errMsg);
       }
@@ -168,6 +168,11 @@ export default class SearchSongDisplay extends Component {
 
         fetch(releaseSearchUrl, myInit)
         .then(function(response) {
+          if (!response.ok) {
+            const errMsg = "Search server (Spotify) down :( Try again?";
+            self.setError(errMsg);
+            throw Error(errMsg);
+          }
           return response.json();
         }).then(function(json) {
           self.setState(function(previousState) {
@@ -188,8 +193,9 @@ export default class SearchSongDisplay extends Component {
             };
           });
           self.setState({isSearching: false});
+        }).catch(function(ex) {
+          console.log('Fetching Releases Failed: ', ex)
         });
-
       }
     }
   }
