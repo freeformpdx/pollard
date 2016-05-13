@@ -1,12 +1,17 @@
 var assert = require('assert');
-var util = require('../util.js');
+var util = require('../util');
+var PlaylistPage = require('../pages/playlistPage');
 
 describe('playlist tests', function() {
 
-  it('should add songs?', function () {
-    // wip
-    util.addSongs(2);
-    browser.debug();
+  it('adds unplayed songs', function () {
+    util.addSongs(1);
+    console.log('PlaylistPage.getPlayedButtonTextByCSSIndex(1)');
+    console.log(PlaylistPage.getPlayedButtonTextByCSSIndex(1));
+    assert(
+      PlaylistPage.getPlayedButtonTextByCSSIndex(1) === 'Play Song',
+      'song should start out unplayed'
+    );
   });
 
 });

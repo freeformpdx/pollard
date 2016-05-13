@@ -1,7 +1,10 @@
 var assert = require('assert');
+var util = require('../util.js');
+
 var RoutesPage = require('../pages/routesPage');
 var SearchSongPage = require('../pages/searchSongPage');
 var SelectedSongPage = require('../pages/selectedSongPage');
+var PlaylistPage = require('../pages/playlistPage');
 
 describe('search song tests', function() {
 
@@ -50,26 +53,20 @@ describe('search song tests', function() {
   });
 
   it('should produce addable results', function () {
-    RoutesPage.makeNewPlaylist();
-
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
-
-    assert(SelectedSongPage.selectedSongExists(), 'song added to setlist');
+    util.addSongs(1);
+    assert(
+      PlaylistPage.getAllSongs().length === 1,
+      'one song added to setlist'
+    );
   });
 
   it('should produce addable results x2', function () {
-    RoutesPage.makeNewPlaylist();
+    util.addSongs(2);
 
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
-
-    assert(SelectedSongPage.selectedSongExists(), 'song added to setlist');
-
-    SearchSongPage.searchForSong("guided by voices", "valuable hunting knife");
-    SearchSongPage.addSongToPlaylist();
-
-    assert(SelectedSongPage.selectedSongExists(), 'second song added to setlist');
+    assert(
+      PlaylistPage.getAllSongs().length === 2,
+      'two songs added to setlist'
+    );
   });
 
 

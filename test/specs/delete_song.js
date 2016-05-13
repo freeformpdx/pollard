@@ -1,14 +1,11 @@
 var assert = require('assert');
-var RoutesPage = require('../pages/routesPage');
-var SearchSongPage = require('../pages/searchSongPage');
+var util = require('../util.js');
 var SelectedSongPage = require('../pages/selectedSongPage');
 
 describe('delete song tests', function() {
 
   it('delete song button should exist', function () {
-    RoutesPage.makeNewPlaylist();
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
+    util.addSongs(1);
 
     assert(
       SelectedSongPage.deleteButtonExists(),
@@ -18,10 +15,8 @@ describe('delete song tests', function() {
   });
 
   it('should default to delete button initial state', function () {
-    RoutesPage.makeNewPlaylist();
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
 
+    util.addSongs(1);
     assert(
       SelectedSongPage.getDeleteButtonText() === 'Delete',
       'delete button should default to initial state'
@@ -29,9 +24,7 @@ describe('delete song tests', function() {
   });
 
   it('should prompt for delete confirmation', function () {
-    RoutesPage.makeNewPlaylist();
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
+    util.addSongs(1);
     SelectedSongPage.clickDeleteButton();
 
     assert(
@@ -42,9 +35,7 @@ describe('delete song tests', function() {
   });
 
   it('should delete the song', function () {
-    RoutesPage.makeNewPlaylist();
-    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
-    SearchSongPage.addSongToPlaylist();
+    util.addSongs(1);
     SelectedSongPage.clickDeleteButton();
     SelectedSongPage.clickDeleteButton();
 

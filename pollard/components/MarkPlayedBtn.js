@@ -38,7 +38,8 @@ export default class MarkPlayedBtn extends Component {
       "col-xs-10",
       "col-xs-offset-1",
       "col-sm-2",
-      "col-sm-offset-1"
+      "col-sm-offset-1",
+      "playButton"
     );
 
     let spanClasses = classNames(

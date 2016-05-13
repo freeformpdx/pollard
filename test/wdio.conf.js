@@ -17,21 +17,11 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     suites: {
-      playlist: [
-        './specs/playlist.js',
-      ],
-      blank_song: [
-        './specs/blank_song.js',
-      ],
-      delete_song: [
-        './specs/delete_song.js',
-      ],
-      make_new_playlist: [
-        './specs/make_new_playlist.js',
-      ],
-      search_song: [
-        './specs/search_song.js',
-      ],
+      blank_song: ['./specs/blank_song.js'],
+      delete_song: ['./specs/delete_song.js'],
+      make_new_playlist: ['./specs/make_new_playlist.js'],
+      playlist: ['./specs/playlist.js'],
+      search_song: ['./specs/search_song.js'],
     },
     //
     // ============

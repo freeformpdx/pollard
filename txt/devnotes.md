@@ -22,6 +22,7 @@ LOCALS ONLY!!!
 - [X] [MNGO] local backups 2 aws S3
 - [X] [SYSE] mk staging versions of init && restart scripts
 - [X] [LIST] delete action
+- [X] [LIST] play song exists
 
 
 # WH1P
