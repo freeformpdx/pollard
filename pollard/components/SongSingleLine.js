@@ -26,7 +26,7 @@ export default class SongSingleLine extends Component {
     ).first().get('value');
 
     return (
-      <li className="list-group-item clearfix" style={ songStyle }>
+      <li className="list-group-item clearfix song" style={ songStyle }>
           <div
             onClick={ (e) => this.handleClick(e) }
             style={ {marginTop: 5, cursor:'pointer'} }

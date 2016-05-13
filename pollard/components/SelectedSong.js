@@ -45,7 +45,7 @@ export default class SelectedSong extends Component {
     );
 
     return (
-      <li id="SelectedSong" className="list-group-item clearfix" style={ songStyle }>
+      <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }>
           <div className={ gridClasses }>
             { inputs }
           </div>

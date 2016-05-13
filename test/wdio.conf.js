@@ -17,6 +17,9 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     suites: {
+      playlist: [
+        './specs/playlist.js',
+      ],
       blank_song: [
         './specs/blank_song.js',
       ],
