@@ -21,6 +21,7 @@ LOCALS ONLY!!!
 - [X] [MNGO] scp backups to local
 - [X] [MNGO] local backups 2 aws S3
 - [X] [SYSE] mk staging versions of init && restart scripts
+- [X] [LIST] delete action
 
 
 # WH1P
@@ -51,7 +52,6 @@ LOCALS ONLY!!!
 
 # TEST
 
-- [ ] [LIST] delete action
 - [ ] [LIST] play song action
 - [ ] [LIST] play song action => now playing
 - [ ] [LIST] select song

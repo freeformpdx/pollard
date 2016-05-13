@@ -25,9 +25,18 @@ var selectedSongPage = {
       return true;
     },
 
-    deleteButtonExists: function() {
+    deleteButtonDoesNotExist: function() {
+      return !browser.isExisting(this._deleteButton);
+    },
+
+    clickDeleteButton: function() {
       browser.waitForExist(this._deleteButton, 5000);
-      return true;
+      browser.click(this._deleteButton);
+    },
+
+    getDeleteButtonText: function() {
+      browser.waitForExist(this._deleteButton, 5000);
+      return browser.getText(this._deleteButton);
     },
 };
 

@@ -17,16 +17,41 @@ describe('delete song tests', function() {
 
   });
 
-  it('should prompt for delete confirmation', function () {
+  it('should default to delete button initial state', function () {
     RoutesPage.makeNewPlaylist();
     SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
     SearchSongPage.addSongToPlaylist();
 
-    /* WIP */
+    assert(
+      SelectedSongPage.getDeleteButtonText() === 'Delete',
+      'delete button should default to initial state'
+    );
+  });
+
+  it('should prompt for delete confirmation', function () {
+    RoutesPage.makeNewPlaylist();
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+    SearchSongPage.addSongToPlaylist();
+    SelectedSongPage.clickDeleteButton();
 
     assert(
-      SelectedSongPage.deleteButtonExists(),
-      'delete button should exist'
+      SelectedSongPage.getDeleteButtonText() === 'Confirm',
+      'delete button should prompt for confirmation'
+    );
+
+  });
+
+  it('should delete the song', function () {
+    RoutesPage.makeNewPlaylist();
+    SearchSongPage.searchForSong("guided by voices", "gold star for robot boy");
+    SearchSongPage.addSongToPlaylist();
+    SelectedSongPage.clickDeleteButton();
+    SelectedSongPage.clickDeleteButton();
+
+
+    assert(
+      SelectedSongPage.deleteButtonDoesNotExist(),
+      "delete button shouldn't exist"
     );
 
   });
