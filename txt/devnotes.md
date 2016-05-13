@@ -26,6 +26,7 @@ LOCALS ONLY!!!
 
 # WH1P
 
+- [ ] [LIST] play song action
 
 # T4SX
 
@@ -52,7 +53,6 @@ LOCALS ONLY!!!
 
 # TEST
 
-- [ ] [LIST] play song action
 - [ ] [LIST] play song action => now playing
 - [ ] [LIST] select song
 - [ ] [LIST] edit song inputs
