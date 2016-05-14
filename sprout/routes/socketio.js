@@ -51,7 +51,7 @@ module.exports = function(io) {
 					return setlist.save();
 				});
 			} else {
-				console.log('no setlist id yet');
+				throw new Error('Pushing state when no setlist id exists in state');
 			}
 		});
 
