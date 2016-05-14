@@ -17,6 +17,10 @@ var playlistPage = {
       return this.getAllSongEls()[index]['ELEMENT']
     },
 
+    getNumSongs: function() {
+      return browser.elements(this._song).value.length;
+    },
+
     getAllSongButtonEls: function() {
       return browser.elements(this._song + ' ' + this._playButton).value;
     },

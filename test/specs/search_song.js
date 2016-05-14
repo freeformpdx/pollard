@@ -52,19 +52,20 @@ describe('search song tests', function() {
     assert(SearchSongPage.songsFound(), 'song results found');
   });
 
-  it('should produce addable results', function () {
+  it('should add songs', function () {
     util.addSongs(1);
+
     assert(
-      PlaylistPage.getAllSongs().length === 1,
+      PlaylistPage.getNumSongs() === 1,
       'one song added to setlist'
     );
   });
 
-  it('should produce addable results x2', function () {
+  it('should should add songs x2', function () {
     util.addSongs(2);
 
     assert(
-      PlaylistPage.getAllSongs().length === 2,
+      PlaylistPage.getNumSongs() === 2,
       'two songs added to setlist'
     );
   });
