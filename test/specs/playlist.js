@@ -18,17 +18,33 @@ describe('playlist tests', function() {
 
     assert(
       PlaylistPage.getPlayedButtonTextByIndex(0) === 'Now Playing',
-      'song should start out unplayed'
+      'most recent played song shows Now Playing'
     );
   });
 
-  it('adds 2 songs, plays earliest song, song shows "now playing"', function () {
+  it('add 2 songs, play earliest song, song shows "now playing"', function () {
     util.addSongs(2);
     PlaylistPage.playSongByIndex(1);
 
     assert(
       PlaylistPage.getPlayedButtonTextByIndex(1) === 'Now Playing',
-      'song should start out unplayed'
+      'most recent played song shows Now Playing'
+    );
+  });
+
+  it('add && play 2 songs, latest song shows now playing', function () {
+    util.addSongs(2);
+    PlaylistPage.playSongByIndex(0);
+    PlaylistPage.playSongByIndex(1);
+
+    assert(
+      PlaylistPage.getPlayedButtonTextByIndex(0) === 'Now Playing',
+      'most recent played song shows Now Playing'
+    );
+
+    assert(
+      PlaylistPage.getPlayedButtonTextByIndex(1) === 'Played',
+      'older played songs show Played'
     );
   });
 

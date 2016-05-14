@@ -23,11 +23,12 @@ LOCALS ONLY!!!
 - [X] [SYSE] mk staging versions of init && restart scripts
 - [X] [LIST] delete action
 - [X] [LIST] play song exists
+- [X] [LIST] play song action
 
 
 # WH1P
 
-- [ ] [LIST] play song action
+- [ ] [LIST] play song action => now playing
 
 # T4SX
 
@@ -54,7 +55,6 @@ LOCALS ONLY!!!
 
 # TEST
 
-- [ ] [LIST] play song action => now playing
 - [ ] [LIST] select song
 - [ ] [LIST] edit song inputs
 - [ ] [LIST] reorder/D&&D
