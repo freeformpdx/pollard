@@ -24,11 +24,13 @@ LOCALS ONLY!!!
 - [X] [LIST] delete action
 - [X] [LIST] play song exists
 - [X] [LIST] play song action
+- [X] [LIST] play song action => now playing
 
 
 # WH1P
 
-- [ ] [LIST] play song action => now playing
+- [ ] [LIST] select song
+
 
 # T4SX
 
@@ -55,7 +57,6 @@ LOCALS ONLY!!!
 
 # TEST
 
-- [ ] [LIST] select song
 - [ ] [LIST] edit song inputs
 - [ ] [LIST] reorder/D&&D
 

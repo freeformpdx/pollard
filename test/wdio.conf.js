@@ -22,6 +22,7 @@ exports.config = {
       make_new_playlist: ['./specs/make_new_playlist.js'],
       playlist: ['./specs/playlist.js'],
       search_song: ['./specs/search_song.js'],
+      selected_song: ['./specs/selected_song.js'],
     },
     //
     // ============

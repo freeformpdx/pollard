@@ -4,24 +4,42 @@ var playlistPage = {
      */
     _song:  '.song',
     _playButton:  '.playButton',
+    _singleLineTitle: '.singleLineTitle',
 
     /**
      * define functionality
      */
-    getAllSongs: function() {
+    getAllSongEls: function() {
       return browser.elements(this._song).value;
     },
 
-    getAllSongButtons: function() {
+    getSongElByIndex: function(index) {
+      return this.getAllSongEls()[index]['ELEMENT']
+    },
+
+    getAllSongButtonEls: function() {
       return browser.elements(this._song + ' ' + this._playButton).value;
     },
 
+    getSongButtonElByIndex: function(index) {
+      return this.getAllSongButtonEls()[index]['ELEMENT'];
+    },
+
     getPlayedButtonTextByIndex(index) {
-      return browser.elementIdText(this.getAllSongButtons()[index]['ELEMENT']).value;
+      return browser.elementIdText(this.getSongButtonElByIndex(index)).value;
     },
 
     playSongByIndex(index) {
-      return browser.elementIdClick(this.getAllSongButtons()[index]['ELEMENT']);
+      return browser.elementIdClick(this.getSongButtonElByIndex(index));
+    },
+
+    isSongSelected: function(index) {
+      return (
+        browser.elementIdAttribute(
+          this.getSongElByIndex(index),
+          'id'
+        ).value === 'SelectedSong'
+      );
     },
 
 };
