@@ -8,6 +8,9 @@ var playlistPage = {
     /**
      * define functionality
      */
+    getAllSongs: function() {
+      return browser.elements(this._song).value;
+    },
 
     getAllSongButtons: function() {
       return browser.elements(this._song + ' ' + this._playButton).value;
