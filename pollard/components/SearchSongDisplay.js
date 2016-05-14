@@ -215,7 +215,7 @@ export default class SearchSongDisplay extends Component {
 
   render() {
     let searchStyle = mergeStyles({
-      backgroundColor: '#F6EBFA'
+      backgroundColor: '#D0D0D0'
     });
 
 

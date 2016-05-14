@@ -15,7 +15,7 @@ export default class SongSingleLine extends Component {
 
   render() {
     let songStyle= mergeStyles({
-      backgroundColor: '#F6EBFA'
+      backgroundColor: '#D0D0D0'
     });
 
     const songTitle = this.props.song.get('inputs').filter(

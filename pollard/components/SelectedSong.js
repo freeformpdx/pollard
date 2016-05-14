@@ -21,7 +21,7 @@ export default class SelectedSong extends Component {
     });
 
     const songStyle= mergeStyles({
-      backgroundColor: '#F6EBFA'
+      backgroundColor: '#D0D0D0'
     });
 
     const gridClasses = classNames(

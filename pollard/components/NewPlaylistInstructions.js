@@ -5,7 +5,7 @@ import mergeStyles from '../lib/mergeStyles';
 export default class NewPlaylistInstructions extends Component {
   render() {
     const newPlaylistStyle = mergeStyles({
-      backgroundColor: '#F6EBFA'
+      backgroundColor: '#D0D0D0'
     });
 
     return (
