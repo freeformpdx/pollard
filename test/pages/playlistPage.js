@@ -6,29 +6,21 @@ var playlistPage = {
     _playButton:  '.playButton',
 
     /**
-     * define selector functions
-     */
-     _songNthChild: function(index) {
-      return this._song + ':nth-child('+index+')';
-     },
-
-    /**
      * define functionality
      */
 
-    getPlayedButtonTextByCSSIndex: function(index) {
-      return browser
-        .getText(this._songNthChild(index) + ' ' + this._playButton);
+    getAllSongButtons: function() {
+      return browser.elements(this._song + ' ' + this._playButton).value;
     },
 
-    playSongByCSSIndex: function(index) {
-      return browser
-        .click(this._songNthChild(index) + ' ' + this._playButton);
+    getPlayedButtonTextByIndex(index) {
+      return browser.elementIdText(this.getAllSongButtons()[index]['ELEMENT']).value;
     },
 
-    getAllSongs: function() {
-      return browser.elements(this._song).value;
-    }
+    playSongByIndex(index) {
+      return browser.elementIdClick(this.getAllSongButtons()[index]['ELEMENT']);
+    },
+
 };
 
 module.exports = playlistPage;
