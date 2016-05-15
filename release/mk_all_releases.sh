@@ -21,13 +21,13 @@ git push origin $1
 
 
 # MK DEV RELEASE
-bin/mk_release.sh development $1
+release/mk_release.sh development $1
 
 # MK STAGING RELEASE
-bin/mk_release.sh staging $1
+release/mk_release.sh staging $1
 
 # MK PROD RELEASE
-bin/mk_release.sh production $1
+release/mk_release.sh production $1
 
 echo -n "Push releases to Docker Hub (y/n)?"
 read answer

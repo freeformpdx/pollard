@@ -11,6 +11,6 @@ docker stop sprout
 echo "rming sprout"
 docker rm sprout
 echo "mking dev release"
-bin/mk_release.sh development
+release/mk_release.sh development
 echo "running dev container"
 bin/docker_run_sprout_container.sh development latest

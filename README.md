@@ -40,7 +40,7 @@ A DJ Playlist creator
 
 ## releasin (WIPAF)
 
-- ./bin/mk_releases.sh
+- ./release/mk_releases.sh
 
 
 ## devin

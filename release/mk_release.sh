@@ -6,7 +6,7 @@
 # - builds docker container
 
 
-# USAGE: ./bin/mk_release.sh [development, staging, production] [opt: tag]
+# USAGE: ./release/mk_release.sh [development, staging, production] [opt: tag]
 
 if [ -z "$1" ]; then
   echo "No env specified. Use [development, staging, production]"
