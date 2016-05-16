@@ -11,7 +11,15 @@ var Song = new Schema({
 	inputs: [SongInput],
 	img64px: String,
 	img300px: String,
-	played: Boolean
+	played: Boolean,
+  playedAt: { type: Date }
+});
+
+Song.pre('save', function(next) {
+  if (this.isModified("played") && this.played) {
+    playedAt = new Date();
+  }
+  next();
 });
 
 var setlistSchema = new Schema({
