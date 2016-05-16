@@ -18,6 +18,7 @@ export default class SearchInput extends Component {
           id={ id }
           type="text"
           placeholder={ type }
+          tabIndex='1'
           value={ value }
           onKeyPress={ (e) => onKeyPress(e) }
           onChange={ (e) => onChange(e) }/>
