@@ -20,6 +20,11 @@ var selectedSongPage = {
       return browser.getValue(this._selectedSongField + field);
     },
 
+    setSelectedSongField: function(field, value) {
+      browser.waitForExist(this._selectedSong, 5000);
+      return browser.setValue(this._selectedSongField + field, value);
+    },
+
     deleteButtonExists: function() {
       browser.waitForExist(this._deleteButton, 5000);
       return true;

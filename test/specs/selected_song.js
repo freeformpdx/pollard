@@ -23,4 +23,45 @@ describe('selected song tests', function() {
     );
   });
 
+  it('selected song should have editable title field', function () {
+    util.addSongs(1);
+    editableFieldTest('title');
+  });
+
+  it('selected song should have editable artist field', function () {
+    util.addSongs(1);
+    editableFieldTest('artist');
+  });
+
+  it('selected song should have editable album field', function () {
+    util.addSongs(1);
+    editableFieldTest('album');
+  });
+
+  it('selected song should have editable label field', function () {
+    util.addSongs(1);
+    editableFieldTest('label');
+  });
+
+  it('selected song should have editable year field', function () {
+    util.addSongs(1);
+    editableFieldTest('year');
+  });
+
+  it('selected song should have editable notes field', function () {
+    util.addSongs(1);
+    editableFieldTest('notes');
+  });
+
 });
+
+function editableFieldTest(field) {
+  var testInput = SelectedSongPage.getSelectedSongField(field) + 'test';
+
+  SelectedSongPage.setSelectedSongField(field, testInput);
+
+  assert (
+    SelectedSongPage.getSelectedSongField(field) == testInput,
+    field + ' input should be editable'
+  );
+}
