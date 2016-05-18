@@ -32,14 +32,30 @@ export default class AddSong extends Component {
     });
 
     return (
-      <button
-        id="AddSong"
-        className="btn btn-primary col-xs-10 col-xs-offset-1 col-sm-2"
-        onClick={ (e) => this.handleClick(e) }>
-        <span
-          className="glyphicon glyphicon-plus"
-          aria-hidden="true"></span> Blank Song
-      </button>
+      <div
+        className="dropdown col-xs-10 col-xs-offset-1 col-sm-2"
+        style={{padding:0}}>
+          <button
+            id="AddDropdown"
+            className="btn btn-primary col-xs-12"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false">
+              <span
+                className="glyphicon glyphicon-plus"
+                aria-hidden="true"></span> Add <span className="caret"></span>
+          </button>
+
+        <ul className="dropdown-menu" aria-labelledby="AddDropdown">
+          <li>
+            <a onClick={ (e) => this.handleClick(e) } style={{cursor: 'pointer'}}>Blank Song</a>
+          </li>
+          <li>
+            <a href="#">Air Break</a>
+          </li>
+        </ul>
+      </div>
     );
   }
 
