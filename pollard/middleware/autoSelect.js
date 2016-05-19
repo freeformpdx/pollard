@@ -1,13 +1,17 @@
 import { selectSong } from '../actions/Actions.js';
 import * as actionTypes from '../constants/ActionTypes';
 
-// Middleware that autoselects newest song anytime one is added
+// Middleware that preserves selected song anytime one is added
 
 let autoSelect = store => next => action => {
   const result = next(action);
   if (action.type == actionTypes.ADD_SONG) {
     const state = store.getState().state;
-    store.dispatch(selectSong(0));
+    const selectedSong = parseInt(state.getIn(['view','song','selected']));
+    if (!isNaN(selectedSong)) {
+      const nowSelected = selectedSong + 1;
+      store.dispatch(selectSong(nowSelected));
+    }
   }
   return result;
 };
