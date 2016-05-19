@@ -28,24 +28,21 @@ LOCALS ONLY!!!
 - [X] [LIST] select song
 - [X] [LIST] edit song inputs
 - [X] [DVLP] Add button in Search: add blank song
+- [X] [DVLP] Add button in Search: add talk break action
 
 
 # WH1P
 
-- [ ] [DVLP] Add button in Search: add talk break action
+- [ ] [DVLP] imgs on selected song
+- [ ] [UIUX] Group all non-top level song actions into menu
+             - top level: play
+             - other: delete, from music library
+- [ ] [DVLP] deselect song button
 
-# T4SX
+
+# ALRT
 
 - [ ] [TEST] Load-test script
-- [ ] [SYSE] init && restart: use deploy target tags
-- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
-- [ ] [DVLP] deselect song button
-- [ ] [RFXR] rm setState calls from SearchSongDisplay
-- [ ] [UIUX] Group all non-top level song actions into menu
-             - top level: play, back-announced
-             - other: delete, from music library
-- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
-- [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
 - [ ] [ALRT] run all smoke tests from studio && from somewhere else? (home server?)
 - [ ] [ALRT] send page/email
 - [ ] [ALRT] maybs run erry 5 mins? if dead for 4 runs (20 mins) call it fux0rd
@@ -53,13 +50,22 @@ LOCALS ONLY!!!
 - [ ] [TEST] 'now playing' smoke test (has 'now playing' and now playing updated in last 2 hrs)
 - [ ] [TEST] stream server dead smoke test
 - [ ] [TEST] can't reach freeformportland.org smoke test
-- [ ] [LGNG] get some mongo logging
-- [ ] [XTRA] nginx reverse proxy container && configuration
 
 
 # TEST
 
 - [ ] [LIST] reorder/D&&D
+
+
+# T4SX
+
+- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
+- [ ] [SYSE] init && restart: use deploy target tags
+- [ ] [RFXR] rm setState calls from SearchSongDisplay
+- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
+- [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
+- [ ] [LGNG] get some mongo logging
+- [ ] [XTRA] nginx reverse proxy container && configuration
 
 
 # RUMINATIN AF RN
