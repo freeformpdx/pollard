@@ -50,10 +50,10 @@ export default class SelectedSong extends Component {
             { inputs }
           </div>
           <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-          { this.props.song.img300px ?
+          { this.props.song.get('img300px') ?
             <img
               className={ releaseImgXSClasses }
-              src={ this.props.song.img300px } />
+              src={ this.props.song.get('img300px') } />
             : ""
           }
           <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
@@ -67,10 +67,10 @@ export default class SelectedSong extends Component {
             isSongPlayed={ this.props.song.played }
             markSongPlayed={ this.props.markSongPlayed } />
           <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
-          { this.props.song.img300px ?
+          { this.props.song.get('img300px') ?
             <img
               className={ releaseImgSMClasses }
-              src={ this.props.song.img300px } />
+              src={ this.props.song.get('img300px') } />
             : ""
           }
       </li>
