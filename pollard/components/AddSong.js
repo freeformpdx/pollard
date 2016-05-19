@@ -4,7 +4,7 @@ import guid from '../lib/guid';
 import mergeStyles from '../lib/mergeStyles';
 
 export default class AddSong extends Component {
-  handleClick(event) {
+  handleBlankSongClick(event) {
     const title = this.props.lastSearchedSong.get('title') ?
                   this.props.lastSearchedSong.get('title') :
                   '';
@@ -19,6 +19,20 @@ export default class AddSong extends Component {
       }, {
         name: 'artist',
         value: artist,
+      }],
+      clientID: guid(),
+    });
+    this.props.clearSongs();
+  }
+
+  handleAirBreakClick(event) {
+    this.props.addSong({
+      inputs: [{
+        name: 'title',
+        value: 'KFFP 90.3',
+      }, {
+        name: 'artist',
+        value: 'freeformportland.org',
       }],
       clientID: guid(),
     });
@@ -49,10 +63,18 @@ export default class AddSong extends Component {
 
         <ul className="dropdown-menu" aria-labelledby="AddDropdown">
           <li>
-            <a onClick={ (e) => this.handleClick(e) } style={{cursor: 'pointer'}}>Blank Song</a>
+            <a
+              style={{cursor: 'pointer'}}
+              onClick={ (e) => this.handleBlankSongClick(e) }>
+              Blank Song
+            </a>
           </li>
           <li>
-            <a href="#">Air Break</a>
+            <a
+              style={{cursor: 'pointer'}}
+              onClick={ (e) => this.handleAirBreakClick(e) }>
+              Air Break
+            </a>
           </li>
         </ul>
       </div>
