@@ -18,7 +18,7 @@ import SetPage from '../components/SetPage';
 import AdvancedSearch from '../components/AdvancedSearch';
 import LoadSchedule from '../components/LoadSchedule';
 
-import autoSelect from '../middleware/autoSelect.js';
+import preserveSelected from '../middleware/preserveSelected.js';
 import pushToServer from '../middleware/pushToServer.js';
 
 // TODO
@@ -31,7 +31,10 @@ const reducer = combineReducers({
 });
 
 const store = compose(
-  applyMiddleware(autoSelect,pushToServer),
+  applyMiddleware(
+    preserveSelected,
+    pushToServer
+  ),
   reduxReactRouter({createHistory}),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore)(reducer);

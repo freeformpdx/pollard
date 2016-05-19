@@ -3,7 +3,7 @@ import * as actionTypes from '../constants/ActionTypes';
 
 // Middleware that preserves selected song anytime one is added
 
-let autoSelect = store => next => action => {
+let preserveSelected = store => next => action => {
   const result = next(action);
   if (action.type == actionTypes.ADD_SONG) {
     const state = store.getState().state;
@@ -16,4 +16,4 @@ let autoSelect = store => next => action => {
   return result;
 };
 
-export default autoSelect;
+export default preserveSelected;
