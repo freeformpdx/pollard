@@ -64,7 +64,7 @@ export default class SelectedSong extends Component {
           <MarkPlayedBtn
             idx={ this.props.idx }
             playingSongIdx={ this.props.playingSongIdx }
-            isSongPlayed={ this.props.song.played }
+            isSongPlayed={ this.props.song.get('played') }
             markSongPlayed={ this.props.markSongPlayed } />
           <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
           { this.props.song.get('img300px') ?

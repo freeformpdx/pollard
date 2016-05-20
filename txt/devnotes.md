@@ -34,10 +34,10 @@ LOCALS ONLY!!!
 
 # WH1P
 
+- [ ] [DVLP] deselect song button
 - [ ] [UIUX] Group all non-top level song actions into menu
              - top level: play
              - other: delete, from music library
-- [ ] [DVLP] deselect song button
 
 
 # ALRT
