@@ -29,11 +29,11 @@ LOCALS ONLY!!!
 - [X] [LIST] edit song inputs
 - [X] [DVLP] Add button in Search: add blank song
 - [X] [DVLP] Add button in Search: add talk break action
+- [X] [DVLP] imgs on selected song
 
 
 # WH1P
 
-- [ ] [DVLP] imgs on selected song
 - [ ] [UIUX] Group all non-top level song actions into menu
              - top level: play
              - other: delete, from music library
