@@ -7,6 +7,13 @@ var playlistPage = {
     _singleLineTitle: '.singleLineTitle',
 
     /**
+     * defne selector functions
+     */
+    getSongSelectorByCSSIndex: function(index) {
+      return '#AddedSongsDisplay > div:nth-child(' + index + ')';
+    },
+
+    /**
      * define functionality
      */
     getAllSongEls: function() {

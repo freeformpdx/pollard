@@ -22,7 +22,7 @@ export default class AddedSongsDisplay extends Component {
     const playingSongIdx = this.getCurrentlyPlayingSongIdx(songs);
 
     return (
-      <div>
+      <div id='AddedSongsDisplay'>
       { songs.map((song, idx) => {
           const key = song.get('_id') ?
                       song.get('_id') :

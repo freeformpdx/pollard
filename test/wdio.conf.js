@@ -19,6 +19,7 @@ exports.config = {
     suites: {
       blank_song: ['./specs/blank_song.js'],
       delete_song: ['./specs/delete_song.js'],
+      drag_and_drop: ['./specs/drag_and_drop.js'],
       make_new_playlist: ['./specs/make_new_playlist.js'],
       playlist: ['./specs/playlist.js'],
       search_song: ['./specs/search_song.js'],
