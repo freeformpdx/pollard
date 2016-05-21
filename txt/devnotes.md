@@ -18,10 +18,10 @@ LOCALS ONLY!!!
 
 - [X] [DVLP] deselect song button
 - [X] [DVLP] componentize title line
+- [X] [DVLP] if artist && title blank, display 'blank song' or smth
 
 # WH1P
 
-- [ ] [DVLP] if artist && title blank, display 'blank song' or smth
 - [ ] [DVLP] add freeform img link 2 air break
 - [ ] [UIUX] Group all non-top level song actions into menu
              - top level: play

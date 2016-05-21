@@ -24,6 +24,13 @@ export default class TitleArtistLine extends Component {
                       'glyphicon-triangle-right' ;
     const glyphClassName = 'glyphicon ' + glyphType;
 
+    let titleArtistDisplay;
+    if (songTitle && artistName) {
+      titleArtistDisplay = songTitle + ' - ' + artistName;
+    } else {
+      titleArtistDisplay = 'No Title / Artist Entered';
+    }
+
     return (
       <div
         onClick={ (e) => this.handleClick() }
@@ -31,7 +38,7 @@ export default class TitleArtistLine extends Component {
         className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 singleLineTitle">
          <span
           className={ glyphClassName }
-          aria-hidden="true"></span> { songTitle } - { artistName }
+          aria-hidden="true"></span> { titleArtistDisplay }
        </div>
     );
   }
