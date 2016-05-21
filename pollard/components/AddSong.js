@@ -35,6 +35,7 @@ export default class AddSong extends Component {
         value: 'freeformportland.org',
       }],
       clientID: guid(),
+      img300px: 'http://www.freeformportland.org/wp-content/themes/graphy/images/freeform-portland.svg',
     });
     this.props.clearSongs();
   }
