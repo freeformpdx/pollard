@@ -32,7 +32,9 @@ export default class SongSingleLine extends Component {
           onClick={ (e) => this.handleClick(e) }
           style={ {marginTop: 5, cursor:'pointer'} }
           className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 singleLineTitle">
-          { songTitle } - { artistName }
+           <span
+            className="glyphicon glyphicon-triangle-right"
+            aria-hidden="true"></span> { songTitle } - { artistName }
         </div>
         <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
         <div className="col-xs-3" />

@@ -255,3 +255,18 @@ Total page size = 123K
 - [X] [SRCH] add blank song w/ inputs
 - [X] [SRCH] add blank song after failed search
 - [X] [CODE] load schedule FE
+- [X] [MNGO] ./bin/docker\_mongo\_backup.sh
+- [X] [MNGO] ./bin/docker\_mongo\_restore.sh
+- [X] [MNGO] scp backups to local
+- [X] [MNGO] local backups 2 aws S3
+- [X] [SYSE] mk staging versions of init && restart scripts
+- [X] [LIST] delete action
+- [X] [LIST] play song exists
+- [X] [LIST] play song action
+- [X] [LIST] play song action => now playing
+- [X] [LIST] select song
+- [X] [LIST] edit song inputs
+- [X] [DVLP] Add button in Search: add blank song
+- [X] [DVLP] Add button in Search: add talk break action
+- [X] [DVLP] imgs on selected song
+

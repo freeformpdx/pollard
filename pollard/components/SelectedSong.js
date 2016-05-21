@@ -11,6 +11,14 @@ import DeleteSongBtn from './DeleteSongBtn';
 export default class SelectedSong extends Component {
 
   render() {
+    const songTitle = this.props.song.get('inputs').filter(
+      input => input.get('name') == 'title'
+    ).first().get('value');
+
+    const artistName = this.props.song.get('inputs').filter(
+      input => input.get('name') == 'artist'
+    ).first().get('value');
+
     const inputs = this.props.song.get('inputs').map((input, index) => {
       return <SongInput
         label={ input.get('name') }
@@ -46,6 +54,13 @@ export default class SelectedSong extends Component {
 
     return (
       <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }>
+        <div
+          style={ {marginTop: 5, cursor:'pointer'} }
+          className="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 singleLineTitle">
+           <span
+            className="glyphicon glyphicon-triangle-bottom"
+            aria-hidden="true"></span> { songTitle } - { artistName }
+         </div>
           <div className={ gridClasses }>
             { inputs }
           </div>
