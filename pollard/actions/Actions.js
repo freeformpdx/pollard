@@ -35,6 +35,12 @@ export function selectSong(idx) {
   }
 };
 
+export function deselectSong() {
+  return {
+    type: types.DESELECT_SONG
+  }
+};
+
 export function searchSong(artist, title) {
   return {
     type: types.SEARCH_SONG,

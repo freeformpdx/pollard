@@ -10,6 +10,10 @@ import DeleteSongBtn from './DeleteSongBtn';
 
 export default class SelectedSong extends Component {
 
+  handleClick() {
+    this.props.deselectSong();
+  }
+
   render() {
     const songTitle = this.props.song.get('inputs').filter(
       input => input.get('name') == 'title'
@@ -55,6 +59,7 @@ export default class SelectedSong extends Component {
     return (
       <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }>
         <div
+          onClick={ (e) => this.handleClick() }
           style={ {marginTop: 5, cursor:'pointer'} }
           className="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 singleLineTitle">
            <span

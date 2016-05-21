@@ -100,6 +100,8 @@ export function viewSong(state = initialViewSongState, action) {
   switch (action.type) {
   case actionTypes.SELECT_SONG:
     return state.set('selected', action.idx);
+  case actionTypes.DESELECT_SONG:
+    return state.set('selected', null);
   case actionTypes.MOVE_SONG:
     // persist selected state while moving
     if (state.get('selected') == action.fromIdx) {

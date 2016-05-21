@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import {
   selectSong,
+  deselectSong,
   updateSong,
   markSongPlayed,
   moveSong,
@@ -15,27 +16,8 @@ import AddedSongsDisplay from './AddedSongsDisplay';
 
 class AddedSongsConnector extends Component {
   render() {
-    const {
-      deleteSong,
-      markSongPlayed,
-      moveSong,
-      selectSong,
-      updateSong,
-      songs,
-      selectedSong,
-    } = this.props;
-
-
     return (
-      <AddedSongsDisplay
-        deleteSong={ deleteSong }
-        markSongPlayed={ markSongPlayed }
-        moveSong={ moveSong }
-        selectSong={ selectSong }
-        updateSong={ updateSong }
-        songs={ songs }
-        selectedSong={ selectedSong }
-      />
+      <AddedSongsDisplay { ...this.props }/>
     );
   }
 }
@@ -50,6 +32,7 @@ function mapStateToProps({state}) {
 function mapDispatchToProps(dispatch) {
   return {
     selectSong: bindActionCreators(selectSong, dispatch),
+    deselectSong: bindActionCreators(deselectSong, dispatch),
     updateSong: bindActionCreators(updateSong, dispatch),
     markSongPlayed: bindActionCreators(markSongPlayed, dispatch),
     moveSong: bindActionCreators(moveSong, dispatch),

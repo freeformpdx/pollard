@@ -4,6 +4,7 @@ export const UPDATE_SET = 'UPDATE_SET';
 export const DELETE_SET = 'DELETE_SET';
 
 export const SELECT_SONG = 'SELECT_SONG';
+export const DESELECT_SONG = 'DESELECT_SONG';
 export const SEARCH_SONG = 'SEARCH_SONG';
 export const ARTIST_CHANGE = 'ARTIST_CHANGE';
 export const TITLE_CHANGE = 'TITLE_CHANGE';
