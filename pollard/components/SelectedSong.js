@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import mergeStyles from '../lib/mergeStyles';
 
 import SongInput from './SongInput';
+import TitleArtistLine from './TitleArtistLine';
 import MarkPlayedBtn from './MarkPlayedBtn';
 import DeleteSongBtn from './DeleteSongBtn';
 
@@ -15,14 +16,6 @@ export default class SelectedSong extends Component {
   }
 
   render() {
-    const songTitle = this.props.song.get('inputs').filter(
-      input => input.get('name') == 'title'
-    ).first().get('value');
-
-    const artistName = this.props.song.get('inputs').filter(
-      input => input.get('name') == 'artist'
-    ).first().get('value');
-
     const inputs = this.props.song.get('inputs').map((input, index) => {
       return <SongInput
         label={ input.get('name') }
@@ -58,14 +51,12 @@ export default class SelectedSong extends Component {
 
     return (
       <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }>
-        <div
-          onClick={ (e) => this.handleClick() }
-          style={ {marginTop: 5, cursor:'pointer'} }
-          className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 singleLineTitle">
-           <span
-            className="glyphicon glyphicon-triangle-bottom"
-            aria-hidden="true"></span> { songTitle } - { artistName }
-         </div>
+          <TitleArtistLine
+            song={ this.props.song }
+            idx={ this.props.idx }
+            deselectSong={ this.props.deselectSong }
+            type='selected'
+          />
           <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
           <DeleteSongBtn
             songIdx={ this.props.idx }

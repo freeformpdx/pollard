@@ -17,10 +17,10 @@ LOCALS ONLY!!!
 # D34D
 
 - [X] [DVLP] deselect song button
+- [X] [DVLP] componentize title line
 
 # WH1P
 
-- [ ] [DVLP] componentize title line
 - [ ] [DVLP] if artist && title blank, display 'blank song' or smth
 - [ ] [DVLP] add freeform img link 2 air break
 - [ ] [UIUX] Group all non-top level song actions into menu
@@ -47,13 +47,18 @@ LOCALS ONLY!!!
 
 # T4SX
 
-- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
 - [ ] [SYSE] init && restart: use deploy target tags
-- [ ] [RFXR] rm setState calls from SearchSongDisplay
-- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
 - [ ] [SYSE] ? mk one liner build=>release=>push 2 staging script
+- [ ] [SYSE] nginx reverse proxy container && configuration
+- [ ] [SYSE] move express/mongo 2 flask/postgres
+
+- [ ] [RFXR] rm setState calls from SearchSongDisplay
+- [ ] [RFXR] rm setState calls from SearchSongDisplay
+
+- [ ] [DVLP] gotta do a fresh install && devnotes 4 set up && whatnot
+- [ ] [DVLP] adding song b4 search results come back causes setState errors in promise
+
 - [ ] [LGNG] get some mongo logging
-- [ ] [XTRA] nginx reverse proxy container && configuration
 
 
 # RUMINATIN AF RN

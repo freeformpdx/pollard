@@ -4,38 +4,24 @@ import classNames from 'classnames';
 import mergeStyles from '../lib/mergeStyles';
 
 import MarkPlayedBtn from './MarkPlayedBtn';
+import TitleArtistLine from './TitleArtistLine';
 
 
 export default class SongSingleLine extends Component {
-
-  handleClick(event) {
-    this.props.selectSong(this.props.idx);
-  }
-
 
   render() {
     let songStyle= mergeStyles({
       backgroundColor: '#D0D0D0'
     });
 
-    const songTitle = this.props.song.get('inputs').filter(
-      input => input.get('name') == 'title'
-    ).first().get('value');
-
-    const artistName = this.props.song.get('inputs').filter(
-      input => input.get('name') == 'artist'
-    ).first().get('value');
-
     return (
       <li className="list-group-item clearfix song" style={ songStyle }>
-        <div
-          onClick={ (e) => this.handleClick(e) }
-          style={ {marginTop: 5, cursor:'pointer'} }
-          className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 singleLineTitle">
-           <span
-            className="glyphicon glyphicon-triangle-right"
-            aria-hidden="true"></span> { songTitle } - { artistName }
-        </div>
+        <TitleArtistLine
+          song={ this.props.song }
+          selectSong={ this.props.selectSong }
+          idx={ this.props.idx }
+          type='unselected'
+        />
         <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
         <div className="col-xs-3" />
         <MarkPlayedBtn
