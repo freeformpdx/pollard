@@ -45,6 +45,17 @@ with sprout && mongo containers running:
 
 This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
 
+## mongo stuff:
+
+- Lookin @ shiznards
+- `show dbs`
+- `show collections`
+
+- Lookin @ records
+- `use test`
+- `db.setlists.find({}, {_id: true})`
+- `it`
+
 
 ## Logging in to AWS
 - add yr IP to AWS security rules
