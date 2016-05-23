@@ -67,6 +67,7 @@ export default class SelectedSong extends Component {
             playingSongIdx={ this.props.playingSongIdx }
             isSongPlayed={ this.props.song.get('played') }
             markSongPlayed={ this.props.markSongPlayed } />
+          <div className="clearfix"></div>
           <div className={ gridClasses }>
             { inputs }
           </div>

@@ -20,6 +20,7 @@ LOCALS ONLY!!!
 - [X] [DVLP] componentize title line
 - [X] [DVLP] if artist && title blank, display 'blank song' or smth
 - [X] [DVLP] add freeform img link 2 air break
+- [X] [BUGZ] long title/artist line causes inputs to display right
 
 # WH1P
 
@@ -66,7 +67,7 @@ LOCALS ONLY!!!
 - actual release promotion stuff
   - hack hack hack w/ dev server
   - mk staging release
-  - deploy to staging.kffp.rocks
+ - deploy to staging.kffp.rocks
   - run tests
   - call it good
   - mk production release
