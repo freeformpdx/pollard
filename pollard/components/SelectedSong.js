@@ -49,6 +49,14 @@ export default class SelectedSong extends Component {
       "hidden-xs"
     );
 
+    const imgSMStyle = {
+      border: '1px solid black',
+      padding: 12,
+      height: 220,
+      width: 220,
+      marginLeft: 138,
+    }
+
     return (
       <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }> <TitleArtistLine
           song={ this.props.song }
@@ -74,16 +82,26 @@ export default class SelectedSong extends Component {
             src={ this.props.song.get('img300px') } />
           : ""
         }
-        <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
+        <div className={ releaseImgSMClasses } style={{ marginTop: 10 }} />
         { this.props.song.get('img300px') ?
           <img
             className={ releaseImgSMClasses }
+            style={ imgSMStyle }
             src={ this.props.song.get('img300px') } />
           : ""
         }
         <div className="clearfix"></div>
-        <div style={{ marginTop:5 }}>
-          ACTION BAR
+        <div style={{ marginTop:10 }}>
+          <div className="col-xs-6" style={{marginBottom: 5}}>
+            ACTION BAR
+          </div>
+          <div className="clearfix visible-xs"></div>
+          <DeleteLink
+            songIdx={ this.props.idx }
+            deleteSong={ this.props.deleteSong } />
+          <DeleteLink
+            songIdx={ this.props.idx }
+            deleteSong={ this.props.deleteSong } />
           <DeleteLink
             songIdx={ this.props.idx }
             deleteSong={ this.props.deleteSong } />
