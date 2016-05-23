@@ -17,7 +17,7 @@ var Song = new Schema({
 
 Song.pre('save', function(next) {
   if (this.isModified("played") && this.played) {
-    playedAt = new Date();
+    this.playedAt = new Date();
   }
   next();
 });
