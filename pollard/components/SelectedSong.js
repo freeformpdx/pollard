@@ -6,7 +6,7 @@ import mergeStyles from '../lib/mergeStyles';
 import SongInput from './SongInput';
 import TitleArtistLine from './TitleArtistLine';
 import MarkPlayedBtn from './MarkPlayedBtn';
-import DeleteLink from './DeleteLink';
+import ActionBar from './ActionBar';
 
 
 export default class SelectedSong extends Component {
@@ -91,21 +91,9 @@ export default class SelectedSong extends Component {
           : ""
         }
         <div className="clearfix"></div>
-        <div style={{ marginTop:10 }}>
-          <div className="col-xs-6" style={{marginBottom: 5}}>
-            ACTION BAR
-          </div>
-          <div className="clearfix visible-xs"></div>
-          <DeleteLink
-            songIdx={ this.props.idx }
-            deleteSong={ this.props.deleteSong } />
-          <DeleteLink
-            songIdx={ this.props.idx }
-            deleteSong={ this.props.deleteSong } />
-          <DeleteLink
-            songIdx={ this.props.idx }
-            deleteSong={ this.props.deleteSong } />
-        </div>
+        <ActionBar
+          songIdx={ this.props.idx }
+          deleteSong={ this.props.deleteSong } />
       </li>
     );
   }

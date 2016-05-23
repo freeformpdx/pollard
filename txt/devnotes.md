@@ -21,13 +21,12 @@ LOCALS ONLY!!!
 - [X] [DVLP] if artist && title blank, display 'blank song' or smth
 - [X] [DVLP] add freeform img link 2 air break
 - [X] [BUGZ] long title/artist line causes inputs to display right
+- [X] [DVLP] Componentize Action Bar
 
 # WH1P
 
-- [ ] [UIUX] Group all non-top level song actions into menu
-             - top level: play
-             - other: delete, from music library
-
+- [ ] [DVLP] Action Bar: add from music library toggle(?)
+- [ ] [DVLP] Action Bar: Played @ info in action bar
 
 # ALRT
 

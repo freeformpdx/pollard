@@ -24,12 +24,14 @@ export default class DeleteLink extends Component {
 render() {
   return (
     <a
-      className="deleteButton col-xs-4 col-sm-2"
+      className="deleteButton"
+      style={{marginLeft: 15}}
       onClick={ (e) => this.handleClick(e) }>
-
-      <span
-        className="glyphicon glyphicon-trash"
-        aria-hidden="true"></span> { this.state.deleteStep == 0 ? 'Delete' : 'Confirm' }
+      <small>
+        <span
+          className="glyphicon glyphicon-trash"
+          aria-hidden="true"></span> { this.state.deleteStep == 0 ? 'Delete' : 'Confirm' }
+      </small>
 
     </a>
   );
