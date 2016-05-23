@@ -32,13 +32,18 @@ export default class MarkPlayedBtn extends Component {
       btnClass = 'btn-success';
     }
 
+    const selectedOffset = this.props.isSelected ?
+                           'col-sm-offset-4' :
+                           'col-sm-offset-1' ;
+
+
     let btnClasses = classNames(
       btnClass,
       "btn",
       "col-xs-10",
       "col-xs-offset-1",
       "col-sm-2",
-      "col-sm-offset-1",
+      selectedOffset,
       "playButton"
     );
 

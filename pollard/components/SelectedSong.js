@@ -6,7 +6,7 @@ import mergeStyles from '../lib/mergeStyles';
 import SongInput from './SongInput';
 import TitleArtistLine from './TitleArtistLine';
 import MarkPlayedBtn from './MarkPlayedBtn';
-import DeleteSongBtn from './DeleteSongBtn';
+import DeleteLink from './DeleteLink';
 
 
 export default class SelectedSong extends Component {
@@ -50,41 +50,44 @@ export default class SelectedSong extends Component {
     );
 
     return (
-      <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }>
-          <TitleArtistLine
-            song={ this.props.song }
-            idx={ this.props.idx }
-            deselectSong={ this.props.deselectSong }
-            type='selected'
-          />
-          <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-          <DeleteSongBtn
+      <li id="SelectedSong" className="list-group-item clearfix song" style={ songStyle }> <TitleArtistLine
+          song={ this.props.song }
+          idx={ this.props.idx }
+          deselectSong={ this.props.deselectSong }
+          type='selected'
+        />
+        <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+        <MarkPlayedBtn
+          idx={ this.props.idx }
+          playingSongIdx={ this.props.playingSongIdx }
+          isSelected={ true }
+          isSongPlayed={ this.props.song.get('played') }
+          markSongPlayed={ this.props.markSongPlayed } />
+        <div className="clearfix"></div>
+        <div className={ gridClasses }>
+          { inputs }
+        </div>
+        <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
+        { this.props.song.get('img300px') ?
+          <img
+            className={ releaseImgXSClasses }
+            src={ this.props.song.get('img300px') } />
+          : ""
+        }
+        <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
+        { this.props.song.get('img300px') ?
+          <img
+            className={ releaseImgSMClasses }
+            src={ this.props.song.get('img300px') } />
+          : ""
+        }
+        <div className="clearfix"></div>
+        <div style={{ marginTop:5 }}>
+          ACTION BAR
+          <DeleteLink
             songIdx={ this.props.idx }
             deleteSong={ this.props.deleteSong } />
-          <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-          <MarkPlayedBtn
-            idx={ this.props.idx }
-            playingSongIdx={ this.props.playingSongIdx }
-            isSongPlayed={ this.props.song.get('played') }
-            markSongPlayed={ this.props.markSongPlayed } />
-          <div className="clearfix"></div>
-          <div className={ gridClasses }>
-            { inputs }
-          </div>
-          <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
-          { this.props.song.get('img300px') ?
-            <img
-              className={ releaseImgXSClasses }
-              src={ this.props.song.get('img300px') } />
-            : ""
-          }
-          <div className={ releaseImgSMClasses } style={{ marginTop: 5 }} />
-          { this.props.song.get('img300px') ?
-            <img
-              className={ releaseImgSMClasses }
-              src={ this.props.song.get('img300px') } />
-            : ""
-          }
+        </div>
       </li>
     );
   }
