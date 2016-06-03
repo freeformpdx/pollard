@@ -27,7 +27,7 @@ router.get('/nowPlaying/:format', function(req, res, next) {
         return res.send(err);
       }
 
-      var response = 'KFFP FREEFORM PDX!';
+      var response = null;
 
       if (setlist) {
         response.setlistID = setlist.id;
@@ -37,6 +37,8 @@ router.get('/nowPlaying/:format', function(req, res, next) {
               response = formatSong(req.params.format, setlist.songs[idx]);
               break;
             }
+          }
+          if (!resopnse) {
             console.log('ERROR: no played songs for setlist ' + setlist.id);
           }
         } else {
@@ -44,6 +46,9 @@ router.get('/nowPlaying/:format', function(req, res, next) {
         }
       } else {
         console.log('ERROR: no setlist found for ' + showDoc.showID);
+      }
+      if (!response) {
+        response = 'KFFP FREEFORM PDX!';
       }
       res.json(response);
     })
