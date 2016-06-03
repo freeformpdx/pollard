@@ -18,9 +18,9 @@ let pushToServer = store => next => action => {
   const result = next(action);
   const socket = require('socket.io-client')(config.SOCKET_URL);
 
-  // console.log(store.getState().state.toJSON());
 
   if (shouldPushState(action)) {
+    console.log(store.getState().state.toJSON());
     socket.emit('pushState', store.getState().state.toJSON());
   }
 

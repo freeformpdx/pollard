@@ -48,7 +48,15 @@ module.exports = function(io) {
 				Setlist.findById(newState.view.setlist.id, function (err, setlist) {
 					if (err) throw err;
 					setlist.songs = newState.data.setlist.songs;
-					return setlist.save();
+					setlist.save(function (err, setlist) {
+            if (err) return console.error(err);
+            socket.emit('existingSetlistLoaded', {
+              setlist: {
+                id: setlist.id,
+                songs: setlist.songs
+              }
+            });
+          });
 				});
 			} else {
 				throw new Error('Pushing state when no setlist id exists in state');

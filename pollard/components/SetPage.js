@@ -14,24 +14,27 @@ import Setlist from './Setlist.js';
 
 class SetPage extends Component {
   socketIOevents() {
-      const socket = require('socket.io-client')(config.SOCKET_URL);
-      const urlSetlistId = this.props.params.id;
-      if (typeof urlSetlistId == 'undefined') {
-        if (!this.props.viewSetlist.get('id')) {
-          socket.emit('loadNewSetlist');
-          socket.on('newSetlistCreated', (setlist) => {
-            this.props.setSetlistId(setlist.id);
-            this.props.history.pushState(null, '/setlist/' + setlist.id);
-          });
-        } else {
-          console.log('trying to reload after initial load????');
-        }
-      } else {
-        socket.emit('loadExistingSetlist', { id: this.props.params.id });
-        socket.on('existingSetlistLoaded', ( {setlist} ) => {
-          this.props.loadSetlistState(setlist);
+    debugger;
+    const socket = require('socket.io-client')(config.SOCKET_URL);
+    const urlSetlistId = this.props.params.id;
+    if (typeof urlSetlistId == 'undefined') {
+      if (!this.props.viewSetlist.get('id')) {
+        socket.emit('loadNewSetlist');
+        socket.on('newSetlistCreated', (setlist) => {
+          this.props.setSetlistId(setlist.id);
+          this.props.history.pushState(null, '/setlist/' + setlist.id);
         });
+      } else {
+        console.log('trying to reload after initial load????');
       }
+    } else {
+      socket.emit('loadExistingSetlist', { id: this.props.params.id });
+      socket.on('existingSetlistLoaded', ( {setlist} ) => {
+        debugger;
+        console.log('loaded');
+        this.props.loadSetlistState(setlist);
+      });
+    }
   }
 
   componentDidMount() {

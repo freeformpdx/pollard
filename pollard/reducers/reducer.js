@@ -131,6 +131,7 @@ export function dataSetlist(state = initialDataSetlistState , action) {
   switch (action.type) {
 
   case actionTypes.LOAD_SETLIST_STATE:
+    debugger;
     return Immutable.fromJS(action.state);
 
   case actionTypes.UPDATE_SONG:
