@@ -112,7 +112,7 @@ export default class SearchSongDisplay extends Component {
   }
 
   getSongsFromJSON(json) {
-    return json.response.songs;
+    return json.tracks.items;
   }
 
   formatTrackSearch(songsJSON) {
@@ -120,27 +120,13 @@ export default class SearchSongDisplay extends Component {
 
     for ( let i = 0 ; i < songsJSON.length ; i++) {
       let song = songsJSON[i];
-      if (song.tracks.length > 0) {
-        // FOR RELEASE INFO
-        for ( let j = 0; j < song.tracks.length ; j++ ) {
-          formattedTracks.push({
-            title: song.title,
-            artist: song.artist_name,
-            foreignReleaseId: song.tracks[j].foreign_release_id,
-            album: '',
-            date: ''
-          });
-        }
-      } else {
-        // FOR NO RELEASE INFO
-        formattedTracks.push({
-          title: song.title,
-          artist: song.artist_name,
-          album: '',
-          date: ''
-        });
-
-      }
+      formattedTracks.push({
+        title: song.name,
+        artist: song.artists[0].name,
+        releaseId: song.album.id,
+        album: song.album.name,
+        date: ''
+      });
     }
     return formattedTracks;
   }
@@ -151,11 +137,9 @@ export default class SearchSongDisplay extends Component {
     let self = this;
 
     for (let i = 0 ; i < songs.length ; i++) {
-      let releaseIdFull = songs[i].foreignReleaseId;
+      let releaseId = songs[i].releaseId;
 
-      if (typeof releaseIdFull !== 'undefined') {
-
-        let releaseId = releaseIdFull.split(':')[2];
+      if (typeof releaseId !== 'undefined') {
 
         let releaseSearchUrl = this.getReleaseSearchUrl(releaseId);
 
@@ -199,11 +183,11 @@ export default class SearchSongDisplay extends Component {
   }
 
   getTrackSearchUrl() {
-    const url = "http://developer.echonest.com/api/v4/song/search?" +
-      "api_key=" + this.state.echoNestApiKey +
-      "&title=" + encodeURIComponent(this.state.trackValue) +
-      "&artist=" + encodeURIComponent(this.state.artistValue) +
-      "&bucket=id:spotify-WW&bucket=audio_summary&bucket=tracks";
+    const url = "https://api.spotify.com/v1/search?" +
+      "q=" + encodeURIComponent(this.state.artistValue) + "%20" +
+      encodeURIComponent(this.state.trackValue) +
+      "&type=track";
+
     return url;
   }
 

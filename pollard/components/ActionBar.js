@@ -15,13 +15,7 @@ export default class ActionBar extends Component {
           className="col-xs-12 col-sm-6"
           style={{textAlign: 'right'}}>
           <DeleteLink
-            songIdx={ this.props.idx }
-            deleteSong={ this.props.deleteSong }/>
-          <DeleteLink
-            songIdx={ this.props.idx }
-            deleteSong={ this.props.deleteSong }/>
-          <DeleteLink
-            songIdx={ this.props.idx }
+            songIdx={ this.props.songIdx }
             deleteSong={ this.props.deleteSong }/>
         </div>
       </div>
