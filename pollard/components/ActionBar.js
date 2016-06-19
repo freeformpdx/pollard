@@ -8,7 +8,7 @@ export default class ActionBar extends Component {
     return (
       <div style={{ marginTop:10 }}>
         <div className="col-xs-12 col-sm-6" style={{marginBottom: 5}}>
-          <small>ACTION BAR</small>
+          <small></small>
         </div>
         <div className="clearfix visible-xs"></div>
         <div
