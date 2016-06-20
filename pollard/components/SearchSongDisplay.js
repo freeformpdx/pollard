@@ -143,7 +143,6 @@ export default class SearchSongDisplay extends Component {
       }
     }
 
-
     let releaseSearchUrl = this.getReleaseSearchUrl(releaseIds);
 
     let myHeaders = new Headers();
@@ -204,49 +203,6 @@ export default class SearchSongDisplay extends Component {
       }
     }
   }
-
-    /*
-      if (typeof releaseId !== 'undefined') {
-
-        let releaseSearchUrl = this.getReleaseSearchUrl(releaseId);
-
-        let myHeaders = new Headers();
-        myHeaders.append("Accept", "application/json");
-        let myInit = { headers: myHeaders };
-
-
-        fetch(releaseSearchUrl, myInit)
-        .then(function(response) {
-          if (!response.ok) {
-            const errMsg = "Search server (Spotify) down :( Try again?";
-            self.setError(errMsg);
-            throw Error(errMsg);
-          }
-          return response.json();
-        }).then(function(json) {
-          self.setState(function(previousState) {
-
-            let foundSongs = previousState.foundSongs;
-            let updatedFoundSong = Object.assign(foundSongs[i], {
-              album: json.name ? json.name : 'No Spotify Album Info',
-              date: json.release_date,
-              img300px: json.images[1].url,
-              img64px: json.images[2].url,
-              label: json.copyrights[0] ? json.copyrights[0].text : ''
-            });
-
-            foundSongs[i] = updatedFoundSong;
-
-            return {
-              foundSongs
-            };
-          });
-          self.setState({isSearching: false});
-        }).catch(function(ex) {
-          console.log('Fetching Releases Failed: ', ex)
-        });
-      }
-    */
 
   getTrackSearchUrl() {
     const url = "https://api.spotify.com/v1/search?" +
