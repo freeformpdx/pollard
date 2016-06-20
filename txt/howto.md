@@ -45,6 +45,13 @@ with sprout && mongo containers running:
 
 This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
 
+## functional tests
+
+- `java -jar selenium-server-standalone-2.53.0.jar`
+- `cd test`
+- `HOST='http://0.0.0.0:3000' ./node_modules/.bin/wdio`
+- `HOST='http://0.0.0.0:3000' ./node_modules/.bin/wdio --suite drag_and_drop`
+
 ## mongo stuff:
 
 - Lookin @ shiznards
@@ -72,3 +79,4 @@ This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for de
 
 ### LOADING SCHEDULES INTO POLLARD
 - make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`
+
