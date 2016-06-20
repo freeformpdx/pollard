@@ -135,10 +135,77 @@ export default class SearchSongDisplay extends Component {
   fetchReleases(songs) {
     // ON FETCH RES, FETCH ALBUM
     let self = this;
-
+    let releaseIds = [];
     for (let i = 0 ; i < songs.length ; i++) {
       let releaseId = songs[i].releaseId;
+      if (typeof releaseId !== 'undefined') {
+        releaseIds.push(releaseId);
+      }
+    }
 
+
+    let releaseSearchUrl = this.getReleaseSearchUrl(releaseIds);
+
+    let myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    let myInit = { headers: myHeaders };
+
+
+    fetch(releaseSearchUrl, myInit)
+    .then(function(response) {
+      if (!response.ok) {
+        const errMsg = "Search server (Spotify) down :( Try again?";
+        self.setError(errMsg);
+        throw Error(errMsg);
+      }
+      return response.json();
+    }).then(function(json) {
+      /* update state */
+      for (let i = 0 ; i < songs.length ; i++) {
+        let releaseId = songs[i].releaseId;
+        if (typeof releaseId !== 'undefined') {
+          const releaseInfo = self.getReleaseInfo(releaseId, json);
+          if (releaseInfo) {
+            self.setState(function(previousState) {
+              let foundSongs = previousState.foundSongs;
+              let updatedFoundSong = Object.assign(foundSongs[i], {
+                date: releaseInfo.date,
+                img300px: releaseInfo.img300px,
+                img64px: releaseInfo.img64px,
+                label: releaseInfo.label
+              });
+
+              foundSongs[i] = updatedFoundSong;
+
+              return {
+                foundSongs
+              };
+            });
+          }
+        }
+      }
+      self.setState({isSearching: false});
+    }).catch(function(ex) {
+      console.log('Fetching Releases Failed: ', ex)
+    });
+  }
+
+  getReleaseInfo(releaseId, json) {
+    const albums = json.albums;
+    for (let i = 0; i < albums.length; i++) {
+      const album = albums[i];
+      if (album.id == releaseId) {
+        return {
+          date: album.release_date,
+          img300px: album.images[1].url,
+          img64px: album.images[2].url,
+          label: album.copyrights[0] ? album.copyrights[0].text : ''
+        };
+      }
+    }
+  }
+
+    /*
       if (typeof releaseId !== 'undefined') {
 
         let releaseSearchUrl = this.getReleaseSearchUrl(releaseId);
@@ -179,8 +246,7 @@ export default class SearchSongDisplay extends Component {
           console.log('Fetching Releases Failed: ', ex)
         });
       }
-    }
-  }
+    */
 
   getTrackSearchUrl() {
     const url = "https://api.spotify.com/v1/search?" +
@@ -191,9 +257,9 @@ export default class SearchSongDisplay extends Component {
     return url;
   }
 
-  getReleaseSearchUrl(releaseId) {
+  getReleaseSearchUrl(releaseIds) {
     // TODO: convert this to several
-    const url = "https://api.spotify.com/v1/albums/" + releaseId;
+    const url = "https://api.spotify.com/v1/albums/?ids=" + releaseIds.join(',');
     return url;
   }
 
