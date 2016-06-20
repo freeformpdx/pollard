@@ -4,6 +4,8 @@ var router = express.Router();
 
 var config = require('../env.js');
 
+var cors = require('cors')
+
 var Setlist = require('../models/Setlist');
 var Schedule = require('../models/Schedule');
 
@@ -15,7 +17,7 @@ router.get('/setlist/:id', function(req, res, next) {
 	});
 });
 
-router.get('/nowPlaying/:format', function(req, res, next) {
+router.get('/nowPlaying/:format', cors(), function(req, res, next) {
   Schedule.findShowIDByTime(moment().tz("America/Los_Angeles"), function(err, showDoc) {
     if (err) throw err;
     if (!showDoc) { return res.send('KFFP FREEFORM PORTLAND!'); }
@@ -82,7 +84,7 @@ function getButtFormat(song) {
   return artist + ' - ' + title;
 }
 
-router.get('/setlistsByShowID/:showID', function(req, res, next) {
+router.get('/setlistsByShowID/:showID', cors(), function(req, res, next) {
   var showID = req.params.showID;
   Setlist.find({ 'showID': showID }, function(err, setlists) {
     if (err) throw err;
