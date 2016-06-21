@@ -40,7 +40,7 @@ router.get('/nowPlaying/:format', cors(), function(req, res, next) {
               break;
             }
           }
-          if (!resopnse) {
+          if (!response) {
             console.log('ERROR: no played songs for setlist ' + setlist.id);
           }
         } else {
