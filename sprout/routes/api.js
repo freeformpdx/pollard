@@ -32,11 +32,11 @@ router.get('/nowPlaying/:format', cors(), function(req, res, next) {
       var response = null;
 
       if (setlist) {
-        response.setlistID = setlist.id;
         if (setlist.songs.length > 0) {
           for (var idx = 0; idx < setlist.songs.length; idx++) {
             if (setlist.songs[idx].played) {
               response = formatSong(req.params.format, setlist.songs[idx]);
+              response.setlistID = setlist.id;
               break;
             }
           }
