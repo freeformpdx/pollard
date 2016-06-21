@@ -3,7 +3,7 @@
 ## Thanks!
 - Testing the Playlist App is a big job, so thank you for your help!
 - If it breaks, don't worry! Click that big 'Report a Bug' button && let us know what happened.
-![report_bug](gifs/report_bug.png)
+![report_bug](../gifs/report_bug.png)
 - If it breaks real bad && you can't enter your playlist, don't worry! Click that big 'Report a Bug' button && use a paper playlist.
 
 ## Step 0: Before your show
