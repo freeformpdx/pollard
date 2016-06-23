@@ -14,7 +14,7 @@ ssh ec2-user@$KFFPPROD \
 
 echo -e "\n** scping backup 2 local"
 
-mkdir -p backup/production/$DOTE
+mkdir -p backup/production/$DATE
 
 scp -r \
   ec2-user@$KFFPPROD:/data/backup \
