@@ -45,6 +45,16 @@ with sprout && mongo containers running:
 
 This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
 
+## backup && restore
+- backup prod db:
+- `./backup/production_backup.sh`
+
+- restore to dev:
+- `./bin/docker_restore_mongo.sh $(PWD)/backup/production/<epoch>/backup/`
+
+- restore to staging:
+- `./backup/staging_restore.sh backup/production/<epoch>/backup/`
+
 ## functional tests
 
 - `java -jar selenium-server-standalone-2.53.0.jar`
