@@ -2,12 +2,24 @@ var moment = require('moment-timezone');
 var express = require('express');
 var router = express.Router();
 
-var config = require('../env.js');
-
 var cors = require('cors')
 
 var Setlist = require('../models/Setlist');
 var Schedule = require('../models/Schedule');
+
+var whitelist = [
+  'http://kffp.rocks',
+  'http://staging.kffp.rocks',
+  'http://0.0.0.0:3000',
+  'http://192.168.99.100/',
+];
+
+var corsOptions = {
+  origin: function(origin, callback){
+    var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+    callback(null, originIsWhitelisted);
+  }
+};
 
 router.get('/setlist/:id', function(req, res, next) {
 	var setlistId = req.params.id;
@@ -105,48 +117,70 @@ router.get('/newSetlist/:showID', function(req, res, next) {
   });
 });
 
-/* deprecated (FOR NOW) */
-/* TODO: move upload logic from app.js into here (somehow?)
 
+/**
+ * Pollard frontend routes
+ *
+ **/
 
-router.post('/loadSchedule/', function(req, res, next) {
-  if (req.body.pw == config.LOAD_SCHED_PW) {
-    if (!req.body.sched) {
-      return res.send("No sched found: req:\n" + JSON.stringify(req.body, null, 2));
-    }
-
-    // clear sched first
-    var schedStream = Schedule.find().stream();
-
-    schedStream.on('data', function(doc) {
-      doc.remove();
-    }).on('close', function() {
-      // after clear, load sched
-      try {
-        var sched = JSON.parse(req.body.sched);
-        for (var idx = 0; idx < sched.length; idx++) {
-          var schedule = new Schedule(sched[idx]);
-          schedule.save().then(function(schedule) {
-            console.log('added: ' + schedule.showID);
-          });
-        }
-        setTimeout(function() {
-          res.send("Loaded!");
-        }, 3000);
-      } catch(e) {
-        console.log(JSON.stringify(e));
-        res.status(400).send('Invalid JSON string');
-      }
-    });
-  } else {
-    // security lol
-    setTimeout(function() {
-      res.send("NUH UH");
-    }, 3000);
-  }
+router.get('/loadNewSetlist', cors(corsOptions), function(req, res, next) {
+  var setlist = new Setlist({
+    songs: []
+  });
+  setlist.save()
+  .then(function(setlist) {
+    res.json({ id: setlist.id });
+  });
 });
 
-*/
+router.options('/loadExistingSetlist', cors(corsOptions));
+router.post('/loadExistingSetlist', cors(corsOptions), function(req, res, next) {
+  Setlist.findById(req.body.id).exec()
+  .then(function (setlist) {
+    if (setlist) {
+      res.json({
+        setlist: {
+          id: setlist.id,
+          songs: setlist.songs
+        }
+      });
+    } else {
+      res.json({
+        error: 'No Setlist found',
+      });
+    }
+  })
+});
+
+
+router.options('/pushState', cors(corsOptions));
+router.post('/pushState', cors(corsOptions), function(req, res, next) {
+  var setlistId = req.body.newState.view.setlist.id;
+  console.log(setlistId);
+  if (setlistId) {
+    Setlist.findById(setlistId, function (err, setlist) {
+      if (err) throw err;
+      setlist.songs = req.body.newState.data.setlist.songs;
+      setlist.save(function(err) {
+        if (err) {
+          res.json({
+            error: 'ERROR: Server failed to save playlist'
+          });
+        }
+        setlist.id = setlist['_id'];
+        console.log("setlist['_id']");
+        console.log(setlist['_id']);
+        console.log("setlist.id");
+        console.log(setlist.id);
+        res.json({
+          setlist: setlist,
+        })
+      });
+    });
+  } else {
+    throw new Error('Pushing state when no setlist id exists in state');
+  }
+});
 
 router.get('/500', function(req, res, next) {
   throw new Error("⚰ DAMN DUDE ITS FUUUUUCKED ⚰ ");

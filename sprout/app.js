@@ -5,19 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer = require('multer');
-var socket_io = require('socket.io');
 var mongoose = require('mongoose')
 
-var socketRoute = require('./routes/socketio');
+var routes = require('./routes/routes');
 var api = require('./routes/api');
 var users = require('./routes/users');
 var config = require('./env.js');
 
 var app = express();
-
-var io = socket_io();
-app.io = io;
-
 
 var options = {
   server: {
@@ -93,7 +88,7 @@ app.post('/api/loadSchedule', upload.single('sched'), function (req, res, next) 
 
 app.use('/api', api);
 app.use('/users', users);
-app.use('/', socketRoute(app.io));
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -109,6 +104,8 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
+    console.log(err);
+    console.log(err.stack);
     res.render('error', {
       message: err.message,
       error: err

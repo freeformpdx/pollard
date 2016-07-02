@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -13,29 +14,56 @@ import config from '../../env.js';
 import Setlist from './Setlist.js';
 
 class SetPage extends Component {
-  socketIOevents() {
-      const socket = require('socket.io-client')(config.SOCKET_URL);
-      const urlSetlistId = this.props.params.id;
-      if (typeof urlSetlistId == 'undefined') {
-        if (!this.props.viewSetlist.get('id')) {
-          socket.emit('loadNewSetlist');
-          socket.on('newSetlistCreated', (setlist) => {
-            this.props.setSetlistId(setlist.id);
-            this.props.history.pushState(null, '/setlist/' + setlist.id);
-          });
-        } else {
-          console.log('trying to reload after initial load????');
-        }
+  fetchSetlist() {
+    const urlSetlistId = this.props.params.id;
+    if (typeof urlSetlistId == 'undefined') {
+      if (!this.props.viewSetlist.get('id')) {
+        const loadNewSetlistUrl = 'http://' + config.API_URL + '/api/loadNewSetlist';
+        fetch(loadNewSetlistUrl)
+        .then((res) => {
+          if (!res.ok) {
+            const errMsg = "Failed to load new setlist";
+            throw Error(errMsg);
+          }
+          return res.json();
+        }).then((res) => {
+          this.props.setSetlistId(res.id);
+          this.props.history.pushState(null, '/setlist/' + res.id);
+        })
       } else {
-        socket.emit('loadExistingSetlist', { id: this.props.params.id });
-        socket.on('existingSetlistLoaded', ( {setlist} ) => {
-          this.props.loadSetlistState(setlist);
-        });
+        console.log('trying to reload after initial load????');
       }
+    } else {
+      const loadExistingSetlistUrl = 'http://' + config.API_URL + '/api/loadExistingSetlist';
+      const body = JSON.stringify({
+        id: this.props.params.id
+      });
+      fetch(loadExistingSetlistUrl, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        method: "POST",
+        body,
+      })
+      .then((res) => {
+        if (!res.ok) {
+          const errMsg = "Failed to load existing setlist";
+          throw Error(errMsg);
+        }
+        return res.json();
+      }).then((res) => {
+        if (res.error) {
+          throw Error(res.error);
+        } else {
+          this.props.loadSetlistState(res.setlist);
+        }
+      })
+    }
   }
 
   componentDidMount() {
-    this.socketIOevents();
+    this.fetchSetlist();
   }
 
   componentWillReceiveProps(nextProps) {
