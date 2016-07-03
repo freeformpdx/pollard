@@ -8,29 +8,16 @@ import {
   clearSearchSongInputs,
   searchSong,
   titleChange,
+  setError,
+  clearError,
 } from '../actions/Actions.js';
 
 import SearchSongDisplay from './SearchSongDisplay';
 
 class SearchSongConnector extends Component {
   render() {
-    const {
-      addSong,
-      artistChange,
-      clearSearchSongInputs,
-      lastSearchedSong,
-      searchSong,
-      titleChange,
-    } = this.props;
-
     return (
-      <SearchSongDisplay
-        addSong={ addSong }
-        artistChange={ artistChange }
-        clearSearchSongInputs={ clearSearchSongInputs }
-        lastSearchedSong={ lastSearchedSong }
-        searchSong={ searchSong }
-        titleChange={ titleChange }/>
+      <SearchSongDisplay {...this.props} />
     );
   }
 }
@@ -48,6 +35,8 @@ function mapDispatchToProps(dispatch) {
     clearSearchSongInputs: bindActionCreators(clearSearchSongInputs, dispatch),
     searchSong: bindActionCreators(searchSong, dispatch),
     titleChange: bindActionCreators(titleChange, dispatch),
+    setError: bindActionCreators(setError, dispatch),
+    clearError: bindActionCreators(clearError, dispatch),
   };
 }
 

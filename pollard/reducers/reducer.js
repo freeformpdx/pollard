@@ -42,19 +42,17 @@ const initialSongState = {
 
 
 export function state(state = Map({}), action) {
-  switch (action.type) {
-  default:
-    return state
-      .set('view', view(state.get('view'), action))
-      .set('data', data(state.get('data'), action));
-  }
+  return state
+    .set('view', view(state.get('view'), action))
+    .set('data', data(state.get('data'), action));
 }
 
 export function view(state = Map({}), action) {
     return state
       .set('search', viewSearch(state.get('search'), action))
       .set('setlist', viewSetlist(state.get('setlist'), action))
-      .set('song', viewSong(state.get('song'), action));
+      .set('song', viewSong(state.get('song'), action))
+      .set('error', viewError(state.get('error'), action));
 }
 
 export function viewSearch(state = Map({}), action) {
@@ -117,6 +115,18 @@ export function viewSong(state = initialViewSongState, action) {
       }
     }
     return state;
+  default:
+    return state;
+  }
+}
+
+export function viewError(state = '', action) {
+  switch (action.type) {
+
+  case actionTypes.SET_ERROR:
+    return action.error;
+  case actionTypes.CLEAR_ERROR:
+    return '';
   default:
     return state;
   }

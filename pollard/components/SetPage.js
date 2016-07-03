@@ -12,6 +12,7 @@ import mergeStyles from '../lib/mergeStyles';
 import config from '../../env.js';
 
 import Setlist from './Setlist.js';
+import ErrorBar from './ErrorBar.js';
 
 class SetPage extends Component {
   fetchSetlist() {
@@ -77,6 +78,7 @@ class SetPage extends Component {
   render() {
     const {
       songs,
+      error,
     } = this.props;
     const setStyle = mergeStyles({
       maxWidth: 720
@@ -84,6 +86,7 @@ class SetPage extends Component {
 
     return (
       <div style={ setStyle }>
+        <ErrorBar error={ error }/>
         <Setlist songs={ songs }/>
       </div>
     );
@@ -94,6 +97,7 @@ function mapStateToProps({state}) {
   return {
     songs: state.getIn(['data','setlist', 'songs']),
     viewSetlist: state.getIn(['view','setlist']),
+    error: state.getIn(['view','error']),
   };
 }
 

@@ -22,7 +22,6 @@ export default class SearchSongDisplay extends Component {
       artistValue: '',
       isSearching: false,
       foundSongs: [],
-      error: null,
       echoNestApiKey,
     };
   }
@@ -34,9 +33,7 @@ export default class SearchSongDisplay extends Component {
   }
 
   setError(error) {
-    this.setState({
-      error,
-    });
+    this.props.setError(error);
   }
 
   handleTitleChange(e) {
@@ -57,22 +54,21 @@ export default class SearchSongDisplay extends Component {
       artistValue: '',
       isSearching: false,
       foundSongs: [],
-      error: null,
     });
+    this.props.clearError();
     this.props.clearSearchSongInputs();
   }
 
   handleSearchClick(event) {
     if (!this.state.artistValue || !this.state.trackValue) {
-      this.setState({
-        error: 'Search needs title && artist',
-      });
+      this.props.setError('Search needs title && artist');
       return;
     }
     this.setState({
       isSearching: true,
       foundSongs: []
     });
+    this.props.clearError();
     let trackSearchUrl = this.getTrackSearchUrl();
     let self = this;
 
@@ -87,7 +83,7 @@ export default class SearchSongDisplay extends Component {
     .then(function(response) {
       if (!response.ok) {
         const errMsg = "Search server (EchoNest) down :( Try again?";
-        self.setError(errMsg);
+        self.props.setError(errMsg);
         throw Error(errMsg);
       }
       return response.json();
@@ -101,13 +97,13 @@ export default class SearchSongDisplay extends Component {
         // Then, fetch release data from songs
         self.fetchReleases(songs);
       } else {
+        self.setError('No search results found :(');
         self.setState({
-          error: 'No search results found :(',
           isSearching: false
         });
       }
     }).catch(function(ex) {
-      console.log('Fetching Tracks Failed: ', ex)
+      self.setError('Fetching Tracks Failed: ', ex);
     })
   }
 
@@ -185,7 +181,7 @@ export default class SearchSongDisplay extends Component {
       }
       self.setState({isSearching: false});
     }).catch(function(ex) {
-      console.log('Fetching Releases Failed: ', ex)
+      self.setError('Fetching Releases Failed: ', ex);
     });
   }
 

@@ -1,6 +1,11 @@
 import config from '../../env.js';
 import * as actionTypes from '../constants/ActionTypes';
-import { loadSetlistState } from '../actions/Actions';
+import {
+  loadSetlistState,
+  setError,
+  clearError,
+  retrySave,
+} from '../actions/Actions';
 
 // Middleware that pushes state back to server anytime songs get fuxxed wif
 const shouldPushStateActionTypes = [
@@ -9,6 +14,7 @@ const shouldPushStateActionTypes = [
   actionTypes.MARK_SONG_PLAYED,
   actionTypes.MOVE_SONG,
   actionTypes.UPDATE_SONG,
+  actionTypes.RETRY_SAVE,
 ];
 
 function shouldPushState(action) {
@@ -31,17 +37,25 @@ function _pushState(state, dispatch) {
   .then((res) => {
     if (!res.ok) {
       const errMsg = "Failed to save playlist";
+      dispatch(setError(errMsg));
+      console.log(errMsg);
       throw Error(errMsg);
     }
     return res.json();
   }).then((res) => {
     if (res.error) {
+      dispatch(setError(res.error));
       throw Error(res.error);
     } else {
       res.setlist.id = res.setlist._id;
       dispatch(loadSetlistState(res.setlist));
+      dispatch(clearError());
     }
-  })
+  }).catch(error => {
+    dispatch(setError("Failed saving playlist, retrying..."));
+    setTimeout(() => dispatch(retrySave()), 3000);
+    console.log(error);
+  });
 }
 
 const pushState = debounce(_pushState, 1000);
