@@ -156,7 +156,6 @@ router.post('/loadExistingSetlist', cors(corsOptions), function(req, res, next) 
 router.options('/pushState', cors(corsOptions));
 router.post('/pushState', cors(corsOptions), function(req, res, next) {
   var setlistId = req.body.newState.view.setlist.id;
-  console.log(setlistId);
   if (setlistId) {
     Setlist.findById(setlistId, function (err, setlist) {
       if (err) throw err;
@@ -168,10 +167,6 @@ router.post('/pushState', cors(corsOptions), function(req, res, next) {
           });
         }
         setlist.id = setlist['_id'];
-        console.log("setlist['_id']");
-        console.log(setlist['_id']);
-        console.log("setlist.id");
-        console.log(setlist.id);
         res.json({
           setlist: setlist,
         })
