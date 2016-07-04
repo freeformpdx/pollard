@@ -35,6 +35,9 @@ module.exports = {
       test: /\.css?$/,
       loaders: ['style', 'raw'],
       include: __dirname
+    }, {
+      include: /\.json$/,
+      loaders: ["json-loader"]
     }]
   }
 };
