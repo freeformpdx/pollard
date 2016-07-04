@@ -21,7 +21,7 @@ module.exports = {
     alias: {
       'redux': path.join(__dirname, 'node_modules/redux')
     },
-    extensions: ['', '.js']
+    extensions: ['', '.js','.json']
   },
   module: {
     loaders: [{
@@ -37,6 +37,9 @@ module.exports = {
       test: /\.css?$/,
       loaders: ['style', 'raw'],
       include: __dirname
+    }, {
+      include: /\.json$/,
+      loaders: ["json-loader"]
     }]
   },
   proxy: {

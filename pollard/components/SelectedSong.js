@@ -25,6 +25,8 @@ export default class SelectedSong extends Component {
         songIdx={ this.props.idx }/>;
     });
 
+    const playedAt = this.props.song.get('playedAt');
+
     const songStyle= mergeStyles({
       backgroundColor: '#D0D0D0'
     });
@@ -93,7 +95,8 @@ export default class SelectedSong extends Component {
         <div className="clearfix"></div>
         <ActionBar
           songIdx={ this.props.idx }
-          deleteSong={ this.props.deleteSong } />
+          deleteSong={ this.props.deleteSong }
+          playedAt={ playedAt }/>
       </li>
     );
   }
