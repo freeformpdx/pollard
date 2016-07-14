@@ -263,7 +263,7 @@ export default class SearchSongDisplay extends Component {
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
 
             <SearchSongButton
-              isDragging={ this.state.isDragging }
+              isSearching={ this.state.isSearching }
               onClick={ (e) => this.handleSearchClick(e) }/>
 
             <div className="visible-xs-block col-xs-12" style={{ marginTop: 5 }} />
