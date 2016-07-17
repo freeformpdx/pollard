@@ -13,7 +13,7 @@
   If not, send an email to editor@freeformportland.org
 
 ## Step 1: Find your show page
-- Login to [WordPress](http://www.freeformportland.org/wp-login.php)
+- Login to [WordPress](http://www.freeformportland.org/wp-admin/)
 - Click 'Shows'
 
 ![show_section](../gifs/show_section.png)
