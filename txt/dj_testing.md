@@ -1,7 +1,6 @@
-# DJ Testing
+# Using the Playlist App
 
 ## Thanks!
-- Testing the Playlist App is a big job, so thank you for your help!
 - If it breaks, don't worry! Click that big 'Report a Bug' button && let us know what happened.
 
 ![report_bug](../gifs/report_bug.png)
