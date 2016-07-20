@@ -12,16 +12,19 @@
 - TEST: can you login to [WordPress](http://www.freeformportland.org/wp-admin)?
   If not, send an email to editor@freeformportland.org
 
-## Step 1: Find your show page
+## Step 1: Log in
 - Login to [WordPress](http://www.freeformportland.org/wp-admin/)
-- Click 'Shows'
+
+## Step 2: Find your show page (or the show page you're covering)
+- If it's you're own show, click 'Shows'
 
 ![show_section](../gifs/show_section.png)
 - Hover over your show && click 'View'
-
 ![show_list_hover](../gifs/show_list_hover.png)
 
-## Step 2: Make new playlist
+- If you are subbing, find that show's page in the [schedule](http://www.freeformportland.org/schedule/)
+
+## Step 3: Make new playlist
 - Click 'Make New Playlist'
 
 ![mk_new_playlist](../gifs/mk_new_playlist.png)
@@ -29,7 +32,7 @@
 
 ![pollard](../gifs/pollard.png)
 
-## Step 3: Add Songs
+## Step 4: Add Songs
 - Enter an artist && title && press Enter or click 'Search'
 - If you find results, click 'Add To Setlist'
 
@@ -45,7 +48,7 @@
 ![add_air_break](../gifs/add_air_break.png)
 - If you add songs out of order, you can drag && drop them into place.
 
-## Step 4: Playing songs
+## Step 5: Playing songs
 - When you play a song, click 'Play Song'.
 - This updates the Now Playing feature on freeformportland.org && records the start time of the track.
 
@@ -57,7 +60,7 @@
 
 ![now_playing_widget](../gifs/now_playing_widget.png)
 
-## Step 5: Editing songs
+## Step 6: Editing songs
 - Click on the 'Title - Artist' line of a song to open Edit Mode.
 - Edit any field && your changes are automatically saved.
 - To delete an entry, click the Trash Can icon. It will prompt you to confirm.
