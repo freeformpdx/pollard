@@ -20,6 +20,7 @@
 
 ![show_section](../gifs/show_section.png)
 - Hover over your show && click 'View'
+
 ![show_list_hover](../gifs/show_list_hover.png)
 
 - If you are subbing, find that show's page in the [schedule](http://www.freeformportland.org/schedule/)
