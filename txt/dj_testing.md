@@ -6,6 +6,8 @@
 ![report_bug](../gifs/report_bug.png)
 - If it breaks real bad && you can't enter your playlist, don't worry! Click that big 'Report a Bug' button && use a paper playlist.
 
+- Do you have an idea for how we can improve the playlisting features? [Fill out this form](http://www.freeformportland.org/features)
+
 ## Step 0: Before your show
 - TEST: Check the [schedule](http://www.freeformportland.org/schedule).
   Is your timeslot right? If not, send an email to editor@freeformportland.org
