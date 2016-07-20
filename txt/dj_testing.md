@@ -16,7 +16,7 @@
 - Login to [WordPress](http://www.freeformportland.org/wp-admin/)
 
 ## Step 2: Find your show page (or the show page you're covering)
-- If it's you're own show, click 'Shows'
+- If it's your own show, click 'Shows'
 
 ![show_section](../gifs/show_section.png)
 - Hover over your show && click 'View'
