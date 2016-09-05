@@ -11,7 +11,7 @@ var whitelist = [
   'http://kffp.rocks',
   'http://staging.kffp.rocks',
   'http://0.0.0.0:3000',
-  'http://192.168.99.100/',
+  'http://0.0.0.0/',
 ];
 
 var corsOptions = {
@@ -141,6 +141,9 @@ router.post('/loadExistingSetlist', cors(corsOptions), function(req, res, next) 
       res.json({
         setlist: {
           id: setlist.id,
+          title: setlist.title,
+          description: setlist.description,
+          img: setlist.img,
           songs: setlist.songs
         }
       });
@@ -160,6 +163,9 @@ router.post('/pushState', cors(corsOptions), function(req, res, next) {
     Setlist.findById(setlistId, function (err, setlist) {
       if (err) throw err;
       setlist.songs = req.body.newState.data.setlist.songs;
+      setlist.title = req.body.newState.data.setlist.title;
+      setlist.description = req.body.newState.data.setlist.description;
+      setlist.img = req.body.newState.data.setlist.img;
       setlist.save(function(err) {
         if (err) {
           res.json({

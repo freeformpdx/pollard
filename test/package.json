@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:dev",
     "test:dev": "HOST='http://0.0.0.0:3000' ./node_modules/.bin/wdio",
-    "test:docker": "HOST='http://192.168.99.100' ./node_modules/.bin/wdio"
+    "test:docker": "HOST='http://0.0.0.0' ./node_modules/.bin/wdio"
   },
   "repository": {
     "type": "git",

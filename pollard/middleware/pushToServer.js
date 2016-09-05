@@ -15,6 +15,9 @@ const shouldPushStateActionTypes = [
   actionTypes.MOVE_SONG,
   actionTypes.UPDATE_SONG,
   actionTypes.RETRY_SAVE,
+  actionTypes.SET_PLAYLIST_TITLE,
+  actionTypes.SET_PLAYLIST_DESCRIPTION,
+  actionTypes.SET_PLAYLIST_IMG,
 ];
 
 function shouldPushState(action) {

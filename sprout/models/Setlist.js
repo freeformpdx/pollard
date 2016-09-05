@@ -25,6 +25,9 @@ Song.pre('save', function(next) {
 var setlistSchema = new Schema({
 	songs: [Song],
   showID: String,
+  title: String,
+  description: String,
+  img: String,
   createdAt: { type: Date, default: Date.now },
 });
 

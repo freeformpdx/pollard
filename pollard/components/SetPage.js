@@ -13,6 +13,7 @@ import config from '../../env.js';
 
 import Setlist from './Setlist.js';
 import ErrorBar from './ErrorBar.js';
+import PlaylistInfo from './PlaylistInfo.js';
 
 class SetPage extends Component {
   fetchSetlist() {
@@ -87,6 +88,7 @@ class SetPage extends Component {
     return (
       <div style={ setStyle }>
         <ErrorBar error={ error }/>
+        <PlaylistInfo />
         <Setlist songs={ songs }/>
       </div>
     );

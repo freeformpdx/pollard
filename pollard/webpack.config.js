@@ -44,7 +44,7 @@ module.exports = {
   },
   proxy: {
     '/favicon.ico': {
-      target: 'http://192.168.99.100',
+      target: 'http://0.0.0.0',
       secure: false
     }
   }

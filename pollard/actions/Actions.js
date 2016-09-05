@@ -137,3 +137,25 @@ export function retrySave() {
     type: types.RETRY_SAVE
   }
 };
+
+export function setPlaylistTitle(title) {
+  return {
+    type: types.SET_PLAYLIST_TITLE,
+    title,
+  }
+};
+
+export function setPlaylistDescription(description) {
+  return {
+    type: types.SET_PLAYLIST_DESCRIPTION,
+    description,
+  }
+};
+
+export function setPlaylistImg(img) {
+  return {
+    type: types.SET_PLAYLIST_IMG,
+    img,
+  }
+};
+

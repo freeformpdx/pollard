@@ -12,6 +12,9 @@ const initialViewSongState = Immutable.fromJS({
 
 const initialDataSetlistState = Immutable.fromJS({
   id: '',
+  title: '',
+  description: '',
+  img: '',
   songs: []
 });
 
@@ -189,6 +192,15 @@ export function dataSetlist(state = initialDataSetlistState , action) {
 
   case actionTypes.SERCH_SONG:
     return state.deleteIn(['songs', action.idx]);
+
+  case actionTypes.SET_PLAYLIST_TITLE:
+    return state.set('title', action.title);
+
+  case actionTypes.SET_PLAYLIST_DESCRIPTION:
+    return state.set('description', action.description);
+
+  case actionTypes.SET_PLAYLIST_IMG:
+    return state.set('img', action.img);
 
   default:
     return state;
