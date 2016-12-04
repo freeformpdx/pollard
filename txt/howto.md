@@ -119,3 +119,38 @@ This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for de
 ### LOADING SCHEDULES INTO POLLARD
 - make a post request w/ postman or w/e to: `http://kffp.rocks/api/loadSched/[LOAD_SCHED_PW]`
 
+
+## OLD DIY
+
+[Dev Notes][devnotes]
+
+## env
+
+- `cp env/development.env.template env/development.env`
+  && then enter in yr [echonest][echonestapikey]
+  && [7digital][7digitalapikey] api keys
+
+## buildin
+
+- `./pollard/bin/build_dist.sh [development, staging, production]`
+- `./bin/docker_build.sh`
+
+
+## runnin
+
+- `./bin/docker_run_containers.sh [development, staging, production]`
+
+## releasin (WIPAF)
+
+- ./release/mk_releases.sh
+
+
+## devin
+
+with sprout && mongo containers running:
+
+- `cd pollard && npm start`
+- in yr browser at 0.0.0.0:3000
+
+This runs webpack-dev-server, w/ hot reloading && other goodies. Strickly for dev purposes.
+
