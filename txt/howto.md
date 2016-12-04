@@ -13,7 +13,36 @@ KFFP LOCALS ONLY U FUKKEN GROMMET!!!
       PLZ 2 EAT SHIT
           && DIE
 
-# FINISHED PROCESS
+# Install && Initial set-up
+
+## prereqs
+- install node/npm
+- install docker
+
+## Set up env files
+- cp env files into /env
+
+## build backend (sprout)
+- `./bin/docker_build.sh development latest`
+
+## running containers
+- `./bin/docker_run_containers.sh development`
+
+## Running frontend dev server (hot reloading, etc)
+- `cd pollard/`
+- `npm install` (once)
+- `npm start` (runs devserver at 0.0.0.0:3000)
+
+
+# Additional
+
+## building assets (frontend js bundle)
+- cd pollard/
+- npm install (once)
+- ./pollard/bin/build_dist.sh
+
+
+# FINISHED PROCESS [Old, Partially operational]
 
 ## buildin for test/local dev
 
